@@ -38,15 +38,24 @@ int readInteger()
     int value;
     while (true) {
         cin >> value;
-        if (cin.fail() or value < 0) {
+        if (cin.fail() or value < 0) 
+        {
             cin.clear();
             cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             cout << "Klaida: Prasome ivesti teigiama skaiciu." << endl;
         }
-        else {
+        else 
+        {
             cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             break;
         }
     }
     return value;
+}
+//---
+int generuotiAtsitiktiniP(int min, int max) 
+{
+    static std::mt19937 gen(std::random_device{}());
+    std::uniform_int_distribution<> dis(min, max);
+    return dis(gen);
 }

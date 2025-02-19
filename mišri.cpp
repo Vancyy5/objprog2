@@ -1,18 +1,6 @@
-#include<iostream>
-#include<iomanip>
-#include<vector>
-#include<random>
-#include<numeric>
-#include<algorithm>
+#include "lib.h"
 //---
-using std::cout;
-using std::cin;
-using std::string;
-using std::vector;
-using std::endl;
-using std::setw;
-//---
-struct Stud
+struct Studentai
 {
     string var, pav;
     int* nd;
@@ -20,19 +8,14 @@ struct Stud
     int egz;
 };
 //---
-double skaiciuotiVid(const Stud& a);
-double skaiciuotiMed(const Stud& a);
-int generuotiAtsitiktiniP(int min=1, int max=10) 
-{
-    static std::mt19937 gen(std::random_device{}());
-    std::uniform_int_distribution<> dis(min, max);
-    return dis(gen);
-}
+double skaiciuotiVid(const Studentai& a);
+double skaiciuotiMed(const Studentai& a);
+int generuotiAtsitiktiniP(int min=1, int max=10);
 //---
 int main() 
 {
-    Stud laik;
-    vector<Stud> grupe;
+    Studentai laik;
+    vector<Studentai> grupe;
 
     char testiStudentus, testiNd, generuoti;
     int i=0;
@@ -131,7 +114,7 @@ int main()
     return 0;
 }
 //---
-double skaiciuotiVid(const Stud& a) 
+double skaiciuotiVid(const Studentai& a) 
 {
     if (a.nd_kiekis == 0) return 0.0;
 
@@ -143,7 +126,7 @@ double skaiciuotiVid(const Stud& a)
     return suma / a.nd_kiekis;
 }
 //---
-double skaiciuotiMed(const Stud& a) 
+double skaiciuotiMed(const Studentai& a) 
 {
     if (a.nd_kiekis == 0) return 0.0;
 
@@ -166,4 +149,12 @@ double skaiciuotiMed(const Stud& a)
     delete[] kopija;
     return mediana;
 }
+//---
+int generuotiAtsitiktiniP(int min, int max) 
+{
+    static std::mt19937 gen(std::random_device{}());
+    std::uniform_int_distribution<> dis(min, max);
+    return dis(gen);
+}
+//meniu padaryti
 //duomenu patikrinima padaryti

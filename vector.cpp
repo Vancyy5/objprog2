@@ -1,13 +1,4 @@
-#include"lib.h"
-//---
-double skaiciuotiVid(vector<int> nd);
-double skaiciuotiMed(vector<int> nd);
-int generuotiAtsitiktiniP(int min=1, int max=10) 
-{
-    static std::mt19937 gen(std::random_device{}());
-    std::uniform_int_distribution<> dis(min, max);
-    return dis(gen);
-}
+#include "funkcijos.h"
 //---
 int main() 
 {
@@ -30,15 +21,15 @@ int main()
 
         if (generuoti == 't' or generuoti == 'T') 
         {
-            int kiekis = generuotiAtsitiktiniP(1, 10);
+            int kiekis = generuotiAtsitiktiniP();
 
           for (int j = 0; j < kiekis; ++j) 
           {
-          int paz = generuotiAtsitiktiniP(1, 10);
+          int paz = generuotiAtsitiktiniP();
            laik.nd.push_back(paz);
           }
 
-           laik.egz = generuotiAtsitiktiniP(1, 10);
+           laik.egz = generuotiAtsitiktiniP();
         } 
         else 
         {
@@ -102,38 +93,5 @@ int main()
     return 0;
 }
 //---
-double skaiciuotiVid(vector<int> nd) 
-{
-    if (nd.empty()) return 0.00;
-    else
-    {
-        double suma = 0.0;
-        for (int nd : nd) 
-        {
-            suma += nd;
-        }
-    return suma*1.00/ nd.size();
-    }
-    
-}
-//---
-double skaiciuotiMed(vector<int> nd) 
-{
-    if (nd.empty()) return 0.00;
-    else
-    {
-        sort(nd.begin(), nd.end());
-    int dydis = nd.size();
-    if (dydis % 2 == 0) 
-    {
-        return (nd[dydis / 2 - 1] + nd[dydis / 2]) / 2.0;
-    } 
-    else 
-    {
-        return nd[dydis / 2];
-    }
-    }
-    
-}
-//---
+//meniu padaryti 
 //duomenu patikrinima padaryti
