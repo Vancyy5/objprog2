@@ -61,7 +61,10 @@ int main()
         cin >> laik.egz;
        }  
 
-        grupe.push_back(laik);
+       grupe.push_back(laik);
+       laik.nd.clear();
+       
+
 
         cout << "Ar norite ivesti dar viena studenta? (t/n): ";
         cin >> testiStudentus;
