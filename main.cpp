@@ -1,7 +1,8 @@
 #include"lib.h"
 //---
 double skaiciuotiVid(vector <int> nd);
-double skaiciuotiMed(vector <int> nd) ;
+double skaiciuotiMed(vector <int> nd);
+int readInteger();
 //---
 int main()
 {
@@ -21,25 +22,25 @@ int main()
     else
     {
         cout << "Iveskite studentu namu darbu skaiciu: ";
-        cin >> n;
+        n=readInteger();
 
         for (int i=0; i<m; i++)
         {
             cout << "Iveskite " << i+1 << "-ojo studento varda: ";
-            cin >> laik.var;
+            getline(cin, laik.var);
             cout << "Iveskite " << i+1 << "-ojo studento pavarde: ";
-            cin >> laik.pav;
+            getline(cin, laik.pav);
 
             for (int j=0; j<n; j++)
             {
                 int paz;
                 cout << "Iveskite "<< i+1 << "-ojo studento " << j+1 << "-ojo namu darbo rezultata:";
-                cin >> paz;
+                paz=readInteger();
                 laik.nd.push_back(paz);
             }
 
             cout << "Iveskite "<< i+1 << "-ojo studento egzamino rezultata: ";
-            cin >> laik.egz;
+            laik.egz=readInteger();
 
             grupe.push_back(laik);
             laik.nd.clear();
@@ -108,13 +109,29 @@ double skaiciuotiMed(vector<int> nd)
     {
         return nd[dydis / 2];
     }
+}  
+}
+//---
+int readInteger() 
+{
+    int value;
+    while (true) {
+        cin >> value;
+        if (cin.fail() or value < 0) {
+            cin.clear();
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            cout << "Klaida: Prasome ivesti teigiama skaiciu." << endl;
+        }
+        else {
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            break;
+        }
     }
-    
+    return value;
 }
 //--------------------------
 //padaryt kiekvieno ivedamo duomenu patikrinima
 //padaryt pasirinktinai meniu
-//random generacija
 //funkcijas sutvarkyti
 //funkciju headeri padaryt
 //funkciju faila padaryt

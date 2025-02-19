@@ -64,10 +64,9 @@ int main()
        grupe.push_back(laik);
        laik.nd.clear();
        
-
-
         cout << "Ar norite ivesti dar viena studenta? (t/n): ";
         cin >> testiStudentus;
+        
     } while (testiStudentus == 't' or testiStudentus == 'T');
 
     cout << "Ar galutinio balo skaiciavimui norite naudoti vidurki ar mediana? (v/m): ";
@@ -108,8 +107,12 @@ double skaiciuotiVid(vector<int> nd)
     if (nd.empty()) return 0.00;
     else
     {
-    double suma = accumulate(nd.begin(), nd.end(), 0.0); //pataisyk
-    return suma / nd.size();
+        double suma = 0.0;
+        for (int nd : nd) 
+        {
+            suma += nd;
+        }
+    return suma*1.00/ nd.size();
     }
     
 }

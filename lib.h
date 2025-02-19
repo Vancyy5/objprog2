@@ -4,6 +4,8 @@
 #include<iostream>
 #include<iomanip>
 #include<vector>
+#include<cmath>
+#include<string>
 #include<numeric>
 #include<algorithm>
 #include<random>
@@ -13,6 +15,7 @@ using std::cout;
 using std::cin;
 using std::string;
 using std::vector;
+using std::getline;
 using std::endl;
 using std::setw;
 
