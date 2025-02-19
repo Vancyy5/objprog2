@@ -3,15 +3,14 @@
 
 #include<iostream>
 #include<iomanip>
-#include<cmath>
 #include<vector>
-#include<string>
-#include <numeric>
-#include <algorithm>
+#include<numeric>
+#include<algorithm>
+#include<random>
+
 
 using std::cout;
 using std::cin;
-using std::getline;
 using std::string;
 using std::vector;
 using std::endl;
