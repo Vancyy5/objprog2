@@ -2,7 +2,9 @@
 
 double skaiciuotiVid(vector<int> nd) 
 {
-    if (nd.empty()) return 0.0;
+    if (nd.empty()) {
+        throw std::runtime_error("Namu darbu sarasas negali buti tuscias");
+    }
     else
     {
         double suma = 0.0;
@@ -17,7 +19,9 @@ double skaiciuotiVid(vector<int> nd)
 //---
 double skaiciuotiMed(vector<int> nd) 
 {
-    if (nd.empty()) return 0.0;
+    if (nd.empty()) {
+        throw std::runtime_error("Namu darbu sarasas negali buti tuscias");
+    }
     else
     {
         sort(nd.begin(), nd.end());
@@ -58,4 +62,28 @@ int generuotiAtsitiktiniP(int min, int max)
     static std::mt19937 gen(std::random_device{}());
     std::uniform_int_distribution<> dis(min, max);
     return dis(gen);
+}
+//---
+string generuotiVarda(bool berniukas) 
+{
+    vector<string> berniukuVardai = {"Jokubas", "Jonas", "Petras", "Lukas", "Mantas", "Tomas"};
+    vector<string> mergaiciuVardai = {"Simona", "Vakare", "Greta", "Laura", "Egle"};
+
+    if (berniukas) {
+        return berniukuVardai[rand() % berniukuVardai.size()];
+    } else {
+        return mergaiciuVardai[rand() % mergaiciuVardai.size()];
+    }
+}
+//---
+string generuotiPavarde(bool berniukas) 
+{
+    vector<string> berniukuPavardes = {"Jonaitis", "Petraitis", "Lukaitis", "Mantaitis", "Tomaitis"};
+    vector<string> mergaiciuPavardes = {"Jonaite", "Petraite", "Lukaite", "Mantaite", "Tomaite"};
+
+    if (berniukas) {
+        return berniukuPavardes[rand() % berniukuPavardes.size()];
+    } else {
+        return mergaiciuPavardes[rand() % mergaiciuPavardes.size()];
+    }
 }
