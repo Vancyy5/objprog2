@@ -2,7 +2,8 @@
 
 double skaiciuotiVid(vector<int> nd) 
 {
-    if (nd.empty()) {
+    if (nd.empty()) 
+    {
         throw std::runtime_error("Namu darbu sarasas negali buti tuscias");
     }
     else
@@ -19,7 +20,8 @@ double skaiciuotiVid(vector<int> nd)
 //---
 double skaiciuotiMed(vector<int> nd) 
 {
-    if (nd.empty()) {
+    if (nd.empty())
+     {
         throw std::runtime_error("Namu darbu sarasas negali buti tuscias");
     }
     else

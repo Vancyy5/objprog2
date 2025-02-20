@@ -18,6 +18,11 @@ int main()
         cout << "Pasirinkimas: ";
         cin >> pasirinkimas;
 
+        if (pasirinkimas!=1 and pasirinkimas!=2 and pasirinkimas!=3 and pasirinkimas!=4)
+    {
+        cout << "Neteisingai pasirinktas meniu variantas" <<endl;
+        return 1;
+    }
     if (pasirinkimas!=4)
     {
         if(pasirinkimas==1)
@@ -27,32 +32,43 @@ int main()
           {
             i++;
             cout << "Iveskite "<< i << "-ojo studento varda: ";
-            cin >> laik.var;
+            cin>>laik.var;
             cout << "Iveskite "<< i << "-ojo studento pavarde: ";
-            cin >> laik.pav;
+            cin>>laik.pav;
     
             laik.nd.clear();
             int j=0;
             do 
             {
-
             int paz;
             j++;
             cout << "Iveskite "<< i << "-ojo studento "<< j << "-ojo namu darbo rezultata: ";
-            cin >> paz;
+            paz=readInteger();
             laik.nd.push_back(paz);
 
             cout << "Ar norite ivesti dar viena namu darba? (t/n): ";
             cin >> testiNd;
+            if (testiNd == 'n' or testiNd == 'N') break;
+        else if (testiNd != 't' and testiNd != 'T')
+        {
+            cout << "Blogai atsakytas paskutinis klausimas" << endl;
+            return 1;
+        }
             } while (testiNd == 't' or testiNd == 'T');
            cout << "Iveskite "<< i << "-ojo studento egzamino rezultata: ";
-           cin >> laik.egz;
+           laik.egz=readInteger();
 
           grupe.push_back(laik);
           laik.nd.clear();
        
         cout << "Ar norite ivesti dar viena studenta? (t/n): ";
         cin >> testiStudentus;
+        if (testiStudentus == 'n' or testiStudentus == 'N') break;
+        else if (testiStudentus != 't' and testiStudentus != 'T')
+        {
+            cout << "Blogai atsakytas paskutinis klausimas" << endl;
+            return 1;
+        }
         } while (testiStudentus == 't' or testiStudentus == 'T');
        }
 
@@ -61,9 +77,9 @@ int main()
         do{
             i++;
         cout << "Iveskite "<< i << "-ojo studento varda: ";
-        cin >> laik.var;
+        cin>>laik.var;
         cout << "Iveskite "<< i << "-ojo studento pavarde: ";
-        cin >> laik.pav;
+        cin>>laik.pav;
 
         laik.nd.clear();
 
@@ -82,6 +98,12 @@ int main()
            
             cout << "Ar norite ivesti dar viena studenta? (t/n): ";
             cin >> testiStudentus;
+            if (testiStudentus == 'n' or testiStudentus == 'N') break;
+        else if (testiStudentus != 't' and testiStudentus != 'T')
+        {
+            cout << "Blogai atsakytas paskutinis klausimas" << endl;
+            return 1;
+        }
         }while (testiStudentus == 't' or testiStudentus == 'T');
 
        }
@@ -110,6 +132,12 @@ int main()
 
         cout << "Ar sugeneruoti dar viena studenta? (t/n): ";
         cin >> testiStudentus;
+        if (testiStudentus == 'n' or testiStudentus == 'N') break;
+        else if (testiStudentus != 't' and testiStudentus != 'T')
+        {
+            cout << "Blogai atsakytas paskutinis klausimas" << endl;
+            return 1;
+        }
        }while(testiStudentus == 't' or testiStudentus == 'T');
        }
 
@@ -136,16 +164,19 @@ int main()
             double galutinis = 0.4 * skaiciuotiMed(a.nd) + 0.6 * a.egz;
             cout << std::left << setw(15) << a.pav << setw(15) << a.var << std::fixed << std::setprecision(2) << galutinis << endl;
         }
-       }
+        }
+        else
+        {
+            cout << "Netinkamai atsakytas klausimas apie galutinio balo skaiciavima" <<endl;
+            return 1;
+        }
         return 0;
     }
 
-    else 
+    else if(pasirinkimas==4)
         {
         cout << "Pasirinkta baigti darba" <<endl;
         return 1;
         }
     }
-
 //---
-//duomenu patikrinima padaryti
