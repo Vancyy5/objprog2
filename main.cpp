@@ -15,9 +15,9 @@ int main()
         for (int i=0; i<m; i++)
         {
             cout << "Iveskite " << i+1 << "-ojo studento varda: ";
-            getline(cin, laik.var);
+            cin>> laik.var;
             cout << "Iveskite " << i+1 << "-ojo studento pavarde: ";
-            getline(cin, laik.pav);
+            cin>>laik.pav;
 
             for (int j=0; j<n; j++)
             {
