@@ -2,6 +2,7 @@
 #define LIB_H
 
 #include<iostream>
+#include<fstream>
 #include<iomanip>
 #include<vector>
 #include<cmath>
@@ -9,6 +10,7 @@
 #include<numeric>
 #include<algorithm>
 #include<random>
+#include<sstream>
 
 
 using std::cout;

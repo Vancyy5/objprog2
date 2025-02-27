@@ -89,3 +89,27 @@ string generuotiPavarde(bool berniukas)
         return mergaiciuPavardes[rand() % mergaiciuPavardes.size()];
     }
 }
+//---
+bool sortByName(const Stud& a, const Stud& b) 
+{
+    return a.var < b.var; 
+}
+//---
+bool sortBySurname(const Stud& a, const Stud& b) 
+{
+    return a.pav < b.pav; 
+}
+//---
+bool sortByFinalGradeAvg(const Stud& a, const Stud& b)
+ {
+    double finalA = 0.4 * skaiciuotiVid(a.nd) + 0.6 * a.egz;
+    double finalB = 0.4 * skaiciuotiVid(b.nd) + 0.6 * b.egz;
+    return finalA > finalB; 
+}
+//---
+bool sortByFinalGradeMed(const Stud& a, const Stud& b) 
+{
+    double finalA = 0.4 * skaiciuotiMed(a.nd) + 0.6 * a.egz;
+    double finalB = 0.4 * skaiciuotiMed(b.nd) + 0.6 * b.egz;
+    return finalA > finalB;
+}

@@ -9,7 +9,51 @@ int main()
 
     char testiStudentus, testiNd, generuoti;
 
-    int i=0;
+    cout << "Ar norite nuskaityti studentu duomenis is failo? (t/n): ";
+    char readFromFile;
+    cin >> readFromFile;
+
+    if (readFromFile == 't' or readFromFile == 'T') 
+    {
+        std::ifstream inputFile("studentai10000.txt"); 
+        
+        if (!inputFile.is_open()) 
+        {
+            cout << "Nepavyko atidaryti failo" << endl;
+            return 1;
+        }
+        string line;
+        
+        getline(inputFile, line);
+
+        while (getline(inputFile, line)) 
+        {
+            std::stringstream ss(line);
+    ss >> laik.var >> laik.pav; 
+    
+    laik.nd.clear();  
+    int pazymys;
+    vector<int> scores;  
+    
+    while (ss >> pazymys) 
+    {
+        scores.push_back(pazymys);
+    }
+
+    if (scores.size() > 0)
+    {
+        laik.nd = vector<int>(scores.begin(), scores.end() - 1);  
+        
+        laik.egz = scores.back();
+        
+        grupe.push_back(laik); 
+        }
+    }
+        inputFile.close();
+    }
+        else if (readFromFile == 'n' or readFromFile == 'N')
+    {
+        int i=0;
         cout << "Pasirinkite veiksma:\n";
         cout << "1 - Ivesti duomenis ranka\n";
         cout << "2 - Generuoti tik pazymius\n";
@@ -140,43 +184,103 @@ int main()
         }
        }while(testiStudentus == 't' or testiStudentus == 'T');
        }
-
-       cout << "Ar galutinio balo skaiciavimui norite naudoti vidurki ar mediana? (v/m): ";
-    char ats;
-    cin >> ats;
-
-    if (ats == 'v' or ats == 'V') 
-    {
-        cout << std::left << setw(15) << "Pavarde" << setw(15) << "Vardas" << setw(20) << "Galutinis (Vid.)" << endl;
-        cout << string(50, '-') << endl;
-        for (const auto &a : grupe) 
-        {
-            double galutinis = 0.4 * skaiciuotiVid(a.nd) + 0.6 * a.egz;
-            cout << std::left << setw(15) << a.pav << setw(15) << a.var << std::fixed << std::setprecision(2) << galutinis << endl;
-        }
-    } 
-        else if (ats == 'm' or ats == 'M') 
-        {
-        cout << std::left << setw(15) << "Pavarde" << setw(15) << "Vardas" << setw(20) << "Galutinis (Med.)" << endl;
-        cout << string(50, '-') << endl;
-        for (const auto &a : grupe) 
-        {
-            double galutinis = 0.4 * skaiciuotiMed(a.nd) + 0.6 * a.egz;
-            cout << std::left << setw(15) << a.pav << setw(15) << a.var << std::fixed << std::setprecision(2) << galutinis << endl;
-        }
-        }
-        else
-        {
-            cout << "Netinkamai atsakytas klausimas apie galutinio balo skaiciavima" <<endl;
-            return 1;
-        }
-        return 0;
     }
-
     else if(pasirinkimas==4)
         {
         cout << "Pasirinkta baigti darba" <<endl;
         return 1;
         }
+    
+}
+else 
+{
+    cout << "Netinkamai atsakytas klausimas" <<endl;
+      return 1;
+}
+
+cout << "Ar galutinio balo skaiciavimui norite naudoti vidurki ar mediana? (v/m): ";
+char ats;
+cin >> ats;
+
+    if (ats!='v' and ats != 'V' and ats !='m' and ats!= 'M') 
+    {
+        cout << "Netinkamai atsakytas klausimas apie galutinio balo skaiciavima" <<endl;
+        return 1;
     }
+
+    cout << "Kaip norite surusiuoti studentus? (v/vardas, p/pavarde, g/galutinis): ";
+    char sortingOption;
+    cin >> sortingOption;
+
+    if (sortingOption == 'v') {
+        std::sort(grupe.begin(), grupe.end(), sortByName);
+    } else if (sortingOption == 'p') {
+        std::sort(grupe.begin(), grupe.end(), sortBySurname);
+    } else if (sortingOption == 'g') {
+        if (ats == 'v' or ats == 'V') {
+            std::sort(grupe.begin(), grupe.end(), sortByFinalGradeAvg);
+        } else if (ats == 'm' or ats == 'M') {
+            std::sort(grupe.begin(), grupe.end(), sortByFinalGradeMed);
+        }
+    } else {
+        cout << "Netinkamai pasirinkta rikiavimo opcija" << endl;
+        return 1;
+    }
+
+    cout << "Ar norite atspaudinti studentu duomenis i faila ar i ekrana? (f/e): ";
+    char spausdinti;
+    cin >> spausdinti;
+
+    if (spausdinti == 'f' or spausdinti == 'F') 
+    {
+        std::ofstream outputFile("rezultatai.txt"); 
+        if (!outputFile.is_open()) 
+        {
+            cout << "Nepavyko sukurti failo" << endl;
+            return 1;
+        }
+        outputFile<< std::left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(20) << "Galutinis (Vid.)" << endl;
+        outputFile << string(50, '-') << endl; 
+        for (const auto &a : grupe) 
+        {
+            double galutinis = 0.0;
+            if (ats=='v' or ats == 'V') 
+            { 
+                galutinis = 0.4 * skaiciuotiVid(a.nd) + 0.6 * a.egz;
+            }
+            else if (ats == 'm' or ats == 'M') 
+            {
+                galutinis = 0.4 * skaiciuotiMed(a.nd) + 0.6 * a.egz;
+            }
+            outputFile << std::left << setw(15) << a.var << setw(15) << a.pav << std::fixed << std::setprecision(2) << galutinis << endl;
+    }
+}
+    
+    else if (spausdinti == 'e' or spausdinti == 'E')
+    {
+        cout << std::left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(20) << "Galutinis (Vid.)" << endl;
+        cout << string(50, '-') << endl; 
+        double galutinis = 0.0;
+    for (const auto &a : grupe) 
+    {
+        if (ats=='v' or ats == 'V') 
+        { 
+            galutinis = 0.4 * skaiciuotiVid(a.nd) + 0.6 * a.egz;
+        }
+        else if (ats == 'm' or ats == 'M') 
+        {
+            galutinis = 0.4 * skaiciuotiMed(a.nd) + 0.6 * a.egz;
+        }
+
+        cout << std::left << setw(15) << a.pav << setw(15) << a.var << std::fixed << std::setprecision(2) << galutinis << endl;
+    }
+    return 0;
+    }
+    else 
+    {
+        cout << "Netinkamai atsakytas klausimas" <<endl;
+        return 1;
+    }
+    return 0;
+}
 //---

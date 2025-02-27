@@ -9,5 +9,9 @@ int readInteger();
 int generuotiAtsitiktiniP(int min=1, int max=10) ;
 string generuotiPavarde(bool berniukas);
 string generuotiVarda(bool berniukas);
+bool sortByName(const Stud& a, const Stud& b);
+bool sortBySurname(const Stud& a, const Stud& b);
+bool sortByFinalGradeAvg(const Stud& a, const Stud& b);
+bool sortByFinalGradeMed(const Stud& a, const Stud& b) ;
 
 #endif // FUNKCIJOS_H
