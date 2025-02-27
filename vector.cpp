@@ -1,4 +1,5 @@
 #include "funkcijos.h"
+#include "laikas.h"
 //---
 int main() 
 {
@@ -9,12 +10,17 @@ int main()
 
     char testiStudentus, testiNd, generuoti;
 
+    Laikas programa("Bendras programos vykdymas");
+    programa.pradeti();
+
     cout << "Ar norite nuskaityti studentu duomenis is failo? (t/n): ";
     char readFromFile;
     cin >> readFromFile;
 
     if (readFromFile == 't' or readFromFile == 'T') 
     {
+        Laikas failoNuskaitymas("Failo nuskaitymas");
+        failoNuskaitymas.pradeti();
         std::ifstream inputFile("studentai10000.txt"); 
         
         if (!inputFile.is_open()) 
@@ -50,6 +56,7 @@ int main()
         }
     }
         inputFile.close();
+        failoNuskaitymas.baigti();
     }
         else if (readFromFile == 'n' or readFromFile == 'N')
     {
@@ -231,6 +238,9 @@ cin >> ats;
     char spausdinti;
     cin >> spausdinti;
 
+    Laikas rezultatuIsvedimas("Rezultatu isvedimas");
+    rezultatuIsvedimas.pradeti();
+
     if (spausdinti == 'f' or spausdinti == 'F') 
     {
         std::ofstream outputFile("rezultatai.txt"); 
@@ -260,8 +270,8 @@ cin >> ats;
                 galutinis = 0.4 * skaiciuotiMed(a.nd) + 0.6 * a.egz;
             }
             outputFile << std::left << setw(15) << a.var << setw(15) << a.pav << std::fixed << std::setprecision(2) << galutinis << endl;
+        }
     }
-}
     
     else if (spausdinti == 'e' or spausdinti == 'E')
     {
@@ -288,13 +298,15 @@ cin >> ats;
 
         cout << std::left << setw(15) << a.var << setw(15) << a.pav << std::fixed << std::setprecision(2) << galutinis << endl;
     }
-    return 0;
     }
     else 
     {
         cout << "Netinkamai atsakytas klausimas" <<endl;
         return 1;
     }
+    rezultatuIsvedimas.baigti();
+    programa.baigti(); 
     return 0;
+    
 }
 //---
