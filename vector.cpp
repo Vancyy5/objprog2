@@ -239,7 +239,14 @@ cin >> ats;
             cout << "Nepavyko sukurti failo" << endl;
             return 1;
         }
-        outputFile<< std::left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(20) << "Galutinis (Vid.)" << endl;
+        if (ats=='v' or ats == 'V') 
+        { 
+            outputFile<< std::left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(20) << "Galutinis (Vid.)" << endl;
+        }
+        else if (ats == 'm' or ats == 'M') 
+        {
+            outputFile<< std::left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(20) << "Galutinis (Med.)" << endl;
+        }
         outputFile << string(50, '-') << endl; 
         for (const auto &a : grupe) 
         {
@@ -258,7 +265,14 @@ cin >> ats;
     
     else if (spausdinti == 'e' or spausdinti == 'E')
     {
-        cout << std::left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(20) << "Galutinis (Vid.)" << endl;
+        if (ats=='v' or ats == 'V') 
+        { 
+            cout<< std::left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(20) << "Galutinis (Vid.)" << endl;
+        }
+        else if (ats == 'm' or ats == 'M') 
+        {
+            cout<< std::left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(20) << "Galutinis (Med.)" << endl;
+        }
         cout << string(50, '-') << endl; 
         double galutinis = 0.0;
     for (const auto &a : grupe) 
@@ -272,7 +286,7 @@ cin >> ats;
             galutinis = 0.4 * skaiciuotiMed(a.nd) + 0.6 * a.egz;
         }
 
-        cout << std::left << setw(15) << a.pav << setw(15) << a.var << std::fixed << std::setprecision(2) << galutinis << endl;
+        cout << std::left << setw(15) << a.var << setw(15) << a.pav << std::fixed << std::setprecision(2) << galutinis << endl;
     }
     return 0;
     }
