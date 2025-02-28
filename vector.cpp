@@ -17,7 +17,7 @@ int main()
     char readFromFile;
     cin >> readFromFile;
 
-    if (readFromFile == 't' or readFromFile == 'T') 
+    if (readFromFile == 't'  || readFromFile == 'T') 
     {
         Laikas failoNuskaitymas("Failo nuskaitymas");
         failoNuskaitymas.pradeti();
@@ -58,7 +58,7 @@ int main()
         inputFile.close();
         failoNuskaitymas.baigti();
     }
-        else if (readFromFile == 'n' or readFromFile == 'N')
+        else if (readFromFile == 'n' || readFromFile == 'N')
     {
         int i=0;
         cout << "Pasirinkite veiksma:\n";
@@ -99,13 +99,13 @@ int main()
 
             cout << "Ar norite ivesti dar viena namu darba? (t/n): ";
             cin >> testiNd;
-            if (testiNd == 'n' or testiNd == 'N') break;
+            if (testiNd == 'n' || testiNd == 'N') break;
         else if (testiNd != 't' and testiNd != 'T')
         {
             cout << "Blogai atsakytas paskutinis klausimas" << endl;
             return 1;
         }
-            } while (testiNd == 't' or testiNd == 'T');
+            } while (testiNd == 't' || testiNd == 'T');
            cout << "Iveskite "<< i << "-ojo studento egzamino rezultata: ";
            laik.egz=readInteger();
 
@@ -114,13 +114,13 @@ int main()
        
         cout << "Ar norite ivesti dar viena studenta? (t/n): ";
         cin >> testiStudentus;
-        if (testiStudentus == 'n' or testiStudentus == 'N') break;
+        if (testiStudentus == 'n' || testiStudentus == 'N') break;
         else if (testiStudentus != 't' and testiStudentus != 'T')
         {
             cout << "Blogai atsakytas paskutinis klausimas" << endl;
             return 1;
         }
-        } while (testiStudentus == 't' or testiStudentus == 'T');
+        } while (testiStudentus == 't' || testiStudentus == 'T');
        }
 
        else if (pasirinkimas==2)
@@ -149,13 +149,13 @@ int main()
            
             cout << "Ar norite ivesti dar viena studenta? (t/n): ";
             cin >> testiStudentus;
-            if (testiStudentus == 'n' or testiStudentus == 'N') break;
+            if (testiStudentus == 'n' || testiStudentus == 'N') break;
         else if (testiStudentus != 't' and testiStudentus != 'T')
         {
             cout << "Blogai atsakytas paskutinis klausimas" << endl;
             return 1;
         }
-        }while (testiStudentus == 't' or testiStudentus == 'T');
+        }while (testiStudentus == 't' || testiStudentus == 'T');
 
        }
        else if (pasirinkimas==3)
@@ -218,7 +218,7 @@ cin >> ats;
     cout << "Kaip norite surusiuoti studentus? (v/vardas, p/pavarde, g/galutinis): ";
     char sortingOption;
     cin >> sortingOption;
-
+    
     if (sortingOption == 'v') {
         std::sort(grupe.begin(), grupe.end(), sortByName);
     } else if (sortingOption == 'p') {
@@ -241,7 +241,7 @@ cin >> ats;
     Laikas rezultatuIsvedimas("Rezultatu isvedimas");
     rezultatuIsvedimas.pradeti();
 
-    if (spausdinti == 'f' or spausdinti == 'F') 
+    if (spausdinti == 'f' || spausdinti == 'F') 
     {
         std::ofstream outputFile("rezultatai.txt"); 
         if (!outputFile.is_open()) 
@@ -249,7 +249,7 @@ cin >> ats;
             cout << "Nepavyko sukurti failo" << endl;
             return 1;
         }
-        if (ats=='v' or ats == 'V') 
+        if (ats=='v' || ats == 'V') 
         { 
             outputFile<< std::left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(20) << "Galutinis (Vid.)" << endl;
         }

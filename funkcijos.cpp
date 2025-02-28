@@ -113,3 +113,4 @@ bool sortByFinalGradeMed(const Stud& a, const Stud& b)
     double finalB = 0.4 * skaiciuotiMed(b.nd) + 0.6 * b.egz;
     return finalA > finalB;
 }
+//---
