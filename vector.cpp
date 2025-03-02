@@ -210,13 +210,14 @@ while (spausdinti != 'f' && spausdinti != 'F' && spausdinti != 'e' && spausdinti
             cout << "Nepavyko sukurti failo" << endl;
             return 1;
         }
+        outputFile<< std::left << setw(15) << "Vardas" << setw(15) << "Pavarde";
         if (ats=='v' || ats == 'V') 
         { 
-            outputFile<< std::left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(20) << "Galutinis (Vid.)" << endl;
+            outputFile<< std::left << setw(20) << "Galutinis (Vid.)" << endl;
         }
         else if (ats == 'm' || ats == 'M') 
         {
-            outputFile<< std::left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(20) << "Galutinis (Med.)" << endl;
+            outputFile<< std::left  << setw(20) << "Galutinis (Med.)" << endl;
         }
         outputFile << string(50, '-') << endl; 
         for (const auto &a : grupe) 
@@ -236,13 +237,14 @@ while (spausdinti != 'f' && spausdinti != 'F' && spausdinti != 'e' && spausdinti
     
     else if (spausdinti == 'e' || spausdinti == 'E')
     {
+        cout<< std::left << setw(15) << "Vardas" << setw(15) << "Pavarde" ;
         if (ats=='v' || ats == 'V') 
         { 
-            cout<< std::left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(20) << "Galutinis (Vid.)" << endl;
+            cout<< std::left << "Galutinis (Vid.)" << endl;
         }
         else if (ats == 'm' || ats == 'M') 
         {
-            cout<< std::left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(20) << "Galutinis (Med.)" << endl;
+            cout << std::left << setw(20) << "Galutinis (Med.)" << endl;
         }
         cout << string(50, '-') << endl; 
         double galutinis = 0.0;
