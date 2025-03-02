@@ -66,7 +66,7 @@ int main()
             if (testiNd == 'n' || testiNd == 'N') break;
         else if (testiNd != 't' && testiNd != 'T')
         {
-            cout << "Blogai atsakytas paskutinis klausimas" << endl;
+            cout << "Blogai atsakytas klausimas apie namu darbus" << endl;
             return 1;
         }
             } while (testiNd == 't' || testiNd == 'T');
@@ -81,7 +81,7 @@ int main()
         if (testiStudentus == 'n' || testiStudentus == 'N') break;
         else if (testiStudentus != 't' && testiStudentus != 'T')
         {
-            cout << "Blogai atsakytas paskutinis klausimas" << endl;
+            cout << "Blogai atsakytas klausimas apie studentu ivedima" << endl;
             return 1;
         }
         } while (testiStudentus == 't' || testiStudentus == 'T');
@@ -116,7 +116,7 @@ int main()
             if (testiStudentus == 'n' || testiStudentus == 'N') break;
         else if (testiStudentus != 't' && testiStudentus != 'T')
         {
-            cout << "Blogai atsakytas paskutinis klausimas" << endl;
+            cout << "Blogai atsakytas apie studentu ivedima" << endl;
             return 1;
         }
         }while (testiStudentus == 't' || testiStudentus == 'T');
@@ -150,7 +150,7 @@ int main()
         if (testiStudentus == 'n' || testiStudentus == 'N') break;
         else if (testiStudentus != 't' && testiStudentus != 'T')
         {
-            cout << "Blogai atsakytas paskutinis klausimas" << endl;
+            cout << "Blogai atsakytas klausimas apie studentu generavima" << endl;
             return 1;
         }
        }while(testiStudentus == 't' || testiStudentus == 'T');
@@ -161,11 +161,10 @@ int main()
         cout << "Pasirinkta baigti darba" <<endl;
         return 1;
         }
-    
 }
 else 
 {
-    cout << "Netinkamai atsakytas klausimas" <<endl;
+    cout << "Netinkamai atsakytas klausimas apie duomenuu skaityma" <<endl;
       return 1;
 }
 
@@ -265,7 +264,7 @@ cin >> ats;
     }
     else 
     {
-        cout << "Netinkamai atsakytas klausimas" <<endl;
+        cout << "Netinkamai atsakytas klausimas apie duomenu spausdinima" <<endl;
         return 1;
     }
     rezultatuIsvedimas.baigti();
