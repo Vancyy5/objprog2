@@ -1,4 +1,5 @@
 #include "funkcijos.h"
+#include "laikas.h"
 
 double skaiciuotiVid(vector<int> nd) 
 {
@@ -44,7 +45,7 @@ int readInteger()
     int value;
     while (true) {
         cin >> value;
-        if (cin.fail() or value < 0) 
+        if (cin.fail()  || value < 0) 
         {
             cin.clear();
             cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -114,3 +115,44 @@ bool sortByFinalGradeMed(const Stud& a, const Stud& b)
     return finalA > finalB;
 }
 //---
+void skaitytiIsFailo(vector<Stud>& grupe)
+{
+    Laikas failoNuskaitymas("Failo nuskaitymas");
+    failoNuskaitymas.pradeti();
+    std::ifstream inputFile("kursiokai.txt"); 
+    
+    if (!inputFile.is_open()) 
+    {
+        std::cerr << "Nepavyko atidaryti failo" << endl; exit(1);
+    }
+    Stud laik;
+    string line;
+    
+    getline(inputFile, line);
+
+    while (getline(inputFile, line)) 
+    {
+        std::stringstream ss(line);
+ss >> laik.var >> laik.pav; 
+
+laik.nd.clear();  
+int pazymys;
+vector<int> scores;  
+
+while (ss >> pazymys) 
+{
+    scores.push_back(pazymys);
+}
+
+if (scores.size() > 0)
+{
+    laik.nd = vector<int>(scores.begin(), scores.end() - 1);  
+    
+    laik.egz = scores.back();
+    
+    grupe.push_back(laik); 
+    }
+}
+    inputFile.close();
+    failoNuskaitymas.baigti();
+}

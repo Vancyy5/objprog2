@@ -11,6 +11,7 @@
 #include<algorithm>
 #include<random>
 #include<sstream>
+#include<stdexcept>
 
 
 using std::cout;

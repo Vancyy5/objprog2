@@ -1,5 +1,6 @@
 #include "funkcijos.h"
 #include "laikas.h"
+#include <stdexcept>
 //---
 int main() 
 {
@@ -18,46 +19,9 @@ int main()
     cin >> readFromFile;
 
     if (readFromFile == 't'  || readFromFile == 'T') 
-    {
-        Laikas failoNuskaitymas("Failo nuskaitymas");
-        failoNuskaitymas.pradeti();
-        std::ifstream inputFile("studentai10000.txt"); 
-        
-        if (!inputFile.is_open()) 
-        {
-            cout << "Nepavyko atidaryti failo" << endl;
-            return 1;
-        }
-        string line;
-        
-        getline(inputFile, line);
-
-        while (getline(inputFile, line)) 
-        {
-            std::stringstream ss(line);
-    ss >> laik.var >> laik.pav; 
-    
-    laik.nd.clear();  
-    int pazymys;
-    vector<int> scores;  
-    
-    while (ss >> pazymys) 
-    {
-        scores.push_back(pazymys);
-    }
-
-    if (scores.size() > 0)
-    {
-        laik.nd = vector<int>(scores.begin(), scores.end() - 1);  
-        
-        laik.egz = scores.back();
-        
-        grupe.push_back(laik); 
-        }
-    }
-        inputFile.close();
-        failoNuskaitymas.baigti();
-    }
+   {
+    skaitytiIsFailo(grupe);
+   }
         else if (readFromFile == 'n' || readFromFile == 'N')
     {
         int i=0;
@@ -69,7 +33,7 @@ int main()
         cout << "Pasirinkimas: ";
         cin >> pasirinkimas;
 
-        if (pasirinkimas!=1 and pasirinkimas!=2 and pasirinkimas!=3 and pasirinkimas!=4)
+        if (pasirinkimas!=1 && pasirinkimas!=2 && pasirinkimas!=3 && pasirinkimas!=4)
     {
         cout << "Neteisingai pasirinktas meniu variantas" <<endl;
         return 1;
@@ -100,7 +64,7 @@ int main()
             cout << "Ar norite ivesti dar viena namu darba? (t/n): ";
             cin >> testiNd;
             if (testiNd == 'n' || testiNd == 'N') break;
-        else if (testiNd != 't' and testiNd != 'T')
+        else if (testiNd != 't' && testiNd != 'T')
         {
             cout << "Blogai atsakytas paskutinis klausimas" << endl;
             return 1;
@@ -115,7 +79,7 @@ int main()
         cout << "Ar norite ivesti dar viena studenta? (t/n): ";
         cin >> testiStudentus;
         if (testiStudentus == 'n' || testiStudentus == 'N') break;
-        else if (testiStudentus != 't' and testiStudentus != 'T')
+        else if (testiStudentus != 't' && testiStudentus != 'T')
         {
             cout << "Blogai atsakytas paskutinis klausimas" << endl;
             return 1;
@@ -150,7 +114,7 @@ int main()
             cout << "Ar norite ivesti dar viena studenta? (t/n): ";
             cin >> testiStudentus;
             if (testiStudentus == 'n' || testiStudentus == 'N') break;
-        else if (testiStudentus != 't' and testiStudentus != 'T')
+        else if (testiStudentus != 't' && testiStudentus != 'T')
         {
             cout << "Blogai atsakytas paskutinis klausimas" << endl;
             return 1;
@@ -183,13 +147,13 @@ int main()
 
         cout << "Ar sugeneruoti dar viena studenta? (t/n): ";
         cin >> testiStudentus;
-        if (testiStudentus == 'n' or testiStudentus == 'N') break;
-        else if (testiStudentus != 't' and testiStudentus != 'T')
+        if (testiStudentus == 'n' || testiStudentus == 'N') break;
+        else if (testiStudentus != 't' && testiStudentus != 'T')
         {
             cout << "Blogai atsakytas paskutinis klausimas" << endl;
             return 1;
         }
-       }while(testiStudentus == 't' or testiStudentus == 'T');
+       }while(testiStudentus == 't' || testiStudentus == 'T');
        }
     }
     else if(pasirinkimas==4)
@@ -209,7 +173,7 @@ cout << "Ar galutinio balo skaiciavimui norite naudoti vidurki ar mediana? (v/m)
 char ats;
 cin >> ats;
 
-    if (ats!='v' and ats != 'V' and ats !='m' and ats!= 'M') 
+    if (ats!='v' && ats != 'V' && ats !='m' && ats!= 'M') 
     {
         cout << "Netinkamai atsakytas klausimas apie galutinio balo skaiciavima" <<endl;
         return 1;
@@ -224,9 +188,9 @@ cin >> ats;
     } else if (sortingOption == 'p') {
         std::sort(grupe.begin(), grupe.end(), sortBySurname);
     } else if (sortingOption == 'g') {
-        if (ats == 'v' or ats == 'V') {
+        if (ats == 'v' || ats == 'V') {
             std::sort(grupe.begin(), grupe.end(), sortByFinalGradeAvg);
-        } else if (ats == 'm' or ats == 'M') {
+        } else if (ats == 'm' || ats == 'M') {
             std::sort(grupe.begin(), grupe.end(), sortByFinalGradeMed);
         }
     } else {
@@ -253,7 +217,7 @@ cin >> ats;
         { 
             outputFile<< std::left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(20) << "Galutinis (Vid.)" << endl;
         }
-        else if (ats == 'm' or ats == 'M') 
+        else if (ats == 'm' || ats == 'M') 
         {
             outputFile<< std::left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(20) << "Galutinis (Med.)" << endl;
         }
@@ -261,11 +225,11 @@ cin >> ats;
         for (const auto &a : grupe) 
         {
             double galutinis = 0.0;
-            if (ats=='v' or ats == 'V') 
+            if (ats=='v' || ats == 'V') 
             { 
                 galutinis = 0.4 * skaiciuotiVid(a.nd) + 0.6 * a.egz;
             }
-            else if (ats == 'm' or ats == 'M') 
+            else if (ats == 'm' || ats == 'M') 
             {
                 galutinis = 0.4 * skaiciuotiMed(a.nd) + 0.6 * a.egz;
             }
@@ -273,13 +237,13 @@ cin >> ats;
         }
     }
     
-    else if (spausdinti == 'e' or spausdinti == 'E')
+    else if (spausdinti == 'e' || spausdinti == 'E')
     {
-        if (ats=='v' or ats == 'V') 
+        if (ats=='v' || ats == 'V') 
         { 
             cout<< std::left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(20) << "Galutinis (Vid.)" << endl;
         }
-        else if (ats == 'm' or ats == 'M') 
+        else if (ats == 'm' || ats == 'M') 
         {
             cout<< std::left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(20) << "Galutinis (Med.)" << endl;
         }
@@ -287,11 +251,11 @@ cin >> ats;
         double galutinis = 0.0;
     for (const auto &a : grupe) 
     {
-        if (ats=='v' or ats == 'V') 
+        if (ats=='v' || ats == 'V') 
         { 
             galutinis = 0.4 * skaiciuotiVid(a.nd) + 0.6 * a.egz;
         }
-        else if (ats == 'm' or ats == 'M') 
+        else if (ats == 'm' || ats == 'M') 
         {
             galutinis = 0.4 * skaiciuotiMed(a.nd) + 0.6 * a.egz;
         }
