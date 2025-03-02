@@ -222,15 +222,7 @@ while (spausdinti != 'f' && spausdinti != 'F' && spausdinti != 'e' && spausdinti
         outputFile << string(50, '-') << endl; 
         for (const auto &a : grupe) 
         {
-            double galutinis = 0.0;
-            if (ats=='v' || ats == 'V') 
-            { 
-                galutinis = 0.4 * skaiciuotiVid(a.nd) + 0.6 * a.egz;
-            }
-            else if (ats == 'm' || ats == 'M') 
-            {
-                galutinis = 0.4 * skaiciuotiMed(a.nd) + 0.6 * a.egz;
-            }
+            double galutinis = skaiciuotiGalutini(a, ats);
             outputFile << std::left << setw(15) << a.var << setw(15) << a.pav << std::fixed << std::setprecision(2) << galutinis << endl;
         }
     }
@@ -250,15 +242,7 @@ while (spausdinti != 'f' && spausdinti != 'F' && spausdinti != 'e' && spausdinti
         double galutinis = 0.0;
     for (const auto &a : grupe) 
     {
-        if (ats=='v' || ats == 'V') 
-        { 
-            galutinis = 0.4 * skaiciuotiVid(a.nd) + 0.6 * a.egz;
-        }
-        else if (ats == 'm' || ats == 'M') 
-        {
-            galutinis = 0.4 * skaiciuotiMed(a.nd) + 0.6 * a.egz;
-        }
-
+        double galutinis = skaiciuotiGalutini(a, ats);
         cout << std::left << setw(15) << a.var << setw(15) << a.pav << std::fixed << std::setprecision(2) << galutinis << endl;
     }
 }

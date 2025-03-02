@@ -16,5 +16,6 @@ bool sortByFinalGradeMed(const Stud& a, const Stud& b);
 void skaitytiIsFailo(vector<Stud>& grupe);
 int pasirinktiVeiksma();
 void readString(string& str);
+double skaiciuotiGalutini(const Stud& stud, char metodas);
 
 #endif // FUNKCIJOS_H
