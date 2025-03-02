@@ -1,6 +1,6 @@
 #include "funkcijos.h"
 #include "laikas.h"
-#include <stdexcept>
+
 //---
 int main() 
 {
@@ -24,20 +24,10 @@ int main()
    }
         else if (readFromFile == 'n' || readFromFile == 'N')
     {
+        int pasirinkimas;
         int i=0;
-        cout << "Pasirinkite veiksma:\n";
-        cout << "1 - Ivesti duomenis ranka\n";
-        cout << "2 - Generuoti tik pazymius\n";
-        cout << "3 - Generuoti vardus, pavardes ir pazymius\n";
-        cout << "4 - Baigti darba\n";
-        cout << "Pasirinkimas: ";
-        cin >> pasirinkimas;
+        pasirinkimas=pasirinktiVeiksma();
 
-        if (pasirinkimas!=1 && pasirinkimas!=2 && pasirinkimas!=3 && pasirinkimas!=4)
-    {
-        cout << "Neteisingai pasirinktas meniu variantas" <<endl;
-        return 1;
-    }
     if (pasirinkimas!=4)
     {
         if(pasirinkimas==1)

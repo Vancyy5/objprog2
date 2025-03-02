@@ -156,7 +156,6 @@ if (ss.fail()&& !ss.eof())
             {
                 std::cerr << "Klaida: Netinkamas pazymys (ne skaicius) studentui " << laik.var << " " << laik.pav << endl; exit(1);
             }
-            
 if (scores.size() > 0)
 {
     laik.nd = vector<int>(scores.begin(), scores.end() - 1);  
@@ -169,3 +168,29 @@ if (scores.size() > 0)
     inputFile.close();
     failoNuskaitymas.baigti();
 }
+//---
+int pasirinktiVeiksma() {
+    int pasirinkimas;
+    while (true) {
+        cout << "Pasirinkite veiksma:\n";
+        cout << "1 - Ivesti duomenis ranka\n";
+        cout << "2 - Generuoti tik pazymius\n";
+        cout << "3 - Generuoti vardus, pavardes ir pazymius\n";
+        cout << "4 - Baigti darba\n";
+        cout << "Pasirinkimas: ";
+        try {
+            cin >> pasirinkimas;
+            if (cin.fail() || (pasirinkimas < 1 || pasirinkimas > 4)) {
+                throw std::runtime_error("Neteisingai pasirinktas meniu variantas.");
+            }
+            break;
+        } catch (const std::runtime_error& e) 
+        {
+            cout << e.what() << endl;
+            cin.clear();
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        }
+    }
+    return pasirinkimas;
+}
+//---
