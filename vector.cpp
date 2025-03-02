@@ -4,6 +4,8 @@
 //---
 int main() 
 {
+    try 
+    {
     srand(time(0));
     Stud laik;
     vector<Stud> grupe;
@@ -108,12 +110,11 @@ int main()
            
             cout << "Ar norite ivesti dar viena studenta? (t/n): ";
             cin >> testiStudentus;
-            if (testiStudentus == 'n' || testiStudentus == 'N') break;
-        else if (testiStudentus != 't' && testiStudentus != 'T')
-        {
-            cout << "Blogai atsakytas apie studentu ivedima" << endl;
-            return 1;
-        }
+            while (testiStudentus != 't' && testiStudentus != 'T' && testiStudentus != 'n' && testiStudentus != 'N') 
+            {
+                cout << "Netinkama ivestis. Bandykite dar karta: ";
+                cin >> testiStudentus;
+            }
         }while (testiStudentus == 't' || testiStudentus == 'T');
 
        }
@@ -142,11 +143,10 @@ int main()
 
         cout << "Ar sugeneruoti dar viena studenta? (t/n): ";
         cin >> testiStudentus;
-        if (testiStudentus == 'n' || testiStudentus == 'N') break;
-        else if (testiStudentus != 't' && testiStudentus != 'T')
+        while (testiStudentus != 't' && testiStudentus != 'T' && testiStudentus != 'n' && testiStudentus != 'N') 
         {
-            cout << "Blogai atsakytas klausimas apie studentu generavima" << endl;
-            return 1;
+            cout << "Netinkama ivestis. Bandykite dar karta: ";
+            cin >> testiStudentus;
         }
        }while(testiStudentus == 't' || testiStudentus == 'T');
        }
@@ -249,6 +249,19 @@ while (spausdinti != 'f' && spausdinti != 'F' && spausdinti != 'e' && spausdinti
     rezultatuIsvedimas.baigti();
     programa.baigti(); 
     return 0;
-    
+}
+catch (const std::exception& e) 
+    {
+        std::cerr << "Ivyko klaida: " << e.what() << endl;
+        return 1;
+    }
+    catch (...) 
+    {
+        std::cerr << "Nezinoma klaida." << endl;
+        return 1;
+    }
+
+    return 0;
+
 }
 //---
