@@ -18,6 +18,12 @@ int main()
     char readFromFile;
     cin >> readFromFile;
 
+    while (readFromFile != 't' && readFromFile != 'T' && readFromFile != 'n' && readFromFile != 'N') 
+{
+    cout << "Netinkama ivestis. Bandykite dar karta: ";
+    cin >> readFromFile;
+}
+
     if (readFromFile == 't'  || readFromFile == 'T') 
    {
     skaitytiIsFailo(grupe);
@@ -53,13 +59,13 @@ int main()
 
             cout << "Ar norite ivesti dar viena namu darba? (t/n): ";
             cin >> testiNd;
-            if (testiNd == 'n' || testiNd == 'N') break;
-        else if (testiNd != 't' && testiNd != 'T')
-        {
-            cout << "Blogai atsakytas klausimas apie namu darbus" << endl;
-            return 1;
-        }
+            while (testiNd != 't' && testiNd != 'T' && testiNd != 'n' && testiNd != 'N') 
+            {
+                cout << "Netinkama ivestis. Bandykite dar karta: ";
+                cin >> testiNd;
+            }
             } while (testiNd == 't' || testiNd == 'T');
+            
            cout << "Iveskite "<< i << "-ojo studento egzamino rezultata: ";
            laik.egz=readInteger();
 
@@ -68,11 +74,10 @@ int main()
        
         cout << "Ar norite ivesti dar viena studenta? (t/n): ";
         cin >> testiStudentus;
-        if (testiStudentus == 'n' || testiStudentus == 'N') break;
-        else if (testiStudentus != 't' && testiStudentus != 'T')
+        while (testiStudentus != 't' && testiStudentus != 'T' && testiStudentus != 'n' && testiStudentus != 'N') 
         {
-            cout << "Blogai atsakytas klausimas apie studentu ivedima" << endl;
-            return 1;
+            cout << "Netinkama ivestis. Bandykite dar karta: ";
+            cin >> testiStudentus;
         }
         } while (testiStudentus == 't' || testiStudentus == 'T');
        }
@@ -82,9 +87,9 @@ int main()
         do{
             i++;
         cout << "Iveskite "<< i << "-ojo studento varda: ";
-        cin>>laik.var;
+        readString(laik.var);
         cout << "Iveskite "<< i << "-ojo studento pavarde: ";
-        cin>>laik.pav;
+        readString(laik.pav);
 
         laik.nd.clear();
 
@@ -152,49 +157,47 @@ int main()
         return 1;
         }
 }
-else 
-{
-    cout << "Netinkamai atsakytas klausimas apie duomenuu skaityma" <<endl;
-      return 1;
-}
 
 cout << "Ar galutinio balo skaiciavimui norite naudoti vidurki ar mediana? (v/m): ";
 char ats;
 cin >> ats;
 
-    if (ats!='v' && ats != 'V' && ats !='m' && ats!= 'M') 
-    {
-        cout << "Netinkamai atsakytas klausimas apie galutinio balo skaiciavima" <<endl;
-        return 1;
-    }
+while (ats != 'v' && ats != 'V' && ats != 'm' && ats != 'M') 
+{
+    cout << "Netinkama ivestis. Bandykite dar karta: ";
+    cin >> ats;
+}
 
-    cout << "Kaip norite surusiuoti studentus? (v/vardas, p/pavarde, g/galutinis): ";
-    char sortingOption;
+cout << "Kaip norite surusiuoti studentus? (v/vardas, p/pavarde, g/galutinis): ";
+char sortingOption;
+cin >> sortingOption;
+while (sortingOption != 'v' && sortingOption != 'V' && sortingOption != 'p' && sortingOption != 'P' && sortingOption != 'g') {
+    cout << "Netinkama ivestis. Bandykite dar karta: ";
     cin >> sortingOption;
-    
-    if (sortingOption == 'v' || ats == 'V') 
-    {
-        std::sort(grupe.begin(), grupe.end(), sortByName);
-    } else if (sortingOption == 'p' || ats == 'P') 
-    {
-        std::sort(grupe.begin(), grupe.end(), sortBySurname);
-    } else if (sortingOption == 'g') 
-    {
-        if (ats == 'v' || ats == 'V') 
-        {
-            std::sort(grupe.begin(), grupe.end(), sortByFinalGradeAvg);
-        } else if (ats == 'm' || ats == 'M') 
-        {
-            std::sort(grupe.begin(), grupe.end(), sortByFinalGradeMed);
-        }
-    } else {
-        cout << "Netinkamai pasirinkta rikiavimo opcija" << endl;
-        return 1;
-    }
+}
 
-    cout << "Ar norite atspaudinti studentu duomenis i faila ar i ekrana? (f/e): ";
-    char spausdinti;
+if (sortingOption == 'v' || sortingOption == 'V') {
+    sort(grupe.begin(), grupe.end(), sortByName);
+} else if (sortingOption == 'p' || sortingOption == 'P') {
+    sort(grupe.begin(), grupe.end(), sortBySurname);
+} else if (sortingOption == 'g') {
+    if (ats == 'v' || ats == 'V') 
+    {
+        sort(grupe.begin(), grupe.end(), sortByFinalGradeAvg);
+    } else 
+    {
+        sort(grupe.begin(), grupe.end(), sortByFinalGradeMed);
+    }
+}
+
+cout << "Ar norite atspausdinti studentu duomenis i faila ar i ekrana? (f/e): ";
+char spausdinti;
+cin >> spausdinti;
+while (spausdinti != 'f' && spausdinti != 'F' && spausdinti != 'e' && spausdinti != 'E') 
+{
+    cout << "Netinkama ivestis. Bandykite dar karta: ";
     cin >> spausdinti;
+}
 
     Laikas rezultatuIsvedimas("Rezultatu isvedimas");
     rezultatuIsvedimas.pradeti();
@@ -256,12 +259,7 @@ cin >> ats;
 
         cout << std::left << setw(15) << a.var << setw(15) << a.pav << std::fixed << std::setprecision(2) << galutinis << endl;
     }
-    }
-    else 
-    {
-        cout << "Netinkamai atsakytas klausimas apie duomenu spausdinima" <<endl;
-        return 1;
-    }
+}
     rezultatuIsvedimas.baigti();
     programa.baigti(); 
     return 0;
