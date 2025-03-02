@@ -141,9 +141,22 @@ vector<int> scores;
 
 while (ss >> pazymys) 
 {
-    scores.push_back(pazymys);
+
+            if (pazymys >= 1 && pazymys <= 10)  
+            {
+                scores.push_back(pazymys);
+            }
+            else 
+            {
+                std::cerr << "Klaida: Netinkamas pazymys studentui " << laik.var << " " << laik.pav << ": " << pazymys <<  endl; exit(1);
+            }
 }
 
+if (ss.fail()&& !ss.eof()) 
+            {
+                std::cerr << "Klaida: Netinkamas pazymys (ne skaicius) studentui " << laik.var << " " << laik.pav << endl; exit(1);
+            }
+            
 if (scores.size() > 0)
 {
     laik.nd = vector<int>(scores.begin(), scores.end() - 1);  

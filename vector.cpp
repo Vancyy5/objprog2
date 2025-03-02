@@ -182,14 +182,19 @@ cin >> ats;
     char sortingOption;
     cin >> sortingOption;
     
-    if (sortingOption == 'v') {
+    if (sortingOption == 'v' || ats == 'V') 
+    {
         std::sort(grupe.begin(), grupe.end(), sortByName);
-    } else if (sortingOption == 'p') {
+    } else if (sortingOption == 'p' || ats == 'P') 
+    {
         std::sort(grupe.begin(), grupe.end(), sortBySurname);
-    } else if (sortingOption == 'g') {
-        if (ats == 'v' || ats == 'V') {
+    } else if (sortingOption == 'g') 
+    {
+        if (ats == 'v' || ats == 'V') 
+        {
             std::sort(grupe.begin(), grupe.end(), sortByFinalGradeAvg);
-        } else if (ats == 'm' || ats == 'M') {
+        } else if (ats == 'm' || ats == 'M') 
+        {
             std::sort(grupe.begin(), grupe.end(), sortByFinalGradeMed);
         }
     } else {
