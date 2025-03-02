@@ -45,11 +45,11 @@ int readInteger()
     int value;
     while (true) {
         cin >> value;
-        if (cin.fail()  || value < 0) 
+        if (cin.fail()  || value < 1 || value > 10) 
         {
             cin.clear();
             cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            cout << "Klaida: Prasome ivesti teigiama skaiciu." << endl;
+            cout << "Klaida! Iveskite skaiciu nuo 1 iki 10: " << endl;
         }
         else 
         {
