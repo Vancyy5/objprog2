@@ -15,5 +15,6 @@ bool sortByFinalGradeAvg(const Stud& a, const Stud& b);
 bool sortByFinalGradeMed(const Stud& a, const Stud& b);
 void skaitytiIsFailo(vector<Stud>& grupe);
 int pasirinktiVeiksma();
+void readString(string& str);
 
 #endif // FUNKCIJOS_H

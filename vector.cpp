@@ -37,9 +37,9 @@ int main()
           {
             i++;
             cout << "Iveskite "<< i << "-ojo studento varda: ";
-            cin>>laik.var;
+            readString(laik.var);
             cout << "Iveskite "<< i << "-ojo studento pavarde: ";
-            cin>>laik.pav;
+            readString(laik.pav);
     
             laik.nd.clear();
             int j=0;

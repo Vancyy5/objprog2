@@ -194,3 +194,15 @@ int pasirinktiVeiksma() {
     return pasirinkimas;
 }
 //---
+void readString(string& str) 
+{
+    while (true) {
+        cin >> str;
+        if (str.empty() || str.find_first_not_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ") != string::npos) {
+            cout << "Klaida! Vardas arba pavarde turi buti tik raides: ";
+        } else {
+            break;
+        }
+    }
+}
+//---
