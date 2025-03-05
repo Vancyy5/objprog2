@@ -7,13 +7,16 @@ int main()
 {
     try 
     {
+        Laikas programa("Bendras programos vykdymas");
+        programa.pradeti();
+
         string aplankas="test_files";
-        string failoPavadinimas="kursiokai.txt";
+        string failoPavadinimas="kursiokai.txt"; //ir 259 eilutėje
 
         int skaicius;
         int pasirinktasDydis;
 
-        cout << "Pasirinkite failo dydį:\n";
+        cout << "Pasirinkite generacijai failo dydi:\n";
     cout << "1 - 1000 studentu\n";
     cout << "2 - 10000 studentu\n";
     cout << "3 - 100000 studentu\n";
@@ -41,14 +44,13 @@ int main()
             skaicius = 10000000;
             break;
         case 6:
-           cout<< "Pasirinkta failo negeneruoti"<<endl;
+           cout<< "Pasirinkta failo negeneruoti, imti kursiokai.txt faila"<<endl;
            skaicius = 0;
            break;
         default:
            cout<< "Neteisingas pasirinkimas"<<endl;
            return 1;
     }
-    
     
     if (skaicius > 0) 
     {  
@@ -65,10 +67,9 @@ int main()
 
     char testiStudentus, testiNd, generuoti;
 
-    Laikas programa("Bendras programos vykdymas");
-    programa.pradeti();
-
-    cout << "Ar norite nuskaityti studentu duomenis is failo? (t/n): ";
+    skaitytiIsFailo(grupe, failoPavadinimas);    //arba sita uzkomentuoti
+    
+    /*cout << "Ar norite nuskaityti studentu duomenis is failo? (t/n): ";
     char readFromFile;
     cin >> readFromFile;
 
@@ -208,7 +209,9 @@ int main()
         cout << "Pasirinkta baigti darba" <<endl;
         return 1;
         }
+        
 }
+*/
 cout << "Ar galutinio balo skaiciavimui norite naudoti vidurki ar mediana? (v/m): ";
 char ats;
 cin >> ats;
@@ -218,7 +221,6 @@ while (ats != 'v' && ats != 'V' && ats != 'm' && ats != 'M')
     cout << "Netinkama ivestis. Bandykite dar karta: ";
     cin >> ats;
 }
-
 
 cout << "Kaip norite surusiuoti studentus? (v/vardas, p/pavarde, g/galutinis): ";
 char sortingOption;
@@ -244,11 +246,10 @@ if (sortingOption == 'v' || sortingOption == 'V') {
 vector<Stud> kietiakiai;
 vector<Stud> vargsai;
 skirstytiStudentus(grupe, kietiakiai, vargsai, ats);
-
-isvestiStudentusIFaila(kietiakiai, "test_files/kietiakiai.txt", ats);
+isvestiStudentusIFaila(kietiakiai, "test_files/kietiakiai.txt", ats); //arba situs uzkomentuoti
 isvestiStudentusIFaila(vargsai, "test_files/vargsai.txt", ats);
 
-cout << "Ar norite atspausdinti studentu duomenis i faila ar i ekrana? (f/e): ";
+/*cout << "Ar norite atspausdinti studentu duomenis i faila ar i ekrana? (f/e): ";
 char spausdinti;
 cin >> spausdinti;
 while (spausdinti != 'f' && spausdinti != 'F' && spausdinti != 'e' && spausdinti != 'E') 
@@ -256,7 +257,8 @@ while (spausdinti != 'f' && spausdinti != 'F' && spausdinti != 'e' && spausdinti
     cout << "Netinkama ivestis. Bandykite dar karta: ";
     cin >> spausdinti;
 }
-
+if (failoPavadinimas=="kursiokai.txt")
+{
     Laikas rezultatuIsvedimas("Rezultatu isvedimas");
     rezultatuIsvedimas.pradeti();
 
@@ -307,9 +309,15 @@ while (spausdinti != 'f' && spausdinti != 'F' && spausdinti != 'e' && spausdinti
     rezultatuIsvedimas.baigti();
     programa.baigti(); 
     return 0;
-    
 }
-    
+else 
+{
+    isvestiStudentusIFaila(kietiakiai, "test_files/kietiakiai.txt", ats);
+    isvestiStudentusIFaila(vargsai, "test_files/vargsai.txt", ats);
+}
+
+*/  
+}
 catch (const std::exception& e) 
     {
         std::cerr << "Ivyko klaida: " << e.what() << endl;
@@ -322,7 +330,5 @@ catch (const std::exception& e)
     }
 
     return 0;
-
-}
-    
+} 
 //---
