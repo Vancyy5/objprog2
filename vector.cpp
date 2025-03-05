@@ -8,7 +8,7 @@ int main()
     try 
     {
         string aplankas="test_files";
-        string failoPavadinimas=" ";
+        string failoPavadinimas="kursiokai.txt";
 
         int skaicius;
         int pasirinktasDydis;
@@ -42,7 +42,7 @@ int main()
             break;
         case 6:
            cout<< "Pasirinkta failo negeneruoti"<<endl;
-           skaicius =0;
+           skaicius = 0;
            break;
         default:
            cout<< "Neteisingas pasirinkimas"<<endl;
@@ -245,10 +245,10 @@ vector<Stud> kietiakiai;
 vector<Stud> vargsai;
 skirstytiStudentus(grupe, kietiakiai, vargsai, ats);
 
-//isvestiStudentusIFaila(kietiakiai, "kietiakiai.txt", ats);
-//isvestiStudentusIFaila(vargsai, "vargsai.txt", ats);
+//isvestiStudentusIFaila(kietiakiai, "test_files/kietiakiai.txt", ats);
+//isvestiStudentusIFaila(vargsai, "test_files/vargsai.txt", ats);
 
-/*cout << "Ar norite atspausdinti studentu duomenis i faila ar i ekrana? (f/e): ";
+cout << "Ar norite atspausdinti studentu duomenis i faila ar i ekrana? (f/e): ";
 char spausdinti;
 cin >> spausdinti;
 while (spausdinti != 'f' && spausdinti != 'F' && spausdinti != 'e' && spausdinti != 'E') 
@@ -307,7 +307,7 @@ while (spausdinti != 'f' && spausdinti != 'F' && spausdinti != 'e' && spausdinti
     rezultatuIsvedimas.baigti();
     programa.baigti(); 
     return 0;
-    */
+    
 }
     
 catch (const std::exception& e) 

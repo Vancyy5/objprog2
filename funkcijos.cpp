@@ -207,9 +207,11 @@ void readString(string& str)
     }
 }
 //---
-double skaiciuotiGalutini(const Stud& stud, char metodas) {
+double skaiciuotiGalutini(const Stud& stud, char metodas) 
+{
     double galutinis = 0.0;
-    if (tolower(metodas) == 'v') {
+    if (tolower(metodas) == 'v') 
+    {
         galutinis = 0.4 * skaiciuotiVid(stud.nd) + 0.6 * stud.egz;
     } else {
         galutinis = 0.4 * skaiciuotiMed(stud.nd) + 0.6 * stud.egz;
