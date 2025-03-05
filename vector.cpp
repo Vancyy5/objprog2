@@ -54,7 +54,7 @@ int main()
     
     if (skaicius > 0) 
     {  
-        Laikas laikoMatavimasGeneravimas("Failo kurimas");
+    Laikas laikoMatavimasGeneravimas("Failo kurimas");
     laikoMatavimasGeneravimas.pradeti();
     generuotiFaila(skaicius, aplankas,failoPavadinimas); 
     laikoMatavimasGeneravimas.baigti();
@@ -66,7 +66,7 @@ int main()
     int pasirinkimas;
 
     char testiStudentus, testiNd, generuoti;
-
+    
     skaitytiIsFailo(grupe, failoPavadinimas);    //arba sita uzkomentuoti
     
     /*cout << "Ar norite nuskaityti studentu duomenis is failo? (t/n): ";
@@ -245,9 +245,18 @@ if (sortingOption == 'v' || sortingOption == 'V') {
 }
 vector<Stud> kietiakiai;
 vector<Stud> vargsai;
+
+Laikas skirstymas("Skirstymas i du konteinerius");
+skirstymas.pradeti();
 skirstytiStudentus(grupe, kietiakiai, vargsai, ats);
-isvestiStudentusIFaila(kietiakiai, "test_files/kietiakiai.txt", ats); //arba situs uzkomentuoti
-isvestiStudentusIFaila(vargsai, "test_files/vargsai.txt", ats);
+skirstymas.baigti();
+
+
+    Laikas rezultatuIsvedimas("Rezultatu isvedimas");
+    rezultatuIsvedimas.pradeti();
+    isvestiStudentusIFaila(kietiakiai, "test_files/kietiakiai.txt", ats);
+    isvestiStudentusIFaila(vargsai, "test_files/vargsai.txt", ats);        //arba cia uzkomentuoti
+    rezultatuIsvedimas.baigti();
 
 /*cout << "Ar norite atspausdinti studentu duomenis i faila ar i ekrana? (f/e): ";
 char spausdinti;
@@ -307,16 +316,18 @@ if (failoPavadinimas=="kursiokai.txt")
     }
 }
     rezultatuIsvedimas.baigti();
-    programa.baigti(); 
-    return 0;
 }
 else 
 {
+    Laikas rezultatuIsvedimas("Rezultatu isvedimas");
+    rezultatuIsvedimas.pradeti();
     isvestiStudentusIFaila(kietiakiai, "test_files/kietiakiai.txt", ats);
     isvestiStudentusIFaila(vargsai, "test_files/vargsai.txt", ats);
+    rezultatuIsvedimas.baigti();
 }
-
 */  
+programa.baigti();
+return 0;
 }
 catch (const std::exception& e) 
     {
