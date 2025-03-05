@@ -21,7 +21,7 @@ void generuotiFaila(int skaicius, const string& aplankas, string& failoPavadinim
     std::random_device rd;
     std::mt19937 mt(rd());
     std::uniform_int_distribution<int> pazymysDist(1, 10); 
-    std::uniform_int_distribution<int> pazymiuskaicius(5, 20); 
+    std::uniform_int_distribution<int> pazymiuskaicius(10, 20); 
     std::uniform_int_distribution<int> vardasNrDist(1, 10000); 
 
     int pazymiaisk=pazymiuskaicius(mt);
@@ -47,3 +47,4 @@ void generuotiFaila(int skaicius, const string& aplankas, string& failoPavadinim
     outFile.close();
     cout << "Failas " << failoPavadinimas << " su " << skaicius << " irasais sukurtas sekmingai" << endl;
 }
+//---
