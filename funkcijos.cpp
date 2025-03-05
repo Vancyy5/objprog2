@@ -115,11 +115,11 @@ bool sortByFinalGradeMed(const Stud& a, const Stud& b)
     return finalA > finalB;
 }
 //---
-void skaitytiIsFailo(vector<Stud>& grupe)
+void skaitytiIsFailo(vector<Stud>& grupe, string& failoPavadinimas)
 {
     Laikas failoNuskaitymas("Failo nuskaitymas");
     failoNuskaitymas.pradeti();
-    std::ifstream inputFile("kursiokai.txt"); 
+    std::ifstream inputFile(failoPavadinimas); 
     
     if (!inputFile.is_open()) 
     {
@@ -169,7 +169,8 @@ if (scores.size() > 0)
     failoNuskaitymas.baigti();
 }
 //---
-int pasirinktiVeiksma() {
+int pasirinktiVeiksma() 
+{
     int pasirinkimas;
     while (true) {
         cout << "Pasirinkite veiksma:\n";

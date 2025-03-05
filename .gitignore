@@ -403,3 +403,5 @@ FodyWeavers.xsd
 *.env
 *.exe
 node_modules/
+
+test_files/

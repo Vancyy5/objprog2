@@ -1,11 +1,62 @@
 #include "funkcijos.h"
 #include "laikas.h"
-
+#include "generuotif.h"
 //---
 int main() 
 {
     try 
     {
+        string aplankas="test_files";
+        string failoPavadinimas=" ";
+
+        int skaicius;
+        int pasirinktasDydis;
+
+        cout << "Pasirinkite failo dydį:\n";
+    cout << "1 - 1000 studentu\n";
+    cout << "2 - 10000 studentu\n";
+    cout << "3 - 100000 studentu\n";
+    cout << "4 - 1000000 studentu\n";
+    cout << "5 - 10000000 studentu\n";
+    cout << "6 - Negeneruoti failo\n";
+    cout << "Pasirinkimas: ";
+    cin >> pasirinktasDydis;
+
+    switch (pasirinktasDydis) 
+    {
+        case 1:
+            skaicius = 1000;
+            break;
+        case 2:
+            skaicius = 10000;
+            break;
+        case 3:
+            skaicius = 100000;
+            break;
+        case 4:
+            skaicius = 1000000;
+            break;
+        case 5:
+            skaicius = 10000000;
+            break;
+        case 6:
+           cout<< "Pasirinkta failo negeneruoti"<<endl;
+           skaicius =0;
+           break;
+        default:
+           cout<< "Neteisingas pasirinkimas"<<endl;
+           return 1;
+    }
+    
+    
+    if (skaicius > 0) 
+    {  
+        Laikas laikoMatavimasGeneravimas("Failo kurimas");
+    laikoMatavimasGeneravimas.pradeti();
+    generuotiFaila(skaicius, aplankas,failoPavadinimas); 
+    laikoMatavimasGeneravimas.baigti();
+    }
+
     srand(time(0));
     Stud laik;
     vector<Stud> grupe;
@@ -28,7 +79,7 @@ int main()
 
     if (readFromFile == 't'  || readFromFile == 'T') 
    {
-    skaitytiIsFailo(grupe);
+    skaitytiIsFailo(grupe, failoPavadinimas);
    }
         else if (readFromFile == 'n' || readFromFile == 'N')
     {
@@ -157,7 +208,6 @@ int main()
         return 1;
         }
 }
-
 cout << "Ar galutinio balo skaiciavimui norite naudoti vidurki ar mediana? (v/m): ";
 char ats;
 cin >> ats;

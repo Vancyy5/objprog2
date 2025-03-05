@@ -1,17 +1,15 @@
 #include "generuotif.h"
 
-#include <filesystem>
-
 namespace fs=std::filesystem;
 
-void generuotiFaila(int skaicius, const string& aplankas) 
+void generuotiFaila(int skaicius, const string& aplankas, string& failoPavadinimas)
 {
     if (!fs::exists(aplankas)) 
     {
         fs::create_directory(aplankas);
     }
 
-    string failoPavadinimas=aplankas + "/studentai_" + std::to_string(skaicius) + ".txt";
+    failoPavadinimas=aplankas + "/studentai_" + std::to_string(skaicius) + ".txt";
     std::ofstream outFile(failoPavadinimas);
     
     if (!outFile.is_open()) 
@@ -29,11 +27,11 @@ void generuotiFaila(int skaicius, const string& aplankas)
     int pazymiaisk=pazymiuskaicius(mt);
 
     outFile << std::left << setw(15) << "Vardas" << setw(15) << "Pavarde";
-    for (int i = 0; i < pazymiaisk; ++i) 
+    for (int i = 1; i <= pazymiaisk; ++i) 
     {
-        outFile << "ND" << i << " ";
+        outFile << setw(5) << ("ND" + std::to_string(i));
     }
-    outFile << "Egz." << endl;
+    outFile << setw(5) << "Egz." << endl;
 
     for (int i = 1; i <= skaicius; ++i) 
     {
@@ -41,9 +39,9 @@ void generuotiFaila(int skaicius, const string& aplankas)
 
         for (int j = 0; j < pazymiaisk; ++j) 
         {
-            outFile << setw(3) << pazymysDist(mt);
+            outFile << setw(5) << pazymysDist(mt);
         }
-        outFile << setw(3) << pazymysDist(mt) << endl; 
+        outFile << setw(5) << pazymysDist(mt) << endl; 
     }
 
     outFile.close();
