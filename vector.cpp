@@ -245,8 +245,8 @@ vector<Stud> kietiakiai;
 vector<Stud> vargsai;
 skirstytiStudentus(grupe, kietiakiai, vargsai, ats);
 
-//isvestiStudentusIFaila(kietiakiai, "test_files/kietiakiai.txt", ats);
-//isvestiStudentusIFaila(vargsai, "test_files/vargsai.txt", ats);
+isvestiStudentusIFaila(kietiakiai, "test_files/kietiakiai.txt", ats);
+isvestiStudentusIFaila(vargsai, "test_files/vargsai.txt", ats);
 
 cout << "Ar norite atspausdinti studentu duomenis i faila ar i ekrana? (f/e): ";
 char spausdinti;
