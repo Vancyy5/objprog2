@@ -1,6 +1,7 @@
 #include "funkcijos.h"
 #include "laikas.h"
 #include "generuotif.h"
+#include "skirstymas.h"
 //---
 int main() 
 {
@@ -218,6 +219,7 @@ while (ats != 'v' && ats != 'V' && ats != 'm' && ats != 'M')
     cin >> ats;
 }
 
+
 cout << "Kaip norite surusiuoti studentus? (v/vardas, p/pavarde, g/galutinis): ";
 char sortingOption;
 cin >> sortingOption;
@@ -239,8 +241,14 @@ if (sortingOption == 'v' || sortingOption == 'V') {
         sort(grupe.begin(), grupe.end(), sortByFinalGradeMed);
     }
 }
+vector<Stud> kietiakiai;
+vector<Stud> vargsai;
+skirstytiStudentus(grupe, kietiakiai, vargsai, ats);
 
-cout << "Ar norite atspausdinti studentu duomenis i faila ar i ekrana? (f/e): ";
+//isvestiStudentusIFaila(kietiakiai, "kietiakiai.txt", ats);
+//isvestiStudentusIFaila(vargsai, "vargsai.txt", ats);
+
+/*cout << "Ar norite atspausdinti studentu duomenis i faila ar i ekrana? (f/e): ";
 char spausdinti;
 cin >> spausdinti;
 while (spausdinti != 'f' && spausdinti != 'F' && spausdinti != 'e' && spausdinti != 'E') 
@@ -299,7 +307,9 @@ while (spausdinti != 'f' && spausdinti != 'F' && spausdinti != 'e' && spausdinti
     rezultatuIsvedimas.baigti();
     programa.baigti(); 
     return 0;
+    */
 }
+    
 catch (const std::exception& e) 
     {
         std::cerr << "Ivyko klaida: " << e.what() << endl;
@@ -314,4 +324,5 @@ catch (const std::exception& e)
     return 0;
 
 }
+    
 //---
