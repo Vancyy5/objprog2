@@ -1,6 +1,6 @@
 #include "skirstymas.h"
 
-void skirstytiStudentus(const vector<Stud>& grupe, vector<Stud>& kietiakiai, vector<Stud>& vargsai, char ats) 
+void skirstytiStudentus(vector<Stud>& grupe, vector<Stud>& kietiakiai, vector<Stud>& vargsai, char ats) 
 {
     for (const auto& a : grupe) 
     {
@@ -11,6 +11,7 @@ void skirstytiStudentus(const vector<Stud>& grupe, vector<Stud>& kietiakiai, vec
             vargsai.push_back(a);
         }
     }
+    grupe.clear();
 }
 //---
 void isvestiStudentusIFaila(const vector<Stud>& studentai, const string& failoPavadinimas, char ats) 

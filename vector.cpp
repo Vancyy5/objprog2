@@ -11,7 +11,7 @@ int main()
         programa.pradeti();
 
         string aplankas="test_files";
-        string failoPavadinimas="kursiokai.txt"; //ir 249, eilutėse
+        string failoPavadinimas="kursiokai.txt"; //ir 284 eilutėje
 
         int skaicius;
         int pasirinktasDydis;
@@ -256,7 +256,7 @@ rikiavimas.baigti();
 vector<Stud> kietiakiai;
 vector<Stud> vargsai;
 
-Laikas skirstymas(std::to_string(skaicius)+" studentu failo skirstymas i du konteinerius");
+Laikas skirstymas(std::to_string(skaicius)+" studentu failo skirstymas i du konteinerius, panaikinant vector");
     skirstymas.pradeti();
     skirstytiStudentus(grupe, kietiakiai, vargsai, ats);
     skirstymas.baigti();
@@ -334,7 +334,12 @@ if (failoPavadinimas=="kursiokai.txt")
 }
 else 
 {
-     Laikas rezultatuIsvedimaskietekai("Kieteku rezultatu isvedimas");
+    Laikas skirstymas(std::to_string(skaicius)+" studentu failo skirstymas i du konteinerius, panaikinant vector");
+    skirstymas.pradeti();
+    skirstytiStudentus(grupe, kietiakiai, vargsai, ats);
+    skirstymas.baigti();
+    
+    Laikas rezultatuIsvedimaskietekai("Kieteku rezultatu isvedimas");
     rezultatuIsvedimaskietekai.pradeti();
     isvestiStudentusIFaila(kietiakiai, "test_files/kietiakiai.txt", ats);
     rezultatuIsvedimaskietekai.baigti();
