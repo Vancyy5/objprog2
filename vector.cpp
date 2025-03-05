@@ -16,7 +16,7 @@ int main()
         int skaicius;
         int pasirinktasDydis;
 
-        cout << "Pasirinkite generacijai failo dydi:\n";
+    cout << "Pasirinkite generacijai failo dydi:\n";
     cout << "1 - 1000 studentu\n";
     cout << "2 - 10000 studentu\n";
     cout << "3 - 100000 studentu\n";
@@ -60,7 +60,7 @@ int main()
     laikoMatavimasGeneravimas.baigti();
     }
 
-    srand(time(0));
+    /*srand(time(0));
     Stud laik;
     vector<Stud> grupe;
     int pasirinkimas;
@@ -94,7 +94,7 @@ Laikas skirstymas(std::to_string(skaicius)+" studentu failo skirstymas i du kont
         rezultatuIsvedimasvargsai.pradeti();
         isvestiStudentusIFaila(vargsai, "test_files/vargsai.txt", ats);        
         rezultatuIsvedimasvargsai.baigti();
-
+*/
 programa.baigti();
 return 0;
 }

@@ -40,57 +40,6 @@ double skaiciuotiMed(vector<int> nd)
 }  
 }
 //---
-int readInteger() 
-{
-    int value;
-    while (true) {
-        cin >> value;
-        if (cin.fail()  || value < 1 || value > 10) 
-        {
-            cin.clear();
-            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            cout << "Klaida! Iveskite skaiciu nuo 1 iki 10: " << endl;
-        }
-        else 
-        {
-            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            break;
-        }
-    }
-    return value;
-}
-//---
-int generuotiAtsitiktiniP(int min, int max) 
-{
-    static std::mt19937 gen(std::random_device{}());
-    std::uniform_int_distribution<> dis(min, max);
-    return dis(gen);
-}
-//---
-string generuotiVarda(bool berniukas) 
-{
-    vector<string> berniukuVardai = {"Jokubas", "Jonas", "Petras", "Lukas", "Mantas", "Tomas"};
-    vector<string> mergaiciuVardai = {"Simona", "Vakare", "Greta", "Laura", "Egle"};
-
-    if (berniukas) {
-        return berniukuVardai[rand() % berniukuVardai.size()];
-    } else {
-        return mergaiciuVardai[rand() % mergaiciuVardai.size()];
-    }
-}
-//---
-string generuotiPavarde(bool berniukas) 
-{
-    vector<string> berniukuPavardes = {"Jonaitis", "Petraitis", "Lukaitis", "Mantaitis", "Tomaitis"};
-    vector<string> mergaiciuPavardes = {"Jonaite", "Petraite", "Lukaite", "Mantaite", "Tomaite"};
-
-    if (berniukas) {
-        return berniukuPavardes[rand() % berniukuPavardes.size()];
-    } else {
-        return mergaiciuPavardes[rand() % mergaiciuPavardes.size()];
-    }
-}
-//---
 bool sortByName(const Stud& a, const Stud& b) 
 {
     return a.var < b.var; 
@@ -167,44 +116,6 @@ if (scores.size() > 0)
 }
     inputFile.close();
     failoNuskaitymas.baigti();
-}
-//---
-int pasirinktiVeiksma() 
-{
-    int pasirinkimas;
-    while (true) {
-        cout << "Pasirinkite veiksma:\n";
-        cout << "1 - Ivesti duomenis ranka\n";
-        cout << "2 - Generuoti tik pazymius\n";
-        cout << "3 - Generuoti vardus, pavardes ir pazymius\n";
-        cout << "4 - Baigti darba\n";
-        cout << "Pasirinkimas: ";
-        try {
-            cin >> pasirinkimas;
-            if (cin.fail() || (pasirinkimas < 1 || pasirinkimas > 4)) {
-                throw std::runtime_error("Neteisingai pasirinktas meniu variantas.");
-            }
-            break;
-        } catch (const std::runtime_error& e) 
-        {
-            cout << e.what() << endl;
-            cin.clear();
-            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        }
-    }
-    return pasirinkimas;
-}
-//---
-void readString(string& str) 
-{
-    while (true) {
-        cin >> str;
-        if (str.empty() || str.find_first_not_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ") != string::npos) {
-            cout << "Klaida! Vardas arba pavarde turi buti tik raides: ";
-        } else {
-            break;
-        }
-    }
 }
 //---
 double skaiciuotiGalutini(const Stud& stud, char metodas) 
