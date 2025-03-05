@@ -64,7 +64,7 @@ bool sortByFinalGradeMed(const Stud& a, const Stud& b)
     return finalA > finalB;
 }
 //---
-void skaitytiIsFailo(vector<Stud>& grupe, string& failoPavadinimas)
+void skaitytiIsFailo(vector<Stud>& grupe,const string& failoPavadinimas)
 {
     Laikas failoNuskaitymas("Failo nuskaitymas");
     failoNuskaitymas.pradeti();

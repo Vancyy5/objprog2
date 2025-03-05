@@ -7,9 +7,6 @@ int main()
 {
     try 
     {
-        Laikas programa("Bendras programos vykdymas");
-        programa.pradeti();
-
         string aplankas="test_files";
         string failoPavadinimas="kursiokai.txt"; 
 
@@ -22,7 +19,6 @@ int main()
     cout << "3 - 100000 studentu\n";
     cout << "4 - 1000000 studentu\n";
     cout << "5 - 10000000 studentu\n";
-    cout << "6 - Negeneruoti failo, naudoti sukurta faila\n";
     cout << "Pasirinkimas: ";
     cin >> pasirinktasDydis;
 
@@ -43,60 +39,16 @@ int main()
         case 5:
             skaicius = 10000000;
             break;
-        case 6:
-           cout<< "Pasirinkta failo negeneruoti"<<endl;
-           skaicius = 0;
-           break;
         default:
            cout<< "Neteisingas pasirinkimas"<<endl;
            return 1;
     }
     
-    if (skaicius > 0) 
-    {  
-    Laikas laikoMatavimasGeneravimas("Failo kurimas su " + std::to_string(skaicius) + " studentais");
-    laikoMatavimasGeneravimas.pradeti();
-    generuotiFaila(skaicius, aplankas,failoPavadinimas); 
-    laikoMatavimasGeneravimas.baigti();
-    }
+    generuotiFaila(skaicius, aplankas, failoPavadinimas); 
 
-    /*srand(time(0));
-    Stud laik;
-    vector<Stud> grupe;
-    int pasirinkimas;
+    testuotiDuomenuApdorojimas(failoPavadinimas,skaicius);
 
-    char testiStudentus, testiNd, generuoti;
-    
-    skaitytiIsFailo(grupe, failoPavadinimas);   
-
-
-char ats ='v';
-Laikas rikiavimas(std::to_string(skaicius)+" studentu failo rikiavimas mazejimo tvarka pagal vidurki");
-rikiavimas.pradeti();
-sort(grupe.begin(), grupe.end(), sortByFinalGradeAvg);
-rikiavimas.baigti();
-
-vector<Stud> kietiakiai;
-vector<Stud> vargsai;
-
-Laikas skirstymas(std::to_string(skaicius)+" studentu failo skirstymas i du konteinerius, panaikinant vector");
-    skirstymas.pradeti();
-    skirstytiStudentus(grupe, kietiakiai, vargsai, ats);
-    skirstymas.baigti();
-    
-    
-        Laikas rezultatuIsvedimaskietekai("Kieteku rezultatu isvedimas");
-        rezultatuIsvedimaskietekai.pradeti();
-        isvestiStudentusIFaila(kietiakiai, "test_files/kietiakiai.txt", ats);
-        rezultatuIsvedimaskietekai.baigti();
-    
-        Laikas rezultatuIsvedimasvargsai("Vargsu rezultatu isvedimas");
-        rezultatuIsvedimasvargsai.pradeti();
-        isvestiStudentusIFaila(vargsai, "test_files/vargsai.txt", ats);        
-        rezultatuIsvedimasvargsai.baigti();
-*/
-programa.baigti();
-return 0;
+    return 0;
 }
 catch (const std::exception& e) 
     {

@@ -2,8 +2,11 @@
 
 namespace fs=std::filesystem;
 
-void generuotiFaila(int skaicius, const string& aplankas, string& failoPavadinimas)
+void generuotiFaila(int skaicius, const string& aplankas,  string& failoPavadinimas)
 {
+    Laikas laikoMatavimasGeneravimas("Failo kurimas su " + std::to_string(skaicius) + " studentais");
+    laikoMatavimasGeneravimas.pradeti(); 
+
     if (!fs::exists(aplankas)) 
     {
         fs::create_directory(aplankas);
@@ -46,5 +49,6 @@ void generuotiFaila(int skaicius, const string& aplankas, string& failoPavadinim
 
     outFile.close();
     cout << "Failas " << failoPavadinimas << " su " << skaicius << " irasais sukurtas sekmingai" << endl;
+    laikoMatavimasGeneravimas.baigti();
 }
 //---
