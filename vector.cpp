@@ -13,7 +13,7 @@ int main()
         int skaicius;
         int pasirinktasDydis;
 
-    cout << "Pasirinkite generacijai failo dydi:\n";
+    cout << "Pasirinkite failo dydi:\n";
     cout << "1 - 1000 studentu\n";
     cout << "2 - 10000 studentu\n";
     cout << "3 - 100000 studentu\n";
@@ -44,9 +44,9 @@ int main()
            return 1;
     }
     
-    generuotiFaila(skaicius, aplankas, failoPavadinimas); 
+    generuotiFaila(skaicius, aplankas); 
 
-    testuotiDuomenuApdorojimas(failoPavadinimas,skaicius);
+    testuotiDuomenuApdorojimas(aplankas,skaicius);
 
     return 0;
 }

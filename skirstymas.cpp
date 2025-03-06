@@ -29,13 +29,14 @@ void isvestiStudentusIFaila(const vector<Stud>& studentai, const string& failoPa
     }
     outFile << string(50, '-') << std::endl;
 
-    for (const auto& a : studentai) {
+    for (const auto& a : studentai)
+     {
         double galutinis = skaiciuotiGalutini(a, ats);
         outFile << std::left << setw(15) << a.var << setw(15) << a.pav << std::fixed << std::setprecision(2) << galutinis << std::endl;
     }
 }
 //---
-void testuotiDuomenuApdorojimas(const string& failoPavadinimas, int skaicius)
+void testuotiDuomenuApdorojimas(const string& aplankas, int skaicius)
 {
     srand(time(0));
     Stud laik;
@@ -58,9 +59,10 @@ while (sortingOption != 'v' && sortingOption != 'V' && sortingOption != 'p' && s
     cout << "Netinkama ivestis. Bandykite dar karta: ";
     cin >> sortingOption;
 }
+
 Laikas programa("Bendras programos vykdymas");
 programa.pradeti();
-
+string failoPavadinimas=aplankas + "/studentai_" + std::to_string(skaicius) + ".txt";
 skaitytiIsFailo(grupe, failoPavadinimas);   
 
 if (sortingOption == 'v' || sortingOption == 'V') 

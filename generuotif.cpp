@@ -2,7 +2,7 @@
 
 namespace fs=std::filesystem;
 
-void generuotiFaila(int skaicius, const string& aplankas,  string& failoPavadinimas)
+void generuotiFaila(int skaicius, const string& aplankas)
 {
     Laikas laikoMatavimasGeneravimas("Failo kurimas su " + std::to_string(skaicius) + " studentais");
     laikoMatavimasGeneravimas.pradeti(); 
@@ -12,7 +12,7 @@ void generuotiFaila(int skaicius, const string& aplankas,  string& failoPavadini
         fs::create_directory(aplankas);
     }
 
-    failoPavadinimas=aplankas + "/studentai_" + std::to_string(skaicius) + ".txt";
+    string failoPavadinimas=aplankas + "/studentai_" + std::to_string(skaicius) + ".txt";
     std::ofstream outFile(failoPavadinimas);
     
     if (!outFile.is_open()) 

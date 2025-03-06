@@ -7,6 +7,6 @@
 
 void skirstytiStudentus(vector<Stud>& grupe, vector<Stud>& kietiakiai, vector<Stud>& vargsai, char ats);
 void isvestiStudentusIFaila(const vector<Stud>& studentai, const string& failoPavadinimas, char ats);
-void testuotiDuomenuApdorojimas(const string& failoPavadinimas, int skaicius);
+void testuotiDuomenuApdorojimas(const string& aplankas, int skaicius);
 
 #endif // SKIRSTYMAS_H
