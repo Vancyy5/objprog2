@@ -46,9 +46,10 @@ int main()
     
     generuotiFaila(skaicius, aplankas); 
 
-    testuotiDuomenuApdorojimas(aplankas,skaicius);
+    //testuotiDuomenuApdorojimas(aplankas,skaicius);
 
     return 0;
+
 }
 catch (const std::exception& e) 
     {
