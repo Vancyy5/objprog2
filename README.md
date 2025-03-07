@@ -8,6 +8,11 @@ APRAŠYMAS:
 
 Buvo išmatuotas laikas, per kurį sugeneruojami nauji studentų sąrašų failai su atitinkamais dydžiais.
 
+![alt text](<Screenshot 2025-03-06 181244.png>)
+![alt text](<Screenshot 2025-03-06 181620.png>)
+![alt text](<Screenshot 2025-03-07 205935.png>)
+![alt text](<Screenshot 2025-03-07 210309.png>)
+![alt text](<Screenshot 2025-03-07 212020.png>)
 ![alt text](image.png)
 
 2 TYRIMAS: DUOMENŲ APDOROJIMO LAIKAS
