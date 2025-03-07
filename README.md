@@ -18,3 +18,9 @@ Buvo išmatuotas laikas, per kurį sugeneruojami nauji studentų sąrašų faila
 2 TYRIMAS: DUOMENŲ APDOROJIMO LAIKAS
 
 Buvo išmatuotas duomenų nuskaitymo iš egzistuojančio failo, studentų rikiavimo, rūšiavimo į dvi grupes bei rezultatų išvedimo į naujus failus sparta.
+
+![alt text](image-1.png)
+![alt text](image-2.png)
+
+
+Kiekvieno failo vidutiniai laikai:

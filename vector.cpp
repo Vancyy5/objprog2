@@ -44,9 +44,9 @@ int main()
            return 1;
     }
     
-    generuotiFaila(skaicius, aplankas); 
+    //generuotiFaila(skaicius, aplankas); 
 
-    //testuotiDuomenuApdorojimas(aplankas,skaicius);
+    testuotiDuomenuApdorojimas(aplankas,skaicius);
 
     return 0;
 
