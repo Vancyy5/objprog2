@@ -44,9 +44,17 @@ int main()
            return 1;
     }
     
-    //generuotiFaila(skaicius, aplankas); 
+    cout << "Ar norite generuoti nauja faila? (t/n)" ;
+    char atts;
+    cin>>atts;
+    while (atts != 't' && atts != 'T' && atts != 'n' && atts != 'N') 
+{
+    cout << "Netinkama ivestis. Bandykite dar karta: ";
+    cin >> atts;
+}
+    if(atts == 'T' or atts == 't') generuotiFaila(skaicius, aplankas); 
 
-    testuotiDuomenuApdorojimas(aplankas,skaicius);
+    else testuotiDuomenuApdorojimas(aplankas,skaicius);
 
     return 0;
 
