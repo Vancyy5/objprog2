@@ -1,6 +1,5 @@
 #include "funkcijos.h"
 #include "laikas.h"
-#include "generuotif.h"
 #include "skirstymas.h"
 //---
 int main() 
@@ -8,12 +7,12 @@ int main()
     try 
     {
         string aplankas="test_files";
-        string failoPavadinimas="kursiokai.txt"; 
+        string failoPavadinimas; 
 
         int skaicius;
         int pasirinktasDydis;
 
-    cout << "Pasirinkite failo dydi:\n";
+    cout << "Pasirinkite failo dydi testavimui:\n";
     cout << "1 - 1000 studentu\n";
     cout << "2 - 10000 studentu\n";
     cout << "3 - 100000 studentu\n";
@@ -44,19 +43,20 @@ int main()
            return 1;
     }
     
-    cout << "Ar norite generuoti nauja faila? (t/n)" ;
-    char atts;
-    cin>>atts;
-    while (atts != 't' && atts != 'T' && atts != 'n' && atts != 'N') 
+
+
+cout << "Koki konteinerį norite naudoti? (vector - 'v'/ list - 'l' / deque - 'd')" ;
+char konteineris;
+cin>>konteineris;
+while (konteineris != 'v' && konteineris != 'V' && konteineris != 'l' && konteineris != 'L' && konteineris != 'd' && konteineris != 'D') 
 {
-    cout << "Netinkama ivestis. Bandykite dar karta: ";
-    cin >> atts;
+cout << "Netinkama ivestis. Bandykite dar karta: ";
+cin >> konteineris;
 }
-    if(atts == 'T' or atts == 't') generuotiFaila(skaicius, aplankas); 
 
-    else testuotiDuomenuApdorojimas(aplankas,skaicius);
+testuotiDuomenuApdorojima(aplankas,skaicius, konteineris);
 
-    return 0;
+return 0;
 
 }
 catch (const std::exception& e) 

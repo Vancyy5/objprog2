@@ -1,6 +1,7 @@
 #include "funkcijos.h"
 #include "laikas.h"
 
+
 double skaiciuotiVid(vector<int> nd) 
 {
     if (nd.empty()) 
@@ -64,7 +65,7 @@ bool sortByFinalGradeMed(const Stud& a, const Stud& b)
     return finalA > finalB;
 }
 //---
-void skaitytiIsFailo(vector<Stud>& grupe,const string& failoPavadinimas)
+void skaitytiIsFailo(Container& grupe,const string& failoPavadinimas)
 {
     Laikas failoNuskaitymas("Failo nuskaitymas");
     failoNuskaitymas.pradeti();
@@ -89,7 +90,7 @@ ss >> laik.var >> laik.pav;
 
 laik.nd.clear();  
 int pazymys;
-vector<int> scores;  
+typename Container::value_type::nd_type scores;
 
 while (ss >> pazymys) 
 {
@@ -100,26 +101,27 @@ while (ss >> pazymys)
             }
             else 
             {
-                std::cerr << "Klaida: Netinkamas pazymys studentui " << laik.var << " " << laik.pav << ": " << pazymys <<  endl; exit(1);
+                throw invalid_argument("Klaida: Netinkamas pazymys studentui " + laik.var + " " + laik.pav + ": " + to_string(pazymys));
             }
 }
 
 if (ss.fail()&& !ss.eof()) 
             {
-                std::cerr << "Klaida: Netinkamas pazymys (ne skaicius) studentui " << laik.var << " " << laik.pav << endl; exit(1);
+                throw invalid_argument("Klaida: Netinkamas pazymys (ne skaicius) studentui " + laik.var + " " + laik.pav);
             }
-if (scores.size() > 0)
+if (!scores.empty())
 {
-    laik.nd = vector<int>(scores.begin(), scores.end() - 1);  
-    
     laik.egz = scores.back();
-    
-    grupe.push_back(laik); 
-    }
+    scores.pop_back();
+    laik.nd = move(scores);
+    grupe.push_back(laik);
 }
+
     inputFile.close();
     failoNuskaitymas.baigti();
 }
+}
+
 //---
 double skaiciuotiGalutini(const Stud& stud, char metodas) 
 {

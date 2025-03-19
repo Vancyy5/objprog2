@@ -36,11 +36,30 @@ void isvestiStudentusIFaila(const vector<Stud>& studentai, const string& failoPa
     }
 }
 //---
-void testuotiDuomenuApdorojimas(const string& aplankas, int skaicius)
+void testuotiDuomenuApdorojima(const string& aplankas, int skaicius, const char& konteineris)
 {
     srand(time(0));
     Stud laik;
-    vector<Stud> grupe;
+    if (konteineris == 'v' || konteineris == 'V') 
+    {
+        vector<Stud<vector<int>>> grupe;
+        vector<Stud<vector<int>>> kietekai;
+        vector<Stud<vector<int>>> vargsai;
+    }
+
+    if (konteineris == 'l' || konteineris == 'L') 
+    {
+        list<Stud<list<int>>> grupe;
+        list<Stud<list<int>>> kietekai;
+        list<Stud<list<int>>> vargsai;
+    }
+
+    if (konteineris == 'd' || konteineris == 'D') 
+    {
+        deque<Stud<deque<int>>> grupe;
+        deque<Stud<deque<int>>> kietekai;
+        deque<Stud<deque<int>>> vargsai;
+    }
 
     cout << "Ar galutinio balo skaiciavimui norite naudoti vidurki ar mediana? (v/m): ";
 char ats;
@@ -94,14 +113,10 @@ rikiavimas.baigti();
     }
 }
 
-vector<Stud> kietiakiai;
-vector<Stud> vargsai;
-
 Laikas skirstymas(std::to_string(skaicius)+" studentu failo skirstymas i du konteinerius, panaikinant vector");
     skirstymas.pradeti();
     skirstytiStudentus(grupe, kietiakiai, vargsai, ats);
     skirstymas.baigti();
-    
     
         Laikas rezultatuIsvedimaskietekai("Kieteku rezultatu isvedimas");
         rezultatuIsvedimaskietekai.pradeti();
