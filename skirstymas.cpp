@@ -99,33 +99,64 @@ template void testuotiDuomenuApdorojima<std::list<Stud<std::list<int>>>>(const s
 template void testuotiDuomenuApdorojima<std::deque<Stud<std::deque<int>>>>(const std::string&, int, const char&);
 //---
 template <typename Container>
-void sortByChoice(Container& grupe, char ats, char sortingOption) {
-    if (sortingOption == 'v' || sortingOption == 'V') {
-        if constexpr (std::is_same_v<Container, std::list<typename Container::value_type>>) {
-            grupe.sort(sortByName<typename Container::value_type>);
-        } else {
-            std::sort(grupe.begin(), grupe.end(), sortByName<typename Container::value_type>);
-        }
-    } else if (sortingOption == 'p' || sortingOption == 'P') {
-        if constexpr (std::is_same_v<Container, std::list<typename Container::value_type>>) {
-            grupe.sort(sortBySurname<typename Container::value_type>);
-        } else {
-            std::sort(grupe.begin(), grupe.end(), sortBySurname<typename Container::value_type>);
-        }
-    } else if (sortingOption == 'g') {
-        if (ats == 'v' || ats == 'V') {
-            if constexpr (std::is_same_v<Container, std::list<typename Container::value_type>>) {
-                grupe.sort(sortByFinalGradeAvg<typename Container::value_type>);
-            } else {
-                std::sort(grupe.begin(), grupe.end(), sortByFinalGradeAvg<typename Container::value_type>);
+void sortByChoice(Container& grupe, char ats, char sortingOption) 
+{
+    if constexpr (std::is_same_v<Container, list<typename Container::value_type>>) 
+    { 
+        if (sortingOption == 'v' || sortingOption == 'V') {
+            grupe.sort([](const auto& a, const auto& b) { return a.var < b.var; }); 
+        } else if (sortingOption == 'p' || sortingOption == 'P') {
+            grupe.sort([](const auto& a, const auto& b) { return a.pav < b.pav; });
+        } 
+        else if (sortingOption == 'g' || sortingOption == 'G') 
+        {
+            if(sortingOption == 'v' || sortingOption == 'V')
+            { 
+                grupe.sort([](const auto& a, const auto& b) {
+                    double finalA = 0.4 * skaiciuotiVid(a.nd) + 0.6 * a.egz;
+                    double finalB = 0.4 * skaiciuotiVid(b.nd) + 0.6 * b.egz;
+                    return finalA > finalB;
+                });
             }
-        } else {
-            if constexpr (std::is_same_v<Container, std::list<typename Container::value_type>>) {
-                grupe.sort(sortByFinalGradeMed<typename Container::value_type>);
-            } else {
-                std::sort(grupe.begin(), grupe.end(), sortByFinalGradeMed<typename Container::value_type>);
+            else if (ats == 'm' || ats == 'M') 
+            { 
+                grupe.sort([](const auto& a, const auto& b) 
+                {
+                    double finalA = 0.4 * skaiciuotiMed(a.nd) + 0.6 * a.egz;
+                    double finalB = 0.4 * skaiciuotiMed(b.nd) + 0.6 * b.egz;
+                    return finalA > finalB;
+                });
             }
+        }
+    } 
+    else 
+    {
+        if (sortingOption == 'v' || sortingOption == 'V') 
+        {
+            sort(grupe.begin(), grupe.end(), [](const auto& a, const auto& b) { return a.var < b.var; });
+        } else if (sortingOption == 'p' || sortingOption == 'P') 
+        {
+            sort(grupe.begin(), grupe.end(), [](const auto& a, const auto& b) { return a.pav < b.pav; });
+        }   else if (sortingOption == 'g' || sortingOption == 'G') 
+        {
+            if(sortingOption == 'v' || sortingOption == 'V')
+            { 
+                sort(grupe.begin(), grupe.end(), [](const auto& a, const auto& b) {
+                    double finalA = 0.4 * skaiciuotiVid(a.nd) + 0.6 * a.egz;
+                    double finalB = 0.4 * skaiciuotiVid(b.nd) + 0.6 * b.egz;
+                    return finalA > finalB;
+                });
+            }
+            else if (ats == 'm' || ats == 'M') 
+            { 
+                sort(grupe.begin(), grupe.end(), [](const auto& a, const auto& b) 
+                {
+                    double finalA = 0.4 * skaiciuotiMed(a.nd) + 0.6 * a.egz;
+                    double finalB = 0.4 * skaiciuotiMed(b.nd) + 0.6 * b.egz;
+                    return finalA > finalB;
+                });
         }
     }
+}
 }
 //---

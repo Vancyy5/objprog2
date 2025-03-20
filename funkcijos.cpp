@@ -43,22 +43,6 @@ double skaiciuotiMed(Container& nd)
 }
 //---
 template <typename Container>
-bool sortByFinalGradeAvg(const Stud<Container>& a, const Stud<Container>& b)
- {
-    double finalA = 0.4 * skaiciuotiVid(a.nd) + 0.6 * a.egz;
-    double finalB = 0.4 * skaiciuotiVid(b.nd) + 0.6 * b.egz;
-    return finalA > finalB; 
-}
-//---
-template <typename Container>
-bool sortByFinalGradeMed(const Stud<Container>& a, const Stud<Container>& b) 
-{
-    double finalA = 0.4 * skaiciuotiMed(a.nd) + 0.6 * a.egz;
-    double finalB = 0.4 * skaiciuotiMed(b.nd) + 0.6 * b.egz;
-    return finalA > finalB;
-}
-//---
-template <typename Container>
 void skaitytiIsFailo(Container& grupe,const string& failoPavadinimas)
 {
     Laikas failoNuskaitymas("Failo nuskaitymas");
