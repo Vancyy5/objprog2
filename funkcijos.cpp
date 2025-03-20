@@ -1,8 +1,8 @@
 #include "funkcijos.h"
 #include "laikas.h"
 
-
-double skaiciuotiVid(vector<int> nd) 
+template <typename Container>
+double skaiciuotiVid(const Container& nd) 
 {
     if (nd.empty()) 
     {
@@ -11,16 +11,16 @@ double skaiciuotiVid(vector<int> nd)
     else
     {
         double suma = 0.0;
-        for (int nd : nd) 
+        for (auto nd_elem : nd)  
         {
-            suma += nd;
+            suma += nd_elem;
         }
-    return suma*1.00/ nd.size();
+        return suma / nd.size();
     }
-    
 }
 //---
-double skaiciuotiMed(vector<int> nd) 
+template <typename Container>
+double skaiciuotiMed(Container& nd)
 {
     if (nd.empty())
      {
@@ -28,8 +28,9 @@ double skaiciuotiMed(vector<int> nd)
     }
     else
     {
-        sort(nd.begin(), nd.end());
-        int dydis = nd.size();
+        vector<typename Container::value_type> sorted(nd.begin(), nd.end());
+        std::sort(nd.begin(), nd.end());
+    int dydis = nd.size();
     if (dydis % 2 == 0) 
     {
         return (nd[dydis / 2 - 1] + nd[dydis / 2]) / 2.0;
@@ -38,33 +39,26 @@ double skaiciuotiMed(vector<int> nd)
     {
         return nd[dydis / 2];
     }
-}  
+   }  
 }
 //---
-bool sortByName(const Stud& a, const Stud& b) 
-{
-    return a.var < b.var; 
-}
-//---
-bool sortBySurname(const Stud& a, const Stud& b) 
-{
-    return a.pav < b.pav; 
-}
-//---
-bool sortByFinalGradeAvg(const Stud& a, const Stud& b)
+template <typename Container>
+bool sortByFinalGradeAvg(const Stud<Container>& a, const Stud<Container>& b)
  {
     double finalA = 0.4 * skaiciuotiVid(a.nd) + 0.6 * a.egz;
     double finalB = 0.4 * skaiciuotiVid(b.nd) + 0.6 * b.egz;
     return finalA > finalB; 
 }
 //---
-bool sortByFinalGradeMed(const Stud& a, const Stud& b) 
+template <typename Container>
+bool sortByFinalGradeMed(const Stud<Container>& a, const Stud<Container>& b) 
 {
     double finalA = 0.4 * skaiciuotiMed(a.nd) + 0.6 * a.egz;
     double finalB = 0.4 * skaiciuotiMed(b.nd) + 0.6 * b.egz;
     return finalA > finalB;
 }
 //---
+template <typename Container>
 void skaitytiIsFailo(Container& grupe,const string& failoPavadinimas)
 {
     Laikas failoNuskaitymas("Failo nuskaitymas");
@@ -73,12 +67,9 @@ void skaitytiIsFailo(Container& grupe,const string& failoPavadinimas)
     
     if (!inputFile.is_open()) 
     {
-        if (!inputFile.is_open()) 
-        {
             throw std::runtime_error("Nepavyko atidaryti failo: " + failoPavadinimas);
-        }
     }
-    Stud laik;
+    Stud<Container> laik;
     string line;
     
     getline(inputFile, line);
@@ -90,7 +81,7 @@ ss >> laik.var >> laik.pav;
 
 laik.nd.clear();  
 int pazymys;
-typename Container::value_type::nd_type scores;
+Container scores;
 
 while (ss >> pazymys) 
 {
@@ -101,19 +92,19 @@ while (ss >> pazymys)
             }
             else 
             {
-                throw invalid_argument("Klaida: Netinkamas pazymys studentui " + laik.var + " " + laik.pav + ": " + to_string(pazymys));
+                throw std::invalid_argument("Klaida: Netinkamas pazymys studentui " + laik.var + " " + laik.pav);
             }
 }
 
 if (ss.fail()&& !ss.eof()) 
             {
-                throw invalid_argument("Klaida: Netinkamas pazymys (ne skaicius) studentui " + laik.var + " " + laik.pav);
+                throw std::invalid_argument("Klaida: Netinkamas pazymys (ne skaicius) studentui " + laik.var + " " + laik.pav);
             }
 if (!scores.empty())
 {
     laik.egz = scores.back();
     scores.pop_back();
-    laik.nd = move(scores);
+    laik.nd = std::move(scores);
     grupe.push_back(laik);
 }
 
@@ -123,7 +114,8 @@ if (!scores.empty())
 }
 
 //---
-double skaiciuotiGalutini(const Stud& stud, char metodas) 
+template <typename Container>
+double skaiciuotiGalutini(const Stud<Container>& stud, char metodas) 
 {
     double galutinis = 0.0;
     if (tolower(metodas) == 'v') 

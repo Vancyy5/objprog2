@@ -26,11 +26,12 @@ using std::list;
 using std::deque;
 
 template <typename Container>
-struct Stud
+struct Stud 
 {
-    string var, pav;
-    double egz;
-    Container nd; 
+    string var;  
+    string pav;  
+    Container nd;     
+    int egz;       
 };
 
 #endif // LIB_H

@@ -7,7 +7,6 @@ int main()
     try 
     {
         string aplankas="test_files";
-        string failoPavadinimas; 
 
         int skaicius;
         int pasirinktasDydis;
@@ -43,8 +42,6 @@ int main()
            return 1;
     }
     
-
-
 cout << "Koki konteinerį norite naudoti? (vector - 'v'/ list - 'l' / deque - 'd')" ;
 char konteineris;
 cin>>konteineris;
@@ -54,7 +51,21 @@ cout << "Netinkama ivestis. Bandykite dar karta: ";
 cin >> konteineris;
 }
 
-testuotiDuomenuApdorojima(aplankas,skaicius, konteineris);
+if (konteineris == 'v' || konteineris == 'V') 
+        {
+            using ContainerType = vector<Stud<vector<int>>>;
+            testuotiDuomenuApdorojima<ContainerType>(aplankas, skaicius, konteineris);
+        } 
+        else if (konteineris == 'l' || konteineris == 'L') 
+        {
+            using ContainerType = list<Stud<list<int>>>;
+            testuotiDuomenuApdorojima<ContainerType>(aplankas, skaicius, konteineris);
+        } 
+        else if (konteineris == 'd' || konteineris == 'D') 
+        {
+            using ContainerType = deque<Stud<deque<int>>>;
+            testuotiDuomenuApdorojima<ContainerType>(aplankas, skaicius, konteineris);
+        }
 
 return 0;
 

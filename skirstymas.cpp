@@ -1,6 +1,7 @@
 #include "skirstymas.h"
 
-void skirstytiStudentus(vector<Stud>& grupe, vector<Stud>& kietiakiai, vector<Stud>& vargsai, char ats) 
+template <typename Container>
+void skirstytiStudentus(Container& grupe, Container& kietiakiai, Container& vargsai, char ats) 
 {
     for (const auto& a : grupe) 
     {
@@ -14,12 +15,12 @@ void skirstytiStudentus(vector<Stud>& grupe, vector<Stud>& kietiakiai, vector<St
     grupe.clear();
 }
 //---
-void isvestiStudentusIFaila(const vector<Stud>& studentai, const string& failoPavadinimas, char ats) 
+template <typename Container>
+void isvestiStudentusIFaila(const Container& studentai, const std::string& failoPavadinimas, char ats)
 {
     std::ofstream outFile(failoPavadinimas);
     if (!outFile.is_open()) {
-        std::cerr << "Nepavyko atidaryti failo: " << failoPavadinimas << std::endl;
-        return;
+        throw std::runtime_error("Nepavyko atidaryti failo: " + failoPavadinimas);
     }
     outFile << std::left << setw(15) << "Vardas" << setw(15) << "Pavarde";
     if (ats == 'v' || ats == 'V') {
@@ -36,30 +37,15 @@ void isvestiStudentusIFaila(const vector<Stud>& studentai, const string& failoPa
     }
 }
 //---
-void testuotiDuomenuApdorojima(const string& aplankas, int skaicius, const char& konteineris)
+template <typename Container>
+void testuotiDuomenuApdorojima(const std::string& aplankas, int skaicius, const char& konteineris)
 {
     srand(time(0));
-    Stud laik;
-    if (konteineris == 'v' || konteineris == 'V') 
-    {
-        vector<Stud<vector<int>>> grupe;
-        vector<Stud<vector<int>>> kietekai;
-        vector<Stud<vector<int>>> vargsai;
-    }
+    Stud<Container> laik;
 
-    if (konteineris == 'l' || konteineris == 'L') 
-    {
-        list<Stud<list<int>>> grupe;
-        list<Stud<list<int>>> kietekai;
-        list<Stud<list<int>>> vargsai;
-    }
-
-    if (konteineris == 'd' || konteineris == 'D') 
-    {
-        deque<Stud<deque<int>>> grupe;
-        deque<Stud<deque<int>>> kietekai;
-        deque<Stud<deque<int>>> vargsai;
-    }
+    Container grupe;
+    Container kietiakiai;
+    Container vargsai;
 
     cout << "Ar galutinio balo skaiciavimui norite naudoti vidurki ar mediana? (v/m): ";
 char ats;
@@ -84,36 +70,13 @@ programa.pradeti();
 string failoPavadinimas=aplankas + "/studentai_" + std::to_string(skaicius) + ".txt";
 skaitytiIsFailo(grupe, failoPavadinimas);   
 
-if (sortingOption == 'v' || sortingOption == 'V') 
-{
-    Laikas rikiavimas(std::to_string(skaicius)+" studentu failo rikiavimas pagal vardus abeceliskai");
+Laikas rikiavimas(std::to_string(skaicius) + " studentų failo rūšiavimas");
 rikiavimas.pradeti();
-sort(grupe.begin(), grupe.end(), sortByName);
+
+sortByChoice(grupe, ats, sortingOption);
 rikiavimas.baigti();
 
-} else if (sortingOption == 'p' || sortingOption == 'P') 
-{
-    Laikas rikiavimas(std::to_string(skaicius)+" studentu failo rikiavimas pagal pavardes abeceliskai");
-rikiavimas.pradeti();
-sort(grupe.begin(), grupe.end(), sortBySurname);
-rikiavimas.baigti();
-} else if (sortingOption == 'g') {
-    if (ats == 'v' || ats == 'V') 
-    {
-        Laikas rikiavimas(std::to_string(skaicius)+" studentu failo rikiavimas mazejimo tvarka pagal vidurki");
-rikiavimas.pradeti();
-sort(grupe.begin(), grupe.end(), sortByFinalGradeAvg);
-rikiavimas.baigti();
-    } else 
-    {
-        Laikas rikiavimas(std::to_string(skaicius)+" studentu failo rikiavimas mazejimo tvarka pagal mediana");
-rikiavimas.pradeti();
-sort(grupe.begin(), grupe.end(), sortByFinalGradeMed);
-rikiavimas.baigti();
-    }
-}
-
-Laikas skirstymas(std::to_string(skaicius)+" studentu failo skirstymas i du konteinerius, panaikinant vector");
+Laikas skirstymas(std::to_string(skaicius)+" studentu failo skirstymas i du konteinerius");
     skirstymas.pradeti();
     skirstytiStudentus(grupe, kietiakiai, vargsai, ats);
     skirstymas.baigti();
@@ -130,3 +93,39 @@ Laikas skirstymas(std::to_string(skaicius)+" studentu failo skirstymas i du kont
 
 programa.baigti();
 }
+//---
+template void testuotiDuomenuApdorojima<std::vector<Stud<std::vector<int>>>>(const std::string&, int, const char&);
+template void testuotiDuomenuApdorojima<std::list<Stud<std::list<int>>>>(const std::string&, int, const char&);
+template void testuotiDuomenuApdorojima<std::deque<Stud<std::deque<int>>>>(const std::string&, int, const char&);
+//---
+template <typename Container>
+void sortByChoice(Container& grupe, char ats, char sortingOption) {
+    if (sortingOption == 'v' || sortingOption == 'V') {
+        if constexpr (std::is_same_v<Container, std::list<typename Container::value_type>>) {
+            grupe.sort(sortByName<typename Container::value_type>);
+        } else {
+            std::sort(grupe.begin(), grupe.end(), sortByName<typename Container::value_type>);
+        }
+    } else if (sortingOption == 'p' || sortingOption == 'P') {
+        if constexpr (std::is_same_v<Container, std::list<typename Container::value_type>>) {
+            grupe.sort(sortBySurname<typename Container::value_type>);
+        } else {
+            std::sort(grupe.begin(), grupe.end(), sortBySurname<typename Container::value_type>);
+        }
+    } else if (sortingOption == 'g') {
+        if (ats == 'v' || ats == 'V') {
+            if constexpr (std::is_same_v<Container, std::list<typename Container::value_type>>) {
+                grupe.sort(sortByFinalGradeAvg<typename Container::value_type>);
+            } else {
+                std::sort(grupe.begin(), grupe.end(), sortByFinalGradeAvg<typename Container::value_type>);
+            }
+        } else {
+            if constexpr (std::is_same_v<Container, std::list<typename Container::value_type>>) {
+                grupe.sort(sortByFinalGradeMed<typename Container::value_type>);
+            } else {
+                std::sort(grupe.begin(), grupe.end(), sortByFinalGradeMed<typename Container::value_type>);
+            }
+        }
+    }
+}
+//---

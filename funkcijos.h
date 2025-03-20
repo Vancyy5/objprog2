@@ -3,13 +3,13 @@
 
 #include "lib.h"
 
-double skaiciuotiVid(vector <int> nd);
-double skaiciuotiMed(vector <int> nd);
-bool sortByName(const Stud& a, const Stud& b);
-bool sortBySurname(const Stud& a, const Stud& b);
-bool sortByFinalGradeAvg(const Stud& a, const Stud& b);
-bool sortByFinalGradeMed(const Stud& a, const Stud& b);
-void skaitytiIsFailo(Container& grupe,const string& failoPavadinimas);
-double skaiciuotiGalutini(const Stud& stud, char metodas);
+template <typename Container>
+double skaiciuotiVid(const Container& nd);
+template <typename Container>
+double skaiciuotiMed(Container& nd);
+template <typename Container>
+void skaitytiIsFailo(Container& grupe, const string& failoPavadinimas);
+template <typename Container>
+double skaiciuotiGalutini(const Stud<Container>& stud, char metodas);
 
 #endif // FUNKCIJOS_H
