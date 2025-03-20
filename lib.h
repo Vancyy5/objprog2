@@ -14,6 +14,7 @@
 #include<stdexcept>
 #include<list>
 #include<deque>
+#include<ctime>
 
 using std::cout;
 using std::cin;
@@ -31,7 +32,9 @@ struct Stud
     string var;  
     string pav;  
     Container nd;     
-    int egz;       
+    int egz;   
+    
+    using nd_type = Container;
 };
 
 #endif // LIB_H

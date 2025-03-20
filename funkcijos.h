@@ -5,10 +5,13 @@
 
 template <typename Container>
 double skaiciuotiVid(const Container& nd);
+
 template <typename Container>
-double skaiciuotiMed(Container& nd);
+double skaiciuotiMed(const Container& nd);
+
 template <typename Container>
-void skaitytiIsFailo(Container& grupe, const string& failoPavadinimas);
+void skaitytiIsFailo(Container& grupe, const std::string& failoPavadinimas);
+
 template <typename Container>
 double skaiciuotiGalutini(const Stud<Container>& stud, char metodas);
 

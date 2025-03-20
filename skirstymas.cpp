@@ -110,7 +110,7 @@ void sortByChoice(Container& grupe, char ats, char sortingOption)
         } 
         else if (sortingOption == 'g' || sortingOption == 'G') 
         {
-            if(sortingOption == 'v' || sortingOption == 'V')
+            if(ats == 'v' || ats == 'V')
             { 
                 grupe.sort([](const auto& a, const auto& b) {
                     double finalA = 0.4 * skaiciuotiVid(a.nd) + 0.6 * a.egz;
@@ -139,7 +139,7 @@ void sortByChoice(Container& grupe, char ats, char sortingOption)
             sort(grupe.begin(), grupe.end(), [](const auto& a, const auto& b) { return a.pav < b.pav; });
         }   else if (sortingOption == 'g' || sortingOption == 'G') 
         {
-            if(sortingOption == 'v' || sortingOption == 'V')
+            if(ats == 'v' || ats == 'V')
             { 
                 sort(grupe.begin(), grupe.end(), [](const auto& a, const auto& b) {
                     double finalA = 0.4 * skaiciuotiVid(a.nd) + 0.6 * a.egz;

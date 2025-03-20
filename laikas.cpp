@@ -1,4 +1,5 @@
 #include "Laikas.h"
+#include "lib.h"
 
 using namespace std::chrono;
 
