@@ -14,9 +14,9 @@ void Laikas::pradeti() {
 //---
 void Laikas::baigti() {
     end = high_resolution_clock::now();
-    std::cout << "---> " << veiksmoPavadinimas << " uztruko: " << gautiLaikoSkirtuma() << " ms" << std::endl;
+    std::cout << "---> " << veiksmoPavadinimas << " uztruko: " << gautiLaikoSkirtuma() << " s" << std::endl;
 }
 //---
 double Laikas::gautiLaikoSkirtuma() {
-    return duration<double, std::milli>(end - start).count();
+    return duration<double>(end - start).count();
 }
