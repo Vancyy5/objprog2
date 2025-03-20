@@ -70,7 +70,7 @@ programa.pradeti();
 string failoPavadinimas=aplankas + "/studentai_" + std::to_string(skaicius) + ".txt";
 skaitytiIsFailo(grupe, failoPavadinimas);   
 
-Laikas rikiavimas(std::to_string(skaicius) + " studentų failo rūšiavimas");
+Laikas rikiavimas(std::to_string(skaicius) + " studentu failo rusiavimas");
 rikiavimas.pradeti();
 
 sortByChoice(grupe, ats, sortingOption);

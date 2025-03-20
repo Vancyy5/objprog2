@@ -42,7 +42,7 @@ int main()
            return 1;
     }
     
-cout << "Koki konteinerį norite naudoti? (vector - 'v'/ list - 'l' / deque - 'd')" ;
+cout << "Koki konteineri norite naudoti? (vector - 'v'/ list - 'l' / deque - 'd')" ;
 char konteineris;
 cin>>konteineris;
 while (konteineris != 'v' && konteineris != 'V' && konteineris != 'l' && konteineris != 'L' && konteineris != 'd' && konteineris != 'D') 
