@@ -19,7 +19,8 @@ template <typename Container>
 void isvestiStudentusIFaila(const Container& studentai, const std::string& failoPavadinimas, char ats)
 {
     std::ofstream outFile(failoPavadinimas);
-    if (!outFile.is_open()) {
+    if (!outFile.is_open()) 
+    {
         throw std::runtime_error("Nepavyko atidaryti failo: " + failoPavadinimas);
     }
     outFile << std::left << setw(15) << "Vardas" << setw(15) << "Pavarde";
@@ -65,14 +66,16 @@ while (sortingOption != 'v' && sortingOption != 'V' && sortingOption != 'p' && s
     cin >> sortingOption;
 }
 
-Laikas programa("Bendras programos vykdymas");
-programa.pradeti();
+
 string failoPavadinimas=aplankas + "/studentai_" + std::to_string(skaicius) + ".txt";
+
+Laikas nuskaitymas("Failo nuskaitymas");
+nuskaitymas.pradeti();
 skaitytiIsFailo(grupe, failoPavadinimas);   
+nuskaitymas.baigti();
 
-Laikas rikiavimas(std::to_string(skaicius) + " studentu failo rusiavimas");
+Laikas rikiavimas(std::to_string(skaicius) + " studentu failo rusiavimas didejimo tvarka");
 rikiavimas.pradeti();
-
 sortByChoice(grupe, ats, sortingOption);
 rikiavimas.baigti();
 
@@ -81,17 +84,10 @@ Laikas skirstymas(std::to_string(skaicius)+" studentu failo skirstymas i du kont
     skirstytiStudentus(grupe, kietiakiai, vargsai, ats);
     skirstymas.baigti();
     
-        Laikas rezultatuIsvedimaskietekai("Kieteku rezultatu isvedimas");
-        rezultatuIsvedimaskietekai.pradeti();
-        isvestiStudentusIFaila(kietiakiai, "test_files/kietiakiai.txt", ats);
-        rezultatuIsvedimaskietekai.baigti();
-    
-        Laikas rezultatuIsvedimasvargsai("Vargsu rezultatu isvedimas");
-        rezultatuIsvedimasvargsai.pradeti();
-        isvestiStudentusIFaila(vargsai, "test_files/vargsai.txt", ats);        
-        rezultatuIsvedimasvargsai.baigti();
+isvestiStudentusIFaila(kietiakiai, "test_files/kietiakiai.txt", ats);
 
-programa.baigti();
+ isvestiStudentusIFaila(vargsai, "test_files/vargsai.txt", ats);        
+
 }
 //---
 template void testuotiDuomenuApdorojima<std::vector<Stud<std::vector<int>>>>(const std::string&, int, const char&);
