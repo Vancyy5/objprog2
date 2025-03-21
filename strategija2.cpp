@@ -5,9 +5,12 @@ void skirstytiStudentusantras(Container& grupe, Container& vargsai)
 {
     for (auto it = grupe.begin(); it != grupe.end(); ) 
     {
-        if (it->galutinis >= 5.0) {
+        if (it->galutinis >= 5.0) 
+        {
             ++it; 
-        } else {
+        } else
+        {
+
             vargsai.push_back(*it);
             it = grupe.erase(it);  
         }

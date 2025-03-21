@@ -1,0 +1,314 @@
+1000 studentų vector
+
+---> Failo nuskaitymas uztruko: 0.0047423 s
+---> 1000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0001394 s
+---> 1000 studentu failo skirstymas i du konteinerius uztruko: 0.0008479 s
+
+---> Failo nuskaitymas uztruko: 0.0056418 s
+---> 1000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0001676 s
+---> 1000 studentu failo skirstymas i du konteinerius uztruko: 0.0014236 s
+
+---> Failo nuskaitymas uztruko: 0.0060819 s
+---> 1000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0001645 s
+---> 1000 studentu failo skirstymas i du konteinerius uztruko: 0.0007707 s
+
+---> Failo nuskaitymas uztruko: 0.006292 s
+---> 1000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0001552 s
+---> 1000 studentu failo skirstymas i du konteinerius uztruko: 0.0009458 s
+
+---> Failo nuskaitymas uztruko: 0.0044209 s
+---> 1000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0001397 s
+---> 1000 studentu failo skirstymas i du konteinerius uztruko: 0.0007765 s
+
+1000 studentų list 
+
+---> Failo nuskaitymas uztruko: 0.0069719 s
+---> 1000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0001128 s
+---> 1000 studentu failo skirstymas i du konteinerius uztruko: 0.0005212 s
+
+---> Failo nuskaitymas uztruko: 0.0040649 s
+---> 1000 studentu failo rusiavimas didejimo tvarka uztruko: 8.84e-05 s
+---> 1000 studentu failo skirstymas i du konteinerius uztruko: 0.0004939 s
+
+---> Failo nuskaitymas uztruko: 0.0084935 s
+---> 1000 studentu failo rusiavimas didejimo tvarka uztruko: 8.51e-05 s
+---> 1000 studentu failo skirstymas i du konteinerius uztruko: 0.0007525 s
+
+---> Failo nuskaitymas uztruko: 0.0057763 s
+---> 1000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0001182 s
+---> 1000 studentu failo skirstymas i du konteinerius uztruko: 0.0006352 s
+
+---> Failo nuskaitymas uztruko: 0.0056838 s
+---> 1000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0001127 s
+---> 1000 studentu failo skirstymas i du konteinerius uztruko: 0.000678 s
+
+1000 studentų deque
+
+---> Failo nuskaitymas uztruko: 0.0065461 s
+---> 1000 studentu failo rusiavimas didejimo tvarka uztruko: 0.000445 s
+---> 1000 studentu failo skirstymas i du konteinerius uztruko: 0.0017414 s
+
+---> Failo nuskaitymas uztruko: 0.0071865 s
+---> 1000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0007021 s
+---> 1000 studentu failo skirstymas i du konteinerius uztruko: 0.0022835 s
+
+---> Failo nuskaitymas uztruko: 0.0055134 s
+---> 1000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0004243 s
+---> 1000 studentu failo skirstymas i du konteinerius uztruko: 0.0018973 s
+
+---> Failo nuskaitymas uztruko: 0.0072965 s
+---> 1000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0008538 s
+---> 1000 studentu failo skirstymas i du konteinerius uztruko: 0.0017606 s
+
+---> Failo nuskaitymas uztruko: 0.0038608 s
+---> 1000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0004404 s
+---> 1000 studentu failo skirstymas i du konteinerius uztruko: 0.0022393 s
+
+
+10000 studentų vector
+
+---> Failo nuskaitymas uztruko: 0.0407322 s
+---> 10000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0030833 s
+---> 10000 studentu failo skirstymas i du konteinerius uztruko: 0.0618543 s
+
+---> Failo nuskaitymas uztruko: 0.0380113 s
+---> 10000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0020224 s
+---> 10000 studentu failo skirstymas i du konteinerius uztruko: 0.0612467 s
+
+---> Failo nuskaitymas uztruko: 0.0350633 s
+---> 10000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0017233 s
+---> 10000 studentu failo skirstymas i du konteinerius uztruko: 0.0604465 s
+
+---> Failo nuskaitymas uztruko: 0.0409198 s
+---> 10000 studentu failo rusiavimas didejimo tvarka uztruko: 0.001351 s
+---> 10000 studentu failo skirstymas i du konteinerius uztruko: 0.0601154 s
+
+---> Failo nuskaitymas uztruko: 0.0423203 s
+---> 10000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0013888 s
+---> 10000 studentu failo skirstymas i du konteinerius uztruko: 0.0614713 s
+
+
+10000 studentų list
+
+---> Failo nuskaitymas uztruko: 0.0455129 s
+---> 10000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0016496 s
+---> 10000 studentu failo skirstymas i du konteinerius uztruko: 0.0061491 s
+
+---> Failo nuskaitymas uztruko: 0.0480671 s
+---> 10000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0012759 s
+---> 10000 studentu failo skirstymas i du konteinerius uztruko: 0.0072966 s
+
+---> Failo nuskaitymas uztruko: 0.0515382 s
+---> 10000 studentu failo rusiavimas didejimo tvarka uztruko: 0.001266 s
+---> 10000 studentu failo skirstymas i du konteinerius uztruko: 0.0072773 s
+
+---> Failo nuskaitymas uztruko: 0.0548794 s
+---> 10000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0013987 s
+---> 10000 studentu failo skirstymas i du konteinerius uztruko: 0.0066238 s
+
+---> Failo nuskaitymas uztruko: 0.0510348 s
+---> 10000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0040095 s
+---> 10000 studentu failo skirstymas i du konteinerius uztruko: 0.0063166 s
+
+10000 studentų deque
+
+---> Failo nuskaitymas uztruko: 0.0381197 s
+---> 10000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0049491 s
+---> 10000 studentu failo skirstymas i du konteinerius uztruko: 0.126031 s
+
+---> Failo nuskaitymas uztruko: 0.0369449 s
+---> 10000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0058469 s
+---> 10000 studentu failo skirstymas i du konteinerius uztruko: 0.123319 s
+
+---> Failo nuskaitymas uztruko: 0.038632 s
+---> 10000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0051881 s
+---> 10000 studentu failo skirstymas i du konteinerius uztruko: 0.120824 s
+
+---> Failo nuskaitymas uztruko: 0.0354387 s
+---> 10000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0049788 s
+---> 10000 studentu failo skirstymas i du konteinerius uztruko: 0.123998 s
+
+---> Failo nuskaitymas uztruko: 0.0412225 s
+---> 10000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0054263 s
+---> 10000 studentu failo skirstymas i du konteinerius uztruko: 0.1201 s
+
+
+100000 studentų vector
+
+---> Failo nuskaitymas uztruko: 0.186993 s
+---> 100000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0207921 s
+---> 100000 studentu failo skirstymas i du konteinerius uztruko: 6.00277 s
+
+---> 100000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0230253 s
+---> 100000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0230253 s
+---> 100000 studentu failo skirstymas i du konteinerius uztruko: 8.37162 s
+
+---> Failo nuskaitymas uztruko: 0.180082 s
+---> 100000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0203389 s   
+---> 100000 studentu failo skirstymas i du konteinerius uztruko: 6.61835 s
+
+---> Failo nuskaitymas uztruko: 0.177651 s
+---> 100000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0203933 s
+---> 100000 studentu failo skirstymas i du konteinerius uztruko: 6.33611 s
+
+---> Failo nuskaitymas uztruko: 0.1792 s
+---> 100000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0205066 s
+---> 100000 studentu failo skirstymas i du konteinerius uztruko: 6.10472 s
+
+
+100000 studentų list
+
+---> Failo nuskaitymas uztruko: 0.250077 s
+---> 100000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0291688 s
+---> 100000 studentu failo skirstymas i du konteinerius uztruko: 0.0533774 s
+
+---> Failo nuskaitymas uztruko: 0.239838 s
+---> 100000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0331696 s
+---> 100000 studentu failo skirstymas i du konteinerius uztruko: 0.0549594 s
+
+---> Failo nuskaitymas uztruko: 0.255016 s
+---> 100000 studentu failo rusiavimas didejimo tvarka uztruko: 0.036089 s
+---> 100000 studentu failo skirstymas i du konteinerius uztruko: 0.054904 s
+
+---> Failo nuskaitymas uztruko: 0.246877 s
+---> 100000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0371191 s
+---> 100000 studentu failo skirstymas i du konteinerius uztruko: 0.0565212 s
+
+---> Failo nuskaitymas uztruko: 0.24788 s
+---> 100000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0337058 s
+---> 100000 studentu failo skirstymas i du konteinerius uztruko: 0.0571885 s
+
+
+100000 studentų deque
+
+---> Failo nuskaitymas uztruko: 0.205456 s
+---> 100000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0855732 s
+---> 100000 studentu failo skirstymas i du konteinerius uztruko: 15.075 s
+
+---> Failo nuskaitymas uztruko: 0.196687 s
+---> 100000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0854861 s
+---> 100000 studentu failo skirstymas i du konteinerius uztruko: 16.7641 s
+
+---> Failo nuskaitymas uztruko: 0.201354 s
+---> 100000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0874284 s
+---> 100000 studentu failo skirstymas i du konteinerius uztruko: 16.8589 s
+
+---> Failo nuskaitymas uztruko: 0.208071 s
+---> 100000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0851609 s
+---> 100000 studentu failo skirstymas i du konteinerius uztruko: 16.0795 s
+
+---> Failo nuskaitymas uztruko: 0.199686 s
+---> 100000 studentu failo rusiavimas didejimo tvarka uztruko: 0.0883335 s
+---> 100000 studentu failo skirstymas i du konteinerius uztruko: 18.0993 s
+
+
+1000000 studentų vector
+
+---> Failo nuskaitymas uztruko: 2.44047 s
+---> 1000000 studentu failo rusiavimas didejimo tvarka uztruko: 0.280788 s
+
+---> Failo nuskaitymas uztruko: 2.41431 s
+---> 1000000 studentu failo rusiavimas didejimo tvarka uztruko: 0.250601 s
+
+---> Failo nuskaitymas uztruko: 2.33686 s
+---> 1000000 studentu failo rusiavimas didejimo tvarka uztruko: 0.244932 s
+
+---> Failo nuskaitymas uztruko: 2.21149 s
+---> 1000000 studentu failo rusiavimas didejimo tvarka uztruko: 0.268564 s
+
+---> Failo nuskaitymas uztruko: 2.36339 s
+---> 1000000 studentu failo rusiavimas didejimo tvarka uztruko: 0.280972 s
+
+
+1000000 studentų list
+
+---> Failo nuskaitymas uztruko: 3.12353 s
+---> 1000000 studentu failo rusiavimas didejimo tvarka uztruko: 0.603526 s
+---> 1000000 studentu failo skirstymas i du konteinerius uztruko: 0.746774 s
+
+---> Failo nuskaitymas uztruko: 3.16915 s
+---> 1000000 studentu failo rusiavimas didejimo tvarka uztruko: 0.608876 s
+---> 1000000 studentu failo skirstymas i du konteinerius uztruko: 0.75708 s
+
+---> Failo nuskaitymas uztruko: 3.21904 s
+---> 1000000 studentu failo rusiavimas didejimo tvarka uztruko: 0.640384 s
+---> 1000000 studentu failo skirstymas i du konteinerius uztruko: 0.691682 s
+
+---> Failo nuskaitymas uztruko: 3.17483 s
+---> 1000000 studentu failo rusiavimas didejimo tvarka uztruko: 0.619297 s
+---> 1000000 studentu failo skirstymas i du konteinerius uztruko: 0.815521 s
+
+---> Failo nuskaitymas uztruko: 3.13995 s
+---> 1000000 studentu failo rusiavimas didejimo tvarka uztruko: 0.724268 s
+---> 1000000 studentu failo skirstymas i du konteinerius uztruko: 0.751263 s
+
+
+1000000 studentų deque
+
+---> Failo nuskaitymas uztruko: 2.75428 s
+---> 1000000 studentu failo rusiavimas didejimo tvarka uztruko: 1.13822 s
+
+---> Failo nuskaitymas uztruko: 2.23467 s
+---> 1000000 studentu failo rusiavimas didejimo tvarka uztruko: 1.16351 s
+
+---> Failo nuskaitymas uztruko: 2.48831 s
+---> 1000000 studentu failo rusiavimas didejimo tvarka uztruko: 1.13928 s
+
+---> Failo nuskaitymas uztruko: 2.28521 s
+---> 1000000 studentu failo rusiavimas didejimo tvarka uztruko: 1.09127 s
+
+---> Failo nuskaitymas uztruko: 2.50431 s
+---> 1000000 studentu failo rusiavimas didejimo tvarka uztruko: 1.11192 s
+
+
+10000000 studentų vector
+
+---> Failo nuskaitymas uztruko: 24.8713 s
+---> 10000000 studentu failo rusiavimas didejimo tvarka uztruko: 3.07988 s
+
+---> Failo nuskaitymas uztruko: 24.7552 s
+---> 10000000 studentu failo rusiavimas didejimo tvarka uztruko: 2.99959 s
+
+---> Failo nuskaitymas uztruko: 24.7699 s
+---> 10000000 studentu failo rusiavimas didejimo tvarka uztruko: 3.02876 s
+
+---> Failo nuskaitymas uztruko: 23.432 s
+---> 10000000 studentu failo rusiavimas didejimo tvarka uztruko: 2.97551 s
+
+---> Failo nuskaitymas uztruko: 24.4986 s
+---> 10000000 studentu failo rusiavimas didejimo tvarka uztruko: 3.03409 s
+
+
+10000000 studentų list
+
+---> Failo nuskaitymas uztruko: 39.719 s
+---> 10000000 studentu failo rusiavimas didejimo tvarka uztruko: 14.3734 s
+
+---> Failo nuskaitymas uztruko: 42.7395 s
+---> 10000000 studentu failo rusiavimas didejimo tvarka uztruko: 14.6675 s
+
+---> Failo nuskaitymas uztruko: 41.193 s
+---> 10000000 studentu failo rusiavimas didejimo tvarka uztruko: 11.9311 s
+
+---> Failo nuskaitymas uztruko: 49.2161 s
+---> 10000000 studentu failo rusiavimas didejimo tvarka uztruko: 15.1202 s
+
+---> Failo nuskaitymas uztruko: 43.5168 s
+---> 10000000 studentu failo rusiavimas didejimo tvarka uztruko: 14.2024 s
+
+10000000 studentų deque
+
+---> Failo nuskaitymas uztruko: 32.9856 s
+---> 10000000 studentu failo rusiavimas didejimo tvarka uztruko: 17.9448 s
+
+---> Failo nuskaitymas uztruko: 42.1178 s
+---> 10000000 studentu failo rusiavimas didejimo tvarka uztruko: 18.4516 s
+
+---> Failo nuskaitymas uztruko: 30.197 s
+---> 10000000 studentu failo rusiavimas didejimo tvarka uztruko: 20.7894 s
+
+---> Failo nuskaitymas uztruko: 35.9402 s
+---> 10000000 studentu failo rusiavimas didejimo tvarka uztruko: 22.4855 s
+
+---> Failo nuskaitymas uztruko: 36.9473 s
+---> 10000000 studentu failo rusiavimas didejimo tvarka uztruko: 23.8448 s

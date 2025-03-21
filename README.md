@@ -41,3 +41,53 @@ Deque visiškai neefektyvus, ypač skirstymo etape (apie 97 kartus lėčiau nei 
 -------------------------------------------------------------------------------------------------------------
 Išvada:
 Geriausia naudoti vector konteinerį.
+ 
+----------------------------------------------------------------------------------------------------------- 
+
+1 STRATEGIJA
+
+1 strategijoje reikėjo kopijuoti studentu grupes narius i kietiakų ir vargšų konteinerius.
+
+Taip pačiai padaryta pradiniame tyrime ir visi rezultatai sukelti faile "Pradinis testavimias.txt" albume "nuotraukos_ir_tyrimai"
+
+Kadangi duomenys yra kopijuojami yra be reikalo užimima vieta kompiuterio atmintyje. 
+
+Pateikta kiek vietos užema vykdoma programa.
+
+![alt text](<Screenshot 2025-03-21 155630.png>)
+
+
+------------------------------------------------------------------------------------------------------------
+2 STRATEGIJA
+
+2-oje strategijoje reikėjo išmesti kietiaku konteinerį ir surikiuoti juos tiktais naudojant pradinį grupes konteinerį ir naują vargšų.
+
+Buvo išmatuotas laikas, per kurį nuskaitomi failai, surūšiuojami studentai ir išskirstomi į du atskirus(vienas senas, kitas naujas) konteinerius pagal atitinkamus įrašų dydžius ir naudojamą konteinerį.
+
+Rezultatai sukelti faile "2strategija.txt" albume "nuotraukos_ir_tyrimai"
+
+Su kiekvienu failu ir konteineriu tyrimas buvo pakartotas 5 kartus, rezultatai surašyti į lentelę ir apskaičiuotas vidurkis sekundėmis.
+
+![alt text](image2.png)
+
+Pateikta kiek atminties užema vykdoma programa.
+
+![alt text](<Screenshot 2025-03-21 162909.png>)
+
+--------------------------------------------------------------------------------------------------------------
+Tyrimo pastebėjimai: 
+
+Vector yra greičiausias pasirinkimas failo nuskaitymui ir rūšiavimui
+
+List ir deque konteineriai yra žymiai letėsni failo nuskaityme ir rūšiavime.
+
+List yra greičiausias išskirstant į du konteinerius.
+
+-------------------------------------------------------------------------------------------------------------
+Išvada:
+Geriausia naudoti vector konteinerį failo nuskaitymui ir duomenų rūšiavimui, bet list yra palankesnis išskirstyme.
+
+Antra strategija efektyvesnė atminties atžvilgiu, tačiau dažni trynimai (ypač su tam tikrais konteineriais) gali turėti neigiamą poveikį veikimo greičiui.
+
+--------------------------------------------------------------------------------------------------------------
+ 
