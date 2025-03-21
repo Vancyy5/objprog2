@@ -1,10 +1,10 @@
 # objprog
 
 APRAŠYMAS:
-
+---
 Ši programa analizuoja studentų duomenų failus su skirtingais įrašų dydžiai, juos surūšiuoja,vėliau juos išskirsto pagal jų galutinį balą į dvi grupes: kietekų(galutinis balas >=5.0 ) ir vargšų(galutinis balas < 5.0). Testavimai buvo atlikti su  penkiais atsitiktinias studentų sąrašų failais, sudarytus iš: 1 000, 10 000, 100 000, 1 000 000, 10 000 000 įrašų. Programoje vartotojas pasirenka, kurį konteinerį nori naudoti iš (vector/list/deque).
 -------------------------------------------------------------------------------------------------------
-Norėdami naudoti šį proframą:
+Norėdami naudoti šį programą:
 ---
 Įdėkite CMakeLists.txt į savo projekto šakninį katalogą (kur yra jūsų šaltinio failai).
 
@@ -15,6 +15,7 @@ Paleiskite CMake: cmake ..
 Kompiliuokite savo projektą: cmake --build .
 
 (Vykdomasis failas bus patalpintas bin pakatalogyje jūsų build aplanke)
+
 
 Šis CMakeLists.txt failas yra sukonfigūruotas jūsų studentų vertinimo sistemai su šiomis savybėmis:
 ---
@@ -31,9 +32,10 @@ Sukuria vykdomąjį failą pavadinimu "StudentuVertinimas".
 Sukuria test_files katalogą kompiliavimo išvestyje.
 
 Konfigūruoja įdiegimo nustatymus.
+
 -------------------------------------------------------------------------------------------------------
 TESTAVIMO SISTEMOS PARAMETRAI:
-
+---
 CPU: Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz, 1190 Mhz, 4 Core(s), 8 Logical Processors
 
 RAM: 8GB DDR4-2666 
@@ -48,7 +50,7 @@ G++ versija 14.2.0
 
 ------------------------------------------------------------------------------------------------------
 PRADINIS TYRIMAS
-
+---
 Buvo išmatuotas laikas, per kurį nuskaitomi failai, surūšiuojami studentai ir išskirstomi į du atskirus konteinerius pagal atitinkamus įrašų dydžius ir naudojamą konteinerį.
 
 Su kiekvienu failu ir konteineriu tyrimas buvo pakartotas 5 kartus, rezultatai surašyti į lentelę ir apskaičiuotas vidurkis sekundėmis.
@@ -57,7 +59,7 @@ Su kiekvienu failu ir konteineriu tyrimas buvo pakartotas 5 kartus, rezultatai s
 
 --------------------------------------------------------------------------------------------------------------
 Tyrimo pastebėjimai: 
-
+---
 Visi konteineriai panašiai nuskaito failo.
 
 Vector yra greičiausias pasirinkimas visais etapais.
@@ -68,12 +70,13 @@ Deque visiškai neefektyvus, ypač skirstymo etape (apie 97 kartus lėčiau nei 
 
 -------------------------------------------------------------------------------------------------------------
 Išvada:
+---
 Geriausia naudoti vector konteinerį.
  
 ----------------------------------------------------------------------------------------------------------- 
 
 1 STRATEGIJA
-
+---
 1 strategijoje reikėjo kopijuoti studentu grupes narius i kietiakų ir vargšų konteinerius.
 
 Taip pačiai padaryta pradiniame tyrime ir visi rezultatai sukelti faile "Pradinis testavimias.txt" albume "nuotraukos_ir_tyrimai"
@@ -87,7 +90,7 @@ Pateikta kiek vietos užema vykdoma programa.
 
 ------------------------------------------------------------------------------------------------------------
 2 STRATEGIJA
-
+---
 2-oje strategijoje reikėjo išmesti kietiaku konteinerį ir surikiuoti juos tiktais naudojant pradinį grupes konteinerį ir naują vargšų.
 
 Buvo išmatuotas laikas, per kurį nuskaitomi failai, surūšiuojami studentai ir išskirstomi į du atskirus(vienas senas, kitas naujas) konteinerius pagal atitinkamus įrašų dydžius ir naudojamą konteinerį.
@@ -104,7 +107,7 @@ Pateikta kiek atminties užema vykdoma programa.
 
 --------------------------------------------------------------------------------------------------------------
 Tyrimo pastebėjimai: 
-
+---
 Vector yra greičiausias pasirinkimas failo nuskaitymui ir rūšiavimui
 
 List ir deque konteineriai yra žymiai letėsni failo nuskaityme ir rūšiavime.
@@ -113,13 +116,14 @@ List yra greičiausias išskirstant į du konteinerius.
 
 -------------------------------------------------------------------------------------------------------------
 Išvada:
+---
 Geriausia naudoti vector konteinerį failo nuskaitymui ir duomenų rūšiavimui, bet list yra palankesnis išskirstyme.
 
 Antra strategija efektyvesnė atminties atžvilgiu, tačiau dažni trynimai (ypač su tam tikrais konteineriais) gali turėti neigiamą poveikį veikimo greičiui.
 
 --------------------------------------------------------------------------------------------------------------
  3 STRATEGIJA
-
+---
  Kadangi vector pagal 1 strategiją vector buvo greitesnis negu 2-oje,  3 strategijoje ir naudosime 1 strategijos principą (sukurti 2 naujus konteinerius).
 
  Iš duotų pasirinktų STL algoritmų panaudojau:
@@ -143,7 +147,7 @@ Su kiekvienu failu tyrimas buvo pakartotas 5 kartus, rezultatai surašyti į len
 
 ---------------------------------------------------------------------------
 Tyrimo pastebėjimai:
-
+---
 Rūšiavimas išlieka efektyvus nepriklausant nuo failo dydžio.
 
 Skirstymas į du konteinerius tampa truputį lėtesnis didėjant įrašų skaičiui.
@@ -152,16 +156,16 @@ Failo nuskaitymo laikas auga beveik linijiškai, tačiau 10 milijonų įrašų f
 
 ----------------------------------------------------------------------------
 Išvada:
-
+---
 3-ioji strategija, naudojanti optimizuotus algoritmus su VECTOR konteineriu yra greita ir efektyvi, ypač esant dideliems studentų kiekiams. Ši strategija suteikia žymiai greitesnį skirstymą į grupes palyginti su kitais konteineriais ir medotais.
 
 ----------------------------------------------------------------------------
-Geriausias konteineris:
-
+Konteinerių palyginimas:
+---
 ![alt text](https://github.com/Vancyy5/objprog/blob/v1.0/nuotraukos_ir_tyrimai/Screenshot%202025-03-21%20200201.png)
 
 GALUTINĖ IŠVADA:
-
+---
 Naudokite vector yra geriausias pasirinkimas bendrai, ypač jeigu pagrindinis prioritetas yra rūšiavimas ir skirstymas į grupes.
 Naudokite list, jei dažnai reikia įterpti arba šalinti elementus.
 Venkite naudoti deque, kadangi jis yra lėčiausias rūšiavime.
