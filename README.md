@@ -4,6 +4,34 @@ APRAŠYMAS:
 
 Ši programa analizuoja studentų duomenų failus su skirtingais įrašų dydžiai, juos surūšiuoja,vėliau juos išskirsto pagal jų galutinį balą į dvi grupes: kietekų(galutinis balas >=5.0 ) ir vargšų(galutinis balas < 5.0). Testavimai buvo atlikti su  penkiais atsitiktinias studentų sąrašų failais, sudarytus iš: 1 000, 10 000, 100 000, 1 000 000, 10 000 000 įrašų. Programoje vartotojas pasirenka, kurį konteinerį nori naudoti iš (vector/list/deque).
 -------------------------------------------------------------------------------------------------------
+Norėdami naudoti šį proframą:
+---
+Įdėkite CMakeLists.txt į savo projekto šakninį katalogą (kur yra jūsų šaltinio failai).
+
+Sukurkite kompiliavimo katalogą: mkdir build && cd build
+
+Paleiskite CMake: cmake ..
+
+Kompiliuokite savo projektą: cmake --build .
+
+(Vykdomasis failas bus patalpintas bin pakatalogyje jūsų build aplanke)
+
+Šis CMakeLists.txt failas yra sukonfigūruotas jūsų studentų vertinimo sistemai su šiomis savybėmis:
+---
+Nustato C++ standartą į C++17 (reikalinga std::execution::par).
+
+Bando surasti Intel TBB biblioteką, kad būtų palaikomi lygiagretūs algoritmai.
+
+Nustato tinkamus kompiliatoriaus vėliavėles, atsižvelgiant į naudojamą kompiliatorių.
+
+Įtraukia visus šaltinio failus (main.cpp, funkcijos.cpp, laikas.cpp, strategija1.cpp, strategija2.cpp, strategija3.cpp).
+
+Sukuria vykdomąjį failą pavadinimu "StudentuVertinimas".
+
+Sukuria test_files katalogą kompiliavimo išvestyje.
+
+Konfigūruoja įdiegimo nustatymus.
+-------------------------------------------------------------------------------------------------------
 TESTAVIMO SISTEMOS PARAMETRAI:
 
 CPU: Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz, 1190 Mhz, 4 Core(s), 8 Logical Processors
