@@ -111,6 +111,7 @@ Rezultatai sukelti faile "3strategija.txt" albume "nuotraukos_ir_tyrimai"
 
 Su kiekvienu failu tyrimas buvo pakartotas 5 kartus, rezultatai surašyti į lentelę ir apskaičiuotas vidurkis sekundėmis.
 
+![alt text](https://github.com/Vancyy5/objprog/blob/v1.0/nuotraukos_ir_tyrimai/Screenshot%202025-03-21%20191536.png)
 
 ---------------------------------------------------------------------------
 Tyrimo pastebėjimai:
@@ -123,3 +124,17 @@ Failo nuskaitymo laikas auga beveik linijiškai, tačiau 10 milijonų įrašų f
 
 ----------------------------------------------------------------------------
 Išvada:
+
+3-ioji strategija, naudojanti optimizuotus algoritmus su VECTOR konteineriu yra greita ir efektyvi, ypač esant dideliems studentų kiekiams. Ši strategija suteikia žymiai greitesnį skirstymą į grupes palyginti su kitais konteineriais ir medotais.
+
+----------------------------------------------------------------------------
+Geriausias konteineris:
+
+![alt text](https://github.com/Vancyy5/objprog/blob/v1.0/nuotraukos_ir_tyrimai/Screenshot%202025-03-21%20200201.png)
+
+GALUTINĖ IŠVADA:
+
+Naudokite vector yra geriausias pasirinkimas bendrai, ypač jeigu pagrindinis prioritetas yra rūšiavimas ir skirstymas į grupes.
+Naudokite list, jei dažnai reikia įterpti arba šalinti elementus.
+Venkite naudoti deque, kadangi jis yra lėčiausias rūšiavime.
+
