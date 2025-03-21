@@ -36,11 +36,11 @@ Makefile apima:
 ---
 Kompiliatoriaus nustatymai su C++17 standartu ir optimizavimo vėliavomis
 
-Kompiliacijos taisyklės visiems jūsų šaltinio failams
+Kompiliacijos taisyklės visiems šaltinio failams
 
 Specialus elgesys su šablonais pagrįstu kodu funkcijos.cpp faile
 
-Švaros tikslas, skirtas pašalinti objektų failus ir vykdomąjį failą
+Švaros funkcija, skirta pašalinti objektų failus ir vykdomąjį failą
 
 Test_files katalogo sukūrimas, jei jis dar neegzistuoja
 
