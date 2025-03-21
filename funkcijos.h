@@ -15,4 +15,7 @@ void skaitytiIsFailo(Container& grupe, const std::string& failoPavadinimas);
 template <typename Container>
 void isvestiStudentusIFaila(const Container& studentai, const std::string& failoPavadinimas, char ats);
 
+template <typename Container>
+void sortByChoice(Container& grupe, char sortingOption);
+
 #endif // FUNKCIJOS_H

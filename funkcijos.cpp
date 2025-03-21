@@ -151,6 +151,34 @@ void isvestiStudentusIFaila(const Container& studentai, const std::string& failo
     }
 }
 //---
+template <typename Container>
+void sortByChoice(Container& grupe, char sortingOption) 
+{
+    if constexpr (std::is_same_v<Container, std::list<typename Container::value_type>>) 
+    { 
+        if (sortingOption == 'v' || sortingOption == 'V') {
+            grupe.sort([](const auto& a, const auto& b) { return a.var < b.var; }); 
+        } else if (sortingOption == 'p' || sortingOption == 'P') {
+            grupe.sort([](const auto& a, const auto& b) { return a.pav < b.pav; });
+        } else if (sortingOption == 'g' || sortingOption == 'G') {
+            grupe.sort([](const auto& a, const auto& b) { return a.galutinis > b.galutinis; });
+        }
+    }
+    else 
+    {
+        if (sortingOption == 'v' || sortingOption == 'V') {
+            std::sort(std::execution::par, grupe.begin(), grupe.end(),
+                      [](const auto& a, const auto& b) { return a.var < b.var; });
+        } else if (sortingOption == 'p' || sortingOption == 'P') {
+            std::sort(std::execution::par, grupe.begin(), grupe.end(),
+                      [](const auto& a, const auto& b) { return a.pav < b.pav; });
+        } else if (sortingOption == 'g' || sortingOption == 'G') {
+            std::sort(std::execution::par, grupe.begin(), grupe.end(),
+                      [](const auto& a, const auto& b) { return a.galutinis > b.galutinis; });
+        }
+    }
+}
+//---
 template double skaiciuotiVid<std::vector<int>>(const std::vector<int>&);
 template double skaiciuotiMed<std::vector<int>>(const std::vector<int>&);
 
@@ -167,3 +195,7 @@ template void skaitytiIsFailo<std::deque<Stud<std::deque<int>>>>(std::deque<Stud
 template void isvestiStudentusIFaila<std::list<Stud<std::list<int>>>>(const std::list<Stud<std::list<int>>>&, const std::string&, char);
 template void isvestiStudentusIFaila<std::vector<Stud<std::vector<int>>>>(const std::vector<Stud<std::vector<int>>>&, const std::string&, char);
 template void isvestiStudentusIFaila<std::deque<Stud<std::deque<int>>>>(const std::deque<Stud<std::deque<int>>>&, const std::string&, char);
+
+template void sortByChoice<std::list<Stud<std::list<int>>>>(std::list<Stud<std::list<int>>>&, char);
+template void sortByChoice<std::vector<Stud<std::vector<int>>>>(std::vector<Stud<std::vector<int>>>&, char);
+template void sortByChoice<std::deque<Stud<std::deque<int>>>>(std::deque<Stud<std::deque<int>>>&, char);

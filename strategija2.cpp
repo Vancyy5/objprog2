@@ -1,28 +1,26 @@
-#include "strategija1.h"
+#include "strategija2.h"
 
 template <typename Container>
-void skirstytiStudentuspirmas(Container& grupe, Container& kietiakiai, Container& vargsai) 
+void skirstytiStudentusantras(Container& grupe, Container& vargsai) 
 {
-    
-    for (const auto& a : grupe) 
+    for (auto it = grupe.begin(); it != grupe.end(); ) 
     {
-        if (a.galutinis >= 5.0) {
-            kietiakiai.push_back(a);
+        if (it->galutinis >= 5.0) {
+            ++it; 
         } else {
-            vargsai.push_back(a);
+            vargsai.push_back(*it);
+            it = grupe.erase(it);  
         }
     }
-    grupe.clear();
 }
 //---
 template <typename Container>
-void testuotiDuomenuApdorojimapirma(const std::string& aplankas, int skaicius, const char& konteineris)
+void testuotiDuomenuApdorojimaantras(const std::string& aplankas, int skaicius, const char& konteineris)
 {
     srand(time(0));
     Stud<Container> laik;
 
     Container grupe;
-    Container kietiakiai;
     Container vargsai;
 
     cout << "Ar galutinio balo skaiciavimui norite naudoti vidurki ar mediana? (v/m): ";
@@ -73,19 +71,17 @@ rikiavimas.baigti();
 
 Laikas skirstymas(std::to_string(skaicius)+" studentu failo skirstymas i du konteinerius");
     skirstymas.pradeti();
-    skirstytiStudentuspirmas(grupe, kietiakiai, vargsai);
+    skirstytiStudentusantras(grupe, vargsai);
     skirstymas.baigti();
     
-isvestiStudentusIFaila(kietiakiai, "test_files/kietiakiai.txt", ats);
+isvestiStudentusIFaila(grupe, "test_files/kietiakiai.txt", ats);
 
 isvestiStudentusIFaila(vargsai, "test_files/vargsai.txt", ats);    
 
-kietiakiai.clear();
 vargsai.clear();
-
 }
 //---
-template void testuotiDuomenuApdorojimapirma<std::vector<Stud<std::vector<int>>>>(const std::string&, int, const char&);
-template void testuotiDuomenuApdorojimapirma<std::list<Stud<std::list<int>>>>(const std::string&, int, const char&);
-template void testuotiDuomenuApdorojimapirma<std::deque<Stud<std::deque<int>>>>(const std::string&, int, const char&);
+template void testuotiDuomenuApdorojimaantras<std::vector<Stud<std::vector<int>>>>(const std::string&, int, const char&);
+template void testuotiDuomenuApdorojimaantras<std::list<Stud<std::list<int>>>>(const std::string&, int, const char&);
+template void testuotiDuomenuApdorojimaantras<std::deque<Stud<std::deque<int>>>>(const std::string&, int, const char&);
 //---

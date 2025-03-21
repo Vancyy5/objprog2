@@ -1,6 +1,7 @@
 #include "funkcijos.h"
 #include "laikas.h"
 #include "strategija1.h"
+#include "strategija2.h"
 //---
 int main() 
 {
@@ -74,10 +75,23 @@ if(strategija == '1')
     {
         testuotiDuomenuApdorojimapirma<deque<Stud<deque<int>>>>(aplankas, skaicius, konteineris);
     } 
+
 }
-
-
-
+    else if(strategija == '2')
+    {
+        if (konteineris == 'v' || konteineris == 'V') 
+        {
+            testuotiDuomenuApdorojimaantras<vector<Stud<vector<int>>>>(aplankas, skaicius, konteineris);
+        } 
+        else if (konteineris == 'l' || konteineris == 'L') 
+        {
+            testuotiDuomenuApdorojimaantras<list<Stud<list<int>>>>(aplankas, skaicius, konteineris);
+        } 
+        else if (konteineris == 'd' || konteineris == 'D') 
+        {
+            testuotiDuomenuApdorojimaantras<deque<Stud<deque<int>>>>(aplankas, skaicius, konteineris);
+        } 
+    }
 
 return 0;
 
