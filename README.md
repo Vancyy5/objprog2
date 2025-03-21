@@ -3,35 +3,46 @@
 APRAŠYMAS:
 ---
 Ši programa analizuoja studentų duomenų failus su skirtingais įrašų dydžiai, juos surūšiuoja,vėliau juos išskirsto pagal jų galutinį balą į dvi grupes: kietekų(galutinis balas >=5.0 ) ir vargšų(galutinis balas < 5.0). Testavimai buvo atlikti su  penkiais atsitiktinias studentų sąrašų failais, sudarytus iš: 1 000, 10 000, 100 000, 1 000 000, 10 000 000 įrašų. Programoje vartotojas pasirenka, kurį konteinerį nori naudoti iš (vector/list/deque).
+
 -------------------------------------------------------------------------------------------------------
-Norėdami naudoti šį programą:
+Programos paleidimas:
 ---
-Įdėkite CMakeLists.txt į savo projekto šakninį katalogą (kur yra jūsų šaltinio failai).
+1. Sukurkite darbo katalogą, kur norite atsisiųsti projektą: 
 
-Sukurkite kompiliavimo katalogą: mkdir build && cd build
+mkdir mano-projektas
+cd mano-projektas
 
-Paleiskite CMake: cmake ..
+2. Klonuoti Repozitoriją:    
 
-Kompiliuokite savo projektą: cmake --build .
-
-(Vykdomasis failas bus patalpintas bin pakatalogyje jūsų build aplanke)
+ git clone https://github.com/Vancyy5/objprog.git
 
 
-Šis CMakeLists.txt failas yra sukonfigūruotas jūsų studentų vertinimo sistemai su šiomis savybėmis:
+3. Užtikrinkite, kad turite įdiegtą C++17 suderinamą kompiliatorių.
+
+4. Kompiliuoti su makefile:
+
+ make
+
+5. Paleiskite:
+
+ ./main
+
+6. Išvalykite:
+
+ make clean
+
+
+Makefile apima:
 ---
-Nustato C++ standartą į C++17 (reikalinga std::execution::par).
+Kompiliatoriaus nustatymai su C++17 standartu ir optimizavimo vėliavomis
 
-Bando surasti Intel TBB biblioteką, kad būtų palaikomi lygiagretūs algoritmai.
+Kompiliacijos taisyklės visiems jūsų šaltinio failams
 
-Nustato tinkamus kompiliatoriaus vėliavėles, atsižvelgiant į naudojamą kompiliatorių.
+Specialus elgesys su šablonais pagrįstu kodu funkcijos.cpp faile
 
-Įtraukia visus šaltinio failus (main.cpp, funkcijos.cpp, laikas.cpp, strategija1.cpp, strategija2.cpp, strategija3.cpp).
+Švaros tikslas, skirtas pašalinti objektų failus ir vykdomąjį failą
 
-Sukuria vykdomąjį failą pavadinimu "StudentuVertinimas".
-
-Sukuria test_files katalogą kompiliavimo išvestyje.
-
-Konfigūruoja įdiegimo nustatymus.
+Test_files katalogo sukūrimas, jei jis dar neegzistuoja
 
 -------------------------------------------------------------------------------------------------------
 TESTAVIMO SISTEMOS PARAMETRAI:
