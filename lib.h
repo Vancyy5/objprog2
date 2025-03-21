@@ -14,6 +14,7 @@
 #include<stdexcept>
 #include<list>
 #include<deque>
+#include<execution>
 #include<ctime>
 
 using std::cout;
@@ -33,6 +34,7 @@ struct Stud
     string pav;  
     Container nd;     
     int egz;   
+    double galutinis;
     
     using nd_type = Container;
 };

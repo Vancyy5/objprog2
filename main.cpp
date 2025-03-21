@@ -52,20 +52,17 @@ cin >> konteineris;
 }
 
 if (konteineris == 'v' || konteineris == 'V') 
-        {
-            using ContainerType = vector<Stud<vector<int>>>;
-            testuotiDuomenuApdorojima<ContainerType>(aplankas, skaicius, konteineris);
-        } 
-        else if (konteineris == 'l' || konteineris == 'L') 
-        {
-            using ContainerType = list<Stud<list<int>>>;
-            testuotiDuomenuApdorojima<ContainerType>(aplankas, skaicius, konteineris);
-        } 
-        else if (konteineris == 'd' || konteineris == 'D') 
-        {
-            using ContainerType = deque<Stud<deque<int>>>;
-            testuotiDuomenuApdorojima<ContainerType>(aplankas, skaicius, konteineris);
-        }
+{
+    testuotiDuomenuApdorojima<vector<Stud<vector<int>>>>(aplankas, skaicius, konteineris);
+} 
+else if (konteineris == 'l' || konteineris == 'L') 
+{
+    testuotiDuomenuApdorojima<list<Stud<list<int>>>>(aplankas, skaicius, konteineris);
+} 
+else if (konteineris == 'd' || konteineris == 'D') 
+{
+    testuotiDuomenuApdorojima<deque<Stud<deque<int>>>>(aplankas, skaicius, konteineris);
+} 
 
 return 0;
 

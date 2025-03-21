@@ -56,16 +56,16 @@ double skaiciuotiMed(const Container& nd_const)
 template <typename Container>
 void skaitytiIsFailo(Container& grupe, const std::string& failoPavadinimas)
 {
-    std::ifstream inputFile(failoPavadinimas);
+    using StudentType = typename Container::value_type;
+    using NDContainer = typename StudentType::nd_type;
     
-    if (!inputFile.is_open()) 
-    {
+    std::ifstream inputFile(failoPavadinimas, std::ios::in | std::ios::binary);
+    std::vector<char> buffer(65536); 
+    inputFile.rdbuf()->pubsetbuf(buffer.data(), buffer.size());
+    
+    if (!inputFile.is_open()) {
         throw std::runtime_error("Nepavyko atidaryti failo: " + failoPavadinimas);
     }
-
-    // Define the appropriate student type based on Container type
-    using StudentType = typename Container::value_type;
-    using NDContainer = typename StudentType::nd_type; // This requires a typedef in your Stud struct
     
     StudentType laik;
     std::string line;
@@ -110,30 +110,14 @@ void skaitytiIsFailo(Container& grupe, const std::string& failoPavadinimas)
     inputFile.close();
 }
 //---
-template <typename Container>
-double skaiciuotiGalutini(const Stud<Container>& stud, char metodas) 
-{
-    double galutinis = 0.0;
-    if (tolower(metodas) == 'v') 
-    {
-        galutinis = 0.4 * skaiciuotiVid(stud.nd) + 0.6 * stud.egz;
-    } else {
-        galutinis = 0.4 * skaiciuotiMed(stud.nd) + 0.6 * stud.egz;
-    }
-    return galutinis;
-}
-//---
 template double skaiciuotiVid<std::vector<int>>(const std::vector<int>&);
 template double skaiciuotiMed<std::vector<int>>(const std::vector<int>&);
-template double skaiciuotiGalutini<std::vector<int>>(const Stud<std::vector<int>>& , char);
 
 template double skaiciuotiVid<std::list<int>>(const std::list<int>&);
 template double skaiciuotiMed<std::list<int>>(const std::list<int>&);
-template double skaiciuotiGalutini<std::list<int>>(const Stud<std::list<int>>& , char);
 
 template double skaiciuotiVid<std::deque<int>>(const std::deque<int>&);
 template double skaiciuotiMed<std::deque<int>>(const std::deque<int>&);
-template double skaiciuotiGalutini<std::deque<int>>(const Stud<std::deque<int>>& , char);
 
 template void skaitytiIsFailo<std::vector<Stud<std::vector<int>>>>(std::vector<Stud<std::vector<int>>>&, const std::string&);
 template void skaitytiIsFailo<std::list<Stud<std::list<int>>>>(std::list<Stud<std::list<int>>>&, const std::string&);
