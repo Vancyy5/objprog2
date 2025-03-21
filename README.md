@@ -92,4 +92,34 @@ Antra strategija efektyvesnė atminties atžvilgiu, tačiau dažni trynimai (ypa
 --------------------------------------------------------------------------------------------------------------
  3 STRATEGIJA
 
- Kadangi vector pagal 1 strategiją vector buvo greitesnis,negu 2-oje, mes 3 strategijoje ir naudosime 1 strategijos principą (sukurti 2 naujus konteinerius).
+ Kadangi vector pagal 1 strategiją vector buvo greitesnis negu 2-oje,  3 strategijoje ir naudosime 1 strategijos principą (sukurti 2 naujus konteinerius).
+
+ Iš duotų pasirinktų STL algoritmų panaudojau:
+ 
+  std::partition atskirti studentus pagal jų galutinį pažymį,
+  
+  std::copy kopijuoti kopijuoti elementus į kietiakų ir vargšų konteinerius,
+
+  std::transform suskaičiuoti galutinį pažymį, išmetant loopus. Tai leidžia pritaikyti skaičiavimą visiems elementams atliekant vieną operaciją.
+
+
+Buvo išmatuotas laikas, per kurį nuskaitomi failai, surūšiuojami studentai ir išskirstomi į du atskirus konteinerius pagal atitinkamus įrašų dydžius.
+
+Visur buvo naudojamas vector konteineris.
+
+Rezultatai sukelti faile "3strategija.txt" albume "nuotraukos_ir_tyrimai"
+
+Su kiekvienu failu tyrimas buvo pakartotas 5 kartus, rezultatai surašyti į lentelę ir apskaičiuotas vidurkis sekundėmis.
+
+
+---------------------------------------------------------------------------
+Tyrimo pastebėjimai:
+
+Rūšiavimas išlieka efektyvus nepriklausant nuo failo dydžio.
+
+Skirstymas į du konteinerius tampa truputį lėtesnis didėjant įrašų skaičiui.
+
+Failo nuskaitymo laikas auga beveik linijiškai, tačiau 10 milijonų įrašų failas užtrunka žymiai ilgiau.
+
+----------------------------------------------------------------------------
+Išvada:
