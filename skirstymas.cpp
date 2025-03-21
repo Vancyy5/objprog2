@@ -3,6 +3,7 @@
 template <typename Container>
 void skirstytiStudentus(Container& grupe, Container& kietiakiai, Container& vargsai) 
 {
+    
     for (const auto& a : grupe) 
     {
         if (a.galutinis >= 5.0) {
@@ -22,17 +23,38 @@ void isvestiStudentusIFaila(const Container& studentai, const std::string& failo
     {
         throw std::runtime_error("Nepavyko atidaryti failo: " + failoPavadinimas);
     }
-    outFile << std::left << setw(15) << "Vardas" << setw(15) << "Pavarde";
-    if (ats == 'v' || ats == 'V') {
-        outFile << std::left << "Galutinis (Vid.)" << std::endl;
-    } else if (ats == 'm' || ats == 'M') {
-        outFile << std::left << "Galutinis (Med.)" << std::endl;
+    
+    std::vector<char> buffer(65536);
+    outFile.rdbuf()->pubsetbuf(buffer.data(), buffer.size());
+    
+    std::stringstream header;
+    header << std::left << setw(15) << "Vardas" << setw(15) << "Pavarde";
+    if (tolower(ats) == 'v') {
+        header << std::left << "Galutinis (Vid.)" << std::endl;
+    } else {
+        header << std::left << "Galutinis (Med.)" << std::endl;
     }
-    outFile << string(50, '-') << std::endl;
-
-    for (const auto& a : studentai)
-     {
-        outFile << std::left << setw(15) << a.var << setw(15) << a.pav << std::fixed << std::setprecision(2) << a.galutinis << std::endl;
+    header << string(50, '-') << std::endl;
+    
+    outFile << header.str();
+    
+    const size_t BATCH_SIZE = 1000;
+    std::stringstream batch;
+    size_t count = 0;
+    
+    for (const auto& a : studentai) {
+        batch << std::left << setw(15) << a.var << setw(15) << a.pav 
+              << std::fixed << std::setprecision(2) << a.galutinis << std::endl;
+        
+        if (++count % BATCH_SIZE == 0) {
+            outFile << batch.str();
+            batch.str(""); 
+            batch.clear();
+        }
+    }
+    
+    if (!batch.str().empty()) {
+        outFile << batch.str();
     }
 }
 //---
@@ -98,7 +120,11 @@ Laikas skirstymas(std::to_string(skaicius)+" studentu failo skirstymas i du kont
     
 isvestiStudentusIFaila(kietiakiai, "test_files/kietiakiai.txt", ats);
 
- isvestiStudentusIFaila(vargsai, "test_files/vargsai.txt", ats);        
+isvestiStudentusIFaila(vargsai, "test_files/vargsai.txt", ats);    
+
+kietiakiai.clear();
+vargsai.clear();
+
 
 }
 //---
