@@ -1,6 +1,6 @@
 #include "funkcijos.h"
 #include "laikas.h"
-#include "skirstymas.h"
+#include "strategija1.h"
 //---
 int main() 
 {
@@ -51,18 +51,33 @@ cout << "Netinkama ivestis. Bandykite dar karta: ";
 cin >> konteineris;
 }
 
-if (konteineris == 'v' || konteineris == 'V') 
+cout << "Kuria strategija norite naudoti? (1/2/3)" ;
+char strategija;
+cin>>strategija;
+while (strategija != '1' && strategija != '2' && strategija != '3') 
 {
-    testuotiDuomenuApdorojima<vector<Stud<vector<int>>>>(aplankas, skaicius, konteineris);
-} 
-else if (konteineris == 'l' || konteineris == 'L') 
+cout << "Netinkama ivestis. Bandykite dar karta: ";
+cin >> strategija;
+}
+
+if(strategija == '1')
 {
-    testuotiDuomenuApdorojima<list<Stud<list<int>>>>(aplankas, skaicius, konteineris);
-} 
-else if (konteineris == 'd' || konteineris == 'D') 
-{
-    testuotiDuomenuApdorojima<deque<Stud<deque<int>>>>(aplankas, skaicius, konteineris);
-} 
+    if (konteineris == 'v' || konteineris == 'V') 
+    {
+        testuotiDuomenuApdorojimapirma<vector<Stud<vector<int>>>>(aplankas, skaicius, konteineris);
+    } 
+    else if (konteineris == 'l' || konteineris == 'L') 
+    {
+        testuotiDuomenuApdorojimapirma<list<Stud<list<int>>>>(aplankas, skaicius, konteineris);
+    } 
+    else if (konteineris == 'd' || konteineris == 'D') 
+    {
+        testuotiDuomenuApdorojimapirma<deque<Stud<deque<int>>>>(aplankas, skaicius, konteineris);
+    } 
+}
+
+
+
 
 return 0;
 

@@ -1,4 +1,4 @@
-#include "skirstymas.h"
+#include "strategija1.h"
 
 template <typename Container>
 void skirstytiStudentus(Container& grupe, Container& kietiakiai, Container& vargsai) 
@@ -16,50 +16,7 @@ void skirstytiStudentus(Container& grupe, Container& kietiakiai, Container& varg
 }
 //---
 template <typename Container>
-void isvestiStudentusIFaila(const Container& studentai, const std::string& failoPavadinimas, char ats)
-{
-    std::ofstream outFile(failoPavadinimas);
-    if (!outFile.is_open()) 
-    {
-        throw std::runtime_error("Nepavyko atidaryti failo: " + failoPavadinimas);
-    }
-    
-    std::vector<char> buffer(65536);
-    outFile.rdbuf()->pubsetbuf(buffer.data(), buffer.size());
-    
-    std::stringstream header;
-    header << std::left << setw(15) << "Vardas" << setw(15) << "Pavarde";
-    if (tolower(ats) == 'v') {
-        header << std::left << "Galutinis (Vid.)" << std::endl;
-    } else {
-        header << std::left << "Galutinis (Med.)" << std::endl;
-    }
-    header << string(50, '-') << std::endl;
-    
-    outFile << header.str();
-    
-    const size_t BATCH_SIZE = 1000;
-    std::stringstream batch;
-    size_t count = 0;
-    
-    for (const auto& a : studentai) {
-        batch << std::left << setw(15) << a.var << setw(15) << a.pav 
-              << std::fixed << std::setprecision(2) << a.galutinis << std::endl;
-        
-        if (++count % BATCH_SIZE == 0) {
-            outFile << batch.str();
-            batch.str(""); 
-            batch.clear();
-        }
-    }
-    
-    if (!batch.str().empty()) {
-        outFile << batch.str();
-    }
-}
-//---
-template <typename Container>
-void testuotiDuomenuApdorojima(const std::string& aplankas, int skaicius, const char& konteineris)
+void testuotiDuomenuApdorojimapirma(const std::string& aplankas, int skaicius, const char& konteineris)
 {
     srand(time(0));
     Stud<Container> laik;
@@ -93,7 +50,8 @@ nuskaitymas.pradeti();
 skaitytiIsFailo(grupe, failoPavadinimas);   
 nuskaitymas.baigti();
 
-if (tolower(ats) == 'v' or tolower(ats) == 'V') 
+ats = tolower(ats);
+if (ats == 'v' or ats == 'V') 
     {
         for (auto& a : grupe) 
         {
@@ -125,12 +83,11 @@ isvestiStudentusIFaila(vargsai, "test_files/vargsai.txt", ats);
 kietiakiai.clear();
 vargsai.clear();
 
-
 }
 //---
-template void testuotiDuomenuApdorojima<std::vector<Stud<std::vector<int>>>>(const std::string&, int, const char&);
-template void testuotiDuomenuApdorojima<std::list<Stud<std::list<int>>>>(const std::string&, int, const char&);
-template void testuotiDuomenuApdorojima<std::deque<Stud<std::deque<int>>>>(const std::string&, int, const char&);
+template void testuotiDuomenuApdorojimapirma<std::vector<Stud<std::vector<int>>>>(const std::string&, int, const char&);
+template void testuotiDuomenuApdorojimapirma<std::list<Stud<std::list<int>>>>(const std::string&, int, const char&);
+template void testuotiDuomenuApdorojimapirma<std::deque<Stud<std::deque<int>>>>(const std::string&, int, const char&);
 //---
 template <typename Container>
 void sortByChoice(Container& grupe, char sortingOption) 

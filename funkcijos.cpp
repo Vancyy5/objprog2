@@ -28,10 +28,8 @@ double skaiciuotiMed(const Container& nd_const)
     }
     else 
     {
-        // Make a copy of the const container
         Container nd = nd_const;
         
-        // Sort the copy
         if constexpr (std::is_same_v<Container, std::list<int>>)
         {
             nd.sort();
@@ -110,6 +108,49 @@ void skaitytiIsFailo(Container& grupe, const std::string& failoPavadinimas)
     inputFile.close();
 }
 //---
+template <typename Container>
+void isvestiStudentusIFaila(const Container& studentai, const std::string& failoPavadinimas, char ats)
+{
+    std::ofstream outFile(failoPavadinimas);
+    if (!outFile.is_open()) 
+    {
+        throw std::runtime_error("Nepavyko atidaryti failo: " + failoPavadinimas);
+    }
+    
+    std::vector<char> buffer(65536);
+    outFile.rdbuf()->pubsetbuf(buffer.data(), buffer.size());
+    
+    std::stringstream header;
+    header << std::left << setw(15) << "Vardas" << setw(15) << "Pavarde";
+    if (tolower(ats) == 'v') {
+        header << std::left << "Galutinis (Vid.)" << std::endl;
+    } else {
+        header << std::left << "Galutinis (Med.)" << std::endl;
+    }
+    header << string(50, '-') << std::endl;
+    
+    outFile << header.str();
+    
+    const size_t BATCH_SIZE = 1000;
+    std::stringstream batch;
+    size_t count = 0;
+    
+    for (const auto& a : studentai) {
+        batch << std::left << setw(15) << a.var << setw(15) << a.pav 
+              << std::fixed << std::setprecision(2) << a.galutinis << std::endl;
+        
+        if (++count % BATCH_SIZE == 0) {
+            outFile << batch.str();
+            batch.str(""); 
+            batch.clear();
+        }
+    }
+    
+    if (!batch.str().empty()) {
+        outFile << batch.str();
+    }
+}
+//---
 template double skaiciuotiVid<std::vector<int>>(const std::vector<int>&);
 template double skaiciuotiMed<std::vector<int>>(const std::vector<int>&);
 
@@ -122,3 +163,7 @@ template double skaiciuotiMed<std::deque<int>>(const std::deque<int>&);
 template void skaitytiIsFailo<std::vector<Stud<std::vector<int>>>>(std::vector<Stud<std::vector<int>>>&, const std::string&);
 template void skaitytiIsFailo<std::list<Stud<std::list<int>>>>(std::list<Stud<std::list<int>>>&, const std::string&);
 template void skaitytiIsFailo<std::deque<Stud<std::deque<int>>>>(std::deque<Stud<std::deque<int>>>&, const std::string&);
+
+template void isvestiStudentusIFaila<std::list<Stud<std::list<int>>>>(const std::list<Stud<std::list<int>>>&, const std::string&, char);
+template void isvestiStudentusIFaila<std::vector<Stud<std::vector<int>>>>(const std::vector<Stud<std::vector<int>>>&, const std::string&, char);
+template void isvestiStudentusIFaila<std::deque<Stud<std::deque<int>>>>(const std::deque<Stud<std::deque<int>>>&, const std::string&, char);
