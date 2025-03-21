@@ -18,7 +18,7 @@ void skirstytiStudentusantras(Container& grupe, Container& vargsai)
 }
 //---
 template <typename Container>
-void testuotiDuomenuApdorojimaantras(const std::string& aplankas, int skaicius, const char& konteineris)
+void testuotiDuomenuApdorojimaantras(const std::string& aplankas, int skaicius)
 {
     srand(time(0));
     Stud<Container> laik;
@@ -84,7 +84,7 @@ isvestiStudentusIFaila(vargsai, "test_files/vargsai.txt", ats);
 vargsai.clear();
 }
 //---
-template void testuotiDuomenuApdorojimaantras<std::vector<Stud<std::vector<int>>>>(const std::string&, int, const char&);
-template void testuotiDuomenuApdorojimaantras<std::list<Stud<std::list<int>>>>(const std::string&, int, const char&);
-template void testuotiDuomenuApdorojimaantras<std::deque<Stud<std::deque<int>>>>(const std::string&, int, const char&);
+template void testuotiDuomenuApdorojimaantras<std::vector<Stud<std::vector<int>>>>(const std::string&, int);
+template void testuotiDuomenuApdorojimaantras<std::list<Stud<std::list<int>>>>(const std::string&, int);
+template void testuotiDuomenuApdorojimaantras<std::deque<Stud<std::deque<int>>>>(const std::string&, int);
 //---

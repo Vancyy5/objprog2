@@ -8,6 +8,6 @@
 template <typename Container>
 void skirstytiStudentuspirmas(Container& grupe, Container& kietiakiai, Container& vargsai);
 template <typename Container>
-void testuotiDuomenuApdorojimapirma(const std::string& aplankas, int skaicius, const char& konteineris);
+void testuotiDuomenuApdorojimapirma(const std::string& aplankas, int skaicius);
 
 #endif // STRATEGIJA1_H 

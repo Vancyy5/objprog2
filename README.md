@@ -90,4 +90,6 @@ Geriausia naudoti vector konteinerį failo nuskaitymui ir duomenų rūšiavimui,
 Antra strategija efektyvesnė atminties atžvilgiu, tačiau dažni trynimai (ypač su tam tikrais konteineriais) gali turėti neigiamą poveikį veikimo greičiui.
 
 --------------------------------------------------------------------------------------------------------------
- 
+ 3 STRATEGIJA
+
+ Kadangi vector pagal 1 strategiją vector buvo greitesnis,negu 2-oje, mes 3 strategijoje ir naudosime 1 strategijos principą (sukurti 2 naujus konteinerius).

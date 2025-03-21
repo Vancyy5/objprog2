@@ -1,22 +1,19 @@
 #include "strategija1.h"
 
 template <typename Container>
-void skirstytiStudentuspirmas(Container& grupe, Container& kietiakiai, Container& vargsai) 
+void skirstytiStudentustrecias(Container& grupe, Container& kietiakiai, Container& vargsai) 
 {
-    
-    for (const auto& a : grupe) 
-    {
-        if (a.galutinis >= 5.0) {
-            kietiakiai.push_back(a);
-        } else {
-            vargsai.push_back(a);
-        }
-    }
+    auto it = std::partition(grupe.begin(), grupe.end(), [](const auto& a) { return a.galutinis >= 5.0; });
+
+    // Kopijuojame duomenis į naujus konteinerius
+    std::copy(grupe.begin(), it, std::back_inserter(kietiakiai));
+    std::copy(it, grupe.end(), std::back_inserter(vargsai));
+
     grupe.clear();
 }
 //---
 template <typename Container>
-void testuotiDuomenuApdorojimapirma(const std::string& aplankas, int skaicius)
+void testuotiDuomenuApdorojimatrecias(const std::string& aplankas, int skaicius)
 {
     srand(time(0));
     Stud<Container> laik;
@@ -53,27 +50,40 @@ nuskaitymas.baigti();
 ats = tolower(ats);
 if (ats == 'v' or ats == 'V') 
     {
-        for (auto& a : grupe) 
-        {
+        std::transform(std::execution::par, grupe.begin(), grupe.end(), grupe.begin(),
+        [](auto a) {
             a.galutinis = 0.4 * skaiciuotiVid(a.nd) + 0.6 * a.egz;
-        }
+            return a;
+        });
         
     } else 
     {
-        for (auto& a : grupe) 
-        {
-        a.galutinis = 0.4 * skaiciuotiMed(a.nd) + 0.6 * a.egz;
-        }
+        std::transform(std::execution::par, grupe.begin(), grupe.end(), grupe.begin(),
+        [](auto a) {
+            a.galutinis = 0.4 * skaiciuotiMed(a.nd) + 0.6 * a.egz;
+            return a;
+        });
     }
 
 Laikas rikiavimas(std::to_string(skaicius) + " studentu failo rusiavimas didejimo tvarka");
 rikiavimas.pradeti();
-sortByChoice(grupe, sortingOption);
+if (sortingOption == 'v' || sortingOption == 'V') 
+
+{
+    std::sort(std::execution::par, grupe.begin(), grupe.end(),
+              [](const auto& a, const auto& b) { return a.var < b.var; });
+} else if (sortingOption == 'p' || sortingOption == 'P') {
+    std::sort(std::execution::par, grupe.begin(), grupe.end(),
+              [](const auto& a, const auto& b) { return a.pav < b.pav; });
+} else if (sortingOption == 'g' || sortingOption == 'G') {
+    std::sort(std::execution::par, grupe.begin(), grupe.end(),
+              [](const auto& a, const auto& b) { return a.galutinis > b.galutinis; });
+}
 rikiavimas.baigti();
 
 Laikas skirstymas(std::to_string(skaicius)+" studentu failo skirstymas i du konteinerius");
     skirstymas.pradeti();
-    skirstytiStudentuspirmas(grupe, kietiakiai, vargsai);
+    skirstytiStudentustrecias(grupe, kietiakiai, vargsai);
     skirstymas.baigti();
     
 isvestiStudentusIFaila(kietiakiai, "test_files/kietiakiai.txt", ats);
@@ -85,7 +95,4 @@ vargsai.clear();
 
 }
 //---
-template void testuotiDuomenuApdorojimapirma<std::vector<Stud<std::vector<int>>>>(const std::string&, int);
-template void testuotiDuomenuApdorojimapirma<std::list<Stud<std::list<int>>>>(const std::string&, int);
-template void testuotiDuomenuApdorojimapirma<std::deque<Stud<std::deque<int>>>>(const std::string&, int);
-//---
+template void testuotiDuomenuApdorojimatrecias<std::vector<Stud<std::vector<int>>>>(const std::string&, int);

@@ -2,6 +2,7 @@
 #include "laikas.h"
 #include "strategija1.h"
 #include "strategija2.h"
+#include "strategija3.h"
 //---
 int main() 
 {
@@ -43,6 +44,23 @@ int main()
            return 1;
     }
     
+    cout << "Kuria strategija norite naudoti? (1/2/3)" ;
+char strategija;
+cin>>strategija;
+while (strategija != '1' && strategija != '2' && strategija != '3') 
+{
+cout << "Netinkama ivestis. Bandykite dar karta: ";
+cin >> strategija;
+}
+
+if (strategija == '3')
+{
+    testuotiDuomenuApdorojimatrecias<vector<Stud<vector<int>>>>(aplankas, skaicius);
+
+    return 0;
+}
+
+
 cout << "Koki konteineri norite naudoti? (vector - 'v'/ list - 'l' / deque - 'd')" ;
 char konteineris;
 cin>>konteineris;
@@ -52,28 +70,20 @@ cout << "Netinkama ivestis. Bandykite dar karta: ";
 cin >> konteineris;
 }
 
-cout << "Kuria strategija norite naudoti? (1/2/3)" ;
-char strategija;
-cin>>strategija;
-while (strategija != '1' && strategija != '2' && strategija != '3') 
-{
-cout << "Netinkama ivestis. Bandykite dar karta: ";
-cin >> strategija;
-}
 
 if(strategija == '1')
 {
     if (konteineris == 'v' || konteineris == 'V') 
     {
-        testuotiDuomenuApdorojimapirma<vector<Stud<vector<int>>>>(aplankas, skaicius, konteineris);
+        testuotiDuomenuApdorojimapirma<vector<Stud<vector<int>>>>(aplankas, skaicius);
     } 
     else if (konteineris == 'l' || konteineris == 'L') 
     {
-        testuotiDuomenuApdorojimapirma<list<Stud<list<int>>>>(aplankas, skaicius, konteineris);
+        testuotiDuomenuApdorojimapirma<list<Stud<list<int>>>>(aplankas, skaicius);
     } 
     else if (konteineris == 'd' || konteineris == 'D') 
     {
-        testuotiDuomenuApdorojimapirma<deque<Stud<deque<int>>>>(aplankas, skaicius, konteineris);
+        testuotiDuomenuApdorojimapirma<deque<Stud<deque<int>>>>(aplankas, skaicius);
     } 
 
 }
@@ -81,15 +91,15 @@ if(strategija == '1')
     {
         if (konteineris == 'v' || konteineris == 'V') 
         {
-            testuotiDuomenuApdorojimaantras<vector<Stud<vector<int>>>>(aplankas, skaicius, konteineris);
+            testuotiDuomenuApdorojimaantras<vector<Stud<vector<int>>>>(aplankas, skaicius);
         } 
         else if (konteineris == 'l' || konteineris == 'L') 
         {
-            testuotiDuomenuApdorojimaantras<list<Stud<list<int>>>>(aplankas, skaicius, konteineris);
+            testuotiDuomenuApdorojimaantras<list<Stud<list<int>>>>(aplankas, skaicius);
         } 
         else if (konteineris == 'd' || konteineris == 'D') 
         {
-            testuotiDuomenuApdorojimaantras<deque<Stud<deque<int>>>>(aplankas, skaicius, konteineris);
+            testuotiDuomenuApdorojimaantras<deque<Stud<deque<int>>>>(aplankas, skaicius);
         } 
     }
 
