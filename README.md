@@ -25,7 +25,7 @@ Buvo išmatuotas laikas, per kurį nuskaitomi failai, surūšiuojami studentai i
 
 Su kiekvienu failu ir konteineriu tyrimas buvo pakartotas 5 kartus, rezultatai surašyti į lentelę ir apskaičiuotas vidurkis sekundėmis.
 
-![alt text](image.png)
+![alt text](https://github.com/Vancyy5/objprog/blob/v1.0/nuotraukos_ir_tyrimai/image.png)
 
 --------------------------------------------------------------------------------------------------------------
 Tyrimo pastebėjimai: 
@@ -54,7 +54,7 @@ Kadangi duomenys yra kopijuojami yra be reikalo užimima vieta kompiuterio atmin
 
 Pateikta kiek vietos užema vykdoma programa.
 
-![alt text](<Screenshot 2025-03-21 155630.png>)
+![alt text](https://github.com/Vancyy5/objprog/blob/v1.0/nuotraukos_ir_tyrimai/Screenshot%202025-03-21%20155630.png)
 
 
 ------------------------------------------------------------------------------------------------------------
@@ -68,11 +68,11 @@ Rezultatai sukelti faile "2strategija.txt" albume "nuotraukos_ir_tyrimai"
 
 Su kiekvienu failu ir konteineriu tyrimas buvo pakartotas 5 kartus, rezultatai surašyti į lentelę ir apskaičiuotas vidurkis sekundėmis.
 
-![alt text](image2.png)
+![alt text](https://github.com/Vancyy5/objprog/blob/v1.0/nuotraukos_ir_tyrimai/image2.png)
 
 Pateikta kiek atminties užema vykdoma programa.
 
-![alt text](<Screenshot 2025-03-21 162909.png>)
+![alt text](https://github.com/Vancyy5/objprog/blob/v1.0/nuotraukos_ir_tyrimai/Screenshot%202025-03-21%20162909.png)
 
 --------------------------------------------------------------------------------------------------------------
 Tyrimo pastebėjimai: 
