@@ -1,37 +1,35 @@
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall -Wextra -O3 -march=native
-LDFLAGS = 
+SRCS = main.cpp funkcijos.cpp laikas.cpp
+HEADERS = funkcijos.h laikas.h
+OBJS = $(SRCS:.cpp=.o)
+TARGET = main
 
+.PHONY: all clean run
 
-SOURCES = main.cpp laikas.cpp funkcijos.cpp strategija1.cpp strategija2.cpp strategija3.cpp
+all: $(TARGET)
 
-
-HEADERS = funkcijos.h laikas.h funkcijos.h strategija1.h strategija2.h strategija3.h lib.h
-
-
-OBJECTS = $(SOURCES:.cpp=.o)
-
-
-EXECUTABLE = main
-
-all: $(EXECUTABLE)
-
-$(EXECUTABLE): $(OBJECTS)
-	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
-
+$(TARGET): $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $@ $^
 
 %.o: %.cpp $(HEADERS)
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
+funkcijos.o: funkcijos.cpp funkcijos.h laikas.h
+	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
-funkcijos.o: funkcijos.cpp funkcijos.h
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+laikas.o: laikas.cpp laikas.h
+	$(CXX) $(CXXFLAGS) -c -o $@ $<
+
+main.o: main.cpp funkcijos.h laikas.h
+	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
 clean:
-	rm -f $(OBJECTS) $(EXECUTABLE)
+	rm -f $(OBJS) $(TARGET)
 
+run: $(TARGET)
+	./$(TARGET)
 
-test_files:
+test: $(TARGET)
 	mkdir -p test_files
-
-.PHONY: all clean
+	./$(TARGET)
