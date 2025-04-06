@@ -106,7 +106,7 @@ bool compareByGalutinis(const Studentas& a, const Studentas& b) {
 
 void skaitytiIsFailo(std::vector<Studentas>& grupe, const std::string& failoPavadinimas)
  {
-    std::ifstream inputFile(failoPavadinimas, std::ios::in | std::ios::binary);
+    std::ifstream inputFile(failoPavadinimas, std::ios::in);
     std::vector<char> buffer(65536);
     inputFile.rdbuf()->pubsetbuf(buffer.data(), buffer.size());
     
@@ -200,13 +200,17 @@ void isvestiStudentusIFaila(const std::vector<Studentas>& studentai, const std::
     }
 }
 
-void sortStudentai(std::vector<Studentas>& grupe, char sortingOption) {
-    if (sortingOption == 'v' || sortingOption == 'V') {
-        std::sort(std::execution::par, grupe.begin(), grupe.end(), compareByVardas);
-    } else if (sortingOption == 'p' || sortingOption == 'P') {
-        std::sort(std::execution::par, grupe.begin(), grupe.end(), compareByPavarde);
-    } else if (sortingOption == 'g' || sortingOption == 'G') {
-        std::sort(std::execution::par, grupe.begin(), grupe.end(), compareByGalutinis);
+void sortStudentai(std::vector<Studentas>& grupe, char sortingOption) 
+{
+    if (sortingOption == 'v' || sortingOption == 'V') 
+    {
+        std::sort(grupe.begin(), grupe.end(), compareByVardas);
+    } else if (sortingOption == 'p' || sortingOption == 'P') 
+    {
+        std::sort(grupe.begin(), grupe.end(), compareByPavarde);
+    } else if (sortingOption == 'g' || sortingOption == 'G') 
+    {
+        std::sort(grupe.begin(), grupe.end(), compareByGalutinis);
     }
 }
 
