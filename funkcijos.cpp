@@ -25,7 +25,8 @@ std::istream& Studentas::readStudent(std::istream& is) {
         throw std::invalid_argument("Klaida: Netinkamas pazymys (ne skaicius) studentui " + vardas_ + " " + pavarde_);
     }
     
-    if (!nd_.empty()) {
+    if (!nd_.empty())
+    {
         egzaminas_ = nd_.back();
         nd_.pop_back();
     }
@@ -45,7 +46,8 @@ void Studentas::addND(int pazymys) {
 }
 
 // clearND metodo realizacija
-void Studentas::clearND() {
+void Studentas::clearND() 
+{
     nd_.clear();
 }
 
@@ -106,7 +108,8 @@ bool compareByGalutinis(const Studentas& a, const Studentas& b) {
 }
 
 // Papildomų funkcijų realizacijos
-void skaitytiIsFailo(std::vector<Studentas>& grupe, const std::string& failoPavadinimas) {
+void skaitytiIsFailo(std::vector<Studentas>& grupe, const std::string& failoPavadinimas)
+ {
     std::ifstream inputFile(failoPavadinimas, std::ios::in | std::ios::binary);
     std::vector<char> buffer(65536);
     inputFile.rdbuf()->pubsetbuf(buffer.data(), buffer.size());
@@ -249,49 +252,28 @@ void testuotiDuomenuApdorojima(const std::string& aplankas, int skaicius)
     std::string failoPavadinimas = aplankas + "/studentai_" + std::to_string(skaicius) + ".txt";
     
     // Failo nuskaitymas ir matavimas
-    auto start = std::chrono::high_resolution_clock::now();
-    std::cout << "Pradedamas failo nuskaitymas..." << std::endl;
-    
+    Laikas nuskaitymas("Failo nuskaitymas");
+    nuskaitymas.pradeti();
     skaitytiIsFailo(grupe, failoPavadinimas);
-    
-    auto end = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> diff = end - start;
-    std::cout << "Failo nuskaitymas užtruko: " << diff.count() << " s" << std::endl;
-    
-    // Galutinio balo skaičiavimas
-    start = std::chrono::high_resolution_clock::now();
-    std::cout << "Skaičiuojami galutiniai balai..." << std::endl;
+    nuskaitymas.baigti();
     
     bool naudotiVidurki = (std::tolower(ats) == 'v');
     for (auto& studentas : grupe) {
         studentas.setGalutinis(studentas.galBalas(naudotiVidurki));
     }
     
-    end = std::chrono::high_resolution_clock::now();
-    diff = end - start;
-    std::cout << "Galutinių balų skaičiavimas užtruko: " << diff.count() << " s" << std::endl;
-    
-    // Rikiavimas
-    start = std::chrono::high_resolution_clock::now();
-    std::cout << "Rikiuojami studentai..." << std::endl;
-    
+
+    Laikas rikiavimas(std::to_string(skaicius) + " studentu failo rusiavimas didejimo tvarka");
+    rikiavimas.pradeti();
     sortStudentai(grupe, sortingOption);
-    
-    end = std::chrono::high_resolution_clock::now();
-    diff = end - start;
-    std::cout << "Rikiavimas užtruko: " << diff.count() << " s" << std::endl;
+    rikiavimas.baigti();
     
     // Skirstymas į dvi grupes
-    start = std::chrono::high_resolution_clock::now();
-    std::cout << "Skirstomi studentai į dvi grupes..." << std::endl;
-    
+    Laikas skirstymas(std::to_string(skaicius)+" studentu failo skirstymas i du konteinerius");
+    skirstymas.pradeti();
     skirstytiStudentus(grupe, kietiakiai, vargsai);
-    
-    end = std::chrono::high_resolution_clock::now();
-    diff = end - start;
-    std::cout << "Skirstymas užtruko: " << diff.count() << " s" << std::endl;
-    
-    // Rezultatų išvedimas
+    skirstymas.baigti();
+   
     isvestiStudentusIFaila(kietiakiai, aplankas + "/kietiakiai.txt", ats);
     isvestiStudentusIFaila(vargsai, aplankas + "/vargsai.txt", ats);
     
