@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -std=c++17 -Wall -Wextra -O3 -march=native
+CXXFLAGS = -std=c++17 -Wall -Wextra -O1 -march=native
 SRCS = main.cpp funkcijos.cpp laikas.cpp
 HEADERS = funkcijos.h laikas.h
 OBJS = $(SRCS:.cpp=.o)
@@ -30,6 +30,3 @@ clean:
 run: $(TARGET)
 	./$(TARGET)
 
-test: $(TARGET)
-	mkdir -p test_files
-	./$(TARGET)

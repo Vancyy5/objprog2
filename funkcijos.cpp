@@ -214,11 +214,19 @@ void sortStudentai(std::vector<Studentas>& grupe, char sortingOption)
     }
 }
 
-void skirstytiStudentus(std::vector<Studentas>& grupe, std::vector<Studentas>& kietiakiai, std::vector<Studentas>& vargsai) {
-    auto it = std::partition(grupe.begin(), grupe.end(), [](const auto& a) { return a.galutinis() >= 5.0; });
+void skirstytiStudentus(std::vector<Studentas>& grupe, std::vector<Studentas>& kietiakiai, std::vector<Studentas>& vargsai)
+ {
+    auto it = std::partition(grupe.begin(), grupe.end(), [](const auto& a) 
+    { 
+        return a.galutinis() >= 5.0; 
+    }
+    );
     
-    std::copy(grupe.begin(), it, std::back_inserter(kietiakiai));
-    std::copy(it, grupe.end(), std::back_inserter(vargsai));
+    kietiakiai.reserve(kietiakiai.size() + std::distance(grupe.begin(), it));
+    vargsai.reserve(vargsai.size() + std::distance(it, grupe.end()));
+    
+    std::move(grupe.begin(), it, std::back_inserter(kietiakiai));
+    std::move(it, grupe.end(), std::back_inserter(vargsai));
     
     grupe.clear();
 }
