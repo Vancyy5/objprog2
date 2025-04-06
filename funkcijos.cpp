@@ -35,7 +35,11 @@ std::istream& Studentas::readStudent(std::istream& is) {
     
     return is;
 }
-
+//---
+Studentas::~Studentas()
+ {
+    nd_.clear();
+}
 //---
 void Studentas::addND(int pazymys) {
     if (pazymys >= 1 && pazymys <= 10) {

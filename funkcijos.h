@@ -28,6 +28,8 @@ public:
     Studentas() : egzaminas_(0), galutinis_(0) { }  // default konstruktorius
     Studentas(std::istream& is);
 
+    ~Studentas();
+
     // Getteriai
     inline std::string vardas() const { return vardas_; }
     inline std::string pavarde() const { return pavarde_; }
