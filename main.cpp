@@ -1,7 +1,8 @@
 #include "funkcijos.h"
 #include "laikas.h"
 //---
-int main() {
+int main() 
+{
     try {
         std::string aplankas = "test_files";
         int skaicius;

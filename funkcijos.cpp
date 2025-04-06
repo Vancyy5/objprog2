@@ -1,12 +1,12 @@
 #include "funkcijos.h"
 #include "laikas.h"
 
-// Konstruktoriaus realizacija
+//---
 Studentas::Studentas(std::istream& is) {
     readStudent(is);
 }
 
-// readStudent metodo realizacija
+//---
 std::istream& Studentas::readStudent(std::istream& is) {
     is >> vardas_ >> pavarde_;
     
@@ -36,7 +36,7 @@ std::istream& Studentas::readStudent(std::istream& is) {
     return is;
 }
 
-// addND metodo realizacija
+//---
 void Studentas::addND(int pazymys) {
     if (pazymys >= 1 && pazymys <= 10) {
         nd_.push_back(pazymys);
@@ -45,13 +45,13 @@ void Studentas::addND(int pazymys) {
     }
 }
 
-// clearND metodo realizacija
+//---
 void Studentas::clearND() 
 {
     nd_.clear();
 }
 
-// skaiciuotiVid metodo realizacija
+//---
 double Studentas::skaiciuotiVid() const {
     if (nd_.empty()) {
         throw std::runtime_error("Namu darbu sarasas negali buti tuscias");
@@ -64,7 +64,6 @@ double Studentas::skaiciuotiVid() const {
     }
 }
 
-// skaiciuotiMed metodo realizacija
 double Studentas::skaiciuotiMed() const {
     if (nd_.empty()) {
         throw std::runtime_error("Namu darbu sarasas negali buti tuscias");
@@ -81,7 +80,6 @@ double Studentas::skaiciuotiMed() const {
     }
 }
 
-// galBalas metodo realizacija
 double Studentas::galBalas(bool naudotiVidurki) const {
     double ndRezultatas;
     
@@ -94,7 +92,6 @@ double Studentas::galBalas(bool naudotiVidurki) const {
     return 0.4 * ndRezultatas + 0.6 * egzaminas_;
 }
 
-// Ne-narių funkcijų realizacijos
 bool compareByVardas(const Studentas& a, const Studentas& b) {
     return a.vardas() < b.vardas();
 }
@@ -107,7 +104,6 @@ bool compareByGalutinis(const Studentas& a, const Studentas& b) {
     return a.galutinis() > b.galutinis();
 }
 
-// Papildomų funkcijų realizacijos
 void skaitytiIsFailo(std::vector<Studentas>& grupe, const std::string& failoPavadinimas)
  {
     std::ifstream inputFile(failoPavadinimas, std::ios::in | std::ios::binary);
@@ -121,7 +117,6 @@ void skaitytiIsFailo(std::vector<Studentas>& grupe, const std::string& failoPava
     Studentas laik;
     std::string line;
     
-    // Praleisti antraštę
     getline(inputFile, line);
     
     while (getline(inputFile, line)) {
@@ -251,7 +246,6 @@ void testuotiDuomenuApdorojima(const std::string& aplankas, int skaicius)
     
     std::string failoPavadinimas = aplankas + "/studentai_" + std::to_string(skaicius) + ".txt";
     
-    // Failo nuskaitymas ir matavimas
     Laikas nuskaitymas("Failo nuskaitymas");
     nuskaitymas.pradeti();
     skaitytiIsFailo(grupe, failoPavadinimas);
@@ -268,7 +262,6 @@ void testuotiDuomenuApdorojima(const std::string& aplankas, int skaicius)
     sortStudentai(grupe, sortingOption);
     rikiavimas.baigti();
     
-    // Skirstymas į dvi grupes
     Laikas skirstymas(std::to_string(skaicius)+" studentu failo skirstymas i du konteinerius");
     skirstymas.pradeti();
     skirstytiStudentus(grupe, kietiakiai, vargsai);

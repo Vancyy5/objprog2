@@ -12,7 +12,8 @@
 #include <execution>
 #include <numeric>
 
-class Studentas {
+class Studentas 
+{
 // realizacija
 private:
     std::string vardas_;
@@ -49,12 +50,12 @@ public:
     double galBalas(bool naudotiVidurki = true) const;
 };
 
-// Ne-narių funkcijos
+//---
 bool compareByVardas(const Studentas& a, const Studentas& b);
 bool compareByPavarde(const Studentas& a, const Studentas& b);
 bool compareByGalutinis(const Studentas& a, const Studentas& b);
 
-// Papildomos funkcijos
+//---
 void skaitytiIsFailo(std::vector<Studentas>& grupe, const std::string& failoPavadinimas);
 void isvestiStudentusIFaila(const std::vector<Studentas>& studentai, const std::string& failoPavadinimas, char ats);
 void sortStudentai(std::vector<Studentas>& grupe, char sortingOption);
