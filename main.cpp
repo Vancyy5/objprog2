@@ -1,122 +1,54 @@
 #include "funkcijos.h"
 #include "laikas.h"
-#include "strategija1.h"
-#include "strategija2.h"
-#include "strategija3.h"
 //---
-int main() 
-{
-    try 
-    {
-        string aplankas="test_files";
-
+int main() {
+    try {
+        std::string aplankas = "test_files";
         int skaicius;
         int pasirinktasDydis;
 
-    cout << "Pasirinkite failo dydi testavimui:\n";
-    cout << "1 - 1000 studentu\n";
-    cout << "2 - 10000 studentu\n";
-    cout << "3 - 100000 studentu\n";
-    cout << "4 - 1000000 studentu\n";
-    cout << "5 - 10000000 studentu\n";
-    cout << "Pasirinkimas: ";
-    cin >> pasirinktasDydis;
+        std::cout << "Pasirinkite failo dydi testavimui:\n";
+        std::cout << "1 - 1000 studentu\n";
+        std::cout << "2 - 10000 studentu\n";
+        std::cout << "3 - 100000 studentu\n";
+        std::cout << "4 - 1000000 studentu\n";
+        std::cout << "5 - 10000000 studentu\n";
+        std::cout << "Pasirinkimas: ";
+        std::cin >> pasirinktasDydis;
 
-    switch (pasirinktasDydis) 
-    {
-        case 1:
-            skaicius = 1000;
-            break;
-        case 2:
-            skaicius = 10000;
-            break;
-        case 3:
-            skaicius = 100000;
-            break;
-        case 4:
-            skaicius = 1000000;
-            break;
-        case 5:
-            skaicius = 10000000;
-            break;
-        default:
-           cout<< "Neteisingas pasirinkimas"<<endl;
-           return 1;
+        switch (pasirinktasDydis) {
+            case 1:
+                skaicius = 1000;
+                break;
+            case 2:
+                skaicius = 10000;
+                break;
+            case 3:
+                skaicius = 100000;
+                break;
+            case 4:
+                skaicius = 1000000;
+                break;
+            case 5:
+                skaicius = 10000000;
+                break;
+            default:
+                std::cout << "Neteisingas pasirinkimas" << std::endl;
+                return 1;
+        }
+        
+        testuotiDuomenuApdorojima(aplankas, skaicius);
+        
+        return 0;
     }
-    
-    cout << "Kuria strategija norite naudoti? (1/2/3)" ;
-char strategija;
-cin>>strategija;
-while (strategija != '1' && strategija != '2' && strategija != '3') 
-{
-cout << "Netinkama ivestis. Bandykite dar karta: ";
-cin >> strategija;
-}
-
-if (strategija == '3')
-{
-    testuotiDuomenuApdorojimatrecias<vector<Stud<vector<int>>>>(aplankas, skaicius);
-
-    return 0;
-}
-
-
-cout << "Koki konteineri norite naudoti? (vector - 'v'/ list - 'l' / deque - 'd')" ;
-char konteineris;
-cin>>konteineris;
-while (konteineris != 'v' && konteineris != 'V' && konteineris != 'l' && konteineris != 'L' && konteineris != 'd' && konteineris != 'D') 
-{
-cout << "Netinkama ivestis. Bandykite dar karta: ";
-cin >> konteineris;
-}
-
-
-if(strategija == '1')
-{
-    if (konteineris == 'v' || konteineris == 'V') 
-    {
-        testuotiDuomenuApdorojimapirma<vector<Stud<vector<int>>>>(aplankas, skaicius);
-    } 
-    else if (konteineris == 'l' || konteineris == 'L') 
-    {
-        testuotiDuomenuApdorojimapirma<list<Stud<list<int>>>>(aplankas, skaicius);
-    } 
-    else if (konteineris == 'd' || konteineris == 'D') 
-    {
-        testuotiDuomenuApdorojimapirma<deque<Stud<deque<int>>>>(aplankas, skaicius);
-    } 
-
-}
-    else if(strategija == '2')
-    {
-        if (konteineris == 'v' || konteineris == 'V') 
-        {
-            testuotiDuomenuApdorojimaantras<vector<Stud<vector<int>>>>(aplankas, skaicius);
-        } 
-        else if (konteineris == 'l' || konteineris == 'L') 
-        {
-            testuotiDuomenuApdorojimaantras<list<Stud<list<int>>>>(aplankas, skaicius);
-        } 
-        else if (konteineris == 'd' || konteineris == 'D') 
-        {
-            testuotiDuomenuApdorojimaantras<deque<Stud<deque<int>>>>(aplankas, skaicius);
-        } 
-    }
-
-return 0;
-
-}
-catch (const std::exception& e) 
-    {
-        std::cerr << "Ivyko klaida: " << e.what() << endl;
+    catch (const std::exception& e) {
+        std::cerr << "Ivyko klaida: " << e.what() << std::endl;
         return 1;
     }
-    catch (...) 
-    {
-        std::cerr << "Nezinoma klaida." << endl;
+    catch (...) {
+        std::cerr << "Nezinoma klaida." << std::endl;
         return 1;
     }
 
     return 0;
-} 
-//---
+}

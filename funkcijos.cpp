@@ -1,119 +1,169 @@
 #include "funkcijos.h"
 #include "laikas.h"
 
-template <typename Container>
-double skaiciuotiVid(const Container& nd) 
-{
-    if (nd.empty()) 
-    {
-        throw std::runtime_error("Namu darbu sarasas negali buti tuscias");
+// Konstruktoriaus realizacija
+Studentas::Studentas(std::istream& is) {
+    readStudent(is);
+}
+
+// readStudent metodo realizacija
+std::istream& Studentas::readStudent(std::istream& is) {
+    is >> vardas_ >> pavarde_;
+    
+    nd_.clear();
+    int pazymys;
+    
+    while (is >> pazymys) {
+        if (pazymys >= 1 && pazymys <= 10) {
+            nd_.push_back(pazymys);
+        } else {
+            throw std::invalid_argument("Klaida: Netinkamas pazymys studentui " + vardas_ + " " + pavarde_);
+        }
     }
-    else
-    {
+    
+    if (is.fail() && !is.eof()) {
+        throw std::invalid_argument("Klaida: Netinkamas pazymys (ne skaicius) studentui " + vardas_ + " " + pavarde_);
+    }
+    
+    if (!nd_.empty()) {
+        egzaminas_ = nd_.back();
+        nd_.pop_back();
+    }
+    
+    is.clear();
+    
+    return is;
+}
+
+// addND metodo realizacija
+void Studentas::addND(int pazymys) {
+    if (pazymys >= 1 && pazymys <= 10) {
+        nd_.push_back(pazymys);
+    } else {
+        throw std::invalid_argument("Klaida: Netinkamas pazymys");
+    }
+}
+
+// clearND metodo realizacija
+void Studentas::clearND() {
+    nd_.clear();
+}
+
+// skaiciuotiVid metodo realizacija
+double Studentas::skaiciuotiVid() const {
+    if (nd_.empty()) {
+        throw std::runtime_error("Namu darbu sarasas negali buti tuscias");
+    } else {
         double suma = 0.0;
-        for (const auto& nd_elem : nd)  
-        {
+        for (const auto& nd_elem : nd_) {
             suma += nd_elem;
         }
-        return suma / nd.size();
+        return suma / nd_.size();
     }
 }
-//---
-template <typename Container>
-double skaiciuotiMed(const Container& nd_const)
-{
-    if (nd_const.empty())
-    {
+
+// skaiciuotiMed metodo realizacija
+double Studentas::skaiciuotiMed() const {
+    if (nd_.empty()) {
         throw std::runtime_error("Namu darbu sarasas negali buti tuscias");
-    }
-    else 
-    {
-        Container nd = nd_const;
+    } else {
+        std::vector<int> nd_copy = nd_;
+        std::sort(nd_copy.begin(), nd_copy.end());
         
-        if constexpr (std::is_same_v<Container, std::list<int>>)
-        {
-            nd.sort();
-        }
-        else
-        {
-            std::sort(nd.begin(), nd.end());
-        }
-        
-        int dydis = nd.size();
+        int dydis = nd_copy.size();
         if (dydis % 2 == 0) {
-            auto it = std::next(nd.begin(), dydis / 2 - 1);
-            auto it2 = std::next(nd.begin(), dydis / 2);
-            return (*it + *it2) / 2.0;
+            return (nd_copy[dydis / 2 - 1] + nd_copy[dydis / 2]) / 2.0;
         } else {
-            auto it = std::next(nd.begin(), dydis / 2);
-            return *it;
+            return nd_copy[dydis / 2];
         }
     }
 }
-//---
-template <typename Container>
-void skaitytiIsFailo(Container& grupe, const std::string& failoPavadinimas)
-{
-    using StudentType = typename Container::value_type;
-    using NDContainer = typename StudentType::nd_type;
+
+// galBalas metodo realizacija
+double Studentas::galBalas(bool naudotiVidurki) const {
+    double ndRezultatas;
     
+    if (naudotiVidurki) {
+        ndRezultatas = skaiciuotiVid();
+    } else {
+        ndRezultatas = skaiciuotiMed();
+    }
+    
+    return 0.4 * ndRezultatas + 0.6 * egzaminas_;
+}
+
+// Ne-narių funkcijų realizacijos
+bool compareByVardas(const Studentas& a, const Studentas& b) {
+    return a.vardas() < b.vardas();
+}
+
+bool compareByPavarde(const Studentas& a, const Studentas& b) {
+    return a.pavarde() < b.pavarde();
+}
+
+bool compareByGalutinis(const Studentas& a, const Studentas& b) {
+    return a.galutinis() > b.galutinis();
+}
+
+// Papildomų funkcijų realizacijos
+void skaitytiIsFailo(std::vector<Studentas>& grupe, const std::string& failoPavadinimas) {
     std::ifstream inputFile(failoPavadinimas, std::ios::in | std::ios::binary);
-    std::vector<char> buffer(65536); 
+    std::vector<char> buffer(65536);
     inputFile.rdbuf()->pubsetbuf(buffer.data(), buffer.size());
     
     if (!inputFile.is_open()) {
         throw std::runtime_error("Nepavyko atidaryti failo: " + failoPavadinimas);
     }
     
-    StudentType laik;
+    Studentas laik;
     std::string line;
     
-    getline(inputFile, line);  
-
-    while (getline(inputFile, line)) 
-    {
+    // Praleisti antraštę
+    getline(inputFile, line);
+    
+    while (getline(inputFile, line)) {
         std::stringstream ss(line);
-        ss >> laik.var >> laik.pav; 
-
-        laik.nd.clear();  
+        
+        std::string vardas, pavarde;
+        ss >> vardas >> pavarde;
+        
+        laik.setVardas(vardas);
+        laik.setPavarde(pavarde);
+        
+        laik.clearND();
         int pazymys;
-        NDContainer scores;
-
-        while (ss >> pazymys)  
-        {
-            if (pazymys >= 1 && pazymys <= 10)  
-            {
-                scores.push_back(pazymys); // Now scores is the right container type
-            }
-            else 
-            {
-                throw std::invalid_argument("Klaida: Netinkamas pazymys studentui " + laik.var + " " + laik.pav);
+        std::vector<int> scores;
+        
+        while (ss >> pazymys) {
+            if (pazymys >= 1 && pazymys <= 10) {
+                scores.push_back(pazymys);
+            } else {
+                throw std::invalid_argument("Klaida: Netinkamas pazymys studentui " + vardas + " " + pavarde);
             }
         }
-
-        if (ss.fail() && !ss.eof()) 
-        {
-            throw std::invalid_argument("Klaida: Netinkamas pazymys (ne skaicius) studentui " + laik.var + " " + laik.pav);
+        
+        if (ss.fail() && !ss.eof()) {
+            throw std::invalid_argument("Klaida: Netinkamas pazymys (ne skaicius) studentui " + vardas + " " + pavarde);
         }
-
-        if (!scores.empty())
-        {
-            laik.egz = scores.back();  
-            scores.pop_back();  
-            laik.nd = std::move(scores);  
-            grupe.push_back(laik);  
+        
+        if (!scores.empty()) {
+            laik.setEgzaminas(scores.back());
+            scores.pop_back();
+            
+            for (const auto& score : scores) {
+                laik.addND(score);
+            }
+            
+            grupe.push_back(laik);
         }
     }
-
+    
     inputFile.close();
 }
-//---
-template <typename Container>
-void isvestiStudentusIFaila(const Container& studentai, const std::string& failoPavadinimas, char ats)
-{
+
+void isvestiStudentusIFaila(const std::vector<Studentas>& studentai, const std::string& failoPavadinimas, char ats) {
     std::ofstream outFile(failoPavadinimas);
-    if (!outFile.is_open()) 
-    {
+    if (!outFile.is_open()) {
         throw std::runtime_error("Nepavyko atidaryti failo: " + failoPavadinimas);
     }
     
@@ -121,13 +171,14 @@ void isvestiStudentusIFaila(const Container& studentai, const std::string& failo
     outFile.rdbuf()->pubsetbuf(buffer.data(), buffer.size());
     
     std::stringstream header;
-    header << std::left << setw(15) << "Vardas" << setw(15) << "Pavarde";
-    if (tolower(ats) == 'v') {
+    header << std::left << std::setw(15) << "Vardas" << std::setw(15) << "Pavarde";
+
+    if (std::tolower(ats) == 'v') {
         header << std::left << "Galutinis (Vid.)" << std::endl;
     } else {
         header << std::left << "Galutinis (Med.)" << std::endl;
     }
-    header << string(50, '-') << std::endl;
+    header << std::string(50, '-') << std::endl;
     
     outFile << header.str();
     
@@ -136,12 +187,12 @@ void isvestiStudentusIFaila(const Container& studentai, const std::string& failo
     size_t count = 0;
     
     for (const auto& a : studentai) {
-        batch << std::left << setw(15) << a.var << setw(15) << a.pav 
-              << std::fixed << std::setprecision(2) << a.galutinis << std::endl;
+        batch << std::left << std::setw(15) << a.vardas() << std::setw(15) << a.pavarde()
+              << std::fixed << std::setprecision(2) << a.galutinis() << std::endl;
         
         if (++count % BATCH_SIZE == 0) {
             outFile << batch.str();
-            batch.str(""); 
+            batch.str("");
             batch.clear();
         }
     }
@@ -150,52 +201,100 @@ void isvestiStudentusIFaila(const Container& studentai, const std::string& failo
         outFile << batch.str();
     }
 }
-//---
-template <typename Container>
-void sortByChoice(Container& grupe, char sortingOption) 
-{
-    if constexpr (std::is_same_v<Container, std::list<typename Container::value_type>>) 
-    { 
-        if (sortingOption == 'v' || sortingOption == 'V') {
-            grupe.sort([](const auto& a, const auto& b) { return a.var < b.var; }); 
-        } else if (sortingOption == 'p' || sortingOption == 'P') {
-            grupe.sort([](const auto& a, const auto& b) { return a.pav < b.pav; });
-        } else if (sortingOption == 'g' || sortingOption == 'G') {
-            grupe.sort([](const auto& a, const auto& b) { return a.galutinis > b.galutinis; });
-        }
-    }
-    else 
-    {
-        if (sortingOption == 'v' || sortingOption == 'V') {
-            std::sort(std::execution::par, grupe.begin(), grupe.end(),
-                      [](const auto& a, const auto& b) { return a.var < b.var; });
-        } else if (sortingOption == 'p' || sortingOption == 'P') {
-            std::sort(std::execution::par, grupe.begin(), grupe.end(),
-                      [](const auto& a, const auto& b) { return a.pav < b.pav; });
-        } else if (sortingOption == 'g' || sortingOption == 'G') {
-            std::sort(std::execution::par, grupe.begin(), grupe.end(),
-                      [](const auto& a, const auto& b) { return a.galutinis > b.galutinis; });
-        }
+
+void sortStudentai(std::vector<Studentas>& grupe, char sortingOption) {
+    if (sortingOption == 'v' || sortingOption == 'V') {
+        std::sort(std::execution::par, grupe.begin(), grupe.end(), compareByVardas);
+    } else if (sortingOption == 'p' || sortingOption == 'P') {
+        std::sort(std::execution::par, grupe.begin(), grupe.end(), compareByPavarde);
+    } else if (sortingOption == 'g' || sortingOption == 'G') {
+        std::sort(std::execution::par, grupe.begin(), grupe.end(), compareByGalutinis);
     }
 }
-//---
-template double skaiciuotiVid<std::vector<int>>(const std::vector<int>&);
-template double skaiciuotiMed<std::vector<int>>(const std::vector<int>&);
 
-template double skaiciuotiVid<std::list<int>>(const std::list<int>&);
-template double skaiciuotiMed<std::list<int>>(const std::list<int>&);
+void skirstytiStudentus(std::vector<Studentas>& grupe, std::vector<Studentas>& kietiakiai, std::vector<Studentas>& vargsai) {
+    auto it = std::partition(grupe.begin(), grupe.end(), [](const auto& a) { return a.galutinis() >= 5.0; });
+    
+    std::copy(grupe.begin(), it, std::back_inserter(kietiakiai));
+    std::copy(it, grupe.end(), std::back_inserter(vargsai));
+    
+    grupe.clear();
+}
 
-template double skaiciuotiVid<std::deque<int>>(const std::deque<int>&);
-template double skaiciuotiMed<std::deque<int>>(const std::deque<int>&);
-
-template void skaitytiIsFailo<std::vector<Stud<std::vector<int>>>>(std::vector<Stud<std::vector<int>>>&, const std::string&);
-template void skaitytiIsFailo<std::list<Stud<std::list<int>>>>(std::list<Stud<std::list<int>>>&, const std::string&);
-template void skaitytiIsFailo<std::deque<Stud<std::deque<int>>>>(std::deque<Stud<std::deque<int>>>&, const std::string&);
-
-template void isvestiStudentusIFaila<std::list<Stud<std::list<int>>>>(const std::list<Stud<std::list<int>>>&, const std::string&, char);
-template void isvestiStudentusIFaila<std::vector<Stud<std::vector<int>>>>(const std::vector<Stud<std::vector<int>>>&, const std::string&, char);
-template void isvestiStudentusIFaila<std::deque<Stud<std::deque<int>>>>(const std::deque<Stud<std::deque<int>>>&, const std::string&, char);
-
-template void sortByChoice<std::list<Stud<std::list<int>>>>(std::list<Stud<std::list<int>>>&, char);
-template void sortByChoice<std::vector<Stud<std::vector<int>>>>(std::vector<Stud<std::vector<int>>>&, char);
-template void sortByChoice<std::deque<Stud<std::deque<int>>>>(std::deque<Stud<std::deque<int>>>&, char);
+void testuotiDuomenuApdorojima(const std::string& aplankas, int skaicius) 
+{
+    srand(time(0));
+    
+    std::vector<Studentas> grupe;
+    std::vector<Studentas> kietiakiai;
+    std::vector<Studentas> vargsai;
+    
+    std::cout << "Ar galutinio balo skaiciavimui norite naudoti vidurki ar mediana? (v/m): ";
+    char ats;
+    std::cin >> ats;
+    
+    while (ats != 'v' && ats != 'V' && ats != 'm' && ats != 'M') {
+        std::cout << "Netinkama ivestis. Bandykite dar karta: ";
+        std::cin >> ats;
+    }
+    
+    std::cout << "Kaip norite surusiuoti studentus? (v/vardas, p/pavarde, g/galutinis): ";
+    char sortingOption;
+    std::cin >> sortingOption;
+    while (sortingOption != 'v' && sortingOption != 'V' && sortingOption != 'p' && sortingOption != 'P' && sortingOption != 'g' && sortingOption != 'G') {
+        std::cout << "Netinkama ivestis. Bandykite dar karta: ";
+        std::cin >> sortingOption;
+    }
+    
+    std::string failoPavadinimas = aplankas + "/studentai_" + std::to_string(skaicius) + ".txt";
+    
+    // Failo nuskaitymas ir matavimas
+    auto start = std::chrono::high_resolution_clock::now();
+    std::cout << "Pradedamas failo nuskaitymas..." << std::endl;
+    
+    skaitytiIsFailo(grupe, failoPavadinimas);
+    
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> diff = end - start;
+    std::cout << "Failo nuskaitymas užtruko: " << diff.count() << " s" << std::endl;
+    
+    // Galutinio balo skaičiavimas
+    start = std::chrono::high_resolution_clock::now();
+    std::cout << "Skaičiuojami galutiniai balai..." << std::endl;
+    
+    bool naudotiVidurki = (std::tolower(ats) == 'v');
+    for (auto& studentas : grupe) {
+        studentas.setGalutinis(studentas.galBalas(naudotiVidurki));
+    }
+    
+    end = std::chrono::high_resolution_clock::now();
+    diff = end - start;
+    std::cout << "Galutinių balų skaičiavimas užtruko: " << diff.count() << " s" << std::endl;
+    
+    // Rikiavimas
+    start = std::chrono::high_resolution_clock::now();
+    std::cout << "Rikiuojami studentai..." << std::endl;
+    
+    sortStudentai(grupe, sortingOption);
+    
+    end = std::chrono::high_resolution_clock::now();
+    diff = end - start;
+    std::cout << "Rikiavimas užtruko: " << diff.count() << " s" << std::endl;
+    
+    // Skirstymas į dvi grupes
+    start = std::chrono::high_resolution_clock::now();
+    std::cout << "Skirstomi studentai į dvi grupes..." << std::endl;
+    
+    skirstytiStudentus(grupe, kietiakiai, vargsai);
+    
+    end = std::chrono::high_resolution_clock::now();
+    diff = end - start;
+    std::cout << "Skirstymas užtruko: " << diff.count() << " s" << std::endl;
+    
+    // Rezultatų išvedimas
+    isvestiStudentusIFaila(kietiakiai, aplankas + "/kietiakiai.txt", ats);
+    isvestiStudentusIFaila(vargsai, aplankas + "/vargsai.txt", ats);
+    
+    kietiakiai.clear();
+    vargsai.clear();
+}

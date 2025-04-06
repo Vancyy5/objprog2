@@ -1,5 +1,5 @@
 #include "Laikas.h"
-#include "lib.h"
+#include "funkcijos.h"
 
 using namespace std::chrono;
 
