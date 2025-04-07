@@ -2,7 +2,7 @@
 
 APRAŠYMAS:
 ---
-Ši programa analizuoja studentų duomenų failus su skirtingais įrašų dydžiai, juos surūšiuoja,vėliau juos išskirsto pagal jų galutinį balą į dvi grupes: kietekų(galutinis balas >=5.0 ) ir vargšų(galutinis balas < 5.0). Testavimai buvo atlikti su  penkiais atsitiktinias studentų sąrašų failais, sudarytus iš: 1 000, 10 000, 100 000, 1 000 000, 10 000 000 įrašų. Programoje vartotojas pasirenka, kurį konteinerį nori naudoti iš (vector/list/deque).
+Ši programa analizuoja studentų duomenų failus su skirtingais įrašų dydžiai, juos surūšiuoja,vėliau juos išskirsto pagal jų galutinį balą į dvi grupes: kietekų(galutinis balas >=5.0 ) ir vargšų(galutinis balas < 5.0). Testavimai buvo atlikti su  dviejais atsitiktinias studentų sąrašų failais, sudarytų iš 1 00 000 ir 1 000 000 įrašų. Šioje versijoje naudojama klasės.
 
 -------------------------------------------------------------------------------------------------------
 Programos paleidimas:
@@ -14,7 +14,7 @@ cd mano-projektas
 
 2. Klonuoti Repozitoriją:    
 
- git clone https://github.com/Vancyy5/objprog.git
+ git clone https://github.com/Vancyy5/objprog2.git
 
 
 3. Užtikrinkite, kad turite įdiegtą C++17 suderinamą kompiliatorių.
@@ -42,8 +42,6 @@ Specialus elgesys su šablonais pagrįstu kodu funkcijos.cpp faile
 
 Švaros funkcija, skirta pašalinti objektų failus ir vykdomąjį failą
 
-Test_files katalogo sukūrimas, jei jis dar neegzistuoja
-
 -------------------------------------------------------------------------------------------------------
 TESTAVIMO SISTEMOS PARAMETRAI:
 ---
@@ -60,29 +58,27 @@ GPU: Intel(R) UHD Graphics (1920x1080x32b)
 G++ versija 14.2.0
 
 ------------------------------------------------------------------------------------------------------
-PRADINIS TYRIMAS
+Tyrimas tarp struktūros ir klasės.
 ---
-Buvo išmatuotas laikas, per kurį nuskaitomi failai, surūšiuojami studentai ir išskirstomi į du atskirus konteinerius pagal atitinkamus įrašų dydžius ir naudojamą konteinerį.
+Buvo išmatuotas laikas, per kurį nuskaitomi failai, surūšiuojami studentai ir išskirstomi į du atskirus vector konteinerius pagal atitinkamus įrašų dydžius (100000 ir 1000000) ir naudojamą tipą (klasę ar struktūrą). 
 
-Su kiekvienu failu ir konteineriu tyrimas buvo pakartotas 5 kartus, rezultatai surašyti į lentelę ir apskaičiuotas vidurkis sekundėmis.
+Struktūrą tyrinėti paimta versijos v1.0 3 strategija.
 
-![alt text](https://github.com/Vancyy5/objprog/blob/v1.0/nuotraukos_ir_tyrimai/image.png)
+Abiem tipams buvo naudojamas O3 optimizavimo lygis.
+
+Su kiekvienu failu ir tipu tyrimas buvo pakartotas 5 kartus, rezultatai surašyti į lentelę ir apskaičiuotas vidurkis sekundėmis.
+
+![alt text](https://github.com/Vancyy5/objprog2/blob/v1.1/nuotraukos/Screenshot%202025-04-06%20234457.png)
 
 --------------------------------------------------------------------------------------------------------------
 Tyrimo pastebėjimai: 
 ---
-Visi konteineriai panašiai nuskaito failo.
-
-Vector yra greičiausias pasirinkimas visais etapais.
-
-List failo skirstymas į dvi grupes užtrunka net apie 43 kartus ilgiau nei Vector.
-
-Deque visiškai neefektyvus, ypač skirstymo etape (apie 97 kartus lėčiau nei Vector).
+Klasė yra greitesnė negu struktūra (ypač išskirstant grupes į dvi atskiras).
 
 -------------------------------------------------------------------------------------------------------------
 Išvada:
 ---
-Geriausia naudoti vector konteinerį.
+Geriau naudoti klasę.
  
 ----------------------------------------------------------------------------------------------------------- 
 
