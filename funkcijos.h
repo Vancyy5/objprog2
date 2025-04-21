@@ -27,9 +27,14 @@ public:
     // Konstruktoriai
     Studentas() : egzaminas_(0), galutinis_(0) { }  // default konstruktorius
     Studentas(std::istream& is);
-
-    ~Studentas();
-
+    
+    // Rule of Five
+    Studentas(const Studentas& other); // Copy constructor
+    Studentas& operator=(const Studentas& other); // Copy assignment operator
+    Studentas(Studentas&& other) noexcept; // Move constructor
+    Studentas& operator=(Studentas&& other) noexcept; // Move assignment operator
+    ~Studentas(); // Destruktor
+    
     // Getteriai
     inline std::string vardas() const { return vardas_; }
     inline std::string pavarde() const { return pavarde_; }
@@ -50,6 +55,10 @@ public:
     double skaiciuotiVid() const;
     double skaiciuotiMed() const;
     double galBalas(bool naudotiVidurki = true) const;
+    
+    // Input/Output operators
+    friend std::ostream& operator<<(std::ostream& os, const Studentas& stud);
+    friend std::istream& operator>>(std::istream& is, Studentas& stud);
 };
 
 //---

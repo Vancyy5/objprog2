@@ -7,6 +7,79 @@ Studentas::Studentas(std::istream& is) {
 }
 
 //---
+// Copy constructor
+Studentas::Studentas(const Studentas& other) : 
+    vardas_(other.vardas_), 
+    pavarde_(other.pavarde_), 
+    nd_(other.nd_), 
+    egzaminas_(other.egzaminas_),
+    galutinis_(other.galutinis_) 
+{
+    // std::cout << "Copy constructor called for " << vardas_ << " " << pavarde_ << std::endl;
+}
+
+// Copy assignment operator
+Studentas& Studentas::operator=(const Studentas& other) {
+    if (this != &other) {
+        vardas_ = other.vardas_;
+        pavarde_ = other.pavarde_;
+        nd_ = other.nd_;
+        egzaminas_ = other.egzaminas_;
+        galutinis_ = other.galutinis_;
+    }
+    // std::cout << "Copy assignment operator called for " << vardas_ << " " << pavarde_ << std::endl;
+    return *this;
+}
+
+// Move constructor
+Studentas::Studentas(Studentas&& other) noexcept : 
+    vardas_(std::move(other.vardas_)),
+    pavarde_(std::move(other.pavarde_)),
+    nd_(std::move(other.nd_)),
+    egzaminas_(other.egzaminas_),
+    galutinis_(other.galutinis_)
+{
+    other.egzaminas_ = 0;
+    other.galutinis_ = 0;
+    // std::cout << "Move constructor called for " << vardas_ << " " << pavarde_ << std::endl;
+}
+
+// Move assignment operator
+Studentas& Studentas::operator=(Studentas&& other) noexcept {
+    if (this != &other) {
+        vardas_ = std::move(other.vardas_);
+        pavarde_ = std::move(other.pavarde_);
+        nd_ = std::move(other.nd_);
+        egzaminas_ = other.egzaminas_;
+        galutinis_ = other.galutinis_;
+        
+        other.egzaminas_ = 0;
+        other.galutinis_ = 0;
+    }
+    // std::cout << "Move assignment operator called for " << vardas_ << " " << pavarde_ << std::endl;
+    return *this;
+}
+
+// Output operator
+std::ostream& operator<<(std::ostream& os, const Studentas& stud) {
+    os << std::left << std::setw(15) << stud.vardas_ << std::setw(15) << stud.pavarde_;
+    
+    os << "ND: ";
+    for (const auto& nd : stud.nd_) {
+        os << nd << " ";
+    }
+    
+    os << "Egz: " << stud.egzaminas_;
+    os << " Galutinis: " << std::fixed << std::setprecision(2) << stud.galutinis_;
+    
+    return os;
+}
+
+// Input operator
+std::istream& operator>>(std::istream& is, Studentas& stud) {
+    return stud.readStudent(is);
+}
+
 std::istream& Studentas::readStudent(std::istream& is) {
     is >> vardas_ >> pavarde_;
     
