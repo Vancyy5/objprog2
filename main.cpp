@@ -4,6 +4,17 @@
 int main() 
 {
     try {
+        
+        char testChoice;
+        std::cout << "Ar norite vykdyti Studentas klases metodu testa? (t/n): ";
+        std::cin >> testChoice;
+
+        if (tolower(testChoice) == 't') 
+        {
+            testuotiStudentoMetodus();
+            return 0;
+        }
+        
         std::string aplankas = "test_files";
         int skaicius;
         int pasirinktasDydis;
@@ -14,6 +25,7 @@ int main()
         std::cout << "3 - 100000 studentu\n";
         std::cout << "4 - 1000000 studentu\n";
         std::cout << "5 - 10000000 studentu\n";
+        std::cout << "Kitas- programos pabaiga\n";
         std::cout << "Pasirinkimas: ";
         std::cin >> pasirinktasDydis;
 

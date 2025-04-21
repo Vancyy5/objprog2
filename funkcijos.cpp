@@ -2,11 +2,10 @@
 #include "laikas.h"
 
 //---
-Studentas::Studentas(std::istream& is) {
+Studentas::Studentas(std::istream& is) 
+{
     readStudent(is);
 }
-
-//---
 // Copy constructor
 Studentas::Studentas(const Studentas& other) : 
     vardas_(other.vardas_), 
@@ -14,9 +13,7 @@ Studentas::Studentas(const Studentas& other) :
     nd_(other.nd_), 
     egzaminas_(other.egzaminas_),
     galutinis_(other.galutinis_) 
-{
-    // std::cout << "Copy constructor called for " << vardas_ << " " << pavarde_ << std::endl;
-}
+    {}
 
 // Copy assignment operator
 Studentas& Studentas::operator=(const Studentas& other) {
@@ -27,7 +24,6 @@ Studentas& Studentas::operator=(const Studentas& other) {
         egzaminas_ = other.egzaminas_;
         galutinis_ = other.galutinis_;
     }
-    // std::cout << "Copy assignment operator called for " << vardas_ << " " << pavarde_ << std::endl;
     return *this;
 }
 
@@ -41,7 +37,6 @@ Studentas::Studentas(Studentas&& other) noexcept :
 {
     other.egzaminas_ = 0;
     other.galutinis_ = 0;
-    // std::cout << "Move constructor called for " << vardas_ << " " << pavarde_ << std::endl;
 }
 
 // Move assignment operator
@@ -56,12 +51,12 @@ Studentas& Studentas::operator=(Studentas&& other) noexcept {
         other.egzaminas_ = 0;
         other.galutinis_ = 0;
     }
-    // std::cout << "Move assignment operator called for " << vardas_ << " " << pavarde_ << std::endl;
     return *this;
 }
 
 // Output operator
-std::ostream& operator<<(std::ostream& os, const Studentas& stud) {
+std::ostream& operator<<(std::ostream& os, const Studentas& stud) 
+{
     os << std::left << std::setw(15) << stud.vardas_ << std::setw(15) << stud.pavarde_;
     
     os << "ND: ";
@@ -76,11 +71,13 @@ std::ostream& operator<<(std::ostream& os, const Studentas& stud) {
 }
 
 // Input operator
-std::istream& operator>>(std::istream& is, Studentas& stud) {
+std::istream& operator>>(std::istream& is, Studentas& stud) 
+{
     return stud.readStudent(is);
 }
 
-std::istream& Studentas::readStudent(std::istream& is) {
+std::istream& Studentas::readStudent(std::istream& is) 
+{
     is >> vardas_ >> pavarde_;
     
     nd_.clear();
@@ -361,4 +358,68 @@ void testuotiDuomenuApdorojima(const std::string& aplankas, int skaicius)
     
     kietiakiai.clear();
     vargsai.clear();
+}
+
+void testuotiStudentoMetodus() {
+    std::cout << "\n===== STUDENTAS KLASES METODU TESTAVIMAS =====\n" << std::endl;
+    
+    // Test default constructor
+    std::cout << "1. Default konstruktoriaus testavimas:" << std::endl;
+    Studentas s1;
+    s1.setVardas("Vanesa");
+    s1.setPavarde("Balsyte");
+    s1.addND(8);
+    s1.addND(9);
+    s1.addND(10);
+    s1.setEgzaminas(9);
+    s1.setGalutinis(s1.galBalas());
+    std::cout << "   Sukurtas studentas: " << s1 << std::endl;
+    
+    // Test copy constructor
+    std::cout << "\n2. Kopijavimo konstruktoriaus testavimas:" << std::endl;
+    Studentas s2(s1);
+    std::cout << "   Originalas: " << s1 << std::endl;
+    std::cout << "   Kopija: " << s2 << std::endl;
+    
+    // Test copy assignment
+    std::cout << "\n3. Kopijavimo priskyrimo operatoriaus testavimas:" << std::endl;
+    Studentas s3;
+    s3 = s1;
+    std::cout << "   Originalas: " << s1 << std::endl;
+    std::cout << "   Priskirta kopija: " << s3 << std::endl;
+    
+    // Test move constructor
+    std::cout << "\n4. Perkelimo konstruktoriaus testavimas:" << std::endl;
+    Studentas s4(std::move(Studentas(s1)));
+    std::cout << "   Originalas: " << s1 << std::endl;
+    std::cout << "   Perkeltas objektas: " << s4 << std::endl;
+    
+    // Test move assignment
+    std::cout << "\n5. Perkelimo priskyrimo operatoriaus testavimas:" << std::endl;
+    Studentas s5;
+    s5 = std::move(Studentas(s1));
+    std::cout << "   Originalas: " << s1 << std::endl;
+    std::cout << "   Priskirtas perkeltas objektas: " << s5 << std::endl;
+    
+    // Test input and output operators
+    std::cout << "\n6. Ivesties ir isvesties operatoriu testavimas:" << std::endl;
+    std::cout << "   Isvestis: " << s1 << std::endl;
+    
+    std::cout << "   Ivestis is string srauto (Petras Petraitis 7 8 9 10):" << std::endl;
+    std::stringstream ss("Petras Petraitis 7 8 9 10");
+    Studentas s6;
+    ss >> s6;
+    std::cout << "   Nuskaitytas studentas: " << s6 << std::endl;
+    
+    // Test nd functions
+    std::cout << "\n7. ND funkciju testavimas:" << std::endl;
+    std::cout << "   Pries pakeitimus: " << s6 << std::endl;
+    s6.addND(5);
+    std::cout << "   Po addND(5): " << s6 << std::endl;
+    std::cout << "   ND vidurkis: " << s6.skaiciuotiVid() << std::endl;
+    std::cout << "   ND mediana: " << s6.skaiciuotiMed() << std::endl;
+    s6.clearND();
+    std::cout << "   Po clearND(): " << s6 << std::endl;
+    
+    std::cout << "\n===== TESTAVIMAS BAIGTAS =====\n" << std::endl;
 }

@@ -72,5 +72,6 @@ void isvestiStudentusIFaila(const std::vector<Studentas>& studentai, const std::
 void sortStudentai(std::vector<Studentas>& grupe, char sortingOption);
 void skirstytiStudentus(std::vector<Studentas>& grupe, std::vector<Studentas>& kietiakiai, std::vector<Studentas>& vargsai);
 void testuotiDuomenuApdorojima(const std::string& aplankas, int skaicius);
+void testuotiStudentoMetodus();
 
 #endif // FUNKCIJOS_H
