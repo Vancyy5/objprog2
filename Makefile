@@ -4,6 +4,7 @@ SRCS = main.cpp funkcijos.cpp laikas.cpp
 HEADERS = funkcijos.h laikas.h
 OBJS = $(SRCS:.cpp=.o)
 TARGET = main
+TEMP_FILES = failinis.txt studentai.txt rezultataiT.txt
 
 .PHONY: all clean run
 
@@ -25,7 +26,7 @@ main.o: main.cpp funkcijos.h laikas.h
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
 clean:
-	rm -f $(OBJS) $(TARGET)
+	rm -f $(OBJS) $(TARGET) $(TEMP_FILES)
 
 run: $(TARGET)
 	./$(TARGET)
