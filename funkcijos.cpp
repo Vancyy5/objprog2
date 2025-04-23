@@ -115,7 +115,7 @@ std::istream& Studentas::readStudent(std::istream& is) {
 Studentas::~Studentas()
 {
     nd_.clear();
-    destruktoriuSk++; // Increment destructor counter
+    destruktoriuSk++; 
 }
 //---
 void Studentas::addND(int pazymys) {
@@ -374,7 +374,7 @@ void testuotiDuomenuApdorojima(const std::string& aplankas, int skaicius)
     }
     
 
-    Laikas rikiavimas(std::to_string(skaicius) + " studentu failo rusiavimas didejimo tvarka");
+    Laikas rikiavimas(std::to_string(skaicius) + " studentu failo rusiavimas");
     rikiavimas.pradeti();
     sortStudentai(grupe, sortingOption);
     rikiavimas.baigti();
@@ -430,7 +430,7 @@ void testuotiStudentoMetodus() {
     // === 4. Move constructor ===
     std::cout << "\n[TEST 4] Perkelimo konstruktorius (s4(move(Studentas(s1))))\n";
     Studentas tempS1(s1);
-    std::cout << "Temp studentas pries perkėlimą: " << tempS1 << std::endl;
+    std::cout << "Temp studentas pries perkelima: " << tempS1 << std::endl;
     Studentas s4(std::move(tempS1));
     std::cout << "Perkeltas objektas s4: " << s4 << std::endl;
     std::cout << "Temp studentas po perkelimo: " << tempS1 << std::endl;
@@ -445,44 +445,42 @@ void testuotiStudentoMetodus() {
     std::cout << "s2 po perkelimo: " << s2 << std::endl;
     assert(!s5.nd().empty());
     assert(s2.nd().empty());
+
     
-    // === 6. Output operator ===
-    std::cout << "\n[TEST 6] Isvesties operatorius (<<)\n";
-    std::ostringstream oss;
-    oss << s5;
-    std::cout << "Isvestas s5: " << oss.str() << std::endl;
-    assert(oss.str().find("Balsyte") != std::string::npos);
-    
-    // === 7. Input operator (istringstream) ===
-    std::cout << "\n[TEST 7] Ivesties operatorius (>> is istringstream)\n";
+    // === 6.1 Input operator (istringstream) ===
+    std::cout << "\n[TEST 6.1] Ivesties operatorius (>> is istringstream)\n";
     std::istringstream iss("Vardenis Pavardenis 10 10 10 10 10");
     Studentas s6;
     iss >> s6;
+    s6.setGalutinis(s6.galBalas());
     std::cout << "Ivestas s6: " << s6 << std::endl;
     assert(s6.vardas() == "Vardenis");
     
-    // === 7.1 Input from user ===
-    std::cout << "\n[TEST 7.1] Ivestis is cin (>>)\n";
-    std::cout << "Iveskite studenta (vardas pavardė ND1 ND2... egzaminas): ";
+    // === 6.2 Input from user ===
+    std::cout << "\n[TEST 6.2] Ivestis is cin (>>)\n";
+    std::cout << "Iveskite studenta (vardas pavarde ND1 ND2... egzaminas) vienoje eiluteje: ";
     Studentas s7;
     std::cin >> s7;
+    s7.setGalutinis(s7.galBalas());
     std::cout << "Ivestas s7: " << s7 << std::endl;
     assert(!s7.vardas().empty());
     
-    // === 7.2 Input from file with operator>> ===
-    std::cout << "\n[TEST 7.2] Ivestis is failo su operator>>\n";
+    // === 6.3 Input from file with operator>> ===
+    std::cout << "\n[TEST 6.3] Ivestis is failo su operator>>\n";
     std::ofstream failin("failinis.txt");
     failin << "Antanas Antanaitis 9 8 7 6 5" << std::endl;
     failin.close();
+
     std::ifstream failIn("failinis.txt");
     Studentas s8;
     failIn >> s8;
     failIn.close();
+    s8.setGalutinis(s8.galBalas());
     std::cout << "Is failo ivestas s8: " << s8 << std::endl;
     assert(s8.vardas() == "Antanas");
     
-    // === 7.3 Output to stringstream (<<) ===
-    std::cout << "\n[TEST 7.3] Isvedimas i stringstream (<<)\n";
+    // === 7 Output to stringstream (<<) ===
+    std::cout << "\n[TEST 7] Isvedimas i stringstream (<<)\n";
     std::ostringstream oss2;
     oss2 << s8;
     std::cout << "stringstream rezultatas: " << oss2.str() << std::endl;
@@ -494,6 +492,7 @@ void testuotiStudentoMetodus() {
     testFailas << "Vanesa Balsyte 10 9 8 7 6" << std::endl;
     testFailas << "Petras Petrauskas 8 9 7 10 5" << std::endl;
     testFailas.close();
+
     std::vector<Studentas> grupe;
     Studentas::nuskaitymasFile(grupe, "studentai.txt");
     std::cout << "Gauta studentu: " << grupe.size() << std::endl;
