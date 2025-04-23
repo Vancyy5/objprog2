@@ -11,6 +11,7 @@
 #include <stdexcept>
 #include <execution>
 #include <numeric>
+#include <cassert>
 
 class Studentas 
 {
@@ -24,6 +25,9 @@ private:
 
 // interfeisas
 public:
+    // Tracking destructor calls for testing
+    static int destruktoriuSk;
+
     // Konstruktoriai
     Studentas() : egzaminas_(0), galutinis_(0) { }  // default konstruktorius
     Studentas(std::istream& is);
@@ -55,6 +59,9 @@ public:
     double skaiciuotiVid() const;
     double skaiciuotiMed() const;
     double galBalas(bool naudotiVidurki = true) const;
+    
+    // Static method for file reading
+    static void nuskaitymasFile(std::vector<Studentas>& grupe, const std::string& failoPavadinimas);
     
     // Input/Output operators
     friend std::ostream& operator<<(std::ostream& os, const Studentas& stud);

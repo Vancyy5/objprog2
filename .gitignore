@@ -406,3 +406,6 @@ FodyWeavers.xsd
 node_modules/
 
 test_files/
+failinis.txt
+rezultataiT.txt
+studentai.txt
