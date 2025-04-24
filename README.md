@@ -98,8 +98,11 @@ Funkcija testuotiStudentoMetodus() tikrina:
 4. perkelimo konstruktorių
 5. perkelimo priskyrimo operatorių
 6.  6.1  įvesties operatorių (is istringstream)
+
     6.2  įvestį is cin (>>)
+
     6.3  įvestį is failo
+    
 7. išvedimą į stringstream (<<)
 8. failo nuskaitymą su nuskaitymasFile()
 9. išvedimą į ekraną ir į faila
@@ -126,7 +129,10 @@ Destruktorius:
 Papildomi failai testavimui:
 ---
 failinis.txt - 6.3 testas (įvestis su operatorium >> iš failo)
+
 studentai.txt - 8 testas (failo nuskaitymas)
+
 rezultataiT.txt - 9 testas (išvedimo rezultato failas)
+
 
 Jos išsitrina kartu su vykdomuoju failu parašius terminale make clean.
