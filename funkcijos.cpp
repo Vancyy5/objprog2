@@ -5,53 +5,46 @@
 int Studentas::destruktoriuSk = 0;
 
 //---
-Studentas::Studentas(std::istream& is) {
+Studentas::Studentas(std::istream& is) : Zmogus() 
+{
     readStudent(is);
 }
 
-//---
 // Copy constructor
 Studentas::Studentas(const Studentas& other) : 
-    vardas_(other.vardas_), 
-    pavarde_(other.pavarde_), 
+    Zmogus(other),  
     nd_(other.nd_), 
     egzaminas_(other.egzaminas_),
     galutinis_(other.galutinis_) 
-{
-    // std::cout << "Copy constructor called for " << vardas_ << " " << pavarde_ << std::endl;
-}
+    {}
 
 // Copy assignment operator
 Studentas& Studentas::operator=(const Studentas& other) {
+
     if (this != &other) {
-        vardas_ = other.vardas_;
-        pavarde_ = other.pavarde_;
+        Zmogus::operator=(other); // Call base class assignment operator
         nd_ = other.nd_;
         egzaminas_ = other.egzaminas_;
         galutinis_ = other.galutinis_;
     }
-    // std::cout << "Copy assignment operator called for " << vardas_ << " " << pavarde_ << std::endl;
     return *this;
 }
 
 // Move constructor
 Studentas::Studentas(Studentas&& other) noexcept : 
-    vardas_(std::move(other.vardas_)),
-    pavarde_(std::move(other.pavarde_)),
+    Zmogus(std::move(other)),  
     nd_(std::move(other.nd_)),
     egzaminas_(other.egzaminas_),
     galutinis_(other.galutinis_)
 {
     other.egzaminas_ = 0;
     other.galutinis_ = 0;
-    // std::cout << "Move constructor called for " << vardas_ << " " << pavarde_ << std::endl;
 }
 
 // Move assignment operator
 Studentas& Studentas::operator=(Studentas&& other) noexcept {
     if (this != &other) {
-        vardas_ = std::move(other.vardas_);
-        pavarde_ = std::move(other.pavarde_);
+        Zmogus::operator=(std::move(other)); 
         nd_ = std::move(other.nd_);
         egzaminas_ = other.egzaminas_;
         galutinis_ = other.galutinis_;
@@ -59,28 +52,25 @@ Studentas& Studentas::operator=(Studentas&& other) noexcept {
         other.egzaminas_ = 0;
         other.galutinis_ = 0;
     }
-    // std::cout << "Move assignment operator called for " << vardas_ << " " << pavarde_ << std::endl;
     return *this;
 }
 
-// Output operator
-std::ostream& operator<<(std::ostream& os, const Studentas& stud) {
-    os << std::left << std::setw(15) << stud.vardas_ << std::setw(15) << stud.pavarde_;
+//Output
+void Studentas::print(std::ostream& os) const 
+{
+    os << std::left << std::setw(15) << vardas_ << std::setw(15) << pavarde_;
     
     os << "ND: ";
-    for (const auto& nd : stud.nd_) {
+    for (const auto& nd : nd_) {
         os << nd << " ";
     }
     
-    os << "Egz: " << stud.egzaminas_;
-    os << " Galutinis: " << std::fixed << std::setprecision(2) << stud.galutinis_;
-    
-    return os;
+    os << "Egz: " << egzaminas_;
+    os << " Galutinis: " << std::fixed << std::setprecision(2) << galutinis_;
 }
 
-// Input operator
-std::istream& operator>>(std::istream& is, Studentas& stud) {
-    return stud.readStudent(is);
+void Studentas::read(std::istream& is) {
+    readStudent(is);
 }
 
 std::istream& Studentas::readStudent(std::istream& is) {
