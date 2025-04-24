@@ -12,13 +12,12 @@
 #include <execution>
 #include <numeric>
 #include <cassert>
+#include "zmogus.h"
 
-class Studentas 
+class Studentas : public Zmogus 
 {
 // realizacija
 private:
-    std::string vardas_;
-    std::string pavarde_;
     std::vector<int> nd_;
     int egzaminas_;
     double galutinis_;
@@ -29,26 +28,28 @@ public:
     static int destruktoriuSk;
 
     // Konstruktoriai
-    Studentas() : egzaminas_(0), galutinis_(0) { }  // default konstruktorius
+    Studentas() : Zmogus(), egzaminas_(0), galutinis_(0) { }  // default konstruktorius
     Studentas(std::istream& is);
+    Studentas(const std::string& vardas, const std::string& pavarde) 
+        : Zmogus(vardas, pavarde), egzaminas_(0), galutinis_(0) { }
     
     // Rule of Five
     Studentas(const Studentas& other); // Copy constructor
     Studentas& operator=(const Studentas& other); // Copy assignment operator
     Studentas(Studentas&& other) noexcept; // Move constructor
     Studentas& operator=(Studentas&& other) noexcept; // Move assignment operator
-    ~Studentas(); // Destruktor
+    ~Studentas() override; // Destructor
+    
+    // Implementation of pure virtual methods
+    void print(std::ostream& os) const override;
+    void read(std::istream& is) override;
     
     // Getteriai
-    inline std::string vardas() const { return vardas_; }
-    inline std::string pavarde() const { return pavarde_; }
     inline std::vector<int> nd() const { return nd_; }
     inline int egzaminas() const { return egzaminas_; }
     inline double galutinis() const { return galutinis_; }
 
     // Setteriai
-    inline void setVardas(const std::string& vardas) { vardas_ = vardas; }
-    inline void setPavarde(const std::string& pavarde) { pavarde_ = pavarde; }
     inline void setEgzaminas(int egzaminas) { egzaminas_ = egzaminas; }
     inline void setGalutinis(double galutinis) { galutinis_ = galutinis; }
 
@@ -62,10 +63,6 @@ public:
     
     // Static method for file reading
     static void nuskaitymasFile(std::vector<Studentas>& grupe, const std::string& failoPavadinimas);
-    
-    // Input/Output operators
-    friend std::ostream& operator<<(std::ostream& os, const Studentas& stud);
-    friend std::istream& operator>>(std::istream& is, Studentas& stud);
 };
 
 //---
@@ -80,5 +77,6 @@ void sortStudentai(std::vector<Studentas>& grupe, char sortingOption);
 void skirstytiStudentus(std::vector<Studentas>& grupe, std::vector<Studentas>& kietiakiai, std::vector<Studentas>& vargsai);
 void testuotiDuomenuApdorojima(const std::string& aplankas, int skaicius);
 void testuotiStudentoMetodus();
+void testuotiZmogausKlase(); // New test function
 
 #endif // FUNKCIJOS_H

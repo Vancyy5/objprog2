@@ -519,3 +519,17 @@ void testuotiStudentoMetodus() {
     
     std::cout << "\n===== TESTAVIMAS SEKMINGAI BAIGTAS =====\n" << std::endl;
 }
+
+void testuotiZmogausKlase() 
+{
+    std::cout << "\n===== ZMOGUS KLASES TESTAVIMAS =====\n" << std::endl;
+    
+    try {
+        std::cout << "[TEST] Bandymas sukurti Zmogus objekta tiesiogiai\n";
+        //Atkomentuoti, kad tikrinti
+        // Zmogus z; 
+    }
+    catch (const std::exception& e) {
+        std::cerr << "Klaida testuojant Zmogus klase: " << e.what() << std::endl;
+    }
+}
