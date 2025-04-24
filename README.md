@@ -2,7 +2,7 @@
 
 APRAŠYMAS:
 ---
-Ši programa analizuoja studentų duomenų failus su skirtingais įrašų dydžiai, juos surūšiuoja, vėliau juos išskirsto pagal jų galutinį balą į dvi grupes: kietekų(galutinis balas >=5.0 ) ir vargšų(galutinis balas < 5.0). Šioje versijoje naudojama klasė ir rule of five apimanti:
+Ši programa analizuoja studentų duomenų failus su skirtingais įrašų dydžiai, juos surūšiuoja, vėliau juos išskirsto pagal jų galutinį balą į dvi grupes: kietekų(galutinis balas >=5.0 ) ir vargšų(galutinis balas < 5.0). Šioje versijoje naudojama klasė ir rule of five įtriaukianti:
 1. default konstuktorių
 2. kopijavimo konstruktorių
 3. kopijavimo priskyrimo operatorių
@@ -102,7 +102,7 @@ Funkcija testuotiStudentoMetodus() tikrina:
     6.2  įvestį is cin (>>)
 
     6.3  įvestį is failo
-    
+
 7. išvedimą į stringstream (<<)
 8. failo nuskaitymą su nuskaitymasFile()
 9. išvedimą į ekraną ir į faila
