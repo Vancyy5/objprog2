@@ -2,7 +2,19 @@
 
 APRAŠYMAS:
 ---
-Ši programa analizuoja studentų duomenų failus su skirtingais įrašų dydžiai, juos surūšiuoja,vėliau juos išskirsto pagal jų galutinį balą į dvi grupes: kietekų(galutinis balas >=5.0 ) ir vargšų(galutinis balas < 5.0). Testavimai buvo atlikti su  dviejais atsitiktinias studentų sąrašų failais, sudarytų iš 1 00 000 ir 1 000 000 įrašų. Šioje versijoje naudojama klasės. 
+Ši programa analizuoja studentų duomenų failus su skirtingais įrašų dydžiai, juos surūšiuoja, vėliau juos išskirsto pagal jų galutinį balą į dvi grupes: kietekų(galutinis balas >=5.0 ) ir vargšų(galutinis balas < 5.0). Šioje versijoje naudojama klasė ir rule of five apimanti:
+1. default konstuktorių
+2. kopijavimo konstruktorių
+3. kopijavimo priskyrimo operatorių
+4. perkelimo konstruktorių
+5. perkelimo priskyrimo operatorių
+6. destruktorių
+
+Taip pat perdengti >> ir << operatoriai:
+1. kad palaikytų įvestį iš vartotojo (cin), iš stringo, iš failo
+2. kad palaikytų išvestį į ekraną ir į failą
+
+Testavimą atlieka funkcija testuotiStudentoMetodus().
 
 -------------------------------------------------------------------------------------------------------
 Programos paleidimas:
@@ -40,7 +52,7 @@ Kompiliacijos taisyklės visiems šaltinio failams
 
 Specialus elgesys su šablonais pagrįstu kodu funkcijos.cpp faile
 
-Švaros funkcija, skirta pašalinti objektų failus ir vykdomąjį failą
+Švaros funkcija, skirta pašalinti objektų failus ir vykdomąjį failą ir papildomus failus
 
 -------------------------------------------------------------------------------------------------------
 TESTAVIMO SISTEMOS PARAMETRAI:
@@ -58,66 +70,63 @@ GPU: Intel(R) UHD Graphics (1920x1080x32b)
 G++ versija 14.2.0
 
 ------------------------------------------------------------------------------------------------------
-Tyrimas tarp struktūros ir klasės.
+Perdengti metodai:
 ---
-Buvo išmatuotas laikas, per kurį nuskaitomi failai, surūšiuojami studentai ir išskirstomi į du atskirus vector konteinerius pagal atitinkamus įrašų dydžius (100000 ir 1000000) ir naudojamą tipą (klasę ar struktūrą). 
-
-Struktūrą tyrinėti paimta versijos v1.0 3 strategija.
-
-Abiem tipams buvo naudojamas O3 optimizavimo lygis.
-
-Su kiekvienu failu ir tipu tyrimas buvo pakartotas 5 kartus, rezultatai surašyti į lentelę ir apskaičiuotas vidurkis sekundėmis.
-
-![alt text](https://github.com/Vancyy5/objprog2/blob/v1.1/nuotraukos/Screenshot%202025-04-06%20234457.png)
-
---------------------------------------------------------------------------------------------------------------
-Tyrimo pastebėjimai: 
+------
+Duomenų įvestis:
 ---
-Klasė yra greitesnė negu struktūra (ypač išskirstant grupes į dvi atskiras).
+| Tipas  | Aprašymas |
+| ------------- | ------------- |
+| Rankinis  | Vartotojas įveda vardą, pavardę, pažymius ir egzaminą naudodamas cin |
+| Automatinis  | Įvestis testavimo metu per istringstream |
+| Iš failo  | Įvestis iš failo per ifstream |
 
--------------------------------------------------------------------------------------------------------------
-Išvada:
+Duomenų išvestis:
 ---
-Geriau naudoti klasę.
- 
------------------------------------------------------------------------------------------------------------ 
+|  Tipas   | Aprašymas |
+| ------------- | ------------- |
+| Į ekraną  | Naudojamas cout <<  |
+| Į failą | Studentai išvedami į rezultataiT.txt failą  |
+-----------------------------------------------------------------------------------------------------
+Testas:
+----
+Funkcija testuotiStudentoMetodus() tikrina:
 
-Programos spartos analizė su O1, O2, O3 flag'ais
+1. default konstuktorių
+2. kopijavimo konstruktorių
+3. kopijavimo priskyrimo operatorių
+4. perkelimo konstruktorių
+5. perkelimo priskyrimo operatorių
+6.  6.1  įvesties operatorių (is istringstream)
+    6.2  įvestį is cin (>>)
+    6.3  įvestį is failo
+7. išvedimą į stringstream (<<)
+8. failo nuskaitymą su nuskaitymasFile()
+9. išvedimą į ekraną ir į faila
+10. destruktorių
+
+Rule of five: 
+----
+![alt text](https://github.com/Vancyy5/objprog2/blob/v1.2/nuotraukos/Screenshot%202025-04-24%20193143.png)
+
+Įvesties testavimas:
 ---
-Šiame dokumente pateikiama programos spartos analizė, lyginant "Struktūros" ir "Klasės" variantus su skirtingais optimizavimo flagais. (O1, O2, O3).
+![alt text](https://github.com/Vancyy5/objprog2/blob/v1.2/nuotraukos/Screenshot%202025-04-24%20193158.png)
 
-Buvo išmatuotas laikas, per kurį nuskaitomi failai, surūšiuojami studentai ir išskirstomi į du atskirus vector konteinerius pagal atitinkamus įrašų dydžius (100000 ir 1000000) ir naudojamą tipą (klasę ar struktūrą). 
+Išvedimo testavimas:
+---
+![alt text](https://github.com/Vancyy5/objprog2/blob/v1.2/nuotraukos/Screenshot%202025-04-24%20193207.png)
 
-Executable failų dydis priklausomai nuo tipo ir optimizavimo lygio pavaizduoti nuotraukoje:
+Destruktorius:
+---
+![alt text](https://github.com/Vancyy5/objprog2/blob/v1.2/nuotraukos/Screenshot%202025-04-24%20193213.png)
 
-![alt text](https://github.com/Vancyy5/objprog2/blob/v1.1/nuotraukos/Screenshot%202025-04-06%20235325.png)
-
-
-Su kiekvienu failu, tipu ir optimizavimo lygiu tyrimas buvo pakartotas 5 kartus, rezultatai surašyti į lentelę ir apskaičiuotas vidurkis sekundėmis.
-
-![alt text](https://github.com/Vancyy5/objprog2/blob/v1.1/nuotraukos/Screenshot%202025-04-07%20000511.png)
-
-![alt text](https://github.com/Vancyy5/objprog2/blob/v1.1/nuotraukos/Screenshot%202025-04-07%20000522.png)
 
 ------------------------------------------------------------------------------------------------------------
-Tyrimo pastebėjimai: 
+Papildomi failai testavimui:
 ---
-.exe failų dydžiai yra didžiausi naudojant O1 optimizavimo flag'ą, o mažiausi - O2.
+failinis.txt - 6.3 testas (įvestis su operatorium >> iš failo)
+studentai.txt - 8 testas (failo nuskaitymas)
+rezultataiT.txt - 9 testas (išvedimo rezultato failas)
 
-Optimizavimo flag'ai labiausiai veikia failo nuskaitymą ir studentų skistymą.
-
-Su struktūra geriausi rezultatai pasiekiami naudojant O1 optimizavimo lygį.
-
-Su klase geriausi rezultatai pasiekti naudoant O2 optimizavimo lygį.
-
--------------------------------------------------------------------------------------------------------------
-Išvados:
----
-Optimizavimo flagai (O1, O2, O3) reikšmingai pagerina programos veikimo laiką, ypač didesniems duomenų rinkiniams.
-
-Failo nuskaitymo ir studentų skaidymo į grupes operacijos labiausiai pasinaudoja optimizavimo flagais.
-
-Studentų rūšiavimo operacija yra palyginti greita ir mažai priklauso nuo optimizavimo flagų.
-
-Rekomenduojama naudoti didesnius optimizavimo flagus (O2 ar O3) didesniems duomenų rinkiniams, kad programa veiktų greičiau.
-
+Jos išsitrina kartu su vykdomuoju failu parašius terminale make clean.
