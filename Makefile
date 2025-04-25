@@ -1,33 +1,23 @@
 CXX = g++
-CXXFLAGS = -std=c++17 -Wall -Wextra -O3 -march=native
-SRCS = main.cpp funkcijos.cpp laikas.cpp
-HEADERS = funkcijos.h laikas.h
-OBJS = $(SRCS:.cpp=.o)
-TARGET = main
+CXXFLAGS = -std=c++17 -Wall -Wextra -pedantic -O2
+DEPS = zmogus.h funkcijos.h laikas.h
+OBJ = main.o funkcijos.o zmogus.o laikas.o
 TEMP_FILES = failinis.txt studentai.txt rezultataiT.txt
 
-.PHONY: all clean run
+TARGET = main
 
 all: $(TARGET)
 
-$(TARGET): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $@ $^
+$(TARGET): $(OBJ)
+	$(CXX) -o $@ $^ $(CXXFLAGS)
 
-%.o: %.cpp $(HEADERS)
-	$(CXX) $(CXXFLAGS) -c -o $@ $<
-
-funkcijos.o: funkcijos.cpp funkcijos.h laikas.h
-	$(CXX) $(CXXFLAGS) -c -o $@ $<
-
-laikas.o: laikas.cpp laikas.h
-	$(CXX) $(CXXFLAGS) -c -o $@ $<
-
-main.o: main.cpp funkcijos.h laikas.h
-	$(CXX) $(CXXFLAGS) -c -o $@ $<
+%.o: %.cpp $(DEPS)
+	$(CXX) -c -o $@ $< $(CXXFLAGS)
 
 clean:
-	rm -f $(OBJS) $(TARGET) $(TEMP_FILES)
+	rm -f $(OBJ) $(TARGET) $(TEMP_FILES)
 
 run: $(TARGET)
 	./$(TARGET)
 
+.PHONY: all clean run

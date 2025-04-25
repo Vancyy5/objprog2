@@ -25,6 +25,9 @@ Zmogus& Zmogus::operator=(Zmogus&& other) noexcept
     return *this;
 }
 
+Zmogus::~Zmogus() {
+}
+
 // Global operators
 std::ostream& operator<<(std::ostream& os, const Zmogus& zmogus) {
     zmogus.print(os);

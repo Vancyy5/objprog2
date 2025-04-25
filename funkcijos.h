@@ -77,6 +77,5 @@ void sortStudentai(std::vector<Studentas>& grupe, char sortingOption);
 void skirstytiStudentus(std::vector<Studentas>& grupe, std::vector<Studentas>& kietiakiai, std::vector<Studentas>& vargsai);
 void testuotiDuomenuApdorojima(const std::string& aplankas, int skaicius);
 void testuotiStudentoMetodus();
-void testuotiZmogausKlase(); // New test function
-
+void testuotiZmogausKlase(); //testavimas zmogaus objekto sukurimui
 #endif // FUNKCIJOS_H

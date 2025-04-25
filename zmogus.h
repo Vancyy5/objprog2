@@ -4,7 +4,8 @@
 #include <string>
 #include <iostream>
 
-class Zmogus {
+class Zmogus 
+{
 protected:
     std::string vardas_;
     std::string pavarde_;
@@ -20,7 +21,8 @@ public:
     Zmogus& operator=(const Zmogus& other);
     Zmogus(Zmogus&& other) noexcept;
     Zmogus& operator=(Zmogus&& other) noexcept;
-    virtual ~Zmogus() = default;
+
+    virtual ~Zmogus() = 0;
     
     // Pure virtual methods (make the class abstract)
     virtual void print(std::ostream& os) const = 0;
@@ -36,5 +38,7 @@ public:
 
 std::ostream& operator<<(std::ostream& os, const Zmogus& zmogus);
 std::istream& operator>>(std::istream& is, Zmogus& zmogus);
+
+
 
 #endif // ZMOGUS_H

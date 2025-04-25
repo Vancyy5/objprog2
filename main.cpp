@@ -1,5 +1,6 @@
 #include "funkcijos.h"
 #include "laikas.h"
+#include "zmogus.h"
 //---
 int main() 
 {
