@@ -72,141 +72,105 @@ GPU: Intel(R) UHD Graphics (1920x1080x32b)
 G++ versija 14.2.0
 
 ------------------------------------------------------------------------------------------------------
-BAZINĖ IR IŠVESTINĖ klasės:
+# Bazinė ir išvestinė klasės
+
 ---
-------
-Zmogus (abstrakti bazinė klasė):
+
+## Zmogus (abstrakti bazinė klasė)
+
 ---
-| Atributas  | Tipas| Aprašymas |
-| ------------- | ------------- | ------------- |
-| vardas_  | (std::string) | asmens vardas |
-| pavarde_ | (std::string) | asmens pavardė |
 
+### Atributai
 
+| Atributas  | Tipas         | Aprašymas         |
+|------------|---------------|-------------------|
+| vardas_    | std::string   | asmens vardas     |
+| pavarde_   | std::string   | asmens pavardė    |
 
+### Konstruktoriai
 
-Konstruktoriai:
+- `Zmogus()` – numatytasis konstruktorius  
+- `Zmogus(const std::string& vardas, const std::string& pavarde)` – konstruktorius su parametrais  
+- `Zmogus(const Zmogus& other)` – kopijavimo konstruktorius
 
-Zmogus() - numatytasis konstruktorius
+### Rule of Five
 
-Zmogus(const std::string& vardas, const std::string& pavarde) - konstruktorius su parametrais
+- `Zmogus(const Zmogus& other)` – kopijavimo konstruktorius  
+- `Zmogus& operator=(const Zmogus& other)` – kopijavimo priskyrimo operatorius  
+- `Zmogus(Zmogus&& other) noexcept` – perkelimo konstruktorius  
+- `Zmogus& operator=(Zmogus&& other) noexcept` – perkelimo priskyrimo operatorius  
+- `virtual ~Zmogus() = 0` – virtualus destruktorius (pure virtual, kad klasė būtų abstrakti)
 
-Zmogus(const Zmogus& other) - kopijavimo konstruktorius
+### Grynai virtualios funkcijos
 
+- `virtual void print(std::ostream& os) const = 0` – išvedimui  
+- `virtual void read(std::istream& is) = 0` – įvedimui
 
+### Getteriai ir setteriai
 
+- `std::string vardas() const` – grąžina vardą  
+- `std::string pavarde() const` – grąžina pavardę  
+- `void setVardas(const std::string& vardas)` – nustato vardą  
+- `void setPavarde(const std::string& pavarde)` – nustato pavardę
 
-Rule of Five:
+### Globalūs operatoriai
 
-Zmogus(const Zmogus& other) - kopijavimo konstruktorius
+- `std::ostream& operator<<(std::ostream& os, const Zmogus& zmogus)` – išvedimo operatorius  
+- `std::istream& operator>>(std::istream& is, Zmogus& zmogus)` – įvedimo operatorius
 
-Zmogus& operator=(const Zmogus& other) - kopijavimo priskyrimo operatorius
-
-Zmogus(Zmogus&& other) noexcept - perkelimo konstruktorius
-
-Zmogus& operator=(Zmogus&& other) noexcept - perkelimo priskyrimo operatorius
-
-virtual ~Zmogus() = 0 - virtualus destruktorius (pure virtual, kad klasė būtų abstrakti)
-
-
-
-Grynai virtualios funkcijos:
-
-virtual void print(std::ostream& os) const = 0 - išvedimui
-
-virtual void read(std::istream& is) = 0 - įvedimui
-
-
-
-
-Getteriai ir setteriai:
-
-std::string vardas() const - grąžina vardą
-
-std::string pavarde() const - grąžina pavardę
-
-void setVardas(const std::string& vardas) - nustato vardą
-
-void setPavarde(const std::string& pavarde) - nustato pavardę
-
-
-
-Globalūs operatoriai:
-
-std::ostream& operator<<(std::ostream& os, const Zmogus& zmogus) - išvedimo operatorius
-
-std::istream& operator>>(std::istream& is, Zmogus& zmogus) - įvedimo operatorius
-
-Testavimas:
 ---
-Testuojant atkomentuoja testuotiZmogausKlase() dalis su "Zmogus z", tada programa nesikompiliuoja, nes Zmogus yra abstrakti klasė
 
----------------------------------------------------------------------------------------
-Studentas : public Zmogus (išvestinė klasė):
+### Testavimas
+
+Testuojant atkomentuoja `testuotiZmogausKlase()` dalis su `Zmogus z`, tada programa nesikompiliuoja, nes `Zmogus` yra abstrakti klasė.
+
 ---
-|  Papildomas atributas | Tipas | Aprašymas |
-| ------------- | ------------- | ------------- |
-| nd_  |  (std::vector<int>) | namų darbų pažymiai |
-| egzaminas_ | (int) | egzamino rezultatas |
-| galutinis_ | (double) | galutinis balas |
 
+## Studentas : public Zmogus (išvestinė klasė)
 
-Statiniai atributai:
+---
 
-static int destruktoriuSk - destruktoriaus iškvietimų skaičius (testavimui)
+### Papildomi atributai
 
+| Papildomas atributas | Tipas             | Aprašymas              |
+|----------------------|-------------------|------------------------|
+| nd_                  | std::vector<int>  | namų darbų pažymiai    |
+| egzaminas_           | int               | egzamino rezultatas    |
+| galutinis_           | double            | galutinis balas        |
 
+### Statiniai atributai
 
+- `static int destruktoriuSk` – destruktoriaus iškvietimų skaičius (testavimui)
 
-Konstruktoriai:
+### Konstruktoriai
 
-Studentas() - numatytasis konstruktorius
+- `Studentas()` – numatytasis konstruktorius  
+- `Studentas(std::istream& is)` – konstruktorius su įvesties srautu  
+- `Studentas(const std::string& vardas, const std::string& pavarde)` – konstruktorius su vardu ir pavarde
 
-Studentas(std::istream& is) - konstruktorius su įvesties srautu
+### Rule of Five
 
-Studentas(const std::string& vardas, const std::string& pavarde) - konstruktorius su vardu ir pavarde
+- `Studentas(const Studentas& other)` – kopijavimo konstruktorius  
+- `Studentas& operator=(const Studentas& other)` – kopijavimo priskyrimo operatorius  
+- `Studentas(Studentas&& other) noexcept` – perkelimo konstruktorius  
+- `Studentas& operator=(Studentas&& other) noexcept` – perkelimo priskyrimo operatorius  
+- `~Studentas() override` – destruktorius
 
+### Virtualių funkcijų realizacijos
 
+- `void print(std::ostream& os) const override` – išvedimo funkcija  
+- `void read(std::istream& is) override` – įvedimo funkcija
 
-Rule of Five:
+### Getteriai
 
-Studentas(const Studentas& other) - kopijavimo konstruktorius
+- `std::vector<int> nd() const` – grąžina namų darbų masyvą  
+- `int egzaminas() const` – grąžina egzamino balą  
+- `double galutinis() const` – grąžina galutinį balą
 
-Studentas& operator=(const Studentas& other) - kopijavimo priskyrimo operatorius
+### Setteriai
 
-Studentas(Studentas&& other) noexcept - perkelimo konstruktorius
-
-Studentas& operator=(Studentas&& other) noexcept - perkelimo priskyrimo operatorius
-
-~Studentas() override - destruktorius
-
-
-
-
-Virtualių funkcijų realizacijos:
-
-void print(std::ostream& os) const override - išvedimo funkcija
-
-void read(std::istream& is) override - įvedimo funkcija
-
-
-
-Getteriai:
-
-std::vector<int> nd() const - grąžina namų darbų masyvą
-
-int egzaminas() const - grąžina egzamino balą
-
-double galutinis() const - grąžina galutinį balą
-
-
-
-Setteriai:
-
-void setEgzaminas(int egzaminas) - nustato egzamino balą
-
-void setGalutinis(double galutinis) - nustato galutinį balą
-
+- `void setEgzaminas(int egzaminas)` – nustato egzamino balą  
+- `void setGalutinis(double galutinis)` – nustato galutinį balą
 -----------------------------------------------------------------------------------------------------
 Testas:
 ----
