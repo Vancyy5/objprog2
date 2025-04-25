@@ -82,40 +82,64 @@ Zmogus (abstrakti bazinė klasė):
 | vardas_  | (std::string) | asmens vardas |
 | pavarde_ | (std::string) | asmens pavardė |
 
+
+
+
 Konstruktoriai:
 
 Zmogus() - numatytasis konstruktorius
+
 Zmogus(const std::string& vardas, const std::string& pavarde) - konstruktorius su parametrais
+
 Zmogus(const Zmogus& other) - kopijavimo konstruktorius
+
+
+
 
 Rule of Five:
 
 Zmogus(const Zmogus& other) - kopijavimo konstruktorius
+
 Zmogus& operator=(const Zmogus& other) - kopijavimo priskyrimo operatorius
+
 Zmogus(Zmogus&& other) noexcept - perkelimo konstruktorius
+
 Zmogus& operator=(Zmogus&& other) noexcept - perkelimo priskyrimo operatorius
+
 virtual ~Zmogus() = 0 - virtualus destruktorius (pure virtual, kad klasė būtų abstrakti)
+
+
 
 Grynai virtualios funkcijos:
 
 virtual void print(std::ostream& os) const = 0 - išvedimui
+
 virtual void read(std::istream& is) = 0 - įvedimui
+
+
+
 
 Getteriai ir setteriai:
 
 std::string vardas() const - grąžina vardą
+
 std::string pavarde() const - grąžina pavardę
+
 void setVardas(const std::string& vardas) - nustato vardą
+
 void setPavarde(const std::string& pavarde) - nustato pavardę
+
+
 
 Globalūs operatoriai:
 
 std::ostream& operator<<(std::ostream& os, const Zmogus& zmogus) - išvedimo operatorius
+
 std::istream& operator>>(std::istream& is, Zmogus& zmogus) - įvedimo operatorius
 
 Testavimas:
 ---
-Testuojant atkomentuoja testuotiZmogausKlase() dalis su "Zmogus z", tada programa nesikompiliuoja, nes nes Zmogus yra abstrakti klasė
+Testuojant atkomentuoja testuotiZmogausKlase() dalis su "Zmogus z", tada programa nesikompiliuoja, nes Zmogus yra abstrakti klasė
 
 ---------------------------------------------------------------------------------------
 Studentas : public Zmogus (išvestinė klasė):
@@ -131,34 +155,56 @@ Statiniai atributai:
 
 static int destruktoriuSk - destruktoriaus iškvietimų skaičius (testavimui)
 
+
+
+
 Konstruktoriai:
 
 Studentas() - numatytasis konstruktorius
+
 Studentas(std::istream& is) - konstruktorius su įvesties srautu
+
 Studentas(const std::string& vardas, const std::string& pavarde) - konstruktorius su vardu ir pavarde
+
+
 
 Rule of Five:
 
 Studentas(const Studentas& other) - kopijavimo konstruktorius
+
 Studentas& operator=(const Studentas& other) - kopijavimo priskyrimo operatorius
+
 Studentas(Studentas&& other) noexcept - perkelimo konstruktorius
+
 Studentas& operator=(Studentas&& other) noexcept - perkelimo priskyrimo operatorius
+
 ~Studentas() override - destruktorius
+
+
+
 
 Virtualių funkcijų realizacijos:
 
 void print(std::ostream& os) const override - išvedimo funkcija
+
 void read(std::istream& is) override - įvedimo funkcija
+
+
 
 Getteriai:
 
 std::vector<int> nd() const - grąžina namų darbų masyvą
+
 int egzaminas() const - grąžina egzamino balą
+
 double galutinis() const - grąžina galutinį balą
+
+
 
 Setteriai:
 
 void setEgzaminas(int egzaminas) - nustato egzamino balą
+
 void setGalutinis(double galutinis) - nustato galutinį balą
 
 -----------------------------------------------------------------------------------------------------
