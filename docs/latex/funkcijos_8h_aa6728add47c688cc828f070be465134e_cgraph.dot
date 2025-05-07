@@ -1,0 +1,22 @@
+digraph "sortStudentai"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="sortStudentai",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge7_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="compareByGalutinis",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$funkcijos_8cpp.html#a9b6a228fc464a9d4c17b271db47a90ce",tooltip=" "];
+  Node2 -> Node3 [id="edge8_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="Studentas::galutinis",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_studentas.html#a448772adf518582b94ac0ac39e224a16",tooltip=" "];
+  Node1 -> Node4 [id="edge9_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="compareByPavarde",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$funkcijos_8cpp.html#af2ab3189b93eeee714fd925f27f19b52",tooltip=" "];
+  Node4 -> Node5 [id="edge10_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="Zmogus::pavarde",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_zmogus.html#a24b5b4208f386916dc5c1ccf006bdedf",tooltip=" "];
+  Node1 -> Node6 [id="edge11_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="compareByVardas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$funkcijos_8cpp.html#abed46d0f5cd92f3e761bff20e25ce475",tooltip=" "];
+  Node6 -> Node7 [id="edge12_Node000006_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="Zmogus::vardas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_zmogus.html#a03de7738fc8f68275e401a3b96954cf0",tooltip=" "];
+}

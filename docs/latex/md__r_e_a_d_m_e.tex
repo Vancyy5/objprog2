@@ -1,0 +1,236 @@
+\chapter{objprog2}
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{objprog2@{objprog2}}
+\label{md__r_e_a_d_m_e_autotoc_md0}%
+\Hypertarget{md__r_e_a_d_m_e_autotoc_md0}%
+\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{\texorpdfstring{APRAŠ\+YMAS\+:}{APRAŠ\+YMAS\+:}}\label{md__r_e_a_d_m_e_autotoc_md1}
+Ši programa analizuoja studentų duomenų failus su skirtingais įrašų dydžiai, juos surūšiuoja, vėliau juos išskirsto pagal jų galutinį balą į dvi grupes\+: kietekų(galutinis balas \texorpdfstring{$>$}{>}=5.\+0 ) ir vargšų(galutinis balas \texorpdfstring{$<$}{<} 5.\+0). Šioje versijoje naudojama bazinė klasė Žmogus ir išvestinė klasė \doxylink{class_studentas}{Studentas}. Programoje yra rule of five įtriaukianti\+:
+\begin{DoxyEnumerate}
+\item default konstuktorių
+\item kopijavimo konstruktorių
+\item kopijavimo priskyrimo operatorių
+\item perkelimo konstruktorių
+\item perkelimo priskyrimo operatorių
+\item destruktorių
+\end{DoxyEnumerate}
+
+Taip pat perdengti \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} ir \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operatoriai\+:
+\begin{DoxyEnumerate}
+\item kad palaikytų įvestį iš vartotojo (cin), iš stringo, iš failo
+\item kad palaikytų išvestį į ekraną ir į failą
+\end{DoxyEnumerate}
+
+Testavimą atlieka funkcija \doxylink{funkcijos_8cpp_a0bcc3fa49fd1bf2474cbfd5ccf2aaff2}{testuoti\+Studento\+Metodus()}.
+
+\DoxyHorRuler{0}
+ \hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysection{\texorpdfstring{Programos paleidimas\+:}{Programos paleidimas\+:}}\label{md__r_e_a_d_m_e_autotoc_md3}
+
+\begin{DoxyEnumerate}
+\item Sukurkite darbo katalogą, kur norite atsisiųsti projektą\+:
+\end{DoxyEnumerate}
+
+mkdir mano-\/projektas cd mano-\/projektas
+
+
+\begin{DoxyEnumerate}
+\item Klonuoti Repozitoriją\+: ~\newline
+
+
+git clone \href{https://github.com/Vancyy5/objprog2.git}{\texttt{ https\+://github.\+com/\+Vancyy5/objprog2.\+git}}
+\item Užtikrinkite, kad turite įdiegtą C++17 suderinamą kompiliatorių.
+\item Kompiliuoti su makefile\+:
+
+make
+\item Paleiskite\+:
+
+./main
+\item Išvalykite\+:
+
+make clean
+\end{DoxyEnumerate}\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysection{\texorpdfstring{Makefile apima\+:}{Makefile apima\+:}}\label{md__r_e_a_d_m_e_autotoc_md4}
+Naudoja g++ kompiliatorių su C++17 standartu ir optimizavimu
+
+Apima klaidų tikrinimo vėliavėles
+
+Sukompiliuokite visus šaltinio failus į objektų failus
+
+Susieja juos kartu, kad sukurtų vykdomąjį failą
+
+Pateikiamas švarus tikslas pašalinti objekto failus, vykdomąjį failą ir testavimui reikalingus failus
+
+\DoxyHorRuler{0}
+ \hypertarget{md__r_e_a_d_m_e_autotoc_md6}{}\doxysection{\texorpdfstring{TESTAVIMO SISTEMOS PARAMETRAI\+:}{TESTAVIMO SISTEMOS PARAMETRAI\+:}}\label{md__r_e_a_d_m_e_autotoc_md6}
+CPU\+: Intel(\+R) Core(\+TM) i5-\/1035\+G1 CPU @ 1.\+00\+GHz, 1190 Mhz, 4 Core(s), 8 Logical Processors
+
+RAM\+: 8GB DDR4-\/2666
+
+DISK\+: SKHynix\+\_\+\+HFM512\+GDHTNI-\/87\+A0B (476,9 GB)
+
+OS\+: Microsoft Windows 11 Home
+
+GPU\+: Intel(\+R) UHD Graphics (1920x1080x32b)
+
+G++ versija 14.\+2.\+0
+
+\DoxyHorRuler{0}
+ \hypertarget{md__r_e_a_d_m_e_autotoc_md8}{}\doxysection{\texorpdfstring{Bazinė ir išvestinė klasės}{Bazinė ir išvestinė klasės}}\label{md__r_e_a_d_m_e_autotoc_md8}
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md10}{}\doxysubsection{\texorpdfstring{Zmogus (abstrakti bazinė klasė)}{Zmogus (abstrakti bazinė klasė)}}\label{md__r_e_a_d_m_e_autotoc_md10}
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md12}{}\doxysubsubsection{\texorpdfstring{Atributai}{Atributai}}\label{md__r_e_a_d_m_e_autotoc_md12}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Atributas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Tipas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Aprašymas    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Atributas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Tipas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Aprašymas    }\\\cline{1-3}
+\endhead
+vardas\+\_\+   &std\+::string   &asmens vardas    \\\cline{1-3}
+pavarde\+\_\+   &std\+::string   &asmens pavardė   \\\cline{1-3}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md13}{}\doxysubsubsection{\texorpdfstring{Konstruktoriai}{Konstruktoriai}}\label{md__r_e_a_d_m_e_autotoc_md13}
+
+\begin{DoxyItemize}
+\item {\ttfamily \doxylink{class_zmogus}{Zmogus()}} – numatytasis konstruktorius ~\newline
+
+\item {\ttfamily \doxylink{class_zmogus}{Zmogus}(const std\+::string\& vardas, const std\+::string\& pavarde)} – konstruktorius su parametrais ~\newline
+
+\item {\ttfamily \doxylink{class_zmogus}{Zmogus}(const \doxylink{class_zmogus}{Zmogus}\& other)} – kopijavimo konstruktorius
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md14}{}\doxysubsubsection{\texorpdfstring{Rule of Five}{Rule of Five}}\label{md__r_e_a_d_m_e_autotoc_md14}
+
+\begin{DoxyItemize}
+\item {\ttfamily \doxylink{class_zmogus}{Zmogus}(const \doxylink{class_zmogus}{Zmogus}\& other)} – kopijavimo konstruktorius ~\newline
+
+\item {\ttfamily \doxylink{class_zmogus}{Zmogus}\& operator=(const \doxylink{class_zmogus}{Zmogus}\& other)} – kopijavimo priskyrimo operatorius ~\newline
+
+\item {\ttfamily \doxylink{class_zmogus}{Zmogus}(\doxylink{class_zmogus}{Zmogus}\&\& other) noexcept} – perkelimo konstruktorius ~\newline
+
+\item {\ttfamily \doxylink{class_zmogus}{Zmogus}\& operator=(\doxylink{class_zmogus}{Zmogus}\&\& other) noexcept} – perkelimo priskyrimo operatorius ~\newline
+
+\item {\ttfamily virtual \texorpdfstring{$\sim$}{\string~}\+Zmogus() = 0} – virtualus destruktorius (pure virtual, kad klasė būtų abstrakti)
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md15}{}\doxysubsubsection{\texorpdfstring{Grynai virtualios funkcijos}{Grynai virtualios funkcijos}}\label{md__r_e_a_d_m_e_autotoc_md15}
+
+\begin{DoxyItemize}
+\item {\ttfamily virtual void print(std\+::ostream\& os) const = 0} – išvedimui ~\newline
+
+\item {\ttfamily virtual void read(std\+::istream\& is) = 0} – įvedimui
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md16}{}\doxysubsubsection{\texorpdfstring{Getteriai ir setteriai}{Getteriai ir setteriai}}\label{md__r_e_a_d_m_e_autotoc_md16}
+
+\begin{DoxyItemize}
+\item {\ttfamily std\+::string vardas() const} – grąžina vardą ~\newline
+
+\item {\ttfamily std\+::string pavarde() const} – grąžina pavardę ~\newline
+
+\item {\ttfamily void set\+Vardas(const std\+::string\& vardas)} – nustato vardą ~\newline
+
+\item {\ttfamily void set\+Pavarde(const std\+::string\& pavarde)} – nustato pavardę
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md17}{}\doxysubsubsection{\texorpdfstring{Globalūs operatoriai}{Globalūs operatoriai}}\label{md__r_e_a_d_m_e_autotoc_md17}
+
+\begin{DoxyItemize}
+\item {\ttfamily std\+::ostream\& operator\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}(std\+::ostream\& os, const \doxylink{class_zmogus}{Zmogus}\& zmogus)} – išvedimo operatorius ~\newline
+
+\item {\ttfamily std\+::istream\& operator\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}(std\+::istream\& is, \doxylink{class_zmogus}{Zmogus}\& zmogus)} – įvedimo operatorius
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md19}{}\doxysubsubsection{\texorpdfstring{Testavimas}{Testavimas}}\label{md__r_e_a_d_m_e_autotoc_md19}
+Testuojant atkomentuoja {\ttfamily \doxylink{funkcijos_8cpp_a2df0a259af1958b8b4c2eb00a5806530}{testuoti\+Zmogaus\+Klase()}} dalis su {\ttfamily \doxylink{class_zmogus}{Zmogus} z}, tada programa nesikompiliuoja, nes {\ttfamily \doxylink{class_zmogus}{Zmogus}} yra abstrakti klasė.
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md21}{}\doxysubsection{\texorpdfstring{Studentas \+: public Zmogus (išvestinė klasė)}{Studentas \+: public Zmogus (išvestinė klasė)}}\label{md__r_e_a_d_m_e_autotoc_md21}
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md23}{}\doxysubsubsection{\texorpdfstring{Papildomi atributai}{Papildomi atributai}}\label{md__r_e_a_d_m_e_autotoc_md23}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Papildomas atributas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Tipas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Aprašymas    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Papildomas atributas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Tipas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Aprašymas    }\\\cline{1-3}
+\endhead
+nd\+\_\+   &std\+::vector$<$int$>$   &namų darbų pažymiai    \\\cline{1-3}
+egzaminas\+\_\+   &int   &egzamino rezultatas    \\\cline{1-3}
+galutinis\+\_\+   &double   &galutinis balas   \\\cline{1-3}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md24}{}\doxysubsubsection{\texorpdfstring{Statiniai atributai}{Statiniai atributai}}\label{md__r_e_a_d_m_e_autotoc_md24}
+
+\begin{DoxyItemize}
+\item {\ttfamily static int destruktoriu\+Sk} – destruktoriaus iškvietimų skaičius (testavimui)
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md25}{}\doxysubsubsection{\texorpdfstring{Konstruktoriai}{Konstruktoriai}}\label{md__r_e_a_d_m_e_autotoc_md25}
+
+\begin{DoxyItemize}
+\item {\ttfamily \doxylink{class_studentas}{Studentas()}} – numatytasis konstruktorius ~\newline
+
+\item {\ttfamily \doxylink{class_studentas}{Studentas}(std\+::istream\& is)} – konstruktorius su įvesties srautu ~\newline
+
+\item {\ttfamily \doxylink{class_studentas}{Studentas}(const std\+::string\& vardas, const std\+::string\& pavarde)} – konstruktorius su vardu ir pavarde
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md26}{}\doxysubsubsection{\texorpdfstring{Rule of Five}{Rule of Five}}\label{md__r_e_a_d_m_e_autotoc_md26}
+
+\begin{DoxyItemize}
+\item {\ttfamily \doxylink{class_studentas}{Studentas}(const \doxylink{class_studentas}{Studentas}\& other)} – kopijavimo konstruktorius ~\newline
+
+\item {\ttfamily \doxylink{class_studentas}{Studentas}\& operator=(const \doxylink{class_studentas}{Studentas}\& other)} – kopijavimo priskyrimo operatorius ~\newline
+
+\item {\ttfamily \doxylink{class_studentas}{Studentas}(\doxylink{class_studentas}{Studentas}\&\& other) noexcept} – perkelimo konstruktorius ~\newline
+
+\item {\ttfamily \doxylink{class_studentas}{Studentas}\& operator=(\doxylink{class_studentas}{Studentas}\&\& other) noexcept} – perkelimo priskyrimo operatorius ~\newline
+
+\item {\ttfamily \texorpdfstring{$\sim$}{\string~}\+Studentas() override} – destruktorius
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md27}{}\doxysubsubsection{\texorpdfstring{Virtualių funkcijų realizacijos}{Virtualių funkcijų realizacijos}}\label{md__r_e_a_d_m_e_autotoc_md27}
+
+\begin{DoxyItemize}
+\item {\ttfamily void print(std\+::ostream\& os) const override} – išvedimo funkcija ~\newline
+
+\item {\ttfamily void read(std\+::istream\& is) override} – įvedimo funkcija
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md28}{}\doxysubsubsection{\texorpdfstring{Getteriai}{Getteriai}}\label{md__r_e_a_d_m_e_autotoc_md28}
+
+\begin{DoxyItemize}
+\item {\ttfamily std\+::vector\texorpdfstring{$<$}{<}int\texorpdfstring{$>$}{>} nd() const} – grąžina namų darbų masyvą ~\newline
+
+\item {\ttfamily int egzaminas() const} – grąžina egzamino balą ~\newline
+
+\item {\ttfamily double galutinis() const} – grąžina galutinį balą
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md29}{}\doxysubsubsection{\texorpdfstring{Setteriai}{Setteriai}}\label{md__r_e_a_d_m_e_autotoc_md29}
+
+\begin{DoxyItemize}
+\item {\ttfamily void set\+Egzaminas(int egzaminas)} – nustato egzamino balą ~\newline
+ 
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md30}{}\doxysubsection{\texorpdfstring{-\/ {\ttfamily void set\+Galutinis(double galutinis)} – nustato galutinį balą}{-\/ {\ttfamily void set\+Galutinis(double galutinis)} – nustato galutinį balą}}\label{md__r_e_a_d_m_e_autotoc_md30}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md31}{}\doxysubsection{\texorpdfstring{Testas\+:}{Testas\+:}}\label{md__r_e_a_d_m_e_autotoc_md31}
+Funkcija \doxylink{funkcijos_8cpp_a0bcc3fa49fd1bf2474cbfd5ccf2aaff2}{testuoti\+Studento\+Metodus()} tikrina\+:
+
+
+\begin{DoxyEnumerate}
+\item default konstuktorių
+\item kopijavimo konstruktorių
+\item kopijavimo priskyrimo operatorių
+\item perkelimo konstruktorių
+\item perkelimo priskyrimo operatorių
+\item 6.\+1 įvesties operatorių (is istringstream)
+
+6.\+2 įvestį is cin (\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>})
+
+6.\+3 įvestį is failo
+\item išvedimą į stringstream (\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<})
+\item failo nuskaitymą su nuskaitymas\+File()
+\item išvedimą į ekraną ir į faila
+\item destruktorių
+\end{DoxyEnumerate}\hypertarget{md__r_e_a_d_m_e_autotoc_md32}{}\doxysubsection{\texorpdfstring{Rule of five\+:}{Rule of five\+:}}\label{md__r_e_a_d_m_e_autotoc_md32}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md33}{}\doxysubsection{\texorpdfstring{Įvesties testavimas\+:}{Įvesties testavimas\+:}}\label{md__r_e_a_d_m_e_autotoc_md33}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md34}{}\doxysubsection{\texorpdfstring{Išvedimo testavimas\+:}{Išvedimo testavimas\+:}}\label{md__r_e_a_d_m_e_autotoc_md34}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md35}{}\doxysubsection{\texorpdfstring{Destruktorius\+:}{Destruktorius\+:}}\label{md__r_e_a_d_m_e_autotoc_md35}
+
+
+\DoxyHorRuler{0}
+ \hypertarget{md__r_e_a_d_m_e_autotoc_md37}{}\doxysubsection{\texorpdfstring{Papildomi failai testavimui\+:}{Papildomi failai testavimui\+:}}\label{md__r_e_a_d_m_e_autotoc_md37}
+failinis.\+txt -\/ 6.\+3 testas (įvestis su operatorium \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} iš failo)
+
+studentai.\+txt -\/ 8 testas (failo nuskaitymas)
+
+rezultatai\+T.\+txt -\/ 9 testas (išvedimo rezultato failas)
+
+Jos išsitrina kartu su vykdomuoju failu parašius terminale make clean. 

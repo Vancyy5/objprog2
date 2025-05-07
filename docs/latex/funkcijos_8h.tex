@@ -1,0 +1,141 @@
+\doxysection{funkcijos.\+h File Reference}
+\hypertarget{funkcijos_8h}{}\label{funkcijos_8h}\index{funkcijos.h@{funkcijos.h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$execution$>$}\newline
+{\ttfamily \#include $<$numeric$>$}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include "{}zmogus.\+h"{}}\newline
+Include dependency graph for funkcijos.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_studentas}{Studentas}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{funkcijos_8h_abed46d0f5cd92f3e761bff20e25ce475}{compare\+By\+Vardas}} (const \mbox{\hyperlink{class_studentas}{Studentas}} \&a, const \mbox{\hyperlink{class_studentas}{Studentas}} \&b)
+\item 
+bool \mbox{\hyperlink{funkcijos_8h_af2ab3189b93eeee714fd925f27f19b52}{compare\+By\+Pavarde}} (const \mbox{\hyperlink{class_studentas}{Studentas}} \&a, const \mbox{\hyperlink{class_studentas}{Studentas}} \&b)
+\item 
+bool \mbox{\hyperlink{funkcijos_8h_a9b6a228fc464a9d4c17b271db47a90ce}{compare\+By\+Galutinis}} (const \mbox{\hyperlink{class_studentas}{Studentas}} \&a, const \mbox{\hyperlink{class_studentas}{Studentas}} \&b)
+\item 
+void \mbox{\hyperlink{funkcijos_8h_a55d40c2545ce55b7e4ee9536f339d291}{skaityti\+Is\+Failo}} (std\+::vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&grupe, const std\+::string \&failo\+Pavadinimas)
+\item 
+void \mbox{\hyperlink{funkcijos_8h_a611987d71fb1ea6c7b02ac55df0d05df}{isvesti\+Studentus\+IFaila}} (const std\+::vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&studentai, const std\+::string \&failo\+Pavadinimas, char ats)
+\item 
+void \mbox{\hyperlink{funkcijos_8h_aa6728add47c688cc828f070be465134e}{sort\+Studentai}} (std\+::vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&grupe, char sorting\+Option)
+\item 
+void \mbox{\hyperlink{funkcijos_8h_a3bcd71c154910a66e7be751cab3eb68d}{skirstyti\+Studentus}} (std\+::vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&grupe, std\+::vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&kietiakiai, std\+::vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&vargsai)
+\item 
+void \mbox{\hyperlink{funkcijos_8h_a9b67506502ea72a87dd4f7e8cc0f0072}{testuoti\+Duomenu\+Apdorojima}} (const std\+::string \&aplankas, int skaicius)
+\item 
+void \mbox{\hyperlink{funkcijos_8h_a0bcc3fa49fd1bf2474cbfd5ccf2aaff2}{testuoti\+Studento\+Metodus}} ()
+\item 
+void \mbox{\hyperlink{funkcijos_8h_a2df0a259af1958b8b4c2eb00a5806530}{testuoti\+Zmogaus\+Klase}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{funkcijos_8h_a9b6a228fc464a9d4c17b271db47a90ce}\index{funkcijos.h@{funkcijos.h}!compareByGalutinis@{compareByGalutinis}}
+\index{compareByGalutinis@{compareByGalutinis}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{compareByGalutinis()}{compareByGalutinis()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_a9b6a228fc464a9d4c17b271db47a90ce} 
+bool compare\+By\+Galutinis (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_studentas}{Studentas}} \&}]{a}{, }\item[{const \mbox{\hyperlink{class_studentas}{Studentas}} \&}]{b}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+\Hypertarget{funkcijos_8h_af2ab3189b93eeee714fd925f27f19b52}\index{funkcijos.h@{funkcijos.h}!compareByPavarde@{compareByPavarde}}
+\index{compareByPavarde@{compareByPavarde}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{compareByPavarde()}{compareByPavarde()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_af2ab3189b93eeee714fd925f27f19b52} 
+bool compare\+By\+Pavarde (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_studentas}{Studentas}} \&}]{a}{, }\item[{const \mbox{\hyperlink{class_studentas}{Studentas}} \&}]{b}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 4
+Here is the caller graph for this function\+:
+% FIG 5
+\Hypertarget{funkcijos_8h_abed46d0f5cd92f3e761bff20e25ce475}\index{funkcijos.h@{funkcijos.h}!compareByVardas@{compareByVardas}}
+\index{compareByVardas@{compareByVardas}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{compareByVardas()}{compareByVardas()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_abed46d0f5cd92f3e761bff20e25ce475} 
+bool compare\+By\+Vardas (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_studentas}{Studentas}} \&}]{a}{, }\item[{const \mbox{\hyperlink{class_studentas}{Studentas}} \&}]{b}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 6
+Here is the caller graph for this function\+:
+% FIG 7
+\Hypertarget{funkcijos_8h_a611987d71fb1ea6c7b02ac55df0d05df}\index{funkcijos.h@{funkcijos.h}!isvestiStudentusIFaila@{isvestiStudentusIFaila}}
+\index{isvestiStudentusIFaila@{isvestiStudentusIFaila}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{isvestiStudentusIFaila()}{isvestiStudentusIFaila()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_a611987d71fb1ea6c7b02ac55df0d05df} 
+void isvesti\+Studentus\+IFaila (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{studentai}{, }\item[{const std\+::string \&}]{failo\+Pavadinimas}{, }\item[{char}]{ats}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 8
+\Hypertarget{funkcijos_8h_a55d40c2545ce55b7e4ee9536f339d291}\index{funkcijos.h@{funkcijos.h}!skaitytiIsFailo@{skaitytiIsFailo}}
+\index{skaitytiIsFailo@{skaitytiIsFailo}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{skaitytiIsFailo()}{skaitytiIsFailo()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_a55d40c2545ce55b7e4ee9536f339d291} 
+void skaityti\+Is\+Failo (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{grupe}{, }\item[{const std\+::string \&}]{failo\+Pavadinimas}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 9
+Here is the caller graph for this function\+:
+% FIG 10
+\Hypertarget{funkcijos_8h_a3bcd71c154910a66e7be751cab3eb68d}\index{funkcijos.h@{funkcijos.h}!skirstytiStudentus@{skirstytiStudentus}}
+\index{skirstytiStudentus@{skirstytiStudentus}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{skirstytiStudentus()}{skirstytiStudentus()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_a3bcd71c154910a66e7be751cab3eb68d} 
+void skirstyti\+Studentus (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{grupe}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{kietiakiai}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{vargsai}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 11
+\Hypertarget{funkcijos_8h_aa6728add47c688cc828f070be465134e}\index{funkcijos.h@{funkcijos.h}!sortStudentai@{sortStudentai}}
+\index{sortStudentai@{sortStudentai}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{sortStudentai()}{sortStudentai()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_aa6728add47c688cc828f070be465134e} 
+void sort\+Studentai (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{grupe}{, }\item[{char}]{sorting\+Option}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 12
+Here is the caller graph for this function\+:
+% FIG 13
+\Hypertarget{funkcijos_8h_a9b67506502ea72a87dd4f7e8cc0f0072}\index{funkcijos.h@{funkcijos.h}!testuotiDuomenuApdorojima@{testuotiDuomenuApdorojima}}
+\index{testuotiDuomenuApdorojima@{testuotiDuomenuApdorojima}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{testuotiDuomenuApdorojima()}{testuotiDuomenuApdorojima()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_a9b67506502ea72a87dd4f7e8cc0f0072} 
+void testuoti\+Duomenu\+Apdorojima (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{aplankas}{, }\item[{int}]{skaicius}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 14
+Here is the caller graph for this function\+:
+% FIG 15
+\Hypertarget{funkcijos_8h_a0bcc3fa49fd1bf2474cbfd5ccf2aaff2}\index{funkcijos.h@{funkcijos.h}!testuotiStudentoMetodus@{testuotiStudentoMetodus}}
+\index{testuotiStudentoMetodus@{testuotiStudentoMetodus}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{testuotiStudentoMetodus()}{testuotiStudentoMetodus()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_a0bcc3fa49fd1bf2474cbfd5ccf2aaff2} 
+void testuoti\+Studento\+Metodus (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 16
+Here is the caller graph for this function\+:
+% FIG 17
+\Hypertarget{funkcijos_8h_a2df0a259af1958b8b4c2eb00a5806530}\index{funkcijos.h@{funkcijos.h}!testuotiZmogausKlase@{testuotiZmogausKlase}}
+\index{testuotiZmogausKlase@{testuotiZmogausKlase}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{testuotiZmogausKlase()}{testuotiZmogausKlase()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_a2df0a259af1958b8b4c2eb00a5806530} 
+void testuoti\+Zmogaus\+Klase (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
