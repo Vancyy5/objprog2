@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Klasės Studentų valdymas: Laikas Class Reference</title>
+<title>Student Management System: Laikas Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Klasės Studentų valdymas
+   <div id="projectname">Student Management System
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -110,29 +110,42 @@ $(function(){initNavTree('class_laikas.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 
+<p>Class for measuring execution time.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="laikas_8h_source.html">laikas.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a4189b28bae30f92d9b0db6ddc52d51e3" id="r_a4189b28bae30f92d9b0db6ddc52d51e3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4189b28bae30f92d9b0db6ddc52d51e3">Laikas</a> (const std::string &amp;pavadinimas)</td></tr>
+<tr class="memdesc:a4189b28bae30f92d9b0db6ddc52d51e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
 <tr class="separator:a4189b28bae30f92d9b0db6ddc52d51e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97d3fa3942008539737a30a7b965dc66" id="r_a97d3fa3942008539737a30a7b965dc66"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97d3fa3942008539737a30a7b965dc66">pradeti</a> ()</td></tr>
+<tr class="memdesc:a97d3fa3942008539737a30a7b965dc66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the timer Records the starting time point.  <br /></td></tr>
 <tr class="separator:a97d3fa3942008539737a30a7b965dc66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7dd9dcd9c4d49854ad7e479762cadcc" id="r_aa7dd9dcd9c4d49854ad7e479762cadcc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7dd9dcd9c4d49854ad7e479762cadcc">baigti</a> ()</td></tr>
+<tr class="memdesc:aa7dd9dcd9c4d49854ad7e479762cadcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop the timer and print the elapsed time Records the ending time point and outputs the time difference.  <br /></td></tr>
 <tr class="separator:aa7dd9dcd9c4d49854ad7e479762cadcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04257c2ddcfb976e2a3f1106b037f6ba" id="r_a04257c2ddcfb976e2a3f1106b037f6ba"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04257c2ddcfb976e2a3f1106b037f6ba">gautiLaikoSkirtuma</a> ()</td></tr>
+<tr class="memdesc:a04257c2ddcfb976e2a3f1106b037f6ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the elapsed time in seconds.  <br /></td></tr>
 <tr class="separator:a04257c2ddcfb976e2a3f1106b037f6ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a26ce45452dd63b640635ae45ff6a3665" id="r_a26ce45452dd63b640635ae45ff6a3665"><td class="memItemLeft" align="right" valign="top">std::chrono::high_resolution_clock::time_point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26ce45452dd63b640635ae45ff6a3665">start</a></td></tr>
+<tr class="memdesc:a26ce45452dd63b640635ae45ff6a3665"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start time point.  <br /></td></tr>
 <tr class="separator:a26ce45452dd63b640635ae45ff6a3665"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e59f2d398abb6c164c2ce7723edf1b0" id="r_a0e59f2d398abb6c164c2ce7723edf1b0"><td class="memItemLeft" align="right" valign="top">std::chrono::high_resolution_clock::time_point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e59f2d398abb6c164c2ce7723edf1b0">end</a></td></tr>
+<tr class="memdesc:a0e59f2d398abb6c164c2ce7723edf1b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">End time point.  <br /></td></tr>
 <tr class="separator:a0e59f2d398abb6c164c2ce7723edf1b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ea46f532b80113518b362c46aa7492b" id="r_a1ea46f532b80113518b362c46aa7492b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ea46f532b80113518b362c46aa7492b">veiksmoPavadinimas</a></td></tr>
+<tr class="memdesc:a1ea46f532b80113518b362c46aa7492b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the operation being timed.  <br /></td></tr>
 <tr class="separator:a1ea46f532b80113518b362c46aa7492b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class for measuring execution time. </p>
+<p>This class provides functionality to measure and report the execution time of code segments using high-resolution clock. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a4189b28bae30f92d9b0db6ddc52d51e3" name="a4189b28bae30f92d9b0db6ddc52d51e3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4189b28bae30f92d9b0db6ddc52d51e3">&#9670;&#160;</a></span>Laikas()</h2>
 
@@ -147,6 +160,14 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pavadinimas</td><td>Name of the operation to time </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -165,16 +186,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 0 --></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 1 --></div>
-</div>
+
+<p>Stop the timer and print the elapsed time Records the ending time point and outputs the time difference. </p>
 
 </div>
 </div>
@@ -192,11 +205,9 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 2 --></div>
-</div>
+
+<p>Get the elapsed time in seconds. </p>
+<dl class="section return"><dt>Returns</dt><dd>Time difference between start and end in seconds </dd></dl>
 
 </div>
 </div>
@@ -214,11 +225,8 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 3 --></div>
-</div>
+
+<p>Start the timer Records the starting time point. </p>
 
 </div>
 </div>
@@ -243,6 +251,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>End time point. </p>
+
 </div>
 </div>
 <a id="a26ce45452dd63b640635ae45ff6a3665" name="a26ce45452dd63b640635ae45ff6a3665"></a>
@@ -265,6 +275,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Start time point. </p>
+
 </div>
 </div>
 <a id="a1ea46f532b80113518b362c46aa7492b" name="a1ea46f532b80113518b362c46aa7492b"></a>
@@ -286,6 +298,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Name of the operation being timed. </p>
 
 </div>
 </div>

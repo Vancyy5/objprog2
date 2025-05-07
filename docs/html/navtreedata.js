@@ -24,40 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "Klasės Studentų valdymas", "index.html", [
-    [ "objprog2", "md__r_e_a_d_m_e.html", [
-      [ "APRAŠYMAS:", "md__r_e_a_d_m_e.html#autotoc_md1", null ],
-      [ "Programos paleidimas:", "md__r_e_a_d_m_e.html#autotoc_md3", null ],
-      [ "Makefile apima:", "md__r_e_a_d_m_e.html#autotoc_md4", null ],
-      [ "TESTAVIMO SISTEMOS PARAMETRAI:", "md__r_e_a_d_m_e.html#autotoc_md6", null ],
-      [ "Bazinė ir išvestinė klasės", "md__r_e_a_d_m_e.html#autotoc_md8", [
-        [ "Zmogus (abstrakti bazinė klasė)", "md__r_e_a_d_m_e.html#autotoc_md10", [
-          [ "Atributai", "md__r_e_a_d_m_e.html#autotoc_md12", null ],
-          [ "Konstruktoriai", "md__r_e_a_d_m_e.html#autotoc_md13", null ],
-          [ "Rule of Five", "md__r_e_a_d_m_e.html#autotoc_md14", null ],
-          [ "Grynai virtualios funkcijos", "md__r_e_a_d_m_e.html#autotoc_md15", null ],
-          [ "Getteriai ir setteriai", "md__r_e_a_d_m_e.html#autotoc_md16", null ],
-          [ "Globalūs operatoriai", "md__r_e_a_d_m_e.html#autotoc_md17", null ],
-          [ "Testavimas", "md__r_e_a_d_m_e.html#autotoc_md19", null ]
-        ] ],
-        [ "Studentas : public Zmogus (išvestinė klasė)", "md__r_e_a_d_m_e.html#autotoc_md21", [
-          [ "Papildomi atributai", "md__r_e_a_d_m_e.html#autotoc_md23", null ],
-          [ "Statiniai atributai", "md__r_e_a_d_m_e.html#autotoc_md24", null ],
-          [ "Konstruktoriai", "md__r_e_a_d_m_e.html#autotoc_md25", null ],
-          [ "Rule of Five", "md__r_e_a_d_m_e.html#autotoc_md26", null ],
-          [ "Virtualių funkcijų realizacijos", "md__r_e_a_d_m_e.html#autotoc_md27", null ],
-          [ "Getteriai", "md__r_e_a_d_m_e.html#autotoc_md28", null ],
-          [ "Setteriai", "md__r_e_a_d_m_e.html#autotoc_md29", null ]
-        ] ],
-        [ "void setGalutinis(double galutinis) – nustato galutinį balą", "md__r_e_a_d_m_e.html#autotoc_md30", null ],
-        [ "Testas:", "md__r_e_a_d_m_e.html#autotoc_md31", null ],
-        [ "Rule of five:", "md__r_e_a_d_m_e.html#autotoc_md32", null ],
-        [ "Įvesties testavimas:", "md__r_e_a_d_m_e.html#autotoc_md33", null ],
-        [ "Išvedimo testavimas:", "md__r_e_a_d_m_e.html#autotoc_md34", null ],
-        [ "Destruktorius:", "md__r_e_a_d_m_e.html#autotoc_md35", null ],
-        [ "Papildomi failai testavimui:", "md__r_e_a_d_m_e.html#autotoc_md37", null ]
-      ] ]
-    ] ],
+  [ "Student Management System", "index.html", [
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],

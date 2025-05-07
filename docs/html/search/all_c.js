@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['nd_0',['nd',['../class_studentas.html#adfecda15db6a1074b4224cbf6f9a1b8d',1,'Studentas']]],
-  ['nd_5f_1',['nd_',['../class_studentas.html#a1c3423fc1d91e7d2d8271884d60dde3c',1,'Studentas']]],
-  ['nuskaitymasfile_2',['nuskaitymasFile',['../class_studentas.html#aca0bcdc0f22c4caaacf94c5ca7544db0',1,'Studentas']]],
-  ['nustato_20galutinį_20balą_3',['- &lt;tt&gt;void setGalutinis(double galutinis)&lt;/tt&gt; – nustato galutinį balą',['../md__r_e_a_d_m_e.html#autotoc_md30',1,'']]]
+  ['pavarde_0',['pavarde',['../class_zmogus.html#a24b5b4208f386916dc5c1ccf006bdedf',1,'Zmogus']]],
+  ['pavarde_5f_1',['pavarde_',['../class_zmogus.html#a85cd6103a5f887059263d15413a3f081',1,'Zmogus']]],
+  ['pradeti_2',['pradeti',['../class_laikas.html#a97d3fa3942008539737a30a7b965dc66',1,'Laikas']]],
+  ['print_3',['print',['../class_studentas.html#a3d73d57245cccb84a87fff820a32f205',1,'Studentas::print()'],['../class_zmogus.html#a54c34a84f8fee7c318a3c69072521b5f',1,'Zmogus::print()']]]
 ];

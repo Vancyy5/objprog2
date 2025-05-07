@@ -2,114 +2,122 @@
 \hypertarget{class_studentas}{}\label{class_studentas}\index{Studentas@{Studentas}}
 
 
+Student class that inherits from \doxylink{class_zmogus}{Zmogus} (Person) abstract class.  
+
+
+
+
 {\ttfamily \#include $<$funkcijos.\+h$>$}
 
-
-
-Inheritance diagram for Studentas\+:
-% FIG 0
-
-
-Collaboration diagram for Studentas\+:
-% FIG 1
+Inheritance diagram for Studentas\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_studentas}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_studentas_ab459e995e8c9b24cdc9aec5b09a66539}{Studentas}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Default constructor Initializes a student with default values. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_studentas_a00d6db6706f5e4182d3677ea4e90de61}{Studentas}} (std\+::istream \&is)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor that initializes a student from input stream. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_studentas_a7b3f3a8f6acc9d3d18d8682502a80c29}{Studentas}} (const std\+::string \&\mbox{\hyperlink{class_zmogus_a03de7738fc8f68275e401a3b96954cf0}{vardas}}, const std\+::string \&\mbox{\hyperlink{class_zmogus_a24b5b4208f386916dc5c1ccf006bdedf}{pavarde}})
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor with name and surname. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_studentas_aef0484fe46cf05746f8ffc0d083fcf3e}{Studentas}} (const \mbox{\hyperlink{class_studentas}{Studentas}} \&other)
-\item 
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_studentas}{Studentas}} \& \mbox{\hyperlink{class_studentas_a25bcc531503d3bc490dab4a656e3b8e9}{operator=}} (const \mbox{\hyperlink{class_studentas}{Studentas}} \&other)
-\item 
+\begin{DoxyCompactList}\small\item\em Copy assignment operator. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_studentas_a732b15e3745fa8e35ff0002cfc4b73b5}{Studentas}} (\mbox{\hyperlink{class_studentas}{Studentas}} \&\&other) noexcept
-\item 
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_studentas}{Studentas}} \& \mbox{\hyperlink{class_studentas_a6379482d741209e9a2d902023676fb45}{operator=}} (\mbox{\hyperlink{class_studentas}{Studentas}} \&\&other) noexcept
-\item 
+\begin{DoxyCompactList}\small\item\em Move assignment operator. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_studentas_a1842a8cc1832df3ff02680383f473d98}{\texorpdfstring{$\sim$}{\string~}\+Studentas}} () override
-\item 
+\begin{DoxyCompactList}\small\item\em Virtual destructor Overrides the pure virtual destructor from \doxylink{class_zmogus}{Zmogus}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_studentas_a3d73d57245cccb84a87fff820a32f205}{print}} (std\+::ostream \&os) const override
-\item 
+\begin{DoxyCompactList}\small\item\em Prints student information to output stream. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_studentas_a81b9f385ae0038f9c79398d6a00096db}{read}} (std\+::istream \&is) override
-\item 
+\begin{DoxyCompactList}\small\item\em Reads student information from input stream. \end{DoxyCompactList}\item 
 std\+::vector$<$ int $>$ \mbox{\hyperlink{class_studentas_adfecda15db6a1074b4224cbf6f9a1b8d}{nd}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Get homework grades. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_studentas_a8ec75244e6c21cf5a6af9f6d02f20fa2}{egzaminas}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Get exam grade. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_studentas_a448772adf518582b94ac0ac39e224a16}{galutinis}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Get final grade. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_studentas_ac7fa2f1df9d544ac1fc050689d1928bc}{set\+Egzaminas}} (int \mbox{\hyperlink{class_studentas_a8ec75244e6c21cf5a6af9f6d02f20fa2}{egzaminas}})
-\item 
+\begin{DoxyCompactList}\small\item\em Set exam grade. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_studentas_afe8208d99f1c1fefabb9758a5061bd3e}{set\+Galutinis}} (double \mbox{\hyperlink{class_studentas_a448772adf518582b94ac0ac39e224a16}{galutinis}})
-\item 
+\begin{DoxyCompactList}\small\item\em Set final grade. \end{DoxyCompactList}\item 
 std\+::istream \& \mbox{\hyperlink{class_studentas_a56cfe16f164d76b63f50898ef0a6403a}{read\+Student}} (std\+::istream \&is)
-\item 
+\begin{DoxyCompactList}\small\item\em Read student data from input stream. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_studentas_ac25b54f1d6f3a4374499a80b5ac46003}{add\+ND}} (int pazymys)
-\item 
+\begin{DoxyCompactList}\small\item\em Add a homework grade. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_studentas_a56e5236896b579708ec4828a202df274}{clear\+ND}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Clear all homework grades. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_studentas_aab379d5906b265c0179280f3a3864a80}{skaiciuoti\+Vid}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Calculate average of homework grades. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_studentas_ac207dc15bf0ae3cba6eca42681c792bc}{skaiciuoti\+Med}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Calculate median of homework grades. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_studentas_a00616084632943b1a0b2cdb08ac35c35}{gal\+Balas}} (bool naudoti\+Vidurki=true) const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Calculate final grade. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_zmogus}{Zmogus}}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_zmogus_a905fef3b8ad421a6d023c7ebc295f48e}{Zmogus}} ()=default
-\item 
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_zmogus_ae6bfb71e4c8fddf15f3a19b4bcd6fd26}{Zmogus}} (const std\+::string \&\mbox{\hyperlink{class_zmogus_a03de7738fc8f68275e401a3b96954cf0}{vardas}}, const std\+::string \&\mbox{\hyperlink{class_zmogus_a24b5b4208f386916dc5c1ccf006bdedf}{pavarde}})
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor with name and surname. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_zmogus_a9d2bbeaf83ead87dbb686ee04999885f}{Zmogus}} (const \mbox{\hyperlink{class_zmogus}{Zmogus}} \&other)
-\item 
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_zmogus}{Zmogus}} \& \mbox{\hyperlink{class_zmogus_a8bc6d11547d75c71a38567f750f02612}{operator=}} (const \mbox{\hyperlink{class_zmogus}{Zmogus}} \&other)
-\item 
+\begin{DoxyCompactList}\small\item\em Copy assignment operator. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_zmogus_a97c679fdf47100b8d6a9a7e17d4953c2}{Zmogus}} (\mbox{\hyperlink{class_zmogus}{Zmogus}} \&\&other) noexcept
-\item 
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_zmogus}{Zmogus}} \& \mbox{\hyperlink{class_zmogus_af6745536a52d1e85a49c2680199f9a80}{operator=}} (\mbox{\hyperlink{class_zmogus}{Zmogus}} \&\&other) noexcept
-\item 
+\begin{DoxyCompactList}\small\item\em Move assignment operator. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_zmogus_a64c712eed93f3dc770bb00df890292d7}{\texorpdfstring{$\sim$}{\string~}\+Zmogus}} ()=0
-\item 
+\begin{DoxyCompactList}\small\item\em Virtual destructor Pure virtual destructor makes this class abstract. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{class_zmogus_a03de7738fc8f68275e401a3b96954cf0}{vardas}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Get first name. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{class_zmogus_a24b5b4208f386916dc5c1ccf006bdedf}{pavarde}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Get last name. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_zmogus_a6024e8fb5c3a9fbd48ca522f976f8465}{set\+Vardas}} (const std\+::string \&\mbox{\hyperlink{class_zmogus_a03de7738fc8f68275e401a3b96954cf0}{vardas}})
-\item 
+\begin{DoxyCompactList}\small\item\em Set first name. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_zmogus_ae4c3b02e68af5ed87c68101ba699539c}{set\+Pavarde}} (const std\+::string \&\mbox{\hyperlink{class_zmogus_a24b5b4208f386916dc5c1ccf006bdedf}{pavarde}})
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Set last name. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static void \mbox{\hyperlink{class_studentas_aca0bcdc0f22c4caaacf94c5ca7544db0}{nuskaitymas\+File}} (std\+::vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&grupe, const std\+::string \&failo\+Pavadinimas)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Static method for reading students from file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 static int \mbox{\hyperlink{class_studentas_ae812e25299cf9e3f0e7cd943c69eafa3}{destruktoriu\+Sk}} = 0
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Static counter for tracking destructor calls (for testing) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 std\+::vector$<$ int $>$ \mbox{\hyperlink{class_studentas_a1c3423fc1d91e7d2d8271884d60dde3c}{nd\+\_\+}}
-\item 
+\begin{DoxyCompactList}\small\item\em Vector of homework (namų darbų) scores. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_studentas_ab2b6d614a1491c86854d0cd8454a4926}{egzaminas\+\_\+}}
-\item 
+\begin{DoxyCompactList}\small\item\em Exam score. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_studentas_a23307b2f7e41031cd7958022f0adbdae}{galutinis\+\_\+}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Final grade. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_zmogus}{Zmogus}}}
 \begin{DoxyCompactItemize}
 \item 
 std\+::string \mbox{\hyperlink{class_zmogus_a80e72cd553492344884a264a72ce33d2}{vardas\+\_\+}}
-\item 
+\begin{DoxyCompactList}\small\item\em First name of the person. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{class_zmogus_a85cd6103a5f887059263d15413a3f081}{pavarde\+\_\+}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Last name of the person. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Student class that inherits from \doxylink{class_zmogus}{Zmogus} (Person) abstract class. 
+
+This class represents a student with homework grades, exam score and final grade. It inherits from the abstract \doxylink{class_zmogus}{Zmogus} class and implements its pure virtual methods. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{class_studentas_ab459e995e8c9b24cdc9aec5b09a66539}\index{Studentas@{Studentas}!Studentas@{Studentas}}
@@ -118,47 +126,81 @@ std\+::string \mbox{\hyperlink{class_zmogus_a85cd6103a5f887059263d15413a3f081}{p
 {\footnotesize\ttfamily \label{class_studentas_ab459e995e8c9b24cdc9aec5b09a66539} 
 Studentas\+::\+Studentas (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Here is the call graph for this function\+:
-% FIG 2
-Here is the caller graph for this function\+:
-% FIG 3
+
+
+Default constructor Initializes a student with default values. 
+
 \Hypertarget{class_studentas_a00d6db6706f5e4182d3677ea4e90de61}\index{Studentas@{Studentas}!Studentas@{Studentas}}
 \index{Studentas@{Studentas}!Studentas@{Studentas}}
 \doxysubsubsection{\texorpdfstring{Studentas()}{Studentas()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
 {\footnotesize\ttfamily \label{class_studentas_a00d6db6706f5e4182d3677ea4e90de61} 
 Studentas\+::\+Studentas (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is}{}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-% FIG 4
+
+
+Constructor that initializes a student from input stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is} & Input stream to read from \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_studentas_a7b3f3a8f6acc9d3d18d8682502a80c29}\index{Studentas@{Studentas}!Studentas@{Studentas}}
 \index{Studentas@{Studentas}!Studentas@{Studentas}}
 \doxysubsubsection{\texorpdfstring{Studentas()}{Studentas()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
 {\footnotesize\ttfamily \label{class_studentas_a7b3f3a8f6acc9d3d18d8682502a80c29} 
 Studentas\+::\+Studentas (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{vardas}{, }\item[{const std\+::string \&}]{pavarde}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Here is the call graph for this function\+:
-% FIG 5
+
+
+Constructor with name and surname. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vardas} & Student\textquotesingle{}s first name \\
+\hline
+{\em pavarde} & Student\textquotesingle{}s last name \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_studentas_aef0484fe46cf05746f8ffc0d083fcf3e}\index{Studentas@{Studentas}!Studentas@{Studentas}}
 \index{Studentas@{Studentas}!Studentas@{Studentas}}
 \doxysubsubsection{\texorpdfstring{Studentas()}{Studentas()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
 {\footnotesize\ttfamily \label{class_studentas_aef0484fe46cf05746f8ffc0d083fcf3e} 
 Studentas\+::\+Studentas (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_studentas}{Studentas}} \&}]{other}{}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-% FIG 6
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Another student to copy from \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_studentas_a732b15e3745fa8e35ff0002cfc4b73b5}\index{Studentas@{Studentas}!Studentas@{Studentas}}
 \index{Studentas@{Studentas}!Studentas@{Studentas}}
 \doxysubsubsection{\texorpdfstring{Studentas()}{Studentas()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
 {\footnotesize\ttfamily \label{class_studentas_a732b15e3745fa8e35ff0002cfc4b73b5} 
 Studentas\+::\+Studentas (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_studentas}{Studentas}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
 
-Here is the call graph for this function\+:
-% FIG 7
+
+
+Move constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Another student to move from \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_studentas_a1842a8cc1832df3ff02680383f473d98}\index{Studentas@{Studentas}!````~Studentas@{\texorpdfstring{$\sim$}{\string~}Studentas}}
 \index{````~Studentas@{\texorpdfstring{$\sim$}{\string~}Studentas}!Studentas@{Studentas}}
 \doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Studentas()}{\string~Studentas()}}
 {\footnotesize\ttfamily \label{class_studentas_a1842a8cc1832df3ff02680383f473d98} 
 Studentas\+::\texorpdfstring{$\sim$}{\string~}\+Studentas (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Virtual destructor Overrides the pure virtual destructor from \doxylink{class_zmogus}{Zmogus}. 
 
 
 
@@ -169,76 +211,140 @@ Studentas\+::\texorpdfstring{$\sim$}{\string~}\+Studentas (\begin{DoxyParamCapti
 {\footnotesize\ttfamily \label{class_studentas_ac25b54f1d6f3a4374499a80b5ac46003} 
 void Studentas\+::add\+ND (\begin{DoxyParamCaption}\item[{int}]{pazymys}{}\end{DoxyParamCaption})}
 
-Here is the caller graph for this function\+:
-% FIG 8
+
+
+Add a homework grade. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pazymys} & Grade to add \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & If grade is not between 1 and 10 \\
+\hline
+\end{DoxyExceptions}
 \Hypertarget{class_studentas_a56e5236896b579708ec4828a202df274}\index{Studentas@{Studentas}!clearND@{clearND}}
 \index{clearND@{clearND}!Studentas@{Studentas}}
 \doxysubsubsection{\texorpdfstring{clearND()}{clearND()}}
 {\footnotesize\ttfamily \label{class_studentas_a56e5236896b579708ec4828a202df274} 
 void Studentas\+::clear\+ND (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Here is the caller graph for this function\+:
-% FIG 9
+
+
+Clear all homework grades. 
+
 \Hypertarget{class_studentas_a8ec75244e6c21cf5a6af9f6d02f20fa2}\index{Studentas@{Studentas}!egzaminas@{egzaminas}}
 \index{egzaminas@{egzaminas}!Studentas@{Studentas}}
 \doxysubsubsection{\texorpdfstring{egzaminas()}{egzaminas()}}
 {\footnotesize\ttfamily \label{class_studentas_a8ec75244e6c21cf5a6af9f6d02f20fa2} 
 int Studentas\+::egzaminas (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Here is the caller graph for this function\+:
-% FIG 10
+
+
+Get exam grade. 
+
+\begin{DoxyReturn}{Returns}
+Exam grade 
+\end{DoxyReturn}
 \Hypertarget{class_studentas_a00616084632943b1a0b2cdb08ac35c35}\index{Studentas@{Studentas}!galBalas@{galBalas}}
 \index{galBalas@{galBalas}!Studentas@{Studentas}}
 \doxysubsubsection{\texorpdfstring{galBalas()}{galBalas()}}
 {\footnotesize\ttfamily \label{class_studentas_a00616084632943b1a0b2cdb08ac35c35} 
 double Studentas\+::gal\+Balas (\begin{DoxyParamCaption}\item[{bool}]{naudoti\+Vidurki}{ = {\ttfamily true}}\end{DoxyParamCaption}) const}
 
-Here is the call graph for this function\+:
-% FIG 11
-Here is the caller graph for this function\+:
-% FIG 12
+
+
+Calculate final grade. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em naudoti\+Vidurki} & Whether to use average (true) or median (false) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Final grade calculated as 0.\+4\texorpdfstring{$\ast$}{*}homework + 0.\+6\texorpdfstring{$\ast$}{*}exam 
+\end{DoxyReturn}
 \Hypertarget{class_studentas_a448772adf518582b94ac0ac39e224a16}\index{Studentas@{Studentas}!galutinis@{galutinis}}
 \index{galutinis@{galutinis}!Studentas@{Studentas}}
 \doxysubsubsection{\texorpdfstring{galutinis()}{galutinis()}}
 {\footnotesize\ttfamily \label{class_studentas_a448772adf518582b94ac0ac39e224a16} 
 double Studentas\+::galutinis (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Here is the caller graph for this function\+:
-% FIG 13
+
+
+Get final grade. 
+
+\begin{DoxyReturn}{Returns}
+Final grade 
+\end{DoxyReturn}
 \Hypertarget{class_studentas_adfecda15db6a1074b4224cbf6f9a1b8d}\index{Studentas@{Studentas}!nd@{nd}}
 \index{nd@{nd}!Studentas@{Studentas}}
 \doxysubsubsection{\texorpdfstring{nd()}{nd()}}
 {\footnotesize\ttfamily \label{class_studentas_adfecda15db6a1074b4224cbf6f9a1b8d} 
 std\+::vector$<$ int $>$ Studentas\+::nd (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Here is the caller graph for this function\+:
-% FIG 14
+
+
+Get homework grades. 
+
+\begin{DoxyReturn}{Returns}
+Vector of homework grades 
+\end{DoxyReturn}
 \Hypertarget{class_studentas_aca0bcdc0f22c4caaacf94c5ca7544db0}\index{Studentas@{Studentas}!nuskaitymasFile@{nuskaitymasFile}}
 \index{nuskaitymasFile@{nuskaitymasFile}!Studentas@{Studentas}}
 \doxysubsubsection{\texorpdfstring{nuskaitymasFile()}{nuskaitymasFile()}}
 {\footnotesize\ttfamily \label{class_studentas_aca0bcdc0f22c4caaacf94c5ca7544db0} 
 void Studentas\+::nuskaitymas\+File (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{grupe}{, }\item[{const std\+::string \&}]{failo\+Pavadinimas}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Here is the call graph for this function\+:
-% FIG 15
-Here is the caller graph for this function\+:
-% FIG 16
+
+
+Static method for reading students from file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em grupe} & Vector to store students \\
+\hline
+{\em failo\+Pavadinimas} & Filename to read from \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_studentas_a25bcc531503d3bc490dab4a656e3b8e9}\index{Studentas@{Studentas}!operator=@{operator=}}
 \index{operator=@{operator=}!Studentas@{Studentas}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily \label{class_studentas_a25bcc531503d3bc490dab4a656e3b8e9} 
 \mbox{\hyperlink{class_studentas}{Studentas}} \& Studentas\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_studentas}{Studentas}} \&}]{other}{}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-% FIG 17
+
+
+Copy assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Another student to copy from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to this student after assignment 
+\end{DoxyReturn}
 \Hypertarget{class_studentas_a6379482d741209e9a2d902023676fb45}\index{Studentas@{Studentas}!operator=@{operator=}}
 \index{operator=@{operator=}!Studentas@{Studentas}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \label{class_studentas_a6379482d741209e9a2d902023676fb45} 
 \mbox{\hyperlink{class_studentas}{Studentas}} \& Studentas\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_studentas}{Studentas}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
 
-Here is the call graph for this function\+:
-% FIG 18
+
+
+Move assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Another student to move from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to this student after assignment 
+\end{DoxyReturn}
 \Hypertarget{class_studentas_a3d73d57245cccb84a87fff820a32f205}\index{Studentas@{Studentas}!print@{print}}
 \index{print@{print}!Studentas@{Studentas}}
 \doxysubsubsection{\texorpdfstring{print()}{print()}}
@@ -247,10 +353,17 @@ void Studentas\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os}{
 
 
 
+Prints student information to output stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Output stream to print to \\
+\hline
+\end{DoxyParams}
+
+
 Implements \mbox{\hyperlink{class_zmogus_a54c34a84f8fee7c318a3c69072521b5f}{Zmogus}}.
 
-Here is the call graph for this function\+:
-% FIG 19
 \Hypertarget{class_studentas_a81b9f385ae0038f9c79398d6a00096db}\index{Studentas@{Studentas}!read@{read}}
 \index{read@{read}!Studentas@{Studentas}}
 \doxysubsubsection{\texorpdfstring{read()}{read()}}
@@ -259,54 +372,101 @@ void Studentas\+::read (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is}{}
 
 
 
+Reads student information from input stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is} & Input stream to read from \\
+\hline
+\end{DoxyParams}
+
+
 Implements \mbox{\hyperlink{class_zmogus_a8fe0dd00effd9b5da56a7a4b0f1890a2}{Zmogus}}.
 
-Here is the call graph for this function\+:
-% FIG 20
 \Hypertarget{class_studentas_a56cfe16f164d76b63f50898ef0a6403a}\index{Studentas@{Studentas}!readStudent@{readStudent}}
 \index{readStudent@{readStudent}!Studentas@{Studentas}}
 \doxysubsubsection{\texorpdfstring{readStudent()}{readStudent()}}
 {\footnotesize\ttfamily \label{class_studentas_a56cfe16f164d76b63f50898ef0a6403a} 
 std\+::istream \& Studentas\+::read\+Student (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is}{}\end{DoxyParamCaption})}
 
-Here is the caller graph for this function\+:
-% FIG 21
+
+
+Read student data from input stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is} & Input stream to read from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the input stream 
+\end{DoxyReturn}
 \Hypertarget{class_studentas_ac7fa2f1df9d544ac1fc050689d1928bc}\index{Studentas@{Studentas}!setEgzaminas@{setEgzaminas}}
 \index{setEgzaminas@{setEgzaminas}!Studentas@{Studentas}}
 \doxysubsubsection{\texorpdfstring{setEgzaminas()}{setEgzaminas()}}
 {\footnotesize\ttfamily \label{class_studentas_ac7fa2f1df9d544ac1fc050689d1928bc} 
 void Studentas\+::set\+Egzaminas (\begin{DoxyParamCaption}\item[{int}]{egzaminas}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Here is the call graph for this function\+:
-% FIG 22
-Here is the caller graph for this function\+:
-% FIG 23
+
+
+Set exam grade. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em egzaminas} & Exam grade to set \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_studentas_afe8208d99f1c1fefabb9758a5061bd3e}\index{Studentas@{Studentas}!setGalutinis@{setGalutinis}}
 \index{setGalutinis@{setGalutinis}!Studentas@{Studentas}}
 \doxysubsubsection{\texorpdfstring{setGalutinis()}{setGalutinis()}}
 {\footnotesize\ttfamily \label{class_studentas_afe8208d99f1c1fefabb9758a5061bd3e} 
 void Studentas\+::set\+Galutinis (\begin{DoxyParamCaption}\item[{double}]{galutinis}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Here is the call graph for this function\+:
-% FIG 24
-Here is the caller graph for this function\+:
-% FIG 25
+
+
+Set final grade. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em galutinis} & Final grade to set \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_studentas_ac207dc15bf0ae3cba6eca42681c792bc}\index{Studentas@{Studentas}!skaiciuotiMed@{skaiciuotiMed}}
 \index{skaiciuotiMed@{skaiciuotiMed}!Studentas@{Studentas}}
 \doxysubsubsection{\texorpdfstring{skaiciuotiMed()}{skaiciuotiMed()}}
 {\footnotesize\ttfamily \label{class_studentas_ac207dc15bf0ae3cba6eca42681c792bc} 
 double Studentas\+::skaiciuoti\+Med (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
-Here is the caller graph for this function\+:
-% FIG 26
+
+
+Calculate median of homework grades. 
+
+\begin{DoxyReturn}{Returns}
+Median of homework grades 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If there are no homework grades \\
+\hline
+\end{DoxyExceptions}
 \Hypertarget{class_studentas_aab379d5906b265c0179280f3a3864a80}\index{Studentas@{Studentas}!skaiciuotiVid@{skaiciuotiVid}}
 \index{skaiciuotiVid@{skaiciuotiVid}!Studentas@{Studentas}}
 \doxysubsubsection{\texorpdfstring{skaiciuotiVid()}{skaiciuotiVid()}}
 {\footnotesize\ttfamily \label{class_studentas_aab379d5906b265c0179280f3a3864a80} 
 double Studentas\+::skaiciuoti\+Vid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
-Here is the caller graph for this function\+:
-% FIG 27
+
+
+Calculate average of homework grades. 
+
+\begin{DoxyReturn}{Returns}
+Average of homework grades 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If there are no homework grades \\
+\hline
+\end{DoxyExceptions}
 
 
 \doxysubsection{Member Data Documentation}
@@ -316,11 +476,19 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily \label{class_studentas_ae812e25299cf9e3f0e7cd943c69eafa3} 
 int Studentas\+::destruktoriu\+Sk = 0\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Static counter for tracking destructor calls (for testing) 
+
 \Hypertarget{class_studentas_ab2b6d614a1491c86854d0cd8454a4926}\index{Studentas@{Studentas}!egzaminas\_@{egzaminas\_}}
 \index{egzaminas\_@{egzaminas\_}!Studentas@{Studentas}}
 \doxysubsubsection{\texorpdfstring{egzaminas\_}{egzaminas\_}}
 {\footnotesize\ttfamily \label{class_studentas_ab2b6d614a1491c86854d0cd8454a4926} 
 int Studentas\+::egzaminas\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Exam score. 
 
 \Hypertarget{class_studentas_a23307b2f7e41031cd7958022f0adbdae}\index{Studentas@{Studentas}!galutinis\_@{galutinis\_}}
 \index{galutinis\_@{galutinis\_}!Studentas@{Studentas}}
@@ -328,11 +496,19 @@ int Studentas\+::egzaminas\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
 {\footnotesize\ttfamily \label{class_studentas_a23307b2f7e41031cd7958022f0adbdae} 
 double Studentas\+::galutinis\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Final grade. 
+
 \Hypertarget{class_studentas_a1c3423fc1d91e7d2d8271884d60dde3c}\index{Studentas@{Studentas}!nd\_@{nd\_}}
 \index{nd\_@{nd\_}!Studentas@{Studentas}}
 \doxysubsubsection{\texorpdfstring{nd\_}{nd\_}}
 {\footnotesize\ttfamily \label{class_studentas_a1c3423fc1d91e7d2d8271884d60dde3c} 
 std\+::vector$<$int$>$ Studentas\+::nd\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vector of homework (namų darbų) scores. 
 
 
 

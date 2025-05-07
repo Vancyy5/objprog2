@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Klasės Studentų valdymas: Zmogus Class Reference</title>
+<title>Student Management System: Zmogus Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Klasės Studentų valdymas
+   <div id="projectname">Student Management System
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -110,50 +110,75 @@ $(function(){initNavTree('class_zmogus.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 
+<p>Abstract base class representing a person.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="zmogus_8h_source.html">zmogus.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Zmogus:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 0 --></div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+ <div class="center">
+  <img src="class_zmogus.png" usemap="#Zmogus_map" alt=""/>
+  <map id="Zmogus_map" name="Zmogus_map">
+<area href="class_studentas.html" title="Student class that inherits from Zmogus (Person) abstract class." alt="Studentas" shape="rect" coords="0,56,67,80"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a905fef3b8ad421a6d023c7ebc295f48e" id="r_a905fef3b8ad421a6d023c7ebc295f48e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a905fef3b8ad421a6d023c7ebc295f48e">Zmogus</a> ()=default</td></tr>
+<tr class="memdesc:a905fef3b8ad421a6d023c7ebc295f48e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <br /></td></tr>
 <tr class="separator:a905fef3b8ad421a6d023c7ebc295f48e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6bfb71e4c8fddf15f3a19b4bcd6fd26" id="r_ae6bfb71e4c8fddf15f3a19b4bcd6fd26"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6bfb71e4c8fddf15f3a19b4bcd6fd26">Zmogus</a> (const std::string &amp;<a class="el" href="#a03de7738fc8f68275e401a3b96954cf0">vardas</a>, const std::string &amp;<a class="el" href="#a24b5b4208f386916dc5c1ccf006bdedf">pavarde</a>)</td></tr>
+<tr class="memdesc:ae6bfb71e4c8fddf15f3a19b4bcd6fd26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with name and surname.  <br /></td></tr>
 <tr class="separator:ae6bfb71e4c8fddf15f3a19b4bcd6fd26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d2bbeaf83ead87dbb686ee04999885f" id="r_a9d2bbeaf83ead87dbb686ee04999885f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d2bbeaf83ead87dbb686ee04999885f">Zmogus</a> (const <a class="el" href="class_zmogus.html">Zmogus</a> &amp;other)</td></tr>
+<tr class="memdesc:a9d2bbeaf83ead87dbb686ee04999885f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor.  <br /></td></tr>
 <tr class="separator:a9d2bbeaf83ead87dbb686ee04999885f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8bc6d11547d75c71a38567f750f02612" id="r_a8bc6d11547d75c71a38567f750f02612"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_zmogus.html">Zmogus</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8bc6d11547d75c71a38567f750f02612">operator=</a> (const <a class="el" href="class_zmogus.html">Zmogus</a> &amp;other)</td></tr>
+<tr class="memdesc:a8bc6d11547d75c71a38567f750f02612"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy assignment operator.  <br /></td></tr>
 <tr class="separator:a8bc6d11547d75c71a38567f750f02612"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97c679fdf47100b8d6a9a7e17d4953c2" id="r_a97c679fdf47100b8d6a9a7e17d4953c2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97c679fdf47100b8d6a9a7e17d4953c2">Zmogus</a> (<a class="el" href="class_zmogus.html">Zmogus</a> &amp;&amp;other) noexcept</td></tr>
+<tr class="memdesc:a97c679fdf47100b8d6a9a7e17d4953c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor.  <br /></td></tr>
 <tr class="separator:a97c679fdf47100b8d6a9a7e17d4953c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6745536a52d1e85a49c2680199f9a80" id="r_af6745536a52d1e85a49c2680199f9a80"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_zmogus.html">Zmogus</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6745536a52d1e85a49c2680199f9a80">operator=</a> (<a class="el" href="class_zmogus.html">Zmogus</a> &amp;&amp;other) noexcept</td></tr>
+<tr class="memdesc:af6745536a52d1e85a49c2680199f9a80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move assignment operator.  <br /></td></tr>
 <tr class="separator:af6745536a52d1e85a49c2680199f9a80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64c712eed93f3dc770bb00df890292d7" id="r_a64c712eed93f3dc770bb00df890292d7"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64c712eed93f3dc770bb00df890292d7">~Zmogus</a> ()=0</td></tr>
+<tr class="memdesc:a64c712eed93f3dc770bb00df890292d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor Pure virtual destructor makes this class abstract.  <br /></td></tr>
 <tr class="separator:a64c712eed93f3dc770bb00df890292d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54c34a84f8fee7c318a3c69072521b5f" id="r_a54c34a84f8fee7c318a3c69072521b5f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54c34a84f8fee7c318a3c69072521b5f">print</a> (std::ostream &amp;os) const =0</td></tr>
+<tr class="memdesc:a54c34a84f8fee7c318a3c69072521b5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print person information to output stream.  <br /></td></tr>
 <tr class="separator:a54c34a84f8fee7c318a3c69072521b5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fe0dd00effd9b5da56a7a4b0f1890a2" id="r_a8fe0dd00effd9b5da56a7a4b0f1890a2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8fe0dd00effd9b5da56a7a4b0f1890a2">read</a> (std::istream &amp;is)=0</td></tr>
+<tr class="memdesc:a8fe0dd00effd9b5da56a7a4b0f1890a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read person information from input stream.  <br /></td></tr>
 <tr class="separator:a8fe0dd00effd9b5da56a7a4b0f1890a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03de7738fc8f68275e401a3b96954cf0" id="r_a03de7738fc8f68275e401a3b96954cf0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03de7738fc8f68275e401a3b96954cf0">vardas</a> () const</td></tr>
+<tr class="memdesc:a03de7738fc8f68275e401a3b96954cf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get first name.  <br /></td></tr>
 <tr class="separator:a03de7738fc8f68275e401a3b96954cf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24b5b4208f386916dc5c1ccf006bdedf" id="r_a24b5b4208f386916dc5c1ccf006bdedf"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24b5b4208f386916dc5c1ccf006bdedf">pavarde</a> () const</td></tr>
+<tr class="memdesc:a24b5b4208f386916dc5c1ccf006bdedf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get last name.  <br /></td></tr>
 <tr class="separator:a24b5b4208f386916dc5c1ccf006bdedf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6024e8fb5c3a9fbd48ca522f976f8465" id="r_a6024e8fb5c3a9fbd48ca522f976f8465"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6024e8fb5c3a9fbd48ca522f976f8465">setVardas</a> (const std::string &amp;<a class="el" href="#a03de7738fc8f68275e401a3b96954cf0">vardas</a>)</td></tr>
+<tr class="memdesc:a6024e8fb5c3a9fbd48ca522f976f8465"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set first name.  <br /></td></tr>
 <tr class="separator:a6024e8fb5c3a9fbd48ca522f976f8465"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4c3b02e68af5ed87c68101ba699539c" id="r_ae4c3b02e68af5ed87c68101ba699539c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4c3b02e68af5ed87c68101ba699539c">setPavarde</a> (const std::string &amp;<a class="el" href="#a24b5b4208f386916dc5c1ccf006bdedf">pavarde</a>)</td></tr>
+<tr class="memdesc:ae4c3b02e68af5ed87c68101ba699539c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set last name.  <br /></td></tr>
 <tr class="separator:ae4c3b02e68af5ed87c68101ba699539c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a80e72cd553492344884a264a72ce33d2" id="r_a80e72cd553492344884a264a72ce33d2"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a80e72cd553492344884a264a72ce33d2">vardas_</a></td></tr>
+<tr class="memdesc:a80e72cd553492344884a264a72ce33d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">First name of the person.  <br /></td></tr>
 <tr class="separator:a80e72cd553492344884a264a72ce33d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85cd6103a5f887059263d15413a3f081" id="r_a85cd6103a5f887059263d15413a3f081"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85cd6103a5f887059263d15413a3f081">pavarde_</a></td></tr>
+<tr class="memdesc:a85cd6103a5f887059263d15413a3f081"><td class="mdescLeft">&#160;</td><td class="mdescRight">Last name of the person.  <br /></td></tr>
 <tr class="separator:a85cd6103a5f887059263d15413a3f081"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Abstract base class representing a person. </p>
+<p>This class serves as an abstract base class for all person types. It implements common attributes (name, surname) and declares pure virtual methods. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a905fef3b8ad421a6d023c7ebc295f48e" name="a905fef3b8ad421a6d023c7ebc295f48e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a905fef3b8ad421a6d023c7ebc295f48e">&#9670;&#160;</a></span>Zmogus() <span class="overload">[1/4]</span></h2>
 
@@ -176,11 +201,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 1 --></div>
-</div>
+
+<p>Default constructor. </p>
 
 </div>
 </div>
@@ -210,11 +232,15 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 2 --></div>
-</div>
+
+<p>Constructor with name and surname. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vardas</td><td>First name </td></tr>
+    <tr><td class="paramname">pavarde</td><td>Last name </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -240,11 +266,14 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 3 --></div>
-</div>
+
+<p>Copy constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Another person to copy from </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -270,11 +299,14 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 4 --></div>
-</div>
+
+<p>Move constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Another person to move from </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -301,6 +333,8 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Virtual destructor Pure virtual destructor makes this class abstract. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -318,16 +352,15 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 5 --></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 6 --></div>
-</div>
+
+<p>Copy assignment operator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Another person to copy from </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Reference to this person after assignment </dd></dl>
 
 </div>
 </div>
@@ -353,11 +386,15 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 7 --></div>
-</div>
+
+<p>Move assignment operator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Another person to move from </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Reference to this person after assignment </dd></dl>
 
 </div>
 </div>
@@ -383,11 +420,9 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 8 --></div>
-</div>
+
+<p>Get last name. </p>
+<dl class="section return"><dt>Returns</dt><dd>Last name of the person </dd></dl>
 
 </div>
 </div>
@@ -414,12 +449,16 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Print person information to output stream. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>Output stream to print to</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Pure virtual method that derived classes must implement </p>
+
 <p>Implemented in <a class="el" href="class_studentas.html#a3d73d57245cccb84a87fff820a32f205">Studentas</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 9 --></div>
-</div>
 
 </div>
 </div>
@@ -446,12 +485,16 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Read person information from input stream. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">is</td><td>Input stream to read from</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Pure virtual method that derived classes must implement </p>
+
 <p>Implemented in <a class="el" href="class_studentas.html#a81b9f385ae0038f9c79398d6a00096db">Studentas</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 10 --></div>
-</div>
 
 </div>
 </div>
@@ -477,16 +520,14 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 11 --></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 12 --></div>
-</div>
+
+<p>Set last name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pavarde</td><td>Last name to set </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -512,16 +553,14 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 13 --></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 14 --></div>
-</div>
+
+<p>Set first name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vardas</td><td>First name to set </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -547,11 +586,9 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 15 --></div>
-</div>
+
+<p>Get first name. </p>
+<dl class="section return"><dt>Returns</dt><dd>First name of the person </dd></dl>
 
 </div>
 </div>
@@ -576,6 +613,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Last name of the person. </p>
+
 </div>
 </div>
 <a id="a80e72cd553492344884a264a72ce33d2" name="a80e72cd553492344884a264a72ce33d2"></a>
@@ -597,6 +636,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>First name of the person. </p>
 
 </div>
 </div>

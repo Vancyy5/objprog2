@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Klasės Studentų valdymas: zmogus.h File Reference</title>
+<title>Student Management System: zmogus.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Klasės Studentų valdymas
+   <div id="projectname">Student Management System
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -110,29 +110,22 @@ $(function(){initNavTree('zmogus_8h.html',''); initResizable(true); });
 <div class="contents">
 <div class="textblock"><code>#include &lt;string&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for zmogus.h:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 0 --></div>
-</div>
-</div><div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 1 --></div>
-</div>
 </div>
 <p><a href="zmogus_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zmogus.html">Zmogus</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract base class representing a person.  <a href="class_zmogus.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a1abe8d7f968fa7fa8c6f3d9308450199" id="r_a1abe8d7f968fa7fa8c6f3d9308450199"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1abe8d7f968fa7fa8c6f3d9308450199">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="class_zmogus.html">Zmogus</a> &amp;zmogus)</td></tr>
+<tr class="memdesc:a1abe8d7f968fa7fa8c6f3d9308450199"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output operator for <a class="el" href="class_zmogus.html" title="Abstract base class representing a person.">Zmogus</a> class.  <br /></td></tr>
 <tr class="separator:a1abe8d7f968fa7fa8c6f3d9308450199"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4757b75cec6ed4b36bef3442aad7ba64" id="r_a4757b75cec6ed4b36bef3442aad7ba64"><td class="memItemLeft" align="right" valign="top">std::istream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4757b75cec6ed4b36bef3442aad7ba64">operator&gt;&gt;</a> (std::istream &amp;is, <a class="el" href="class_zmogus.html">Zmogus</a> &amp;zmogus)</td></tr>
+<tr class="memdesc:a4757b75cec6ed4b36bef3442aad7ba64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input operator for <a class="el" href="class_zmogus.html" title="Abstract base class representing a person.">Zmogus</a> class.  <br /></td></tr>
 <tr class="separator:a4757b75cec6ed4b36bef3442aad7ba64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -154,11 +147,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 2 --></div>
-</div>
+
+<p>Output operator for <a class="el" href="class_zmogus.html" title="Abstract base class representing a person.">Zmogus</a> class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>Output stream </td></tr>
+    <tr><td class="paramname">zmogus</td><td>Person to output </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Reference to output stream </dd></dl>
 
 </div>
 </div>
@@ -180,11 +178,16 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 3 --></div>
-</div>
+
+<p>Input operator for <a class="el" href="class_zmogus.html" title="Abstract base class representing a person.">Zmogus</a> class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">is</td><td>Input stream </td></tr>
+    <tr><td class="paramname">zmogus</td><td>Person to input to </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Reference to input stream </dd></dl>
 
 </div>
 </div>

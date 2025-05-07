@@ -2,49 +2,61 @@
 \hypertarget{class_zmogus}{}\label{class_zmogus}\index{Zmogus@{Zmogus}}
 
 
+Abstract base class representing a person.  
+
+
+
+
 {\ttfamily \#include $<$zmogus.\+h$>$}
 
-
-
-Inheritance diagram for Zmogus\+:
-% FIG 0
+Inheritance diagram for Zmogus\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_zmogus}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_zmogus_a905fef3b8ad421a6d023c7ebc295f48e}{Zmogus}} ()=default
-\item 
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_zmogus_ae6bfb71e4c8fddf15f3a19b4bcd6fd26}{Zmogus}} (const std\+::string \&\mbox{\hyperlink{class_zmogus_a03de7738fc8f68275e401a3b96954cf0}{vardas}}, const std\+::string \&\mbox{\hyperlink{class_zmogus_a24b5b4208f386916dc5c1ccf006bdedf}{pavarde}})
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor with name and surname. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_zmogus_a9d2bbeaf83ead87dbb686ee04999885f}{Zmogus}} (const \mbox{\hyperlink{class_zmogus}{Zmogus}} \&other)
-\item 
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_zmogus}{Zmogus}} \& \mbox{\hyperlink{class_zmogus_a8bc6d11547d75c71a38567f750f02612}{operator=}} (const \mbox{\hyperlink{class_zmogus}{Zmogus}} \&other)
-\item 
+\begin{DoxyCompactList}\small\item\em Copy assignment operator. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_zmogus_a97c679fdf47100b8d6a9a7e17d4953c2}{Zmogus}} (\mbox{\hyperlink{class_zmogus}{Zmogus}} \&\&other) noexcept
-\item 
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_zmogus}{Zmogus}} \& \mbox{\hyperlink{class_zmogus_af6745536a52d1e85a49c2680199f9a80}{operator=}} (\mbox{\hyperlink{class_zmogus}{Zmogus}} \&\&other) noexcept
-\item 
+\begin{DoxyCompactList}\small\item\em Move assignment operator. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_zmogus_a64c712eed93f3dc770bb00df890292d7}{\texorpdfstring{$\sim$}{\string~}\+Zmogus}} ()=0
-\item 
+\begin{DoxyCompactList}\small\item\em Virtual destructor Pure virtual destructor makes this class abstract. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_zmogus_a54c34a84f8fee7c318a3c69072521b5f}{print}} (std\+::ostream \&os) const =0
-\item 
+\begin{DoxyCompactList}\small\item\em Print person information to output stream. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_zmogus_a8fe0dd00effd9b5da56a7a4b0f1890a2}{read}} (std\+::istream \&is)=0
-\item 
+\begin{DoxyCompactList}\small\item\em Read person information from input stream. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{class_zmogus_a03de7738fc8f68275e401a3b96954cf0}{vardas}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Get first name. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{class_zmogus_a24b5b4208f386916dc5c1ccf006bdedf}{pavarde}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Get last name. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_zmogus_a6024e8fb5c3a9fbd48ca522f976f8465}{set\+Vardas}} (const std\+::string \&\mbox{\hyperlink{class_zmogus_a03de7738fc8f68275e401a3b96954cf0}{vardas}})
-\item 
+\begin{DoxyCompactList}\small\item\em Set first name. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_zmogus_ae4c3b02e68af5ed87c68101ba699539c}{set\+Pavarde}} (const std\+::string \&\mbox{\hyperlink{class_zmogus_a24b5b4208f386916dc5c1ccf006bdedf}{pavarde}})
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Set last name. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 std\+::string \mbox{\hyperlink{class_zmogus_a80e72cd553492344884a264a72ce33d2}{vardas\+\_\+}}
-\item 
+\begin{DoxyCompactList}\small\item\em First name of the person. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{class_zmogus_a85cd6103a5f887059263d15413a3f081}{pavarde\+\_\+}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Last name of the person. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Abstract base class representing a person. 
+
+This class serves as an abstract base class for all person types. It implements common attributes (name, surname) and declares pure virtual methods. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{class_zmogus_a905fef3b8ad421a6d023c7ebc295f48e}\index{Zmogus@{Zmogus}!Zmogus@{Zmogus}}
@@ -53,37 +65,66 @@ std\+::string \mbox{\hyperlink{class_zmogus_a85cd6103a5f887059263d15413a3f081}{p
 {\footnotesize\ttfamily \label{class_zmogus_a905fef3b8ad421a6d023c7ebc295f48e} 
 Zmogus\+::\+Zmogus (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
 
-Here is the caller graph for this function\+:
-% FIG 1
+
+
+Default constructor. 
+
 \Hypertarget{class_zmogus_ae6bfb71e4c8fddf15f3a19b4bcd6fd26}\index{Zmogus@{Zmogus}!Zmogus@{Zmogus}}
 \index{Zmogus@{Zmogus}!Zmogus@{Zmogus}}
 \doxysubsubsection{\texorpdfstring{Zmogus()}{Zmogus()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
 {\footnotesize\ttfamily \label{class_zmogus_ae6bfb71e4c8fddf15f3a19b4bcd6fd26} 
 Zmogus\+::\+Zmogus (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{vardas}{, }\item[{const std\+::string \&}]{pavarde}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Here is the call graph for this function\+:
-% FIG 2
+
+
+Constructor with name and surname. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vardas} & First name \\
+\hline
+{\em pavarde} & Last name \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_zmogus_a9d2bbeaf83ead87dbb686ee04999885f}\index{Zmogus@{Zmogus}!Zmogus@{Zmogus}}
 \index{Zmogus@{Zmogus}!Zmogus@{Zmogus}}
 \doxysubsubsection{\texorpdfstring{Zmogus()}{Zmogus()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
 {\footnotesize\ttfamily \label{class_zmogus_a9d2bbeaf83ead87dbb686ee04999885f} 
 Zmogus\+::\+Zmogus (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_zmogus}{Zmogus}} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Here is the call graph for this function\+:
-% FIG 3
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Another person to copy from \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_zmogus_a97c679fdf47100b8d6a9a7e17d4953c2}\index{Zmogus@{Zmogus}!Zmogus@{Zmogus}}
 \index{Zmogus@{Zmogus}!Zmogus@{Zmogus}}
 \doxysubsubsection{\texorpdfstring{Zmogus()}{Zmogus()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
 {\footnotesize\ttfamily \label{class_zmogus_a97c679fdf47100b8d6a9a7e17d4953c2} 
 Zmogus\+::\+Zmogus (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_zmogus}{Zmogus}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
 
-Here is the call graph for this function\+:
-% FIG 4
+
+
+Move constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Another person to move from \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_zmogus_a64c712eed93f3dc770bb00df890292d7}\index{Zmogus@{Zmogus}!````~Zmogus@{\texorpdfstring{$\sim$}{\string~}Zmogus}}
 \index{````~Zmogus@{\texorpdfstring{$\sim$}{\string~}Zmogus}!Zmogus@{Zmogus}}
 \doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Zmogus()}{\string~Zmogus()}}
 {\footnotesize\ttfamily \label{class_zmogus_a64c712eed93f3dc770bb00df890292d7} 
 Zmogus\+::\texorpdfstring{$\sim$}{\string~}\+Zmogus (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Virtual destructor Pure virtual destructor makes this class abstract. 
 
 
 
@@ -94,26 +135,49 @@ Zmogus\+::\texorpdfstring{$\sim$}{\string~}\+Zmogus (\begin{DoxyParamCaption}{}{
 {\footnotesize\ttfamily \label{class_zmogus_a8bc6d11547d75c71a38567f750f02612} 
 \mbox{\hyperlink{class_zmogus}{Zmogus}} \& Zmogus\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_zmogus}{Zmogus}} \&}]{other}{}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-% FIG 5
-Here is the caller graph for this function\+:
-% FIG 6
+
+
+Copy assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Another person to copy from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to this person after assignment 
+\end{DoxyReturn}
 \Hypertarget{class_zmogus_af6745536a52d1e85a49c2680199f9a80}\index{Zmogus@{Zmogus}!operator=@{operator=}}
 \index{operator=@{operator=}!Zmogus@{Zmogus}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \label{class_zmogus_af6745536a52d1e85a49c2680199f9a80} 
 \mbox{\hyperlink{class_zmogus}{Zmogus}} \& Zmogus\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_zmogus}{Zmogus}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
 
-Here is the call graph for this function\+:
-% FIG 7
+
+
+Move assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Another person to move from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to this person after assignment 
+\end{DoxyReturn}
 \Hypertarget{class_zmogus_a24b5b4208f386916dc5c1ccf006bdedf}\index{Zmogus@{Zmogus}!pavarde@{pavarde}}
 \index{pavarde@{pavarde}!Zmogus@{Zmogus}}
 \doxysubsubsection{\texorpdfstring{pavarde()}{pavarde()}}
 {\footnotesize\ttfamily \label{class_zmogus_a24b5b4208f386916dc5c1ccf006bdedf} 
 std\+::string Zmogus\+::pavarde (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Here is the caller graph for this function\+:
-% FIG 8
+
+
+Get last name. 
+
+\begin{DoxyReturn}{Returns}
+Last name of the person 
+\end{DoxyReturn}
 \Hypertarget{class_zmogus_a54c34a84f8fee7c318a3c69072521b5f}\index{Zmogus@{Zmogus}!print@{print}}
 \index{print@{print}!Zmogus@{Zmogus}}
 \doxysubsubsection{\texorpdfstring{print()}{print()}}
@@ -122,10 +186,17 @@ virtual void Zmogus\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]
 
 
 
+Print person information to output stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Output stream to print to\\
+\hline
+\end{DoxyParams}
+Pure virtual method that derived classes must implement 
+
 Implemented in \mbox{\hyperlink{class_studentas_a3d73d57245cccb84a87fff820a32f205}{Studentas}}.
 
-Here is the caller graph for this function\+:
-% FIG 9
 \Hypertarget{class_zmogus_a8fe0dd00effd9b5da56a7a4b0f1890a2}\index{Zmogus@{Zmogus}!read@{read}}
 \index{read@{read}!Zmogus@{Zmogus}}
 \doxysubsubsection{\texorpdfstring{read()}{read()}}
@@ -134,38 +205,60 @@ virtual void Zmogus\+::read (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{
 
 
 
+Read person information from input stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is} & Input stream to read from\\
+\hline
+\end{DoxyParams}
+Pure virtual method that derived classes must implement 
+
 Implemented in \mbox{\hyperlink{class_studentas_a81b9f385ae0038f9c79398d6a00096db}{Studentas}}.
 
-Here is the caller graph for this function\+:
-% FIG 10
 \Hypertarget{class_zmogus_ae4c3b02e68af5ed87c68101ba699539c}\index{Zmogus@{Zmogus}!setPavarde@{setPavarde}}
 \index{setPavarde@{setPavarde}!Zmogus@{Zmogus}}
 \doxysubsubsection{\texorpdfstring{setPavarde()}{setPavarde()}}
 {\footnotesize\ttfamily \label{class_zmogus_ae4c3b02e68af5ed87c68101ba699539c} 
 void Zmogus\+::set\+Pavarde (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{pavarde}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Here is the call graph for this function\+:
-% FIG 11
-Here is the caller graph for this function\+:
-% FIG 12
+
+
+Set last name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pavarde} & Last name to set \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_zmogus_a6024e8fb5c3a9fbd48ca522f976f8465}\index{Zmogus@{Zmogus}!setVardas@{setVardas}}
 \index{setVardas@{setVardas}!Zmogus@{Zmogus}}
 \doxysubsubsection{\texorpdfstring{setVardas()}{setVardas()}}
 {\footnotesize\ttfamily \label{class_zmogus_a6024e8fb5c3a9fbd48ca522f976f8465} 
 void Zmogus\+::set\+Vardas (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{vardas}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Here is the call graph for this function\+:
-% FIG 13
-Here is the caller graph for this function\+:
-% FIG 14
+
+
+Set first name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vardas} & First name to set \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_zmogus_a03de7738fc8f68275e401a3b96954cf0}\index{Zmogus@{Zmogus}!vardas@{vardas}}
 \index{vardas@{vardas}!Zmogus@{Zmogus}}
 \doxysubsubsection{\texorpdfstring{vardas()}{vardas()}}
 {\footnotesize\ttfamily \label{class_zmogus_a03de7738fc8f68275e401a3b96954cf0} 
 std\+::string Zmogus\+::vardas (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Here is the caller graph for this function\+:
-% FIG 15
+
+
+Get first name. 
+
+\begin{DoxyReturn}{Returns}
+First name of the person 
+\end{DoxyReturn}
 
 
 \doxysubsection{Member Data Documentation}
@@ -175,11 +268,19 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily \label{class_zmogus_a85cd6103a5f887059263d15413a3f081} 
 std\+::string Zmogus\+::pavarde\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Last name of the person. 
+
 \Hypertarget{class_zmogus_a80e72cd553492344884a264a72ce33d2}\index{Zmogus@{Zmogus}!vardas\_@{vardas\_}}
 \index{vardas\_@{vardas\_}!Zmogus@{Zmogus}}
 \doxysubsubsection{\texorpdfstring{vardas\_}{vardas\_}}
 {\footnotesize\ttfamily \label{class_zmogus_a80e72cd553492344884a264a72ce33d2} 
 std\+::string Zmogus\+::vardas\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+First name of the person. 
 
 
 

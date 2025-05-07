@@ -2,29 +2,39 @@
 \hypertarget{class_laikas}{}\label{class_laikas}\index{Laikas@{Laikas}}
 
 
+Class for measuring execution time.  
+
+
+
+
 {\ttfamily \#include $<$laikas.\+h$>$}
 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_laikas_a4189b28bae30f92d9b0db6ddc52d51e3}{Laikas}} (const std\+::string \&pavadinimas)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_laikas_a97d3fa3942008539737a30a7b965dc66}{pradeti}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Start the timer Records the starting time point. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_laikas_aa7dd9dcd9c4d49854ad7e479762cadcc}{baigti}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Stop the timer and print the elapsed time Records the ending time point and outputs the time difference. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_laikas_a04257c2ddcfb976e2a3f1106b037f6ba}{gauti\+Laiko\+Skirtuma}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get the elapsed time in seconds. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 std\+::chrono\+::high\+\_\+resolution\+\_\+clock\+::time\+\_\+point \mbox{\hyperlink{class_laikas_a26ce45452dd63b640635ae45ff6a3665}{start}}
-\item 
+\begin{DoxyCompactList}\small\item\em Start time point. \end{DoxyCompactList}\item 
 std\+::chrono\+::high\+\_\+resolution\+\_\+clock\+::time\+\_\+point \mbox{\hyperlink{class_laikas_a0e59f2d398abb6c164c2ce7723edf1b0}{end}}
-\item 
+\begin{DoxyCompactList}\small\item\em End time point. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{class_laikas_a1ea46f532b80113518b362c46aa7492b}{veiksmo\+Pavadinimas}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Name of the operation being timed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Class for measuring execution time. 
+
+This class provides functionality to measure and report the execution time of code segments using high-\/resolution clock. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{class_laikas_a4189b28bae30f92d9b0db6ddc52d51e3}\index{Laikas@{Laikas}!Laikas@{Laikas}}
@@ -35,6 +45,15 @@ Laikas\+::\+Laikas (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{pava
 
 
 
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pavadinimas} & Name of the operation to time \\
+\hline
+\end{DoxyParams}
+
+
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_laikas_aa7dd9dcd9c4d49854ad7e479762cadcc}\index{Laikas@{Laikas}!baigti@{baigti}}
 \index{baigti@{baigti}!Laikas@{Laikas}}
@@ -42,26 +61,33 @@ Laikas\+::\+Laikas (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{pava
 {\footnotesize\ttfamily \label{class_laikas_aa7dd9dcd9c4d49854ad7e479762cadcc} 
 void Laikas\+::baigti (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-% FIG 0
-Here is the caller graph for this function\+:
-% FIG 1
+
+
+Stop the timer and print the elapsed time Records the ending time point and outputs the time difference. 
+
 \Hypertarget{class_laikas_a04257c2ddcfb976e2a3f1106b037f6ba}\index{Laikas@{Laikas}!gautiLaikoSkirtuma@{gautiLaikoSkirtuma}}
 \index{gautiLaikoSkirtuma@{gautiLaikoSkirtuma}!Laikas@{Laikas}}
 \doxysubsubsection{\texorpdfstring{gautiLaikoSkirtuma()}{gautiLaikoSkirtuma()}}
 {\footnotesize\ttfamily \label{class_laikas_a04257c2ddcfb976e2a3f1106b037f6ba} 
 double Laikas\+::gauti\+Laiko\+Skirtuma (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Here is the caller graph for this function\+:
-% FIG 2
+
+
+Get the elapsed time in seconds. 
+
+\begin{DoxyReturn}{Returns}
+Time difference between start and end in seconds 
+\end{DoxyReturn}
 \Hypertarget{class_laikas_a97d3fa3942008539737a30a7b965dc66}\index{Laikas@{Laikas}!pradeti@{pradeti}}
 \index{pradeti@{pradeti}!Laikas@{Laikas}}
 \doxysubsubsection{\texorpdfstring{pradeti()}{pradeti()}}
 {\footnotesize\ttfamily \label{class_laikas_a97d3fa3942008539737a30a7b965dc66} 
 void Laikas\+::pradeti (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Here is the caller graph for this function\+:
-% FIG 3
+
+
+Start the timer Records the starting time point. 
+
 
 
 \doxysubsection{Member Data Documentation}
@@ -71,17 +97,29 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily \label{class_laikas_a0e59f2d398abb6c164c2ce7723edf1b0} 
 std\+::chrono\+::high\+\_\+resolution\+\_\+clock\+::time\+\_\+point Laikas\+::end\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+End time point. 
+
 \Hypertarget{class_laikas_a26ce45452dd63b640635ae45ff6a3665}\index{Laikas@{Laikas}!start@{start}}
 \index{start@{start}!Laikas@{Laikas}}
 \doxysubsubsection{\texorpdfstring{start}{start}}
 {\footnotesize\ttfamily \label{class_laikas_a26ce45452dd63b640635ae45ff6a3665} 
 std\+::chrono\+::high\+\_\+resolution\+\_\+clock\+::time\+\_\+point Laikas\+::start\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Start time point. 
+
 \Hypertarget{class_laikas_a1ea46f532b80113518b362c46aa7492b}\index{Laikas@{Laikas}!veiksmoPavadinimas@{veiksmoPavadinimas}}
 \index{veiksmoPavadinimas@{veiksmoPavadinimas}!Laikas@{Laikas}}
 \doxysubsubsection{\texorpdfstring{veiksmoPavadinimas}{veiksmoPavadinimas}}
 {\footnotesize\ttfamily \label{class_laikas_a1ea46f532b80113518b362c46aa7492b} 
 std\+::string Laikas\+::veiksmo\+Pavadinimas\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Name of the operation being timed. 
 
 
 

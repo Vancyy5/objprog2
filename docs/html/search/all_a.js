@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['laikas_0',['Laikas',['../class_laikas.html',1,'Laikas'],['../class_laikas.html#a4189b28bae30f92d9b0db6ddc52d51e3',1,'Laikas::Laikas()']]],
-  ['laikas_2ecpp_1',['laikas.cpp',['../laikas_8cpp.html',1,'']]],
-  ['laikas_2eh_2',['laikas.h',['../laikas_8h.html',1,'']]]
+  ['nd_0',['nd',['../class_studentas.html#adfecda15db6a1074b4224cbf6f9a1b8d',1,'Studentas']]],
+  ['nd_5f_1',['nd_',['../class_studentas.html#a1c3423fc1d91e7d2d8271884d60dde3c',1,'Studentas']]],
+  ['nuskaitymasfile_2',['nuskaitymasFile',['../class_studentas.html#aca0bcdc0f22c4caaacf94c5ca7544db0',1,'Studentas']]]
 ];

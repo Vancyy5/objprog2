@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Klasės Studentų valdymas: laikas.h Source File</title>
+<title>Student Management System: laikas.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Klasės Studentų valdymas
+   <div id="projectname">Student Management System
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -110,35 +110,34 @@ $(function(){initNavTree('laikas_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;chrono&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="class_laikas.html">    7</a></span><span class="keyword">class </span><a class="code hl_function" href="class_laikas.html#a4189b28bae30f92d9b0db6ddc52d51e3">Laikas</a> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_laikas.html#a26ce45452dd63b640635ae45ff6a3665">   10</a></span>    std::chrono::high_resolution_clock::time_point <a class="code hl_variable" href="class_laikas.html#a26ce45452dd63b640635ae45ff6a3665">start</a>;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_laikas.html#a0e59f2d398abb6c164c2ce7723edf1b0">   11</a></span>    std::chrono::high_resolution_clock::time_point <a class="code hl_variable" href="class_laikas.html#a0e59f2d398abb6c164c2ce7723edf1b0">end</a>;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_laikas.html#a1ea46f532b80113518b362c46aa7492b">   12</a></span>    std::string <a class="code hl_variable" href="class_laikas.html#a1ea46f532b80113518b362c46aa7492b">veiksmoPavadinimas</a>;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_function" href="class_laikas.html#a4189b28bae30f92d9b0db6ddc52d51e3">Laikas</a>(<span class="keyword">const</span> std::string&amp; pavadinimas);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_laikas.html#a97d3fa3942008539737a30a7b965dc66">pradeti</a>();</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_laikas.html#aa7dd9dcd9c4d49854ad7e479762cadcc">baigti</a>();</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_laikas.html#a04257c2ddcfb976e2a3f1106b037f6ba">gautiLaikoSkirtuma</a>();</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>};</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span></div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_laikas.html">   14</a></span><span class="keyword">class </span><a class="code hl_function" href="class_laikas.html#a4189b28bae30f92d9b0db6ddc52d51e3">Laikas</a> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_laikas.html#a26ce45452dd63b640635ae45ff6a3665">   17</a></span>    std::chrono::high_resolution_clock::time_point <a class="code hl_variable" href="class_laikas.html#a26ce45452dd63b640635ae45ff6a3665">start</a>; </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_laikas.html#a0e59f2d398abb6c164c2ce7723edf1b0">   18</a></span>    std::chrono::high_resolution_clock::time_point <a class="code hl_variable" href="class_laikas.html#a0e59f2d398abb6c164c2ce7723edf1b0">end</a>;   </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_laikas.html#a1ea46f532b80113518b362c46aa7492b">   19</a></span>    std::string <a class="code hl_variable" href="class_laikas.html#a1ea46f532b80113518b362c46aa7492b">veiksmoPavadinimas</a>;                       </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_function" href="class_laikas.html#a4189b28bae30f92d9b0db6ddc52d51e3">Laikas</a>(<span class="keyword">const</span> std::string&amp; pavadinimas);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_laikas.html#a97d3fa3942008539737a30a7b965dc66">pradeti</a>();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_laikas.html#aa7dd9dcd9c4d49854ad7e479762cadcc">baigti</a>();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_laikas.html#a04257c2ddcfb976e2a3f1106b037f6ba">gautiLaikoSkirtuma</a>();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>};</div>
 </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclass_laikas_html_a04257c2ddcfb976e2a3f1106b037f6ba"><div class="ttname"><a href="class_laikas.html#a04257c2ddcfb976e2a3f1106b037f6ba">Laikas::gautiLaikoSkirtuma</a></div><div class="ttdeci">double gautiLaikoSkirtuma()</div><div class="ttdef"><b>Definition</b> laikas.cpp:20</div></div>
-<div class="ttc" id="aclass_laikas_html_a0e59f2d398abb6c164c2ce7723edf1b0"><div class="ttname"><a href="class_laikas.html#a0e59f2d398abb6c164c2ce7723edf1b0">Laikas::end</a></div><div class="ttdeci">std::chrono::high_resolution_clock::time_point end</div><div class="ttdef"><b>Definition</b> laikas.h:11</div></div>
-<div class="ttc" id="aclass_laikas_html_a1ea46f532b80113518b362c46aa7492b"><div class="ttname"><a href="class_laikas.html#a1ea46f532b80113518b362c46aa7492b">Laikas::veiksmoPavadinimas</a></div><div class="ttdeci">std::string veiksmoPavadinimas</div><div class="ttdef"><b>Definition</b> laikas.h:12</div></div>
-<div class="ttc" id="aclass_laikas_html_a26ce45452dd63b640635ae45ff6a3665"><div class="ttname"><a href="class_laikas.html#a26ce45452dd63b640635ae45ff6a3665">Laikas::start</a></div><div class="ttdeci">std::chrono::high_resolution_clock::time_point start</div><div class="ttdef"><b>Definition</b> laikas.h:10</div></div>
-<div class="ttc" id="aclass_laikas_html_a4189b28bae30f92d9b0db6ddc52d51e3"><div class="ttname"><a href="class_laikas.html#a4189b28bae30f92d9b0db6ddc52d51e3">Laikas::Laikas</a></div><div class="ttdeci">Laikas(const std::string &amp;pavadinimas)</div><div class="ttdef"><b>Definition</b> laikas.cpp:6</div></div>
-<div class="ttc" id="aclass_laikas_html_a97d3fa3942008539737a30a7b965dc66"><div class="ttname"><a href="class_laikas.html#a97d3fa3942008539737a30a7b965dc66">Laikas::pradeti</a></div><div class="ttdeci">void pradeti()</div><div class="ttdef"><b>Definition</b> laikas.cpp:11</div></div>
-<div class="ttc" id="aclass_laikas_html_aa7dd9dcd9c4d49854ad7e479762cadcc"><div class="ttname"><a href="class_laikas.html#aa7dd9dcd9c4d49854ad7e479762cadcc">Laikas::baigti</a></div><div class="ttdeci">void baigti()</div><div class="ttdef"><b>Definition</b> laikas.cpp:15</div></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_laikas_html_a04257c2ddcfb976e2a3f1106b037f6ba"><div class="ttname"><a href="class_laikas.html#a04257c2ddcfb976e2a3f1106b037f6ba">Laikas::gautiLaikoSkirtuma</a></div><div class="ttdeci">double gautiLaikoSkirtuma()</div><div class="ttdoc">Get the elapsed time in seconds.</div><div class="ttdef"><b>Definition</b> laikas.cpp:20</div></div>
+<div class="ttc" id="aclass_laikas_html_a0e59f2d398abb6c164c2ce7723edf1b0"><div class="ttname"><a href="class_laikas.html#a0e59f2d398abb6c164c2ce7723edf1b0">Laikas::end</a></div><div class="ttdeci">std::chrono::high_resolution_clock::time_point end</div><div class="ttdoc">End time point.</div><div class="ttdef"><b>Definition</b> laikas.h:18</div></div>
+<div class="ttc" id="aclass_laikas_html_a1ea46f532b80113518b362c46aa7492b"><div class="ttname"><a href="class_laikas.html#a1ea46f532b80113518b362c46aa7492b">Laikas::veiksmoPavadinimas</a></div><div class="ttdeci">std::string veiksmoPavadinimas</div><div class="ttdoc">Name of the operation being timed.</div><div class="ttdef"><b>Definition</b> laikas.h:19</div></div>
+<div class="ttc" id="aclass_laikas_html_a26ce45452dd63b640635ae45ff6a3665"><div class="ttname"><a href="class_laikas.html#a26ce45452dd63b640635ae45ff6a3665">Laikas::start</a></div><div class="ttdeci">std::chrono::high_resolution_clock::time_point start</div><div class="ttdoc">Start time point.</div><div class="ttdef"><b>Definition</b> laikas.h:17</div></div>
+<div class="ttc" id="aclass_laikas_html_a4189b28bae30f92d9b0db6ddc52d51e3"><div class="ttname"><a href="class_laikas.html#a4189b28bae30f92d9b0db6ddc52d51e3">Laikas::Laikas</a></div><div class="ttdeci">Laikas(const std::string &amp;pavadinimas)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition</b> laikas.cpp:6</div></div>
+<div class="ttc" id="aclass_laikas_html_a97d3fa3942008539737a30a7b965dc66"><div class="ttname"><a href="class_laikas.html#a97d3fa3942008539737a30a7b965dc66">Laikas::pradeti</a></div><div class="ttdeci">void pradeti()</div><div class="ttdoc">Start the timer Records the starting time point.</div><div class="ttdef"><b>Definition</b> laikas.cpp:11</div></div>
+<div class="ttc" id="aclass_laikas_html_aa7dd9dcd9c4d49854ad7e479762cadcc"><div class="ttname"><a href="class_laikas.html#aa7dd9dcd9c4d49854ad7e479762cadcc">Laikas::baigti</a></div><div class="ttdeci">void baigti()</div><div class="ttdoc">Stop the timer and print the elapsed time Records the ending time point and outputs the time differen...</div><div class="ttdef"><b>Definition</b> laikas.cpp:15</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

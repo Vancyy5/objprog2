@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['destruktorius_3a_0',['Destruktorius:',['../md__r_e_a_d_m_e.html#autotoc_md35',1,'']]],
-  ['destruktoriusk_1',['destruktoriuSk',['../class_studentas.html#ae812e25299cf9e3f0e7cd943c69eafa3',1,'Studentas']]],
-  ['double_20galutinis_20tt_20–_20nustato_20galutinį_20balą_2',['- &lt;tt&gt;void setGalutinis(double galutinis)&lt;/tt&gt; – nustato galutinį balą',['../md__r_e_a_d_m_e.html#autotoc_md30',1,'']]]
+  ['egzaminas_0',['egzaminas',['../class_studentas.html#a8ec75244e6c21cf5a6af9f6d02f20fa2',1,'Studentas']]],
+  ['egzaminas_5f_1',['egzaminas_',['../class_studentas.html#ab2b6d614a1491c86854d0cd8454a4926',1,'Studentas']]],
+  ['end_2',['end',['../class_laikas.html#a0e59f2d398abb6c164c2ce7723edf1b0',1,'Laikas']]]
 ];

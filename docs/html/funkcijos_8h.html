@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Klasės Studentų valdymas: funkcijos.h File Reference</title>
+<title>Student Management System: funkcijos.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Klasės Studentų valdymas
+   <div id="projectname">Student Management System
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -120,45 +120,46 @@ $(function(){initNavTree('funkcijos_8h.html',''); initResizable(true); });
 <code>#include &lt;numeric&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &quot;<a class="el" href="zmogus_8h_source.html">zmogus.h</a>&quot;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for funkcijos.h:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 0 --></div>
-</div>
-</div><div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 1 --></div>
-</div>
 </div>
 <p><a href="funkcijos_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_studentas.html">Studentas</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Student class that inherits from <a class="el" href="class_zmogus.html" title="Abstract base class representing a person.">Zmogus</a> (Person) abstract class.  <a href="class_studentas.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:abed46d0f5cd92f3e761bff20e25ce475" id="r_abed46d0f5cd92f3e761bff20e25ce475"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abed46d0f5cd92f3e761bff20e25ce475">compareByVardas</a> (const <a class="el" href="class_studentas.html">Studentas</a> &amp;a, const <a class="el" href="class_studentas.html">Studentas</a> &amp;b)</td></tr>
+<tr class="memdesc:abed46d0f5cd92f3e761bff20e25ce475"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare students by first name.  <br /></td></tr>
 <tr class="separator:abed46d0f5cd92f3e761bff20e25ce475"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af2ab3189b93eeee714fd925f27f19b52" id="r_af2ab3189b93eeee714fd925f27f19b52"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2ab3189b93eeee714fd925f27f19b52">compareByPavarde</a> (const <a class="el" href="class_studentas.html">Studentas</a> &amp;a, const <a class="el" href="class_studentas.html">Studentas</a> &amp;b)</td></tr>
+<tr class="memdesc:af2ab3189b93eeee714fd925f27f19b52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare students by last name.  <br /></td></tr>
 <tr class="separator:af2ab3189b93eeee714fd925f27f19b52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b6a228fc464a9d4c17b271db47a90ce" id="r_a9b6a228fc464a9d4c17b271db47a90ce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b6a228fc464a9d4c17b271db47a90ce">compareByGalutinis</a> (const <a class="el" href="class_studentas.html">Studentas</a> &amp;a, const <a class="el" href="class_studentas.html">Studentas</a> &amp;b)</td></tr>
+<tr class="memdesc:a9b6a228fc464a9d4c17b271db47a90ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare students by final grade (descending)  <br /></td></tr>
 <tr class="separator:a9b6a228fc464a9d4c17b271db47a90ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55d40c2545ce55b7e4ee9536f339d291" id="r_a55d40c2545ce55b7e4ee9536f339d291"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55d40c2545ce55b7e4ee9536f339d291">skaitytiIsFailo</a> (std::vector&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;grupe, const std::string &amp;failoPavadinimas)</td></tr>
+<tr class="memdesc:a55d40c2545ce55b7e4ee9536f339d291"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read students from file.  <br /></td></tr>
 <tr class="separator:a55d40c2545ce55b7e4ee9536f339d291"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a611987d71fb1ea6c7b02ac55df0d05df" id="r_a611987d71fb1ea6c7b02ac55df0d05df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a611987d71fb1ea6c7b02ac55df0d05df">isvestiStudentusIFaila</a> (const std::vector&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;studentai, const std::string &amp;failoPavadinimas, char ats)</td></tr>
+<tr class="memdesc:a611987d71fb1ea6c7b02ac55df0d05df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write students to file.  <br /></td></tr>
 <tr class="separator:a611987d71fb1ea6c7b02ac55df0d05df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6728add47c688cc828f070be465134e" id="r_aa6728add47c688cc828f070be465134e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6728add47c688cc828f070be465134e">sortStudentai</a> (std::vector&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;grupe, char sortingOption)</td></tr>
+<tr class="memdesc:aa6728add47c688cc828f070be465134e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort students by specified criterion.  <br /></td></tr>
 <tr class="separator:aa6728add47c688cc828f070be465134e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bcd71c154910a66e7be751cab3eb68d" id="r_a3bcd71c154910a66e7be751cab3eb68d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3bcd71c154910a66e7be751cab3eb68d">skirstytiStudentus</a> (std::vector&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;grupe, std::vector&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;kietiakiai, std::vector&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;vargsai)</td></tr>
+<tr class="memdesc:a3bcd71c154910a66e7be751cab3eb68d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split students into two groups based on final grade.  <br /></td></tr>
 <tr class="separator:a3bcd71c154910a66e7be751cab3eb68d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b67506502ea72a87dd4f7e8cc0f0072" id="r_a9b67506502ea72a87dd4f7e8cc0f0072"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b67506502ea72a87dd4f7e8cc0f0072">testuotiDuomenuApdorojima</a> (const std::string &amp;aplankas, int skaicius)</td></tr>
+<tr class="memdesc:a9b67506502ea72a87dd4f7e8cc0f0072"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test data processing performance.  <br /></td></tr>
 <tr class="separator:a9b67506502ea72a87dd4f7e8cc0f0072"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0bcc3fa49fd1bf2474cbfd5ccf2aaff2" id="r_a0bcc3fa49fd1bf2474cbfd5ccf2aaff2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0bcc3fa49fd1bf2474cbfd5ccf2aaff2">testuotiStudentoMetodus</a> ()</td></tr>
+<tr class="memdesc:a0bcc3fa49fd1bf2474cbfd5ccf2aaff2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test <a class="el" href="class_studentas.html" title="Student class that inherits from Zmogus (Person) abstract class.">Studentas</a> class methods.  <br /></td></tr>
 <tr class="separator:a0bcc3fa49fd1bf2474cbfd5ccf2aaff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2df0a259af1958b8b4c2eb00a5806530" id="r_a2df0a259af1958b8b4c2eb00a5806530"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2df0a259af1958b8b4c2eb00a5806530">testuotiZmogausKlase</a> ()</td></tr>
+<tr class="memdesc:a2df0a259af1958b8b4c2eb00a5806530"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test <a class="el" href="class_zmogus.html" title="Abstract base class representing a person.">Zmogus</a> class.  <br /></td></tr>
 <tr class="separator:a2df0a259af1958b8b4c2eb00a5806530"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -180,16 +181,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 2 --></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 3 --></div>
-</div>
+
+<p>Compare students by final grade (descending) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>First student </td></tr>
+    <tr><td class="paramname">b</td><td>Second student </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if a's final grade is higher than b's </dd></dl>
 
 </div>
 </div>
@@ -211,16 +212,16 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 4 --></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 5 --></div>
-</div>
+
+<p>Compare students by last name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>First student </td></tr>
+    <tr><td class="paramname">b</td><td>Second student </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if a's surname comes before b's </dd></dl>
 
 </div>
 </div>
@@ -242,16 +243,16 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 6 --></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 7 --></div>
-</div>
+
+<p>Compare students by first name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>First student </td></tr>
+    <tr><td class="paramname">b</td><td>Second student </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if a's name comes before b's </dd></dl>
 
 </div>
 </div>
@@ -278,11 +279,16 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 8 --></div>
-</div>
+
+<p>Write students to file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">studentai</td><td>Students to write </td></tr>
+    <tr><td class="paramname">failoPavadinimas</td><td>Filename to write to </td></tr>
+    <tr><td class="paramname">ats</td><td>Whether to use average ('v') or median ('m') for final grade </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -304,16 +310,15 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 9 --></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 10 --></div>
-</div>
+
+<p>Read students from file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">grupe</td><td>Vector to store students </td></tr>
+    <tr><td class="paramname">failoPavadinimas</td><td>Filename to read from </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -340,11 +345,16 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 11 --></div>
-</div>
+
+<p>Split students into two groups based on final grade. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">grupe</td><td>Input vector of students </td></tr>
+    <tr><td class="paramname">kietiakiai</td><td>Output vector for students with final grade &gt;= 5.0 </td></tr>
+    <tr><td class="paramname">vargsai</td><td>Output vector for students with final grade &lt; 5.0 </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -366,16 +376,15 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 12 --></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 13 --></div>
-</div>
+
+<p>Sort students by specified criterion. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">grupe</td><td>Students to sort </td></tr>
+    <tr><td class="paramname">sortingOption</td><td>Sorting criterion: 'v' (name), 'p' (surname), 'g' (final grade) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -397,16 +406,15 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 14 --></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 15 --></div>
-</div>
+
+<p>Test data processing performance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">aplankas</td><td>Directory for files </td></tr>
+    <tr><td class="paramname">skaicius</td><td>Number of students </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -424,16 +432,8 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 16 --></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 17 --></div>
-</div>
+
+<p>Test <a class="el" href="class_studentas.html" title="Student class that inherits from Zmogus (Person) abstract class.">Studentas</a> class methods. </p>
 
 </div>
 </div>
@@ -451,6 +451,8 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Test <a class="el" href="class_zmogus.html" title="Abstract base class representing a person.">Zmogus</a> class. </p>
 
 </div>
 </div>

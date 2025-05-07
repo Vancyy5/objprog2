@@ -2,22 +2,18 @@
 \hypertarget{zmogus_8h}{}\label{zmogus_8h}\index{zmogus.h@{zmogus.h}}
 {\ttfamily \#include $<$string$>$}\newline
 {\ttfamily \#include $<$iostream$>$}\newline
-Include dependency graph for zmogus.\+h\+:
-% FIG 0
-This graph shows which files directly or indirectly include this file\+:
-% FIG 1
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{class_zmogus}{Zmogus}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Abstract base class representing a person. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 std\+::ostream \& \mbox{\hyperlink{zmogus_8h_a1abe8d7f968fa7fa8c6f3d9308450199}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_zmogus}{Zmogus}} \&zmogus)
-\item 
+\begin{DoxyCompactList}\small\item\em Output operator for \doxylink{class_zmogus}{Zmogus} class. \end{DoxyCompactList}\item 
 std\+::istream \& \mbox{\hyperlink{zmogus_8h_a4757b75cec6ed4b36bef3442aad7ba64}{operator$>$$>$}} (std\+::istream \&is, \mbox{\hyperlink{class_zmogus}{Zmogus}} \&zmogus)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Input operator for \doxylink{class_zmogus}{Zmogus} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -27,13 +23,37 @@ std\+::istream \& \mbox{\hyperlink{zmogus_8h_a4757b75cec6ed4b36bef3442aad7ba64}{
 {\footnotesize\ttfamily \label{zmogus_8h_a1abe8d7f968fa7fa8c6f3d9308450199} 
 std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os}{, }\item[{const \mbox{\hyperlink{class_zmogus}{Zmogus}} \&}]{zmogus}{}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-% FIG 2
+
+
+Output operator for \doxylink{class_zmogus}{Zmogus} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Output stream \\
+\hline
+{\em zmogus} & Person to output \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to output stream 
+\end{DoxyReturn}
 \Hypertarget{zmogus_8h_a4757b75cec6ed4b36bef3442aad7ba64}\index{zmogus.h@{zmogus.h}!operator$>$$>$@{operator$>$$>$}}
 \index{operator$>$$>$@{operator$>$$>$}!zmogus.h@{zmogus.h}}
 \doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
 {\footnotesize\ttfamily \label{zmogus_8h_a4757b75cec6ed4b36bef3442aad7ba64} 
 std\+::istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is}{, }\item[{\mbox{\hyperlink{class_zmogus}{Zmogus}} \&}]{zmogus}{}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-% FIG 3
+
+
+Input operator for \doxylink{class_zmogus}{Zmogus} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is} & Input stream \\
+\hline
+{\em zmogus} & Person to input to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to input stream 
+\end{DoxyReturn}
