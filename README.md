@@ -19,24 +19,26 @@ cd mano-projektas
 
 2. Klonuoti Repozitoriją:    
 
- git clone https://github.com/Vancyy5/objprog2.git
+ git clone https://github.com/Vancyy5/objprog2/tree/v2.0
 
+3. Nueikite į objprog1
+  cd objprog2 
 
-3. Užtikrinkite, kad turite įdiegtą C++17 suderinamą kompiliatorių.
+4. Užtikrinkite, kad turite įdiegtą C++17 suderinamą kompiliatorių.
 
-4. Kompiliuoti su makefile:
+5. Kompiliuoti su makefile:
 
  make
 
-5.1 Paleiskite:
+6.1 Paleiskite:
 
  ./main
 
-5.2 Jeigu norit atlikti unit testus:
+6.2 Jeigu norit atlikti unit testus:
   
   make test 
 
-6. Išvalykite:
+7. Išvalykite:
 
  make clean
 
