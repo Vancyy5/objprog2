@@ -19,10 +19,12 @@ cd mano-projektas
 
 2. Klonuoti Repozitoriją:    
 
- git clone https://github.com/Vancyy5/objprog2/tree/v2.0
+git clone https://github.com/Vancyy5/objprog2.git
 
-3. Nueikite į objprog1
+3. Nueikite į objprog2 ir į reikiamą versiją
   cd objprog2 
+
+  git checkout v1.2 ar git checkout v2.0....
 
 4. Užtikrinkite, kad turite įdiegtą C++17 suderinamą kompiliatorių.
 
