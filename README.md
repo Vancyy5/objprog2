@@ -447,6 +447,10 @@ Lentelėje parodoma kiek vidutiniškai laiko užtruko atliekant tikruosius bando
 | Bandomasis paleidimas      |       64          | 
 | Visas bandomasis paleidimas|       89          | 
 
+Parodyta, kad visi testai pavyko
+
+![alt text](https://github.com/Vancyy5/objprog2/blob/v2.0/nuotraukos/Screenshot%202025-05-08%20211935.png)
+
 
 
 
